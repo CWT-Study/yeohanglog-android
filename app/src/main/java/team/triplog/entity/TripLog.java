@@ -1,6 +1,6 @@
-package team.triplog.vo;
+package team.triplog.entity;
 
-public class MainHomeVo {
+public class TripLog {
     public int drawbleId;
     public String title;
 }

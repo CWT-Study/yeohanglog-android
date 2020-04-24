@@ -12,14 +12,14 @@ import java.util.ArrayList;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import team.triplog.R;
-import team.triplog.vo.MainHomeVo;
+import team.triplog.entity.TripLog;
 
 public class MainHomeAdapter extends RecyclerView.Adapter<MainHomeAdapter.ViewHolder> {
-    private ArrayList<MainHomeVo> tripList;
+    private ArrayList<TripLog> tripList;
     private Context mContext;
     private View.OnClickListener onClickListener;
 
-    public MainHomeAdapter(Context mContext, ArrayList<MainHomeVo> tripList, View.OnClickListener onClickListener){
+    public MainHomeAdapter(Context mContext, ArrayList<TripLog> tripList, View.OnClickListener onClickListener){
         this.mContext=mContext;
         this.tripList=tripList;
         this.onClickListener=onClickListener;
@@ -36,12 +36,12 @@ public class MainHomeAdapter extends RecyclerView.Adapter<MainHomeAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        MainHomeVo mainHomeVo = tripList.get(position);
+        TripLog tripLog = tripList.get(position);
 
-        holder.txtTripTitle.setText(mainHomeVo.title);
-        holder.txtTripTitle.setTag(mainHomeVo.title);
+        holder.txtTripTitle.setText(tripLog.title);
+        holder.txtTripTitle.setTag(tripLog.title);
         holder.txtTripTitle.setOnClickListener(onClickListener);
-        holder.imageView.setImageResource(mainHomeVo.drawbleId);
+        holder.imageView.setImageResource(tripLog.drawbleId);
     }
 
     @Override

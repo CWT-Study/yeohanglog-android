@@ -13,7 +13,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import team.triplog.adpater.MainHomeAdapter;
-import team.triplog.vo.MainHomeVo;
+import team.triplog.entity.TripLog;
 
 public class MainHomeFragment extends Fragment {
     private View rootView;
@@ -33,7 +33,7 @@ public class MainHomeFragment extends Fragment {
         return rootView;
     }
 
-    private void init(){
+    private void init() {
         txtNameUser = rootView.findViewById(R.id.txt_name_user);
         txtTripTitle = rootView.findViewById(R.id.txt_trip_title);
         txtTripContent = rootView.findViewById(R.id.txt_trip_content);
@@ -41,56 +41,60 @@ public class MainHomeFragment extends Fragment {
         recyclerView = rootView.findViewById(R.id.recyclerview);
     }
 
-    private void setData(){
-        LinearLayoutManager layoutManager = new LinearLayoutManager(rootView.getContext(),LinearLayoutManager.HORIZONTAL,false);
+    private void setData() {
+        LinearLayoutManager layoutManager =
+                new LinearLayoutManager(
+                        rootView.getContext(),
+                        LinearLayoutManager.HORIZONTAL,
+                        false
+                );
         recyclerView.setLayoutManager(layoutManager);
 
-        ArrayList<MainHomeVo> mainHomeVos = new ArrayList<>();
-        MainHomeVo mainHomeVo = new MainHomeVo();
-        mainHomeVo.title="테스트";
-        mainHomeVo.drawbleId=R.drawable.ic_launcher_background;
+        ArrayList<TripLog> tripLogs = new ArrayList<>();
+        TripLog tripLog = new TripLog();
+        tripLog.title = "테스트";
+        tripLog.drawbleId = R.drawable.ic_launcher_background;
 
-        MainHomeVo mainHomeVo2 = new MainHomeVo();
-        mainHomeVo2.title="테스트2";
-        mainHomeVo2.drawbleId=R.drawable.ic_launcher_background;
+        TripLog tripLog2 = new TripLog();
+        tripLog2.title = "테스트2";
+        tripLog2.drawbleId = R.drawable.ic_launcher_background;
 
-        MainHomeVo mainHomeVo3 = new MainHomeVo();
-        mainHomeVo3.title="테스트3";
-        mainHomeVo3.drawbleId=R.drawable.ic_launcher_background;
+        TripLog tripLog3 = new TripLog();
+        tripLog3.title = "테스트3";
+        tripLog3.drawbleId = R.drawable.ic_launcher_background;
 
-        MainHomeVo mainHomeVo4 = new MainHomeVo();
-        mainHomeVo4.title="테스트4";
-        mainHomeVo4.drawbleId=R.drawable.ic_launcher_background;
+        TripLog tripLog4 = new TripLog();
+        tripLog4.title = "테스트4";
+        tripLog4.drawbleId = R.drawable.ic_launcher_background;
 
-        MainHomeVo mainHomeVo5 = new MainHomeVo();
-        mainHomeVo5.title="테스트5";
-        mainHomeVo5.drawbleId=R.drawable.ic_launcher_background;
+        TripLog tripLog5 = new TripLog();
+        tripLog5.title = "테스트5";
+        tripLog5.drawbleId = R.drawable.ic_launcher_background;
 
-        MainHomeVo mainHomeVo6 = new MainHomeVo();
-        mainHomeVo6.title="테스트6";
-        mainHomeVo6.drawbleId=R.drawable.ic_launcher_background;
+        TripLog tripLog6 = new TripLog();
+        tripLog6.title = "테스트6";
+        tripLog6.drawbleId = R.drawable.ic_launcher_background;
 
-        MainHomeVo mainHomeVo7 = new MainHomeVo();
-        mainHomeVo7.title="테스트7";
-        mainHomeVo7.drawbleId=R.drawable.ic_launcher_background;
+        TripLog tripLog7 = new TripLog();
+        tripLog7.title = "테스트7";
+        tripLog7.drawbleId = R.drawable.ic_launcher_background;
 
-        MainHomeVo mainHomeVo8 = new MainHomeVo();
-        mainHomeVo8.title="테스트8";
-        mainHomeVo8.drawbleId=R.drawable.ic_launcher_background;
-
-
-        mainHomeVos.add(mainHomeVo);
-        mainHomeVos.add(mainHomeVo2);
-        mainHomeVos.add(mainHomeVo3);
-        mainHomeVos.add(mainHomeVo4);
-        mainHomeVos.add(mainHomeVo5);
-        mainHomeVos.add(mainHomeVo6);
-        mainHomeVos.add(mainHomeVo7);
-        mainHomeVos.add(mainHomeVo8);
+        TripLog tripLog8 = new TripLog();
+        tripLog8.title = "테스트8";
+        tripLog8.drawbleId = R.drawable.ic_launcher_background;
 
 
+        tripLogs.add(tripLog);
+        tripLogs.add(tripLog2);
+        tripLogs.add(tripLog3);
+        tripLogs.add(tripLog4);
+        tripLogs.add(tripLog5);
+        tripLogs.add(tripLog6);
+        tripLogs.add(tripLog7);
+        tripLogs.add(tripLog8);
 
-        mAdpater = new MainHomeAdapter(rootView.getContext(),mainHomeVos,onClickItem);
+
+        mAdpater = new MainHomeAdapter(rootView.getContext(), tripLogs, onClickItem);
 
         recyclerView.setAdapter(mAdpater);
 

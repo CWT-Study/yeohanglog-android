@@ -29,7 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="여행 내용"
-            android:textColor="@color/color_font_2"
+            android:textColor="@color/color_white_ffffff"
             android:textSize="20dp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="@+id/imageView"
