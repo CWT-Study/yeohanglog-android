@@ -1,4 +1,4 @@
-package team.triplog.adpater;
+package team.triplog.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;

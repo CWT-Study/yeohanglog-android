@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import team.triplog.adpater.MainHomeAdapter;
+import team.triplog.adapter.MainHomeAdapter;
 import team.triplog.entity.TripLog;
 
 public class MainHomeFragment extends Fragment {
