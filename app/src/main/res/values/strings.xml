@@ -16,4 +16,5 @@
     <string name="main_more_profile">PROFILE</string>
     <string name="main_more_setting">SETTING</string>
     <string name="main_more_withdrawal">회원탈퇴</string>
+    <string name="main_more_version">VER %s</string>
 </resources>
