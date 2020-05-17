@@ -1,8 +1,7 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme"
-        parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -16,6 +15,41 @@
     <style name="tab_text" parent="TextAppearance.Design.Tab">
         <item name="android:textSize">20dp</item>
         <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="text_title">
+        <item name="android:textColor">@color/title</item>
+        <item name="android:text">TEXT_TITLE</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">20dp</item>
+    </style>
+
+    <style name="search_view">
+        <item name="android:background">@drawable/background_search</item>
+        <item name="android:queryHint">@string/search_search_hint</item>
+        <item name="android:queryBackground">@color/transparent</item>
+        <item name="android:theme">@style/search_view_theme</item>
+    </style>
+
+    <style name="search_view_theme" parent="Widget.AppCompat.SearchView">
+        <item name="android:textColorHint">@color/search_hint</item>
+        <item name="android:editTextColor">@color/search</item>
+        <item name="android:textSize">14dp</item>
+    </style>
+
+    <style name="search_no_contents_title">
+        <item name="android:textColor">@color/search_no_contents_title</item>
+        <item name="android:text">@string/search_no_contents_title</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">20dp</item>
+    </style>
+
+    <style name="search_no_contents_message">
+        <item name="android:textColor">@color/search_no_contents_message</item>
+        <item name="android:text">@string/search_no_contents_message</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">14dp</item>
     </style>
 
 </resources>
