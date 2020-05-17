@@ -4,18 +4,130 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".activity.MainActivity"
     >
 
-    <TextView
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_item"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:layout_margin="10dp"
+        android:background="#ffffff"
+        android:elevation="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        />
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_trip_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            >
+
+            <TextView
+                android:id="@+id/text_trip_start_year"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="YEAR"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/view_divider"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+            <TextView
+                android:id="@+id/text_trip_start_month"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MONTH"
+                app:layout_constraintLeft_toLeftOf="@id/text_trip_start_year"
+                app:layout_constraintRight_toRightOf="@id/text_trip_start_year"
+                app:layout_constraintTop_toBottomOf="@id/text_trip_start_year"
+                />
+
+            <TextView
+                android:id="@+id/text_trip_start_day"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DAY"
+                app:layout_constraintLeft_toLeftOf="@id/text_trip_start_month"
+                app:layout_constraintRight_toRightOf="@id/text_trip_start_month"
+                app:layout_constraintTop_toBottomOf="@id/text_trip_start_month"
+                />
+
+            <TextView
+                android:id="@+id/text_trip_end_year"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="YEAR"
+                app:layout_constraintLeft_toRightOf="@id/view_divider"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+            <TextView
+                android:id="@+id/text_trip_end_month"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MONTH"
+                app:layout_constraintLeft_toLeftOf="@id/text_trip_end_year"
+                app:layout_constraintRight_toRightOf="@id/text_trip_end_year"
+                app:layout_constraintTop_toBottomOf="@id/text_trip_end_year"
+                />
+
+            <TextView
+                android:id="@+id/text_trip_end_day"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DAY"
+                app:layout_constraintLeft_toLeftOf="@id/text_trip_end_month"
+                app:layout_constraintRight_toRightOf="@id/text_trip_end_month"
+                app:layout_constraintTop_toBottomOf="@id/text_trip_end_month"
+                />
+
+            <View
+                android:id="@+id/view_divider"
+                android:layout_width="1dp"
+                android:layout_height="10dp"
+                android:layout_margin="10dp"
+                android:background="#666666"
+                app:layout_constraintBottom_toBottomOf="@id/text_trip_start_day"
+                app:layout_constraintLeft_toRightOf="@id/text_trip_start_month"
+                app:layout_constraintRight_toLeftOf="@id/text_trip_end_month"
+                app:layout_constraintTop_toTopOf="@id/text_trip_start_year"
+                />
+
+            <TextView
+                android:id="@+id/text_trip_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="TEXT_TRIP_NAME"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_trip_start_day"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/view_trip"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="#cccccc"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/layout_trip_info"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
