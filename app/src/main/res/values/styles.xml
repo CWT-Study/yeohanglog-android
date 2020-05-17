@@ -146,4 +146,19 @@
         <item name="android:textSize">8dp</item>
     </style>
 
+    <style name="more_user_title">
+        <item name="android:textColor">@color/more_user_title</item>
+        <item name="android:gravity">center_vertical|end</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">14dp</item>
+    </style>
+
+    <style name="more_user_contents">
+        <item name="android:textColor">@color/more_user_contents</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:text">TEXT_CONTENTS</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">14dp</item>
+    </style>
+
 </resources>
