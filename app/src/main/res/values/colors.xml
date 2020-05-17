@@ -2,9 +2,20 @@
 <resources>
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#000000</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorAccent">@color/main</color>
 
-    <color name="color_main">#e3bd8d</color>
-    <color name="color_black_000000">#000000</color>
-    <color name="color_white_ffffff">#ffffff</color>
+    <color name="title">@color/black_000000</color>
+    <color name="search">@color/black_000000</color>
+    <color name="search_hint">@color/gray_999999</color>
+    <color name="search_no_contents_title">@color/black_000000</color>
+    <color name="search_no_contents_message">@color/gray_999999</color>
+    <color name="trip_title">@color/white_ffffff</color>
+
+    <!-- Palette colors -->
+    <color name="transparent">#00000000</color>
+    <color name="black_000000">#000000</color>
+    <color name="white_ffffff">#ffffff</color>
+    <color name="gray_999999">#999999</color>
+    <color name="main">#e3bd8d</color>
+
 </resources>
