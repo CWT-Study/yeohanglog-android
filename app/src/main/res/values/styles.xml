@@ -96,4 +96,47 @@
         <item name="android:textSize">14dp</item>
     </style>
 
+    <style name="main_more_title">
+        <item name="android:textColor">@color/main_more_title</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">12dp</item>
+    </style>
+
+    <style name="main_more_user_name">
+        <item name="android:textColor">@color/main_more_profile_user_name</item>
+        <item name="android:text">TEXT_USER_NAME</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">18dp</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <style name="main_more_user_code">
+        <item name="android:textColor">@color/main_more_profile_user_name</item>
+        <item name="android:text">TEXT_USER_CODE</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">14dp</item>
+    </style>
+
+    <style name="main_more_setting_title">
+        <item name="android:textColor">@color/main_more_setting_title</item>
+        <item name="android:text">TEXT_SETTING_TITLE</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">14dp</item>
+    </style>
+
+    <style name="main_more_setting_description">
+        <item name="android:textColor">@color/main_more_setting_description</item>
+        <item name="android:text">TEXT_SETTING_DESC</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">10dp</item>
+    </style>
+
+    <style name="main_more_withdrawal">
+        <item name="android:textColor">@color/main_more_setting_description</item>
+        <item name="android:text">@string/main_more_withdrawal</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">14dp</item>
+    </style>
+
 </resources>

@@ -16,12 +16,20 @@
     <color name="search_no_contents_title">@color/black_000000</color>
     <color name="search_no_contents_message">@color/gray_999999</color>
     <color name="trip_title">@color/white_ffffff</color>
+    <color name="main_more_title">@color/main</color>
+    <color name="main_more_profile_default">@color/gray_f0f0f0</color>
+    <color name="main_more_profile_user_name">@color/black_000000</color>
+    <color name="main_more_profile_user_code">@color/gray_999999</color>
+    <color name="main_more_setting_title">@color/black_000000</color>
+    <color name="main_more_setting_description">@color/gray_999999</color>
+    <color name="main_more_withdrawal">@color/gray_999999</color>
 
     <!-- Palette colors -->
     <color name="transparent">#00000000</color>
     <color name="black_000000">#000000</color>
-    <color name="gray_999999">#999999</color>
     <color name="gray_333333">#333333</color>
+    <color name="gray_999999">#999999</color>
+    <color name="gray_f0f0f0">#f0f0f0</color>
     <color name="white_ffffff">#ffffff</color>
     <color name="main">#e3bd8d</color>
 
