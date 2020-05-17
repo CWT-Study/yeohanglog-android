@@ -12,4 +12,8 @@
     <string name="search_search_hint">여행 키워드를 입력해보세요.</string>
     <string name="search_no_contents_title">검색 결과 없음</string>
     <string name="search_no_contents_message">나의 여행 및 기록에 대한 전체 검색이 가능합니다.\n다양한 키워드를 통해 검색해보세요.</string>
+    <string name="main_more_title">MORE</string>
+    <string name="main_more_profile">PROFILE</string>
+    <string name="main_more_setting">SETTING</string>
+    <string name="main_more_withdrawal">회원탈퇴</string>
 </resources>
