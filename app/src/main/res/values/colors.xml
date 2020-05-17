@@ -24,6 +24,8 @@
     <color name="main_more_setting_description">@color/gray_999999</color>
     <color name="main_more_withdrawal">@color/gray_999999</color>
     <color name="main_more_version">@color/gray_999999</color>
+    <color name="more_user_title">@color/black_000000</color>
+    <color name="more_user_contents">@color/gray_666666</color>
 
     <!-- Palette colors -->
     <color name="transparent">#00000000</color>
