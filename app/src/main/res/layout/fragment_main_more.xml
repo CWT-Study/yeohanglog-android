@@ -6,14 +6,295 @@
     android:layout_height="match_parent"
     >
 
-    <TextView
-        android:layout_width="wrap_content"
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="MORE!"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        />
+        >
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="#ffffff"
+            app:contentInsetStart="0dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_scrollFlags="scroll|enterAlways|snap"
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+
+                <TextView
+                    android:id="@+id/text_title"
+                    style="@style/text_title"
+                    android:layout_width="0dp"
+                    android:layout_height="?attr/actionBarSize"
+                    android:gravity="center_vertical"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:text="@string/main_more_title"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appbar"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <TextView
+                android:id="@+id/text_profile_title"
+                style="@style/main_more_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/main_more_profile"
+                app:layout_constraintLeft_toLeftOf="@id/view_user_profile"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+            <View
+                android:id="@+id/view_user_profile"
+                android:layout_width="80dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/background_profile_default"
+                android:elevation="4dp"
+                app:layout_constraintDimensionRatio="1"
+                app:layout_constraintHorizontal_bias="0.07"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_profile_title"
+                />
+
+            <TextView
+                android:id="@+id/text_user_name"
+                style="@style/main_more_user_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="10dp"
+                app:layout_constraintBottom_toTopOf="@id/text_user_code"
+                app:layout_constraintLeft_toRightOf="@id/view_user_profile"
+                app:layout_constraintRight_toLeftOf="@id/button_profile_setting"
+                app:layout_constraintTop_toTopOf="@id/view_user_profile"
+                app:layout_constraintVertical_chainStyle="packed"
+                />
+
+            <TextView
+                android:id="@+id/text_user_code"
+                style="@style/main_more_user_code"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                app:layout_constraintBottom_toBottomOf="@id/view_user_profile"
+                app:layout_constraintLeft_toLeftOf="@id/text_user_name"
+                app:layout_constraintRight_toRightOf="@id/text_user_name"
+                app:layout_constraintTop_toBottomOf="@id/text_user_name"
+                />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/button_profile_setting"
+                android:layout_width="45dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="@id/view_user_profile"
+                app:layout_constraintDimensionRatio="1"
+                app:layout_constraintHorizontal_bias="0.95"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/view_user_profile"
+                >
+
+                <View
+                    android:layout_width="30dp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/icon_setting"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintDimensionRatio="1"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/text_setting_title"
+                style="@style/main_more_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="40dp"
+                android:text="@string/main_more_setting"
+                app:layout_constraintLeft_toLeftOf="@id/view_user_profile"
+                app:layout_constraintTop_toBottomOf="@id/view_user_profile"
+                />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_setting"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/background_main_more"
+                android:elevation="4dp"
+                android:padding="20dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_setting_title"
+                app:layout_constraintWidth_percent="0.9"
+                >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_notice_app_push"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    >
+
+                    <TextView
+                        android:id="@+id/text_notice_app_push_title"
+                        style="@style/main_more_setting_title"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toLeftOf="@id/switch_notice_app_push"
+                        app:layout_constraintTop_toTopOf="parent"
+                        />
+
+                    <TextView
+                        android:id="@+id/text_notice_app_push"
+                        style="@style/main_more_setting_description"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        app:layout_constraintLeft_toLeftOf="@id/text_notice_app_push_title"
+                        app:layout_constraintRight_toRightOf="@id/text_notice_app_push_title"
+                        app:layout_constraintTop_toBottomOf="@id/text_notice_app_push_title"
+                        />
+
+                    <Switch
+                        android:id="@+id/switch_notice_app_push"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0.5dp"
+                    android:background="@color/gray_999999"
+                    app:layout_constraintBottom_toTopOf="@id/layout_notice_advertising"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/layout_notice_app_push"
+                    />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_notice_advertising"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/layout_notice_app_push"
+                    >
+
+                    <TextView
+                        android:id="@+id/text_notice_advertising_title"
+                        style="@style/main_more_setting_title"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toLeftOf="@id/switch_notice_advertising"
+                        app:layout_constraintTop_toTopOf="parent"
+                        />
+
+                    <TextView
+                        android:id="@+id/text_notice_advertising"
+                        style="@style/main_more_setting_description"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        app:layout_constraintLeft_toLeftOf="@id/text_notice_advertising_title"
+                        app:layout_constraintRight_toRightOf="@id/text_notice_advertising_title"
+                        app:layout_constraintTop_toBottomOf="@id/text_notice_advertising_title"
+                        />
+
+                    <Switch
+                        android:id="@+id/switch_notice_advertising"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_withdrawal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/background_main_more"
+                android:elevation="4dp"
+                android:padding="20dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/layout_setting"
+                app:layout_constraintWidth_percent="0.9"
+                >
+
+                <TextView
+                    style="@style/main_more_withdrawal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/main_more_withdrawal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
