@@ -5,6 +5,12 @@
     <color name="colorAccent">@color/main</color>
 
     <color name="title">@color/black_000000</color>
+    <color name="main_home_user_name">@color/main</color>
+    <color name="main_home_welcome">@color/black_000000</color>
+    <color name="main_home_trip_title">@color/black_000000</color>
+    <color name="main_home_trip_day">@color/gray_999999</color>
+    <color name="main_home_trip_period">@color/gray_999999</color>
+    <color name="main_home_look_back">@color/gray_333333</color>
     <color name="search">@color/black_000000</color>
     <color name="search_hint">@color/gray_999999</color>
     <color name="search_no_contents_title">@color/black_000000</color>
@@ -14,8 +20,9 @@
     <!-- Palette colors -->
     <color name="transparent">#00000000</color>
     <color name="black_000000">#000000</color>
-    <color name="white_ffffff">#ffffff</color>
     <color name="gray_999999">#999999</color>
+    <color name="gray_333333">#333333</color>
+    <color name="white_ffffff">#ffffff</color>
     <color name="main">#e3bd8d</color>
 
 </resources>
