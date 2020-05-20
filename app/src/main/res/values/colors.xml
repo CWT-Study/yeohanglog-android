@@ -26,6 +26,10 @@
     <color name="main_more_version">@color/gray_999999</color>
     <color name="more_user_title">@color/black_000000</color>
     <color name="more_user_contents">@color/gray_666666</color>
+    <color name="trip_info_description">@color/gray_333333</color>
+    <color name="trip_info_hint">@color/gray_999999</color>
+    <color name="trip_info_trip_name">@color/main</color>
+    <color name="trip_info_select_date">@color/gray_333333</color>
 
     <!-- Palette colors -->
     <color name="transparent">#00000000</color>
