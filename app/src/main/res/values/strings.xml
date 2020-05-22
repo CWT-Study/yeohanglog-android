@@ -25,4 +25,6 @@
     <string name="trip_info_name_hint">여행 이름</string>
     <string name="trip_info_name_limit">* 최대 20자까지 입력 가능합니다.</string>
     <string name="trip_info_select_date">여행의 기간도 설정해주세요.</string>
+    <string name="trip_check_title">준비물</string>
+    <string name="trip_check_pic">담당자 : %s</string>
 </resources>

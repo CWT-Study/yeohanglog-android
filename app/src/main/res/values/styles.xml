@@ -201,4 +201,18 @@
         <item name="android:textSize">14dp</item>
     </style>
 
+    <style name="trip_check_item">
+        <item name="android:textColor">@color/trip_check_item</item>
+        <item name="android:text">TEXT_ITEM_NAME</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">14dp</item>
+    </style>
+
+    <style name="trip_check_pic">
+        <item name="android:textColor">@color/trip_check_pic</item>
+        <item name="android:text">@string/trip_check_pic</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">10dp</item>
+    </style>
+
 </resources>
