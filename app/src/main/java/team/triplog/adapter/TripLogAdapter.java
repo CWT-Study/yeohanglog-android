@@ -7,88 +7,66 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.widget.AppCompatImageView;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-import androidx.appcompat.widget.AppCompatImageView;
-import androidx.recyclerview.widget.RecyclerView;
 import team.triplog.R;
 import team.triplog.entity.TripLog;
 
-public class TripLogAdapter extends RecyclerView.Adapter<TripLogAdapter.ViewHolder>{
+public class TripLogAdapter extends RecyclerView.Adapter<TripLogAdapter.ViewHolder> {
+    private Context context;
+    private ArrayList<TripLog> tripLogs;
 
-    private ArrayList<TripLog> tripLogs = new ArrayList<>();
-    Context context;
-
-    public TripLogAdapter(Context mContext, ArrayList<TripLog> mtripLogs){
-
-        tripLogs = mtripLogs;
-
-        context = mContext;
-    }
-
-    public class ViewHolder extends RecyclerView.ViewHolder{
-
-        public TextView textView;
-        public AppCompatImageView imageView;
-
-        public ViewHolder(View v){
-
-            super(v);
-
-            textView = (TextView) v.findViewById(R.id.text);
-            imageView = v.findViewById(R.id.imageview);
-
-
-            //item click event
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    int pos = getAdapterPosition() ;
-                    if (pos != RecyclerView.NO_POSITION) {
-                        if (pos == 0){
-                            Toast.makeText(context,"새로운 아이템 등록",Toast.LENGTH_SHORT).show();
-                        }else{
-                            Toast.makeText(context,"기존 아이템",Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                }
-            });
-
-        }
+    public TripLogAdapter(Context context, ArrayList<TripLog> tripLogs) {
+        this.tripLogs = tripLogs;
+        this.context = context;
     }
 
     @Override
-    public TripLogAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
+    public int getItemCount() {
+        return tripLogs.size();
+    }
 
-        View view1 = LayoutInflater.from(context).inflate(R.layout.item_trip_log,parent,false);
-
-        ViewHolder viewHolder1 = new ViewHolder(view1);
-
-        return viewHolder1;
+    @NonNull
+    @Override
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        return new ViewHolder(
+                LayoutInflater
+                        .from(context)
+                        .inflate(R.layout.item_trip_log, parent, false)
+        );
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder Vholder, int position){
+    public void onBindViewHolder(ViewHolder holder, int position) {
         TripLog tripLog = tripLogs.get(position);
 
-        Vholder.imageView.setBackground(new ShapeDrawable(new OvalShape()));
-        Vholder.imageView.setClipToOutline(true);
+        holder.imageView.setBackground(new ShapeDrawable(new OvalShape()));
+        holder.imageView.setClipToOutline(true);
 
-        if (position == 0){
-            Vholder.imageView.setImageResource(R.drawable.button_plus);
+        if (position == 0) {
+            holder.imageView.setImageResource(R.drawable.button_plus);
             return;
         }
 
-        Vholder.textView.setText(tripLog.title);
-        Vholder.imageView.setImageResource(tripLog.drawbleId);
+        holder.textView.setText(tripLog.title);
+        holder.imageView.setImageResource(tripLog.drawbleId);
 
     }
 
-    @Override
-    public int getItemCount(){
+    static class ViewHolder extends RecyclerView.ViewHolder {
+        TextView textView;
+        AppCompatImageView imageView;
 
-        return tripLogs.size();
+        ViewHolder(View view) {
+            super(view);
+
+            textView = view.findViewById(R.id.text);
+            imageView = view.findViewById(R.id.imageview);
+        }
     }
 }
