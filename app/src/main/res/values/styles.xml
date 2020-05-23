@@ -227,4 +227,44 @@
         <item name="android:textStyle">normal</item>
         <item name="android:textSize">13dp</item>
     </style>
+
+  <style name="trip_member_name">
+        <item name="android:textColor">@color/trip_member_name</item>
+        <item name="android:text">TEXT_MEMBER</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">14dp</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">2</item>
+    </style>
+
+    <style name="trip_plan_item_year">
+        <item name="android:textColor">@color/trip_plan</item>
+        <item name="android:text">YEAR</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">10dp</item>
+    </style>
+
+    <style name="trip_plan_item_month">
+        <item name="android:textColor">@color/trip_plan</item>
+        <item name="android:text">MONTH</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">10dp</item>
+    </style>
+
+    <style name="trip_plan_item_day">
+        <item name="android:textColor">@color/trip_plan</item>
+        <item name="android:text">DAY</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">20dp</item>
+    </style>
+
+    <style name="trip_plan_item_name">
+        <item name="android:textColor">@color/trip_plan</item>
+        <item name="android:text">TEXT_NAME</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">15dp</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">2</item>
+    </style>
+
 </resources>

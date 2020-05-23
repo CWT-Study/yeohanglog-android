@@ -34,6 +34,8 @@
     <color name="trip_check_item">@color/black_000000</color>
     <color name="trip_check_pic">@color/gray_999999</color>
     <color name="trip_log_item">@color/black_000000</color>
+    <color name="trip_member_name">@color/black_000000</color>
+    <color name="trip_plan">@color/gray_666666</color>
 
     <!-- Palette colors -->
     <color name="transparent">#00000000</color>

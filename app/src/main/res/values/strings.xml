@@ -30,4 +30,5 @@
     <string name="trip_info_select_date">여행의 기간도 설정해주세요.</string>
     <string name="trip_check_title">준비물</string>
     <string name="trip_check_pic">담당자 : %s</string>
+    <string name="trip_member_title">일행</string>
 </resources>
