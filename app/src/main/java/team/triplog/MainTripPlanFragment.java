@@ -33,6 +33,13 @@ public class MainTripPlanFragment extends Fragment {
     private void init() {
         recyclerTripPlan = rootView.findViewById(R.id.recycler_trip_plan);
 
+        // TEST 코드
+        trips.add(new Trip());
+        trips.add(new Trip());
+        trips.add(new Trip());
+        trips.add(new Trip());
+        trips.add(new Trip());
+
         mainTripPlanAdapter = new MainTripPlanAdapter(getContext(), trips);
         recyclerTripPlan.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerTripPlan.setAdapter(mainTripPlanAdapter);
