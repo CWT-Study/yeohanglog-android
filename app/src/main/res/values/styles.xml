@@ -215,4 +215,13 @@
         <item name="android:textSize">10dp</item>
     </style>
 
+    <style name="trip_member_name">
+        <item name="android:textColor">@color/trip_member_name</item>
+        <item name="android:text">TEXT_MEMBER</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">14dp</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">2</item>
+    </style>
+
 </resources>
