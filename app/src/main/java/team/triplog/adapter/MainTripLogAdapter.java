@@ -1,7 +1,6 @@
 package team.triplog.adapter;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.graphics.drawable.ShapeDrawable;
 import android.graphics.drawable.shapes.OvalShape;
 import android.view.LayoutInflater;
@@ -17,12 +16,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import team.triplog.R;
 import team.triplog.entity.TripLog;
 
-public class MainTripLogAdpater extends RecyclerView.Adapter<MainTripLogAdpater.ViewHolder>{
+public class MainTripLogAdapter extends RecyclerView.Adapter<MainTripLogAdapter.ViewHolder>{
 
     private ArrayList<TripLog> tripLogs = new ArrayList<>();
     Context context;
 
-    public MainTripLogAdpater(Context mContext, ArrayList<TripLog> mtripLogs){
+    public MainTripLogAdapter(Context mContext, ArrayList<TripLog> mtripLogs){
 
         tripLogs = mtripLogs;
 
@@ -61,7 +60,7 @@ public class MainTripLogAdpater extends RecyclerView.Adapter<MainTripLogAdpater.
     }
 
     @Override
-    public MainTripLogAdpater.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
+    public MainTripLogAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
 
         View view1 = LayoutInflater.from(context).inflate(R.layout.item_main_trip_log,parent,false);
 

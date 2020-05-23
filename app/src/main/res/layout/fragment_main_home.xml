@@ -2,7 +2,6 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     >
@@ -19,7 +18,7 @@
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="80dp"
+            android:layout_height="?attr/actionBarSize"
             android:background="#ffffff"
             app:contentInsetStart="0dp"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -28,19 +27,26 @@
             app:layout_scrollFlags="scroll|enterAlways|snap"
             >
 
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/layout_tabs"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:text="여행록"
-                android:textSize="28dp"
-                android:textStyle="bold"
-                android:textColor="@color/color_black_000000"
-                android:paddingLeft="10dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintHorizontal_bias="0.1"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+
+                <TextView
+                    android:id="@+id/text_title"
+                    style="@style/text_title"
+                    android:layout_width="0dp"
+                    android:layout_height="?attr/actionBarSize"
+                    android:gravity="center_vertical"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:text="@string/app_name"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.appcompat.widget.Toolbar>
 
@@ -51,110 +57,107 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/appbar"
-        app:layout_constraintBottom_toBottomOf="parent">
+        >
+
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             >
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/txt_name_user"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="28dp"
-                android:text="홍길동"
-                android:textColor="@color/color_main"
-                android:textSize="40dp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="@id/guideline_left"
-                app:layout_constraintTop_toTopOf="@+id/constraintLayout2" />
 
-            <com.google.android.material.textview.MaterialTextView
-                android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/text_user_name"
+                style="@style/text_main_home_user_name"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:text="님, 환영합니다"
-                android:textColor="@color/color_black_000000"
-                android:textSize="28dp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@+id/txt_name_user"
-                app:layout_constraintStart_toEndOf="@+id/txt_name_user" />
+                android:layout_marginTop="30dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.88"
+                />
 
+            <TextView
+                android:id="@+id/text_welcome"
+                style="@style/text_main_home_welcome"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="@id/text_user_name"
+                app:layout_constraintRight_toRightOf="@id/text_user_name"
+                app:layout_constraintTop_toBottomOf="@id/text_user_name"
+                />
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/constraintLayout"
+                android:id="@+id/layout_trip"
                 android:layout_width="0dp"
-                android:layout_height="120dp"
-                android:layout_marginTop="40dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
                 android:background="@drawable/background_round_corner"
-                android:elevation="4dp"
-                app:layout_constraintEnd_toEndOf="@id/guideline_right"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@id/guideline_left"
-                app:layout_constraintTop_toBottomOf="@+id/txt_name_user">
+                android:elevation="10dp"
+                android:padding="20dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_welcome"
+                app:layout_constraintWidth_percent="0.9"
+                >
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="40dp"
+                    android:id="@+id/view_click"
+                    android:layout_width="30dp"
+                    android:layout_height="0dp"
                     android:src="@drawable/icon_search_black"
                     app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintDimensionRatio="1"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-                <com.google.android.material.textview.MaterialTextView
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+
+                <TextView
                     android:id="@+id/txt_trip_title"
-                    android:layout_width="wrap_content"
+                    style="@style/text_main_home_trip_title"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="28dp"
-                    android:layout_marginTop="16dp"
-                    android:text="여행제목"
-                    android:textColor="@color/color_black_000000"
-                    android:textSize="18dp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    android:layout_marginEnd="5dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@id/view_click"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
 
-                <com.google.android.material.textview.MaterialTextView
+                <TextView
                     android:id="@+id/txt_trip_content"
+                    style="@style/text_main_home_trip_day"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="여행 내용"
-                    android:textSize="18dp"
-                    android:textStyle="bold"
+                    android:layout_marginTop="3dp"
                     app:layout_constraintStart_toStartOf="@+id/txt_trip_title"
-                    app:layout_constraintTop_toBottomOf="@+id/txt_trip_title" />
+                    app:layout_constraintTop_toBottomOf="@+id/txt_trip_title"
+                    />
 
-                <com.google.android.material.textview.MaterialTextView
+                <TextView
                     android:id="@+id/txt_trip_date"
+                    style="@style/text_main_home_trip_period"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="16dp"
-                    android:text="2020.04.20 ~ 2020.04.20"
-                    android:textSize="14dp"
-                    android:textStyle="bold"
+                    android:layout_marginTop="5dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/txt_trip_content"
-                    app:layout_constraintTop_toBottomOf="@+id/txt_trip_content" />
-
-
-
+                    app:layout_constraintTop_toBottomOf="@+id/txt_trip_content"
+                    />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/materialTextView2"
-                android:layout_width="wrap_content"
+                style="@style/text_main_home_look_back"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="68dp"
-                android:text="추억 톺아보기"
-                android:textColor="@color/color_black_000000"
-                android:textSize="28dp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="@+id/guideline_left"
-                app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+                android:layout_marginTop="50dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layout_trip"
+                app:layout_constraintWidth_percent="0.88"
+                />
 
 
             <androidx.recyclerview.widget.RecyclerView
@@ -163,11 +166,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:scrollbars="none"
-                app:layout_constraintEnd_toEndOf="@id/guideline_right"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="@id/guideline_left"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/materialTextView2"
-                app:layout_constraintVertical_bias="1.0" />
+                />
 
 
             <androidx.constraintlayout.widget.Guideline
@@ -175,24 +177,20 @@
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:orientation="vertical"
-                app:layout_constraintGuide_percent="0.04" />
+                app:layout_constraintGuide_percent="0.04"
+                />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guideline_right"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:orientation="vertical"
-                app:layout_constraintGuide_percent="0.96" />
+                app:layout_constraintGuide_percent="0.96"
+                />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.core.widget.NestedScrollView>
-
-
-
-
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

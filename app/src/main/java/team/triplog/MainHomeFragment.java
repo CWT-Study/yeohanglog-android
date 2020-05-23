@@ -7,11 +7,12 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.ArrayList;
+
 import team.triplog.adapter.MainHomeAdapter;
 import team.triplog.entity.TripLog;
 
@@ -34,7 +35,7 @@ public class MainHomeFragment extends Fragment {
     }
 
     private void init() {
-        txtNameUser = rootView.findViewById(R.id.txt_name_user);
+        txtNameUser = rootView.findViewById(R.id.text_user_name);
         txtTripTitle = rootView.findViewById(R.id.txt_trip_title);
         txtTripContent = rootView.findViewById(R.id.txt_trip_content);
         txtTripDate = rootView.findViewById(R.id.txt_trip_date);

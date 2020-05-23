@@ -1,8 +1,7 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme"
-        parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -16,6 +15,213 @@
     <style name="tab_text" parent="TextAppearance.Design.Tab">
         <item name="android:textSize">20dp</item>
         <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="text_title">
+        <item name="android:textColor">@color/title</item>
+        <item name="android:text">TEXT_TITLE</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">20dp</item>
+    </style>
+
+    <style name="text_main_home_user_name">
+        <item name="android:textColor">@color/main_home_user_name</item>
+        <item name="android:text">@string/main_home_user_name</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">35dp</item>
+        <item name="android:maxLines">2</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="text_main_home_welcome">
+        <item name="android:textColor">@color/main_home_welcome</item>
+        <item name="android:text">@string/main_home_welcome</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">25dp</item>
+    </style>
+
+    <style name="text_main_home_trip_title">
+        <item name="android:textColor">@color/main_home_trip_title</item>
+        <item name="android:text">TEXT_TRIP_TITLE</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <style name="text_main_home_trip_day">
+        <item name="android:textColor">@color/main_home_trip_day</item>
+        <item name="android:text">TEXT_TRIP_DAY</item>
+        <item name="android:textSize">16dp</item>
+    </style>
+
+    <style name="text_main_home_trip_period">
+        <item name="android:textColor">@color/main_home_trip_period</item>
+        <item name="android:text">TEXT_TRIP_PERIOD</item>
+        <item name="android:textSize">10dp</item>
+    </style>
+
+    <style name="text_main_home_look_back">
+        <item name="android:textColor">@color/main_home_look_back</item>
+        <item name="android:text">@string/main_home_look_back</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">24dp</item>
+    </style>
+
+    <style name="search_view">
+        <item name="android:background">@drawable/background_search</item>
+        <item name="android:queryHint">@string/search_search_hint</item>
+        <item name="android:queryBackground">@color/transparent</item>
+        <item name="android:theme">@style/search_view_theme</item>
+    </style>
+
+    <style name="search_view_theme" parent="Widget.AppCompat.SearchView">
+        <item name="android:textColorHint">@color/search_hint</item>
+        <item name="android:editTextColor">@color/search</item>
+        <item name="android:textSize">14dp</item>
+    </style>
+
+    <style name="search_no_contents_title">
+        <item name="android:textColor">@color/search_no_contents_title</item>
+        <item name="android:text">@string/search_no_contents_title</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">20dp</item>
+    </style>
+
+    <style name="search_no_contents_message">
+        <item name="android:textColor">@color/search_no_contents_message</item>
+        <item name="android:text">@string/search_no_contents_message</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">14dp</item>
+    </style>
+
+    <style name="main_more_title">
+        <item name="android:textColor">@color/main_more_title</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">12dp</item>
+    </style>
+
+    <style name="main_more_user_name">
+        <item name="android:textColor">@color/main_more_profile_user_name</item>
+        <item name="android:text">TEXT_USER_NAME</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">18dp</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <style name="main_more_user_code">
+        <item name="android:textColor">@color/main_more_profile_user_name</item>
+        <item name="android:text">TEXT_USER_CODE</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">14dp</item>
+    </style>
+
+    <style name="main_more_setting_title">
+        <item name="android:textColor">@color/main_more_setting_title</item>
+        <item name="android:text">TEXT_SETTING_TITLE</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">14dp</item>
+    </style>
+
+    <style name="main_more_setting_description">
+        <item name="android:textColor">@color/main_more_setting_description</item>
+        <item name="android:text">TEXT_SETTING_DESC</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">10dp</item>
+    </style>
+
+    <style name="main_more_withdrawal">
+        <item name="android:textColor">@color/main_more_setting_description</item>
+        <item name="android:text">@string/main_more_withdrawal</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">14dp</item>
+    </style>
+
+    <style name="main_more_version">
+        <item name="android:textColor">@color/main_more_version</item>
+        <item name="android:text">@string/main_more_version</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">8dp</item>
+    </style>
+
+    <style name="more_user_title">
+        <item name="android:textColor">@color/more_user_title</item>
+        <item name="android:gravity">center_vertical|end</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">14dp</item>
+    </style>
+
+    <style name="more_user_contents">
+        <item name="android:textColor">@color/more_user_contents</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:text">TEXT_CONTENTS</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">14dp</item>
+    </style>
+
+    <style name="trip_info_description">
+        <item name="android:textColor">@color/trip_info_description</item>
+        <item name="android:text">@string/trip_info_description</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">16dp</item>
+    </style>
+
+    <style name="trip_info_edit_name">
+        <item name="android:textColor">@color/trip_info_description</item>
+        <item name="android:textColorHint">@color/trip_info_hint</item>
+        <item name="android:hint">@string/trip_info_name_hint</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">14dp</item>
+        <item name="android:paddingStart">15dp</item>
+        <item name="android:paddingEnd">15dp</item>
+    </style>
+
+    <style name="trip_info_name_limit">
+        <item name="android:textColor">@color/trip_info_description</item>
+        <item name="android:text">@string/trip_info_name_limit</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">10dp</item>
+        <item name="android:paddingStart">15dp</item>
+        <item name="android:paddingEnd">15dp</item>
+    </style>
+
+    <style name="trip_info_trip_name">
+        <item name="android:textColor">@color/trip_info_trip_name</item>
+        <item name="android:text">TEXT_TRIP_NAME</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">18dp</item>
+    </style>
+
+    <style name="trip_info_select_date">
+        <item name="android:textColor">@color/trip_info_select_date</item>
+        <item name="android:text">@string/trip_info_select_date</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">14dp</item>
+    </style>
+
+    <style name="trip_check_item">
+        <item name="android:textColor">@color/trip_check_item</item>
+        <item name="android:text">TEXT_ITEM_NAME</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">14dp</item>
+    </style>
+
+    <style name="trip_check_pic">
+        <item name="android:textColor">@color/trip_check_pic</item>
+        <item name="android:text">@string/trip_check_pic</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">10dp</item>
+    </style>
+
+    <style name="trip_member_name">
+        <item name="android:textColor">@color/trip_member_name</item>
+        <item name="android:text">TEXT_MEMBER</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">14dp</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">2</item>
     </style>
 
 </resources>

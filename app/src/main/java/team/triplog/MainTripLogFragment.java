@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import team.triplog.adapter.MainTripLogAdpater;
+import team.triplog.adapter.MainTripLogAdapter;
 import team.triplog.entity.TripLog;
 
 public class MainTripLogFragment extends Fragment {
@@ -19,7 +19,7 @@ public class MainTripLogFragment extends Fragment {
     private View rootView;
     private RecyclerView recyclerView;
     private Context context;
-    private MainTripLogAdpater mainTripLogAdpater;
+    private MainTripLogAdapter mainTripLogAdapter;
     private RecyclerView.LayoutManager layoutManager;
     private ArrayList<TripLog> tripLogs = new ArrayList<>();
 
@@ -63,9 +63,9 @@ public class MainTripLogFragment extends Fragment {
         tripLogs.add(tripLog4);
 
 
-        mainTripLogAdpater = new MainTripLogAdpater(context,tripLogs);
+        mainTripLogAdapter = new MainTripLogAdapter(context,tripLogs);
 
-        recyclerView.setAdapter(mainTripLogAdpater);
+        recyclerView.setAdapter(mainTripLogAdapter);
 
     }
 

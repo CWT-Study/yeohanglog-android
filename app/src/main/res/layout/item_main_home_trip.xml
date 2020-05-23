@@ -12,16 +12,18 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="10dp"
+        app:cardCornerRadius="10dp"
         app:cardElevation="6dp"
         app:cardMaxElevation="6dp"
-        app:cardCornerRadius="10dp">
+        >
 
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="fitXY"
-            android:src="@drawable/ic_launcher_background" />
+            android:src="@drawable/ic_launcher_background"
+            />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/txt_trip_title"
@@ -29,17 +31,16 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="여행 내용"
-            android:textColor="@color/color_white_ffffff"
+            android:textColor="@color/trip_title"
             android:textSize="20dp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="@+id/imageView"
             app:layout_constraintHorizontal_bias="0.146"
             app:layout_constraintStart_toStartOf="@+id/imageView"
-            app:layout_constraintTop_toTopOf="parent" />
-
+            app:layout_constraintTop_toTopOf="parent"
+            />
 
     </androidx.cardview.widget.CardView>
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
