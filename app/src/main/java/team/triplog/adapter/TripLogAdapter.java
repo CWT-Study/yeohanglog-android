@@ -1,7 +1,6 @@
 package team.triplog.adapter;
 
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.drawable.ShapeDrawable;
 import android.graphics.drawable.shapes.OvalShape;
 import android.view.LayoutInflater;
@@ -15,15 +14,14 @@ import java.util.ArrayList;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.recyclerview.widget.RecyclerView;
 import team.triplog.R;
-import team.triplog.activity.TripLogActivity;
 import team.triplog.entity.TripLog;
 
-public class MainTripLogAdapter extends RecyclerView.Adapter<MainTripLogAdapter.ViewHolder>{
+public class TripLogAdapter extends RecyclerView.Adapter<TripLogAdapter.ViewHolder>{
 
     private ArrayList<TripLog> tripLogs = new ArrayList<>();
     Context context;
 
-    public MainTripLogAdapter(Context mContext, ArrayList<TripLog> mtripLogs){
+    public TripLogAdapter(Context mContext, ArrayList<TripLog> mtripLogs){
 
         tripLogs = mtripLogs;
 
@@ -49,10 +47,8 @@ public class MainTripLogAdapter extends RecyclerView.Adapter<MainTripLogAdapter.
                 public void onClick(View v) {
                     int pos = getAdapterPosition() ;
                     if (pos != RecyclerView.NO_POSITION) {
-                        if (pos == getItemCount()-1){
+                        if (pos == 0){
                             Toast.makeText(context,"새로운 아이템 등록",Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(context, TripLogActivity.class); //TODO 임시
-                            context.startActivity(intent);
                         }else{
                             Toast.makeText(context,"기존 아이템",Toast.LENGTH_SHORT).show();
                         }
@@ -64,9 +60,9 @@ public class MainTripLogAdapter extends RecyclerView.Adapter<MainTripLogAdapter.
     }
 
     @Override
-    public MainTripLogAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
+    public TripLogAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
 
-        View view1 = LayoutInflater.from(context).inflate(R.layout.item_main_trip_log,parent,false);
+        View view1 = LayoutInflater.from(context).inflate(R.layout.item_trip_log,parent,false);
 
         ViewHolder viewHolder1 = new ViewHolder(view1);
 
@@ -80,7 +76,7 @@ public class MainTripLogAdapter extends RecyclerView.Adapter<MainTripLogAdapter.
         Vholder.imageView.setBackground(new ShapeDrawable(new OvalShape()));
         Vholder.imageView.setClipToOutline(true);
 
-        if (position == getItemCount()-1){
+        if (position == 0){
             Vholder.imageView.setImageResource(R.drawable.button_plus);
             return;
         }
