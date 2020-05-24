@@ -1,7 +1,8 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="AppTheme"
+        parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -12,7 +13,8 @@
         <item name="android:textSize">10dp</item>
     </style>
 
-    <style name="tab_text" parent="TextAppearance.Design.Tab">
+    <style name="tab_text"
+        parent="TextAppearance.Design.Tab">
         <item name="android:textSize">20dp</item>
         <item name="android:textStyle">bold</item>
     </style>
@@ -75,7 +77,8 @@
         <item name="android:theme">@style/search_view_theme</item>
     </style>
 
-    <style name="search_view_theme" parent="Widget.AppCompat.SearchView">
+    <style name="search_view_theme"
+        parent="Widget.AppCompat.SearchView">
         <item name="android:textColorHint">@color/search_hint</item>
         <item name="android:editTextColor">@color/search</item>
         <item name="android:textSize">14dp</item>
@@ -228,7 +231,7 @@
         <item name="android:textSize">13dp</item>
     </style>
 
-  <style name="trip_member_name">
+    <style name="trip_member_name">
         <item name="android:textColor">@color/trip_member_name</item>
         <item name="android:text">TEXT_MEMBER</item>
         <item name="android:textStyle">normal</item>
