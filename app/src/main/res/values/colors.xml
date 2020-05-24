@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimary">@color/main</color>
     <color name="colorPrimaryDark">#000000</color>
     <color name="colorAccent">@color/main</color>
 
@@ -36,6 +36,8 @@
     <color name="trip_log_item">@color/black_000000</color>
     <color name="trip_member_name">@color/black_000000</color>
     <color name="trip_plan">@color/gray_666666</color>
+    <color name="main_trip_plan_no_contents_title">@color/black_000000</color>
+    <color name="main_trip_plan_no_contents_message">@color/gray_999999</color>
 
     <!-- Palette colors -->
     <color name="transparent">#00000000</color>
