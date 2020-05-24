@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -47,20 +48,23 @@ public class MainHomeAdapter extends RecyclerView.Adapter<MainHomeAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        TripLog tripLog = tripList.get(position);
+        TripLog trip = tripList.get(position);
 
-        holder.textTripTitle.setText(tripLog.title);
-        holder.textTripTitle.setTag(tripLog.title);
-        holder.textTripTitle.setOnClickListener(onClickListener);
-        holder.viewTrip.setImageResource(tripLog.drawbleId);
+        holder.layoutItem.setTag(trip);
+        holder.layoutItem.setOnClickListener(onClickListener);
+        holder.textTripTitle.setText(trip.title);
+        holder.viewTrip.setImageResource(trip.drawbleId);
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder {
+        ConstraintLayout layoutItem;
         TextView textTripTitle;
         ImageView viewTrip;
 
         ViewHolder(View view) {
             super(view);
+
+            layoutItem = view.findViewById(R.id.layout_item);
             textTripTitle = view.findViewById(R.id.text_trip_title);
             viewTrip = view.findViewById(R.id.view_trip);
         }

@@ -120,8 +120,12 @@ public class MainHomeFragment extends Fragment {
     private View.OnClickListener onClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            String str = (String) view.getTag();
-            Toast.makeText(rootView.getContext(), str, Toast.LENGTH_SHORT).show();
+            switch (view.getId()) {
+                case R.id.layout_item:
+                    TripLog trip = (TripLog) view.getTag();
+                    Toast.makeText(rootView.getContext(), trip.title + " 화면으로 이동", Toast.LENGTH_SHORT).show();
+                    break;
+            }
         }
     };
 }
