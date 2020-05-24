@@ -1,7 +1,6 @@
 package team.triplog.adapter;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.graphics.drawable.ShapeDrawable;
 import android.graphics.drawable.shapes.OvalShape;
 import android.view.LayoutInflater;
@@ -17,12 +16,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import team.triplog.R;
 import team.triplog.entity.TripLog;
 
-public class MainTripLogAdpater extends RecyclerView.Adapter<MainTripLogAdpater.ViewHolder>{
+public class TripLogContentAdapter extends RecyclerView.Adapter<TripLogContentAdapter.ViewHolder>{
 
     private ArrayList<TripLog> tripLogs = new ArrayList<>();
     Context context;
 
-    public MainTripLogAdpater(Context mContext, ArrayList<TripLog> mtripLogs){
+    public TripLogContentAdapter(Context mContext, ArrayList<TripLog> mtripLogs){
 
         tripLogs = mtripLogs;
 
@@ -31,14 +30,26 @@ public class MainTripLogAdpater extends RecyclerView.Adapter<MainTripLogAdpater.
 
     public class ViewHolder extends RecyclerView.ViewHolder{
 
-        public TextView textView;
+        public TextView text_prev_year;
+        public TextView text_next_year;
+        public TextView text_prev_month;
+        public TextView text_next_month;
+        public TextView text_prev_day;
+        public TextView text_next_day;
+        public TextView text_title;
         public AppCompatImageView imageView;
 
         public ViewHolder(View v){
 
             super(v);
 
-            textView = (TextView) v.findViewById(R.id.text);
+            text_prev_year =  v.findViewById(R.id.text_prev_year);
+            text_next_year =  v.findViewById(R.id.text_next_year);
+            text_prev_month =  v.findViewById(R.id.text_prev_month);
+            text_next_month =  v.findViewById(R.id.text_next_month);
+            text_prev_day =  v.findViewById(R.id.text_prev_day);
+            text_next_day =  v.findViewById(R.id.text_next_day);
+            text_title =  v.findViewById(R.id.text_title);
             imageView = v.findViewById(R.id.imageview);
 
 
@@ -48,7 +59,7 @@ public class MainTripLogAdpater extends RecyclerView.Adapter<MainTripLogAdpater.
                 public void onClick(View v) {
                     int pos = getAdapterPosition() ;
                     if (pos != RecyclerView.NO_POSITION) {
-                        if (pos == getItemCount()-1){
+                        if (pos == 0){
                             Toast.makeText(context,"새로운 아이템 등록",Toast.LENGTH_SHORT).show();
                         }else{
                             Toast.makeText(context,"기존 아이템",Toast.LENGTH_SHORT).show();
@@ -61,29 +72,24 @@ public class MainTripLogAdpater extends RecyclerView.Adapter<MainTripLogAdpater.
     }
 
     @Override
-    public MainTripLogAdpater.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
+    public TripLogContentAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
 
-        View view1 = LayoutInflater.from(context).inflate(R.layout.item_main_trip_log,parent,false);
+        View view1 = LayoutInflater.from(context).inflate(R.layout.item_trip_log_content,parent,false);
 
-        ViewHolder viewHolder1 = new ViewHolder(view1);
+        TripLogContentAdapter.ViewHolder viewHolder1 = new TripLogContentAdapter.ViewHolder(view1);
 
         return viewHolder1;
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder Vholder, int position){
+    public void onBindViewHolder(TripLogContentAdapter.ViewHolder Vholder, int position){
         TripLog tripLog = tripLogs.get(position);
 
         Vholder.imageView.setBackground(new ShapeDrawable(new OvalShape()));
         Vholder.imageView.setClipToOutline(true);
 
-        if (position == getItemCount()-1){
-            Vholder.imageView.setImageResource(R.drawable.button_plus);
-            return;
-        }
 
-        Vholder.textView.setText(tripLog.title);
-        Vholder.imageView.setImageResource(tripLog.drawbleId);
+//        Vholder.imageView.setImageResource(tripLog.drawbleId);
 
     }
 
@@ -92,4 +98,5 @@ public class MainTripLogAdpater extends RecyclerView.Adapter<MainTripLogAdpater.
 
         return tripLogs.size();
     }
+
 }
