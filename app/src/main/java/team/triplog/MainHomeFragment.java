@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.core.widget.NestedScrollView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -18,39 +19,35 @@ import team.triplog.entity.TripLog;
 
 public class MainHomeFragment extends Fragment {
     private View rootView;
-    private TextView txtNameUser;
-    private TextView txtTripTitle;
-    private TextView txtTripContent;
-    private TextView txtTripDate;
-    private RecyclerView recyclerView;
-    private MainHomeAdapter mAdpater;
+    private TextView textUserName;
+    private TextView textTripTitle;
+    private TextView textTripContent;
+    private TextView textTripDate;
+    private RecyclerView recyclerLookBack;
+    private NestedScrollView scrollView;
+    private MainHomeAdapter homeAdapter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         rootView = inflater.inflate(R.layout.fragment_main_home, container, false);
+
         init();
         setData();
+        setUi();
+
         return rootView;
     }
 
     private void init() {
-        txtNameUser = rootView.findViewById(R.id.text_user_name);
-        txtTripTitle = rootView.findViewById(R.id.txt_trip_title);
-        txtTripContent = rootView.findViewById(R.id.txt_trip_content);
-        txtTripDate = rootView.findViewById(R.id.txt_trip_date);
-        recyclerView = rootView.findViewById(R.id.recyclerview);
+        textUserName = rootView.findViewById(R.id.text_user_name);
+        textTripTitle = rootView.findViewById(R.id.text_trip_title);
+        textTripContent = rootView.findViewById(R.id.txt_trip_content);
+        textTripDate = rootView.findViewById(R.id.txt_trip_date);
+        recyclerLookBack = rootView.findViewById(R.id.recycler_look_back);
+        scrollView = rootView.findViewById(R.id.scroll_view);
     }
 
     private void setData() {
-        LinearLayoutManager layoutManager =
-                new LinearLayoutManager(
-                        rootView.getContext(),
-                        LinearLayoutManager.HORIZONTAL,
-                        false
-                );
-        recyclerView.setLayoutManager(layoutManager);
-
         ArrayList<TripLog> tripLogs = new ArrayList<>();
         TripLog tripLog = new TripLog();
         tripLog.title = "테스트";
@@ -95,23 +92,40 @@ public class MainHomeFragment extends Fragment {
         tripLogs.add(tripLog8);
 
 
-        mAdpater = new MainHomeAdapter(rootView.getContext(), tripLogs, onClickItem);
-
-        recyclerView.setAdapter(mAdpater);
-
 //        MainHomeListDecoration decoration = new MainHomeListDecoration();
 //        recyclerView.addItemDecoration(decoration);
 
-        recyclerView.setNestedScrollingEnabled(false);
+        LinearLayoutManager layoutManager =
+                new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
 
+        homeAdapter = new MainHomeAdapter(getContext(), tripLogs, onClickListener);
+        recyclerLookBack.setLayoutManager(layoutManager);
+        recyclerLookBack.setAdapter(homeAdapter);
+        recyclerLookBack.setNestedScrollingEnabled(false);
+
+        scrollView.post(new Runnable() {
+            @Override
+            public void run() {
+                scrollView.scrollTo(0, 0);
+            }
+        });
     }
 
-    private View.OnClickListener onClickItem = new View.OnClickListener() {
+    private void setUi() {
+        // TODO : User 이름으로 대체 필요.
+        String userName = "냉수마찰";
+        textUserName.setText(userName);
+    }
+
+    private View.OnClickListener onClickListener = new View.OnClickListener() {
         @Override
-        public void onClick(View v) {
-            String str = (String) v.getTag();
-            Toast.makeText(rootView.getContext(), str, Toast.LENGTH_SHORT).show();
+        public void onClick(View view) {
+            switch (view.getId()) {
+                case R.id.layout_item:
+                    TripLog trip = (TripLog) view.getTag();
+                    Toast.makeText(rootView.getContext(), trip.title + " 화면으로 이동", Toast.LENGTH_SHORT).show();
+                    break;
+            }
         }
     };
-
 }

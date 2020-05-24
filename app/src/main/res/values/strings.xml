@@ -1,10 +1,11 @@
 <resources>
     <string name="app_name">여행록</string>
+
     <string name="bottom_navigation_home">Home</string>
     <string name="bottom_navigation_trip">여행록</string>
     <string name="bottom_navigation_search">검색</string>
     <string name="bottom_navigation_more">더보기</string>
-    <string name="main_home_user_name">%s 님,</string>
+    <string name="main_home_user_name">님,</string>
     <string name="main_home_welcome">환영합니다.</string>
     <string name="main_home_trip_day">%d 일째 여행중!</string>
     <string name="main_home_look_back">추억 톺아보기</string>
@@ -21,6 +22,8 @@
     <string name="main_more_user_name">이름</string>
     <string name="main_more_user_code">초대 코드</string>
     <string name="main_more_user_account">로그인 계정</string>
+    <string name="main_trip_log_tilte">여행 기록</string>
+    <string name="main_trip_log_save">저장</string>
     <string name="trip_info_description">설레는 여행을 시작할 준비가 되셨나요?\n준비가 되었다면 여행의 이름을 지어주세요.</string>
     <string name="trip_info_name_hint">여행 이름</string>
     <string name="trip_info_name_limit">* 최대 20자까지 입력 가능합니다.</string>
