@@ -18,4 +18,35 @@
         app:layout_constraintTop_toTopOf="parent"
         />
 
+    <TextView
+        android:id="@+id/text_no_contents_title"
+        style="@style/main_trip_plan_no_contents_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.2"
+        />
+
+    <TextView
+        android:id="@+id/text_no_contents_message"
+        style="@style/main_trip_plan_no_contents_message"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_no_contents_title"
+        app:layout_constraintWidth_percent="0.88"
+        />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group_no_contents"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="text_no_contents_title,text_no_contents_message"
+        />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

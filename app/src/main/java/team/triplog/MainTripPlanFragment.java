@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.constraintlayout.widget.Group;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -18,6 +19,7 @@ import team.triplog.entity.Trip;
 
 public class MainTripPlanFragment extends Fragment {
     private View rootView;
+    private Group groupNoContents;
     private RecyclerView recyclerTripPlan;
     private MainTripPlanAdapter mainTripPlanAdapter;
     private ArrayList<Trip> trips = new ArrayList<>();
@@ -33,6 +35,7 @@ public class MainTripPlanFragment extends Fragment {
     }
 
     private void init() {
+        groupNoContents = rootView.findViewById(R.id.group_no_contents);
         recyclerTripPlan = rootView.findViewById(R.id.recycler_trip_plan);
 
         // TEST 코드
@@ -49,6 +52,11 @@ public class MainTripPlanFragment extends Fragment {
 
     private void setUi() {
         if (isAdded()) {
+            if (trips.isEmpty()) {
+                groupNoContents.setVisibility(View.VISIBLE);
+            } else {
+                groupNoContents.setVisibility(View.INVISIBLE);
+            }
         }
     }
 
