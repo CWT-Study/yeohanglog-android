@@ -42,8 +42,6 @@ public class MainTripPlanFragment extends Fragment {
         trips.add(new Trip());
         trips.add(new Trip());
         trips.add(new Trip());
-        trips.add(new Trip());
-        trips.add(new Trip());
 
         mainTripPlanAdapter = new MainTripPlanAdapter(getContext(), trips, onClickListener);
         recyclerTripPlan.setLayoutManager(new LinearLayoutManager(getContext()));
