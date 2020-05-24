@@ -10,5 +10,4 @@ public class TripLog {
     public String prevDay;
     public String nextDay;
     public String conent;
-
 }

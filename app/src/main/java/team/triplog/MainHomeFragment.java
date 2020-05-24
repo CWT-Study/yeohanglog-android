@@ -18,39 +18,32 @@ import team.triplog.entity.TripLog;
 
 public class MainHomeFragment extends Fragment {
     private View rootView;
-    private TextView txtNameUser;
-    private TextView txtTripTitle;
-    private TextView txtTripContent;
-    private TextView txtTripDate;
-    private RecyclerView recyclerView;
-    private MainHomeAdapter mAdpater;
+    private TextView textNameUser;
+    private TextView textTripTitle;
+    private TextView textTripContent;
+    private TextView textTripDate;
+    private RecyclerView recyclerLookBack;
+    private MainHomeAdapter homeAdapter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         rootView = inflater.inflate(R.layout.fragment_main_home, container, false);
+
         init();
         setData();
+
         return rootView;
     }
 
     private void init() {
-        txtNameUser = rootView.findViewById(R.id.text_user_name);
-        txtTripTitle = rootView.findViewById(R.id.txt_trip_title);
-        txtTripContent = rootView.findViewById(R.id.txt_trip_content);
-        txtTripDate = rootView.findViewById(R.id.txt_trip_date);
-        recyclerView = rootView.findViewById(R.id.recyclerview);
+        textNameUser = rootView.findViewById(R.id.text_user_name);
+        textTripTitle = rootView.findViewById(R.id.text_trip_title);
+        textTripContent = rootView.findViewById(R.id.txt_trip_content);
+        textTripDate = rootView.findViewById(R.id.txt_trip_date);
+        recyclerLookBack = rootView.findViewById(R.id.recycler_look_back);
     }
 
     private void setData() {
-        LinearLayoutManager layoutManager =
-                new LinearLayoutManager(
-                        rootView.getContext(),
-                        LinearLayoutManager.HORIZONTAL,
-                        false
-                );
-        recyclerView.setLayoutManager(layoutManager);
-
         ArrayList<TripLog> tripLogs = new ArrayList<>();
         TripLog tripLog = new TripLog();
         tripLog.title = "테스트";
@@ -95,23 +88,24 @@ public class MainHomeFragment extends Fragment {
         tripLogs.add(tripLog8);
 
 
-        mAdpater = new MainHomeAdapter(rootView.getContext(), tripLogs, onClickItem);
-
-        recyclerView.setAdapter(mAdpater);
-
 //        MainHomeListDecoration decoration = new MainHomeListDecoration();
 //        recyclerView.addItemDecoration(decoration);
 
-        recyclerView.setNestedScrollingEnabled(false);
+        LinearLayoutManager layoutManager =
+                new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
+
+        homeAdapter = new MainHomeAdapter(getContext(), tripLogs, onClickListener);
+        recyclerLookBack.setLayoutManager(layoutManager);
+        recyclerLookBack.setAdapter(homeAdapter);
+        recyclerLookBack.setNestedScrollingEnabled(false);
 
     }
 
-    private View.OnClickListener onClickItem = new View.OnClickListener() {
+    private View.OnClickListener onClickListener = new View.OnClickListener() {
         @Override
-        public void onClick(View v) {
-            String str = (String) v.getTag();
+        public void onClick(View view) {
+            String str = (String) view.getTag();
             Toast.makeText(rootView.getContext(), str, Toast.LENGTH_SHORT).show();
         }
     };
-
 }
