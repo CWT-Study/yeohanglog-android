@@ -1,5 +1,6 @@
 package team.triplog;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
+import team.triplog.activity.TripInfoActivity;
 import team.triplog.adapter.MainTripPlanAdapter;
 import team.triplog.entity.Trip;
 
@@ -40,7 +42,7 @@ public class MainTripPlanFragment extends Fragment {
         trips.add(new Trip());
         trips.add(new Trip());
 
-        mainTripPlanAdapter = new MainTripPlanAdapter(getContext(), trips);
+        mainTripPlanAdapter = new MainTripPlanAdapter(getContext(), trips, onClickListener);
         recyclerTripPlan.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerTripPlan.setAdapter(mainTripPlanAdapter);
     }
@@ -49,4 +51,16 @@ public class MainTripPlanFragment extends Fragment {
         if (isAdded()) {
         }
     }
+
+    private View.OnClickListener onClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            switch (view.getId()) {
+                case R.id.layout_item:
+                    Intent intent = new Intent(getContext(), TripInfoActivity.class);
+                    startActivity(intent);
+                    break;
+            }
+        }
+    };
 }
