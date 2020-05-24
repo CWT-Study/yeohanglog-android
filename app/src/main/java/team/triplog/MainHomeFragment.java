@@ -19,7 +19,7 @@ import team.triplog.entity.TripLog;
 
 public class MainHomeFragment extends Fragment {
     private View rootView;
-    private TextView textNameUser;
+    private TextView textUserName;
     private TextView textTripTitle;
     private TextView textTripContent;
     private TextView textTripDate;
@@ -33,12 +33,13 @@ public class MainHomeFragment extends Fragment {
 
         init();
         setData();
+        setUi();
 
         return rootView;
     }
 
     private void init() {
-        textNameUser = rootView.findViewById(R.id.text_user_name);
+        textUserName = rootView.findViewById(R.id.text_user_name);
         textTripTitle = rootView.findViewById(R.id.text_trip_title);
         textTripContent = rootView.findViewById(R.id.txt_trip_content);
         textTripDate = rootView.findViewById(R.id.txt_trip_date);
@@ -108,6 +109,12 @@ public class MainHomeFragment extends Fragment {
                 scrollView.scrollTo(0, 0);
             }
         });
+    }
+
+    private void setUi() {
+        // TODO : User 이름으로 대체 필요.
+        String userName = "냉수마찰";
+        textUserName.setText(userName);
     }
 
     private View.OnClickListener onClickListener = new View.OnClickListener() {

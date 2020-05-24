@@ -26,7 +26,7 @@
 
     <style name="text_main_home_user_name">
         <item name="android:textColor">@color/main_home_user_name</item>
-        <item name="android:text">@string/main_home_user_name</item>
+        <item name="android:text">TEXT_USER_NAME</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">35dp</item>
         <item name="android:maxLines">2</item>

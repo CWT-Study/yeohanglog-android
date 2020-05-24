@@ -69,13 +69,27 @@
             <TextView
                 android:id="@+id/text_user_name"
                 style="@style/text_main_home_user_name"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintLeft_toLeftOf="@id/text_welcome"
+                app:layout_constraintRight_toLeftOf="@id/text_sir"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintWidth_percent="0.88"
+                />
+
+            <TextView
+                android:id="@+id/text_sir"
+                style="@style/text_main_home_welcome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="7dp"
+                android:text="@string/main_home_user_name"
+                app:layout_constraintBottom_toBottomOf="@id/text_user_name"
+                app:layout_constraintLeft_toRightOf="@id/text_user_name"
+                app:layout_constraintRight_toRightOf="@id/text_welcome"
                 />
 
             <TextView
@@ -83,9 +97,10 @@
                 style="@style/text_main_home_welcome"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                app:layout_constraintLeft_toLeftOf="@id/text_user_name"
-                app:layout_constraintRight_toRightOf="@id/text_user_name"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/text_user_name"
+                app:layout_constraintWidth_percent="0.88"
                 />
 
             <androidx.constraintlayout.widget.ConstraintLayout

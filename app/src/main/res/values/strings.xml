@@ -5,7 +5,7 @@
     <string name="bottom_navigation_trip">여행록</string>
     <string name="bottom_navigation_search">검색</string>
     <string name="bottom_navigation_more">더보기</string>
-    <string name="main_home_user_name">%s 님,</string>
+    <string name="main_home_user_name">님,</string>
     <string name="main_home_welcome">환영합니다.</string>
     <string name="main_home_trip_day">%d 일째 여행중!</string>
     <string name="main_home_look_back">추억 톺아보기</string>
