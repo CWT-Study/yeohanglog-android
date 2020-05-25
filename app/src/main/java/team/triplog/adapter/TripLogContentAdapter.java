@@ -9,47 +9,68 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-
+import androidx.annotation.NonNull;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.ArrayList;
+
 import team.triplog.R;
 import team.triplog.entity.TripLog;
 
-public class TripLogContentAdapter extends RecyclerView.Adapter<TripLogContentAdapter.ViewHolder>{
-
-    private ArrayList<TripLog> tripLogs = new ArrayList<>();
+public class TripLogContentAdapter extends RecyclerView.Adapter<TripLogContentAdapter.ViewHolder> {
+    private ArrayList<TripLog> tripLogs;
     Context context;
 
-    public TripLogContentAdapter(Context mContext, ArrayList<TripLog> mtripLogs){
-
+    public TripLogContentAdapter(Context mContext, ArrayList<TripLog> mtripLogs) {
         tripLogs = mtripLogs;
-
         context = mContext;
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    @Override
+    public int getItemCount() {
+        return tripLogs.size();
+    }
 
-        public TextView text_prev_year;
-        public TextView text_next_year;
-        public TextView text_prev_month;
-        public TextView text_next_month;
-        public TextView text_prev_day;
-        public TextView text_next_day;
+    @NonNull
+    @Override
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        return new ViewHolder(
+                LayoutInflater
+                        .from(parent.getContext())
+                        .inflate(R.layout.item_trip_log_content, parent, false)
+        );
+    }
+
+    @Override
+    public void onBindViewHolder(TripLogContentAdapter.ViewHolder holder, int position) {
+        TripLog tripLog = tripLogs.get(position);
+
+        holder.imageView.setBackground(new ShapeDrawable(new OvalShape()));
+        holder.imageView.setClipToOutline(true);
+    }
+
+    public class ViewHolder extends RecyclerView.ViewHolder {
+
+        TextView text_prev_year;
+        TextView text_next_year;
+        TextView text_prev_month;
+        TextView text_next_month;
+        TextView text_prev_day;
+        TextView text_next_day;
         public TextView text_title;
-        public AppCompatImageView imageView;
+        AppCompatImageView imageView;
 
-        public ViewHolder(View v){
-
+        ViewHolder(View v) {
             super(v);
 
-            text_prev_year =  v.findViewById(R.id.text_prev_year);
-            text_next_year =  v.findViewById(R.id.text_next_year);
-            text_prev_month =  v.findViewById(R.id.text_prev_month);
-            text_next_month =  v.findViewById(R.id.text_next_month);
-            text_prev_day =  v.findViewById(R.id.text_prev_day);
-            text_next_day =  v.findViewById(R.id.text_next_day);
-            text_title =  v.findViewById(R.id.text_title);
+            text_prev_year = v.findViewById(R.id.text_prev_year);
+            text_next_year = v.findViewById(R.id.text_next_year);
+            text_prev_month = v.findViewById(R.id.text_prev_month);
+            text_next_month = v.findViewById(R.id.text_next_month);
+            text_prev_day = v.findViewById(R.id.text_prev_day);
+            text_next_day = v.findViewById(R.id.text_next_day);
+            text_title = v.findViewById(R.id.text_title);
             imageView = v.findViewById(R.id.imageview);
 
 
@@ -57,12 +78,12 @@ public class TripLogContentAdapter extends RecyclerView.Adapter<TripLogContentAd
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    int pos = getAdapterPosition() ;
+                    int pos = getAdapterPosition();
                     if (pos != RecyclerView.NO_POSITION) {
-                        if (pos == 0){
-                            Toast.makeText(context,"새로운 아이템 등록",Toast.LENGTH_SHORT).show();
-                        }else{
-                            Toast.makeText(context,"기존 아이템",Toast.LENGTH_SHORT).show();
+                        if (pos == 0) {
+                            Toast.makeText(context, "새로운 아이템 등록", Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(context, "기존 아이템", Toast.LENGTH_SHORT).show();
                         }
                     }
                 }
@@ -70,33 +91,4 @@ public class TripLogContentAdapter extends RecyclerView.Adapter<TripLogContentAd
 
         }
     }
-
-    @Override
-    public TripLogContentAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
-
-        View view1 = LayoutInflater.from(context).inflate(R.layout.item_trip_log_content,parent,false);
-
-        TripLogContentAdapter.ViewHolder viewHolder1 = new TripLogContentAdapter.ViewHolder(view1);
-
-        return viewHolder1;
-    }
-
-    @Override
-    public void onBindViewHolder(TripLogContentAdapter.ViewHolder Vholder, int position){
-        TripLog tripLog = tripLogs.get(position);
-
-        Vholder.imageView.setBackground(new ShapeDrawable(new OvalShape()));
-        Vholder.imageView.setClipToOutline(true);
-
-
-//        Vholder.imageView.setImageResource(tripLog.drawbleId);
-
-    }
-
-    @Override
-    public int getItemCount(){
-
-        return tripLogs.size();
-    }
-
 }

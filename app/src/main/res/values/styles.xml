@@ -26,6 +26,11 @@
         <item name="android:textSize">20dp</item>
     </style>
 
+    <style name="text_sub_title"
+        parent="text_title">
+        <item name="android:textSize">18dp</item>
+    </style>
+
     <style name="text_main_home_user_name">
         <item name="android:textColor">@color/main_home_user_name</item>
         <item name="android:text">TEXT_USER_NAME</item>
@@ -153,7 +158,7 @@
         <item name="android:textColor">@color/main_more_version</item>
         <item name="android:text">@string/main_more_version</item>
         <item name="android:textStyle">normal</item>
-        <item name="android:textSize">18dp</item>
+        <item name="android:textSize">12dp</item>
     </style>
 
     <style name="more_user_title">
