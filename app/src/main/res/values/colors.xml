@@ -11,6 +11,8 @@
     <color name="main_home_trip_day">@color/gray_999999</color>
     <color name="main_home_trip_period">@color/gray_999999</color>
     <color name="main_home_look_back">@color/gray_333333</color>
+    <color name="main_home_no_contents_title">@color/main</color>
+    <color name="main_home_no_contents_message">@color/black_000000</color>
     <color name="search">@color/black_000000</color>
     <color name="search_hint">@color/gray_999999</color>
     <color name="search_no_contents_title">@color/black_000000</color>
