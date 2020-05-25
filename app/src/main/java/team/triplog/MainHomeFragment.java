@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.constraintlayout.widget.Group;
 import androidx.core.widget.NestedScrollView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -19,6 +20,7 @@ import team.triplog.entity.TripLog;
 
 public class MainHomeFragment extends Fragment {
     private View rootView;
+    private Group groupNoContents;
     private TextView textUserName;
     private TextView textTripTitle;
     private TextView textTripContent;
@@ -26,6 +28,7 @@ public class MainHomeFragment extends Fragment {
     private RecyclerView recyclerLookBack;
     private NestedScrollView scrollView;
     private MainHomeAdapter homeAdapter;
+    private ArrayList<TripLog> tripLookBacks = new ArrayList<>();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -39,6 +42,7 @@ public class MainHomeFragment extends Fragment {
     }
 
     private void init() {
+        groupNoContents = rootView.findViewById(R.id.group_no_contents);
         textUserName = rootView.findViewById(R.id.text_user_name);
         textTripTitle = rootView.findViewById(R.id.text_trip_title);
         textTripContent = rootView.findViewById(R.id.txt_trip_content);
@@ -48,7 +52,6 @@ public class MainHomeFragment extends Fragment {
     }
 
     private void setData() {
-        ArrayList<TripLog> tripLogs = new ArrayList<>();
         TripLog tripLog = new TripLog();
         tripLog.title = "테스트";
         tripLog.drawbleId = R.drawable.ic_launcher_background;
@@ -61,44 +64,14 @@ public class MainHomeFragment extends Fragment {
         tripLog3.title = "테스트3";
         tripLog3.drawbleId = R.drawable.ic_launcher_background;
 
-        TripLog tripLog4 = new TripLog();
-        tripLog4.title = "테스트4";
-        tripLog4.drawbleId = R.drawable.ic_launcher_background;
-
-        TripLog tripLog5 = new TripLog();
-        tripLog5.title = "테스트5";
-        tripLog5.drawbleId = R.drawable.ic_launcher_background;
-
-        TripLog tripLog6 = new TripLog();
-        tripLog6.title = "테스트6";
-        tripLog6.drawbleId = R.drawable.ic_launcher_background;
-
-        TripLog tripLog7 = new TripLog();
-        tripLog7.title = "테스트7";
-        tripLog7.drawbleId = R.drawable.ic_launcher_background;
-
-        TripLog tripLog8 = new TripLog();
-        tripLog8.title = "테스트8";
-        tripLog8.drawbleId = R.drawable.ic_launcher_background;
-
-
-        tripLogs.add(tripLog);
-        tripLogs.add(tripLog2);
-        tripLogs.add(tripLog3);
-        tripLogs.add(tripLog4);
-        tripLogs.add(tripLog5);
-        tripLogs.add(tripLog6);
-        tripLogs.add(tripLog7);
-        tripLogs.add(tripLog8);
-
-
-//        MainHomeListDecoration decoration = new MainHomeListDecoration();
-//        recyclerView.addItemDecoration(decoration);
+//        tripLookBacks.add(tripLog);
+//        tripLookBacks.add(tripLog2);
+//        tripLookBacks.add(tripLog3);
 
         LinearLayoutManager layoutManager =
                 new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
 
-        homeAdapter = new MainHomeAdapter(getContext(), tripLogs, onClickListener);
+        homeAdapter = new MainHomeAdapter(getContext(), tripLookBacks, onClickListener);
         recyclerLookBack.setLayoutManager(layoutManager);
         recyclerLookBack.setAdapter(homeAdapter);
         recyclerLookBack.setNestedScrollingEnabled(false);
@@ -115,6 +88,12 @@ public class MainHomeFragment extends Fragment {
         // TODO : User 이름으로 대체 필요.
         String userName = "냉수마찰";
         textUserName.setText(userName);
+
+        if (tripLookBacks.isEmpty()) {
+            groupNoContents.setVisibility(View.VISIBLE);
+        } else {
+            groupNoContents.setVisibility(View.INVISIBLE);
+        }
     }
 
     private View.OnClickListener onClickListener = new View.OnClickListener() {
