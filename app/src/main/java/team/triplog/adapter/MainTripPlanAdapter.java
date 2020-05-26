@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.text.SimpleDateFormat;
@@ -21,13 +22,19 @@ import team.triplog.entity.Trip;
 public class MainTripPlanAdapter extends RecyclerView.Adapter<MainTripPlanAdapter.ViewHolder> {
     private Context context;
     private ArrayList<Trip> trips;
+    private View.OnClickListener onClickListener;
     private SimpleDateFormat yearFormat = new SimpleDateFormat("yyyy");
     private SimpleDateFormat monthFormat = new SimpleDateFormat("MMM", Locale.US);
     private SimpleDateFormat dayFormat = new SimpleDateFormat("d");
 
-    public MainTripPlanAdapter(Context context, ArrayList<Trip> trips) {
+    public MainTripPlanAdapter(
+            Context context,
+            ArrayList<Trip> trips,
+            View.OnClickListener onClickListener
+    ) {
         this.context = context;
         this.trips = trips;
+        this.onClickListener = onClickListener;
     }
 
     @Override
@@ -59,9 +66,13 @@ public class MainTripPlanAdapter extends RecyclerView.Adapter<MainTripPlanAdapte
 
         holder.textTripName.setText(trip.name);
 //        holder.viewTrip.setBackgroundResource(trip.image);
+
+        holder.layoutItem.setTag(trip);
+        holder.layoutItem.setOnClickListener(onClickListener);
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder {
+        ConstraintLayout layoutItem;
         TextView textStartYear;
         TextView textStartMonth;
         TextView textStartDay;
@@ -74,6 +85,7 @@ public class MainTripPlanAdapter extends RecyclerView.Adapter<MainTripPlanAdapte
         ViewHolder(View view) {
             super(view);
 
+            layoutItem = view.findViewById(R.id.layout_item);
             textStartYear = view.findViewById(R.id.text_trip_start_year);
             textStartMonth = view.findViewById(R.id.text_trip_start_month);
             textStartDay = view.findViewById(R.id.text_trip_start_day);

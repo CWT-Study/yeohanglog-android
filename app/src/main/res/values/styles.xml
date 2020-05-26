@@ -1,7 +1,8 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="AppTheme"
+        parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -12,7 +13,8 @@
         <item name="android:textSize">10dp</item>
     </style>
 
-    <style name="tab_text" parent="TextAppearance.Design.Tab">
+    <style name="tab_text"
+        parent="TextAppearance.Design.Tab">
         <item name="android:textSize">20dp</item>
         <item name="android:textStyle">bold</item>
     </style>
@@ -24,9 +26,14 @@
         <item name="android:textSize">20dp</item>
     </style>
 
+    <style name="text_sub_title"
+        parent="text_title">
+        <item name="android:textSize">18dp</item>
+    </style>
+
     <style name="text_main_home_user_name">
         <item name="android:textColor">@color/main_home_user_name</item>
-        <item name="android:text">@string/main_home_user_name</item>
+        <item name="android:text">TEXT_USER_NAME</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">35dp</item>
         <item name="android:maxLines">2</item>
@@ -75,7 +82,8 @@
         <item name="android:theme">@style/search_view_theme</item>
     </style>
 
-    <style name="search_view_theme" parent="Widget.AppCompat.SearchView">
+    <style name="search_view_theme"
+        parent="Widget.AppCompat.SearchView">
         <item name="android:textColorHint">@color/search_hint</item>
         <item name="android:editTextColor">@color/search</item>
         <item name="android:textSize">14dp</item>
@@ -150,7 +158,7 @@
         <item name="android:textColor">@color/main_more_version</item>
         <item name="android:text">@string/main_more_version</item>
         <item name="android:textStyle">normal</item>
-        <item name="android:textSize">18dp</item>
+        <item name="android:textSize">12dp</item>
     </style>
 
     <style name="more_user_title">
@@ -228,7 +236,7 @@
         <item name="android:textSize">13dp</item>
     </style>
 
-  <style name="trip_member_name">
+    <style name="trip_member_name">
         <item name="android:textColor">@color/trip_member_name</item>
         <item name="android:text">TEXT_MEMBER</item>
         <item name="android:textStyle">normal</item>
@@ -267,37 +275,36 @@
         <item name="android:maxLines">2</item>
     </style>
 
+    <style name="main_trip_plan_no_contents_title">
+        <item name="android:textColor">@color/main_trip_plan_no_contents_title</item>
+        <item name="android:text">@string/main_trip_plan_no_contents_title</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">20dp</item>
+    </style>
 
-    <style name="trip_log_item_year">
-        <item name="android:textColor">@color/trip_plan</item>
-        <item name="android:text">YEAR</item>
+    <style name="main_trip_plan_no_contents_message">
+        <item name="android:textColor">@color/main_trip_plan_no_contents_message</item>
+        <item name="android:text">@string/main_trip_plan_no_contents_message</item>
         <item name="android:textStyle">normal</item>
-        <item name="android:textSize">8dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">14dp</item>
     </style>
 
-    <style name="trip_log_item_month">
-        <item name="android:textColor">@color/trip_plan</item>
-        <item name="android:text">MONTH</item>
+    <style name="main_home_no_contents_title">
+        <item name="android:textColor">@color/main_home_no_contents_title</item>
+        <item name="android:text">@string/main_home_no_contents_title</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textSize">8dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">16dp</item>
     </style>
 
-    <style name="trip_log_item_day">
-        <item name="android:textColor">@color/trip_plan</item>
-        <item name="android:text">DAY</item>
-        <item name="android:textStyle">bold</item>
-        <item name="android:textSize">18dp</item>
+    <style name="main_home_no_contents_message">
+        <item name="android:textColor">@color/main_home_no_contents_message</item>
+        <item name="android:text">@string/main_home_no_contents_message</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">14dp</item>
     </style>
-
-    <style name="trip_log_item_name">
-        <item name="android:textColor">@color/trip_plan</item>
-        <item name="android:text">TEXT_NAME</item>
-        <item name="android:textStyle">bold</item>
-        <item name="android:textSize">13dp</item>
-        <item name="android:ellipsize">end</item>
-        <item name="android:maxLines">2</item>
-    </style>
-
-
 
 </resources>
