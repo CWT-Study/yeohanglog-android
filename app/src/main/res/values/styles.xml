@@ -267,4 +267,37 @@
         <item name="android:maxLines">2</item>
     </style>
 
+
+    <style name="trip_log_item_year">
+        <item name="android:textColor">@color/trip_plan</item>
+        <item name="android:text">YEAR</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">8dp</item>
+    </style>
+
+    <style name="trip_log_item_month">
+        <item name="android:textColor">@color/trip_plan</item>
+        <item name="android:text">MONTH</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">8dp</item>
+    </style>
+
+    <style name="trip_log_item_day">
+        <item name="android:textColor">@color/trip_plan</item>
+        <item name="android:text">DAY</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">18dp</item>
+    </style>
+
+    <style name="trip_log_item_name">
+        <item name="android:textColor">@color/trip_plan</item>
+        <item name="android:text">TEXT_NAME</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">13dp</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">2</item>
+    </style>
+
+
+
 </resources>

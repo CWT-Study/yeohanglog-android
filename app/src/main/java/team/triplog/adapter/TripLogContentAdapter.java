@@ -37,20 +37,20 @@ public class TripLogContentAdapter extends RecyclerView.Adapter<TripLogContentAd
         public TextView text_prev_day;
         public TextView text_next_day;
         public TextView text_title;
-        public AppCompatImageView imageView;
+        public View imageView;
 
         public ViewHolder(View v){
 
             super(v);
 
-            text_prev_year =  v.findViewById(R.id.text_prev_year);
-            text_next_year =  v.findViewById(R.id.text_next_year);
-            text_prev_month =  v.findViewById(R.id.text_prev_month);
-            text_next_month =  v.findViewById(R.id.text_next_month);
-            text_prev_day =  v.findViewById(R.id.text_prev_day);
-            text_next_day =  v.findViewById(R.id.text_next_day);
-            text_title =  v.findViewById(R.id.text_title);
-            imageView = v.findViewById(R.id.imageview);
+            text_prev_year =  v.findViewById(R.id.text_trip_start_year);
+            text_next_year =  v.findViewById(R.id.text_trip_end_year);
+            text_prev_month =  v.findViewById(R.id.text_trip_start_month);
+            text_next_month =  v.findViewById(R.id.text_trip_end_month);
+            text_prev_day =  v.findViewById(R.id.text_trip_start_day);
+            text_next_day =  v.findViewById(R.id.text_trip_end_day);
+            text_title =  v.findViewById(R.id.text_trip_name);
+            imageView = v.findViewById(R.id.view_trip);
 
 
             //item click event
@@ -85,8 +85,8 @@ public class TripLogContentAdapter extends RecyclerView.Adapter<TripLogContentAd
     public void onBindViewHolder(TripLogContentAdapter.ViewHolder Vholder, int position){
         TripLog tripLog = tripLogs.get(position);
 
-        Vholder.imageView.setBackground(new ShapeDrawable(new OvalShape()));
-        Vholder.imageView.setClipToOutline(true);
+//        Vholder.imageView.setBackground(new ShapeDrawable(new OvalShape()));
+//        Vholder.imageView.setClipToOutline(true);
 
 
 //        Vholder.imageView.setImageResource(tripLog.drawbleId);
