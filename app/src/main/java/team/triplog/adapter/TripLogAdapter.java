@@ -46,24 +46,27 @@ public class TripLogAdapter extends RecyclerView.Adapter<TripLogAdapter.ViewHold
         TripLog tripLog = tripLogs.get(position);
 
         if (position == 0) {
-            holder.view_trip_log.setBackgroundResource(R.drawable.button_plus);
+            holder.view_trip_log_image.setBackgroundResource(R.drawable.button_plus);
+            holder.view_trip_log_delee.setVisibility(View.GONE);
             return;
         }
 
         holder.textView.setText(tripLog.title);
-        holder.view_trip_log.setBackgroundResource(tripLog.drawbleId);
+        holder.view_trip_log_image.setBackgroundResource(tripLog.drawbleId);
 
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder {
         TextView textView;
-        View view_trip_log;
+        View view_trip_log_image;
+        View view_trip_log_delee;
 
         ViewHolder(View view) {
             super(view);
 
             textView = view.findViewById(R.id.text);
-            view_trip_log = view.findViewById(R.id.view_trip_log);
+            view_trip_log_image = view.findViewById(R.id.view_trip_log_image);
+            view_trip_log_delee = view.findViewById(R.id.view_trip_log_delee);
         }
     }
 }

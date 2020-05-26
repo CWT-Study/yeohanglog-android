@@ -6,6 +6,19 @@
     android:layout_height="wrap_content"
     >
 
+
+    <View
+        android:id="@+id/view_trip_log_delee"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:background="@drawable/button_plus"
+        android:elevation="6dp"
+        app:layout_constraintBottom_toTopOf="@+id/constraintlayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/constraintlayout" />
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintlayout"
         android:layout_width="130dp"
@@ -18,7 +31,7 @@
         app:layout_constraintBottom_toBottomOf="parent">
 
         <View
-            android:id="@+id/view_trip_log"
+            android:id="@+id/view_trip_log_image"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:background="@drawable/ic_launcher_background"
