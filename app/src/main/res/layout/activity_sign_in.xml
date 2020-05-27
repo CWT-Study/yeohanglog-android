@@ -8,14 +8,169 @@
     tools:context=".activity.MainActivity"
     >
 
-    <TextView
+    <ImageView
+        android:id="@+id/view_logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:src="@drawable/icon_logo"
+        app:layout_constraintBottom_toTopOf="@id/button_sign_in_google"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.45"
+        app:layout_constraintVertical_chainStyle="packed"
+        android:layout_marginBottom="80dp"
         />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/button_sign_in_google"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:background="@drawable/button_sign_in"
+        app:layout_constraintBottom_toTopOf="@id/button_sign_in_kakao_talk"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view_logo"
+        android:layout_marginBottom="10dp"
+        >
+
+        <View
+            android:id="@+id/view_google"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/icon_google"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/text_sign_in_google"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/text_sign_in_google"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Google 계정으로 로그인"
+            android:textColor="@color/color_dark_gray"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/view_google"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/button_sign_in_kakao_talk"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:background="@drawable/button_sign_in"
+        app:layout_constraintBottom_toTopOf="@id/button_sign_in_naver"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button_sign_in_google"
+        android:layout_marginBottom="10dp"
+        >
+
+        <View
+            android:id="@+id/view_kakao_talk"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/icon_kakao_talk"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/text_sign_in_kakao_talk"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/text_sign_in_kakao_talk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="카카오 계정으로 로그인"
+            android:textColor="@color/color_dark_gray"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/view_kakao_talk"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/button_sign_in_naver"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:background="@drawable/button_sign_in"
+        app:layout_constraintBottom_toTopOf="@id/button_sign_in_facebook"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button_sign_in_kakao_talk"
+        android:layout_marginBottom="10dp"
+        >
+
+        <View
+            android:id="@+id/view_naver"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/icon_naver"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/text_sign_in_naver"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/text_sign_in_naver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="네이버 계정으로 로그인"
+            android:textColor="@color/color_dark_gray"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/view_naver"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/button_sign_in_facebook"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:background="@drawable/button_sign_in"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button_sign_in_naver"
+        >
+
+        <View
+            android:id="@+id/view_facebook"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/icon_facebook"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/text_sign_in_facebook"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/text_sign_in_facebook"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="페이스북 계정으로 로그인"
+            android:textColor="@color/color_dark_gray"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/view_facebook"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
