@@ -39,6 +39,12 @@
             />
 
         <activity
+            android:name=".activity.TripPlanActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden"
+            />
+
+        <activity
             android:name=".activity.TripLogActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan|stateAlwaysHidden"
