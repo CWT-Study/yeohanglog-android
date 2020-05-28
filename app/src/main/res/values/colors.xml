@@ -38,6 +38,7 @@
     <color name="trip_log_item">@color/black_000000</color>
     <color name="trip_member_name">@color/black_000000</color>
     <color name="trip_plan">@color/gray_666666</color>
+    <color name="trip_plan_info">@color/black_000000</color>
     <color name="main_trip_plan_no_contents_title">@color/black_000000</color>
     <color name="main_trip_plan_no_contents_message">@color/gray_999999</color>
     <color name="sign_in_button">@color/gray_494949</color>
