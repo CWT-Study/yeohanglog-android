@@ -337,4 +337,23 @@
         <item name="android:textSize">14dp</item>
     </style>
 
+    <style name="trip_plan_info_title">
+        <item name="android:textColor">@color/trip_plan_info</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">10dp</item>
+    </style>
+
+    <style name="trip_plan_info">
+        <item name="android:textColor">@color/trip_plan_info</item>
+        <item name="android:text">TEXT_TRIP_INFO</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">14dp</item>
+    </style>
+
+    <style name="trip_plan_button">
+        <item name="android:textColor">@color/trip_plan_info</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">12dp</item>
+    </style>
+
 </resources>
