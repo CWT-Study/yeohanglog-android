@@ -20,7 +20,6 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="#ffffff"
-            app:contentInsetStart="0dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -32,17 +31,14 @@
                 android:layout_height="match_parent"
                 >
 
-                <TextView
-                    android:id="@+id/text_title"
-                    style="@style/text_title"
-                    android:layout_width="0dp"
-                    android:layout_height="?attr/actionBarSize"
-                    android:gravity="center_vertical"
-                    android:paddingStart="20dp"
-                    android:paddingEnd="20dp"
-                    android:text="@string/app_name"
+                <View
+                    android:id="@+id/view_logo"
+                    android:layout_width="@dimen/size_130"
+                    android:layout_height="0dp"
+                    android:background="@drawable/icon_logo"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintDimensionRatio="181:19"
                     app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     />
 
@@ -177,7 +173,7 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycler_look_back"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="271dp"
                 android:layout_marginTop="10dp"
                 android:clipToPadding="false"
                 android:paddingStart="10dp"
@@ -186,6 +182,37 @@
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/text_look_back"
+                />
+
+            <TextView
+                android:id="@+id/text_no_contents_title"
+                style="@style/main_home_no_contents_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@id/recycler_look_back"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/recycler_look_back"
+                app:layout_constraintVertical_bias="0.3"
+                />
+
+            <TextView
+                android:id="@+id/text_no_contents_message"
+                style="@style/main_home_no_contents_message"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_no_contents_title"
+                app:layout_constraintWidth_percent="0.88"
+                />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/group_no_contents"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="text_no_contents_title,text_no_contents_message"
                 />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

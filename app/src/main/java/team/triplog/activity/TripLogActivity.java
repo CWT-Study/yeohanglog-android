@@ -1,33 +1,30 @@
 package team.triplog.activity;
 
-import android.content.Context;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 import team.triplog.R;
-import team.triplog.adapter.MainTripLogAdapter;
 import team.triplog.adapter.TripLogAdapter;
 import team.triplog.adapter.TripLogContentAdapter;
 import team.triplog.entity.TripLog;
 
 public class TripLogActivity extends AppCompatActivity {
 
-    TextView image_back;
     TextView text_save;
     RecyclerView recyclerView_title;
     RecyclerView recyclerView_content;
+    private Toolbar toolbar;
     private RecyclerView.LayoutManager layoutManager;
-    private Context context = this;
     private ArrayList<TripLog> tripLogs = new ArrayList<>();
     private TripLogAdapter tripLogAdapter;
-
     private TripLogContentAdapter tripLogContentAdapter;
 
     @Override
@@ -35,29 +32,32 @@ public class TripLogActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_trip_log);
 
-
         init();
         setData();
     }
 
     private void init() {
-        image_back = findViewById(R.id.image_back);
         text_save = findViewById(R.id.text_save);
         recyclerView_title = findViewById(R.id.recyclerView_title);
         recyclerView_content = findViewById(R.id.recyclerView_content);
+        toolbar = findViewById(R.id.toolbar);
 
-        layoutManager = new LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false);
+        setSupportActionBar(toolbar);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+        }
+
+        layoutManager = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.HORIZONTAL, false);
         recyclerView_title.setLayoutManager(layoutManager);
 
-        layoutManager = new LinearLayoutManager(context,LinearLayoutManager.VERTICAL,false);
+        layoutManager = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false);
         recyclerView_content.setLayoutManager(layoutManager);
 
     }
 
     private void setData() {
-        TripLog tripLog = new TripLog();//TODO First Item무조건 하나 집어넣는다
-
-
+        TripLog tripLog = new TripLog();//TODO First Item 무조건 하나 집어넣는다
         TripLog tripLog2 = new TripLog();
         tripLog2.title = "테수트1";
         tripLog2.drawbleId = R.drawable.ic_launcher_background;
@@ -75,16 +75,20 @@ public class TripLogActivity extends AppCompatActivity {
         tripLogs.add(tripLog3);
         tripLogs.add(tripLog4);
 
-
-        tripLogAdapter = new TripLogAdapter(context,tripLogs);
+        tripLogAdapter = new TripLogAdapter(getApplicationContext(), tripLogs);
+        tripLogContentAdapter = new TripLogContentAdapter(getApplicationContext(), tripLogs);
 
         recyclerView_title.setAdapter(tripLogAdapter);
-
-        tripLogContentAdapter = new TripLogContentAdapter(context,tripLogs);
         recyclerView_content.setAdapter(tripLogContentAdapter);
-
 
     }
 
-
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            finish();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 }
