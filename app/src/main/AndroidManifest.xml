@@ -56,6 +56,12 @@
             android:windowSoftInputMode="adjustPan|stateAlwaysHidden"
             />
 
+        <activity
+            android:name=".activity.TripLogInfoAcitivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden"
+            />
+
     </application>
 
 </manifest>

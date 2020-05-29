@@ -236,6 +236,52 @@
         <item name="android:textSize">13dp</item>
     </style>
 
+    <style name="trip_log_info_day">
+        <item name="android:textColor">@color/main</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">20dp</item>
+    </style>
+
+    <style name="trip_log_info_edit">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">@dimen/size_45</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingStart">5dp</item>
+        <item name="android:layout_margin">5dp</item>
+        <item name="android:textColor">@color/trip_log_info_edit</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">16dp</item>
+    </style>
+
+    <style name="trip_log_info_user_name">
+        <item name="android:textColor">@color/trip_log_info_user_name</item>
+        <item name="android:text">USER</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">10dp</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+
+    <style name="trip_log_info_user_sentence">
+        <item name="android:textColor">@color/trip_log_info_user_sentence</item>
+        <item name="android:text">TEXT_SENTENCE</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">12dp</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <style name="trip_log_info_num">
+        <item name="android:textColor">@color/trip_log_info_num</item>
+        <item name="android:text">no</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">14dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+
     <style name="trip_member_name">
         <item name="android:textColor">@color/trip_member_name</item>
         <item name="android:text">TEXT_MEMBER</item>
