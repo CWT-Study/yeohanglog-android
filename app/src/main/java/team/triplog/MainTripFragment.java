@@ -1,10 +1,12 @@
 package team.triplog;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
@@ -13,17 +15,17 @@ import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
 
+import team.triplog.activity.TripInfoActivity;
+
 public class MainTripFragment extends Fragment {
 
     private View rootView;
     private ViewPager viewPager;
     private TabLayout tabLayout;
-
-    private ArrayList<MainTripPlanFragment> viewpagerList;
+    private ConstraintLayout buttonPlus;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         rootView = inflater.inflate(R.layout.fragment_main_trip, container, false);
 
         init();
@@ -35,7 +37,11 @@ public class MainTripFragment extends Fragment {
     private void init() {
         viewPager = rootView.findViewById(R.id.viewpager);
         tabLayout = rootView.findViewById(R.id.layout_tabs);
+        buttonPlus = rootView.findViewById(R.id.button_plus);
+
+        buttonPlus.setOnClickListener(onClickListener);
     }
+
 
     private void initViewpager() {
         PagerAdapter adapter = new MainTripAdapter(getActivity().getSupportFragmentManager(), tabLayout.getTabCount());
@@ -56,4 +62,16 @@ public class MainTripFragment extends Fragment {
             }
         });
     }
+
+    private View.OnClickListener onClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            switch (view.getId()) {
+                case R.id.button_plus:
+                    Intent intent = new Intent(getContext(), TripInfoActivity.class);
+                    startActivity(intent);
+                    break;
+            }
+        }
+    };
 }

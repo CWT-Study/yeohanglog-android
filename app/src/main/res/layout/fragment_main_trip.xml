@@ -66,8 +66,10 @@
                 </com.google.android.material.tabs.TabLayout>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/button_plus"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
+                    android:background="@drawable/background_button_trans_circle"
                     app:layout_constraintBottom_toBottomOf="@id/layout_tabs"
                     app:layout_constraintDimensionRatio="1"
                     app:layout_constraintRight_toRightOf="parent"

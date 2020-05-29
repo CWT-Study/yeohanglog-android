@@ -11,7 +11,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.widget.AppCompatImageView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -48,33 +47,31 @@ public class TripLogContentAdapter extends RecyclerView.Adapter<TripLogContentAd
     public void onBindViewHolder(TripLogContentAdapter.ViewHolder holder, int position) {
         TripLog tripLog = tripLogs.get(position);
 
-        holder.imageView.setBackground(new ShapeDrawable(new OvalShape()));
-        holder.imageView.setClipToOutline(true);
+        holder.viewTrip.setBackground(new ShapeDrawable(new OvalShape()));
+        holder.viewTrip.setClipToOutline(true);
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
-
+    class ViewHolder extends RecyclerView.ViewHolder {
         TextView text_prev_year;
         TextView text_next_year;
         TextView text_prev_month;
         TextView text_next_month;
         TextView text_prev_day;
         TextView text_next_day;
-        public TextView text_title;
-        AppCompatImageView imageView;
+        TextView text_title;
+        View viewTrip;
 
         ViewHolder(View v) {
             super(v);
 
-            text_prev_year = v.findViewById(R.id.text_prev_year);
-            text_next_year = v.findViewById(R.id.text_next_year);
-            text_prev_month = v.findViewById(R.id.text_prev_month);
-            text_next_month = v.findViewById(R.id.text_next_month);
-            text_prev_day = v.findViewById(R.id.text_prev_day);
-            text_next_day = v.findViewById(R.id.text_next_day);
-            text_title = v.findViewById(R.id.text_title);
-            imageView = v.findViewById(R.id.imageview);
-
+            text_prev_year = v.findViewById(R.id.text_trip_start_year);
+            text_next_year = v.findViewById(R.id.text_trip_end_year);
+            text_prev_month = v.findViewById(R.id.text_trip_start_month);
+            text_next_month = v.findViewById(R.id.text_trip_end_month);
+            text_prev_day = v.findViewById(R.id.text_trip_start_day);
+            text_next_day = v.findViewById(R.id.text_trip_end_day);
+            text_title = v.findViewById(R.id.text_trip_name);
+            viewTrip = v.findViewById(R.id.view_trip);
 
             //item click event
             itemView.setOnClickListener(new View.OnClickListener() {

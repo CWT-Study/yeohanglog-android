@@ -45,28 +45,28 @@ public class TripLogAdapter extends RecyclerView.Adapter<TripLogAdapter.ViewHold
     public void onBindViewHolder(ViewHolder holder, int position) {
         TripLog tripLog = tripLogs.get(position);
 
-        holder.imageView.setBackground(new ShapeDrawable(new OvalShape()));
-        holder.imageView.setClipToOutline(true);
-
         if (position == 0) {
-            holder.imageView.setImageResource(R.drawable.button_plus);
+            holder.view_trip_log_image.setBackgroundResource(R.drawable.button_plus);
+            holder.view_trip_log_delee.setVisibility(View.GONE);
             return;
         }
 
         holder.textView.setText(tripLog.title);
-        holder.imageView.setImageResource(tripLog.drawbleId);
+        holder.view_trip_log_image.setBackgroundResource(tripLog.drawbleId);
 
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder {
         TextView textView;
-        AppCompatImageView imageView;
+        View view_trip_log_image;
+        View view_trip_log_delee;
 
         ViewHolder(View view) {
             super(view);
 
             textView = view.findViewById(R.id.text);
-            imageView = view.findViewById(R.id.imageview);
+            view_trip_log_image = view.findViewById(R.id.view_trip_log_image);
+            view_trip_log_delee = view.findViewById(R.id.view_trip_log_delee);
         }
     }
 }
