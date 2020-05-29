@@ -4,164 +4,142 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="180dp"
+    android:layout_height="wrap_content"
+    tools:context=".activity.MainActivity"
     >
-    <com.google.android.material.checkbox.MaterialCheckBox
+    <androidx.appcompat.widget.AppCompatCheckBox
         android:id="@+id/checkbox"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintEnd_toEndOf="@+id/guideline"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="0dp"
-        android:layout_height="170dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:cardCornerRadius="10dp"
-        app:cardElevation="6dp"
-        app:cardMaxElevation="6dp">
-
-
-
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.1"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
+        android:id="@+id/layout_item"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/background_round_corner"
+        android:elevation="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/checkbox"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
+        >
 
 
-        <TextView
-            android:id="@+id/text_prev_year"
-            style="@style/trip_log_item"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="12dp"
-            android:text="2020"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/text_next_year"
-            style="@style/trip_log_item"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="80dp"
-            android:layout_marginTop="12dp"
-            android:text="2020"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/text_prev_month"
-            style="@style/trip_log_item"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="35dp"
-            android:text="MAR"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/text_next_month"
-            style="@style/trip_log_item"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="80dp"
-            android:layout_marginTop="35dp"
-            android:text="MAR"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/text_prev_day"
-            style="@style/trip_log_item"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="64dp"
-            android:text="30"
-            android:textSize="25dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-
-        <TextView
-            android:id="@+id/text_title"
-            style="@style/trip_log_item"
-            android:layout_width="110dp"
-            android:layout_height="50dp"
-            android:textSize="18dp"
-            android:text="20대의 마지막 전주 여행"
-            android:gravity="center"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_trip_info"
+            android:layout_width="0dp"
+            android:layout_height="120dp"
+            android:padding="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@id/guideline_content"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.882" />
+            >
 
-        <TextView
-            android:id="@+id/text_next_day"
-            style="@style/trip_log_item"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="84dp"
-            android:layout_marginTop="64dp"
-            android:text="31"
-            android:textSize="25dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/text_trip_start_year"
+                style="@style/trip_log_item_year"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/view_divider"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+            <TextView
+                android:id="@+id/text_trip_start_month"
+                style="@style/trip_log_item_month"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="@id/text_trip_start_year"
+                app:layout_constraintRight_toRightOf="@id/text_trip_start_year"
+                app:layout_constraintTop_toBottomOf="@id/text_trip_start_year"
+                />
+
+            <TextView
+                android:id="@+id/text_trip_start_day"
+                style="@style/trip_log_item_day"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="@id/text_trip_start_month"
+                app:layout_constraintRight_toRightOf="@id/text_trip_start_month"
+                app:layout_constraintTop_toBottomOf="@id/text_trip_start_month"
+                />
+
+            <TextView
+                android:id="@+id/text_trip_end_year"
+                style="@style/trip_log_item_year"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toRightOf="@id/view_divider"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+            <TextView
+                android:id="@+id/text_trip_end_month"
+                style="@style/trip_log_item_month"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="@id/text_trip_end_year"
+                app:layout_constraintRight_toRightOf="@id/text_trip_end_year"
+                app:layout_constraintTop_toBottomOf="@id/text_trip_end_year"
+                />
+
+            <TextView
+                android:id="@+id/text_trip_end_day"
+                style="@style/trip_log_item_day"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="@id/text_trip_end_month"
+                app:layout_constraintRight_toRightOf="@id/text_trip_end_month"
+                app:layout_constraintTop_toBottomOf="@id/text_trip_end_month"
+                />
+
+            <View
+                android:id="@+id/view_divider"
+                android:layout_width="1dp"
+                android:layout_height="10dp"
+                android:layout_margin="10dp"
+                android:background="#666666"
+                app:layout_constraintBottom_toBottomOf="@id/text_trip_start_day"
+                app:layout_constraintLeft_toRightOf="@id/text_trip_start_month"
+                app:layout_constraintRight_toLeftOf="@id/text_trip_end_month"
+                app:layout_constraintTop_toTopOf="@id/text_trip_start_year"
+                />
+
+            <TextView
+                android:id="@+id/text_trip_name"
+                style="@style/trip_log_item_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_trip_start_day"
+                app:layout_constraintVertical_bias="0.7"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <View
-            android:layout_width="1dp"
-            android:layout_height="37dp"
-            android:background="@color/black_000000"
-            app:layout_constraintBottom_toTopOf="@+id/text_title"
-            app:layout_constraintEnd_toStartOf="@+id/text_next_month"
-            app:layout_constraintStart_toEndOf="@+id/text_prev_month"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/imageview"
+            android:id="@+id/view_trip"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:src="@drawable/ic_launcher_background"
-            android:scaleType="fitXY"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@id/guideline_content"
+            android:layout_height="0dp"
+            android:background="@drawable/ic_launcher_background"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/layout_trip_info"
+            app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
-
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline_content"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.40" />
+            />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.15" />
-
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
