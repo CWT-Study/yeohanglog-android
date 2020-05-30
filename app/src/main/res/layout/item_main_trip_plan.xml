@@ -13,8 +13,8 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="15dp"
-        android:background="@drawable/background_main_trip_plan"
-        android:elevation="8dp"
+        android:background="@drawable/background_layout_trip"
+        android:elevation="@dimen/size_8"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -132,5 +132,17 @@
             />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/view_item"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/background_button_main"
+        android:elevation="@dimen/size_8"
+        app:layout_constraintBottom_toBottomOf="@id/layout_item"
+        app:layout_constraintLeft_toLeftOf="@id/layout_item"
+        app:layout_constraintRight_toRightOf="@id/layout_item"
+        app:layout_constraintTop_toTopOf="@id/layout_item"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

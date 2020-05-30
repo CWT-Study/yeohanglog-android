@@ -1,5 +1,6 @@
 package team.triplog.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -74,8 +75,12 @@ public class TripInfoActivity extends AppCompatActivity {
             switch (view.getId()) {
                 case R.id.button_next:
                     // TODO : 이름 및 기간 설정 완료시 다음화면으로 넘어가도록 설정
-                    groupInputName.setVisibility(View.GONE);
-                    groupSelectPeriod.setVisibility(View.VISIBLE);
+//                    groupInputName.setVisibility(View.GONE);
+//                    groupSelectPeriod.setVisibility(View.VISIBLE);
+
+                    // TODO : 임시 화면 연동
+                    Intent intent = new Intent(getApplicationContext(), TripPlanActivity.class);
+                    startActivity(intent);
                     break;
 
                 case R.id.button_previous:
