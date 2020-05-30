@@ -62,7 +62,7 @@ public class MainTripPlanFragment extends Fragment {
         @Override
         public void onClick(View view) {
             switch (view.getId()) {
-                case R.id.layout_item:
+                case R.id.view_item:
                     Intent intent = new Intent(getContext(), TripInfoActivity.class);
                     startActivity(intent);
                     break;

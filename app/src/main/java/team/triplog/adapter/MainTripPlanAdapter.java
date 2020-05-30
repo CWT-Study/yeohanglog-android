@@ -67,12 +67,11 @@ public class MainTripPlanAdapter extends RecyclerView.Adapter<MainTripPlanAdapte
         holder.textTripName.setText(trip.name);
 //        holder.viewTrip.setBackgroundResource(trip.image);
 
-        holder.layoutItem.setTag(trip);
-        holder.layoutItem.setOnClickListener(onClickListener);
+        holder.viewItem.setTag(trip);
+        holder.viewItem.setOnClickListener(onClickListener);
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder {
-        ConstraintLayout layoutItem;
         TextView textStartYear;
         TextView textStartMonth;
         TextView textStartDay;
@@ -80,12 +79,12 @@ public class MainTripPlanAdapter extends RecyclerView.Adapter<MainTripPlanAdapte
         TextView textEndMonth;
         TextView textEndDay;
         TextView textTripName;
+        View viewItem;
         View viewTrip;
 
         ViewHolder(View view) {
             super(view);
 
-            layoutItem = view.findViewById(R.id.layout_item);
             textStartYear = view.findViewById(R.id.text_trip_start_year);
             textStartMonth = view.findViewById(R.id.text_trip_start_month);
             textStartDay = view.findViewById(R.id.text_trip_start_day);
@@ -93,6 +92,7 @@ public class MainTripPlanAdapter extends RecyclerView.Adapter<MainTripPlanAdapte
             textEndMonth = view.findViewById(R.id.text_trip_end_month);
             textEndDay = view.findViewById(R.id.text_trip_end_day);
             textTripName = view.findViewById(R.id.text_trip_name);
+            viewItem = view.findViewById(R.id.view_item);
             viewTrip = view.findViewById(R.id.view_trip);
         }
     }
