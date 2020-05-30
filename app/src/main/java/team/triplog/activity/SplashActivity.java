@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import team.triplog.R;
 
 public class SplashActivity extends AppCompatActivity {
-    long DURATION = 1500L;
+    long DURATION = 2500L;
     View viewLogo;
 
     @Override
