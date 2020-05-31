@@ -63,6 +63,20 @@
             android:windowSoftInputMode="adjustPan|stateAlwaysHidden"
             />
 
+        <activity android:name="com.kakao.sdk.auth.AuthCodeCustomTabsActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="oauth"
+                    android:scheme="kakao{native_app_key}"
+                    />
+            </intent-filter>
+        </activity>
+
     </application>
 
 </manifest>

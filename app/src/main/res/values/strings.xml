@@ -42,4 +42,6 @@
     <string name="trip_log_info_day">DAY %s</string>
     <string name="main_trip_plan_no_contents_title">등록된 일정 없음</string>
     <string name="main_trip_plan_no_contents_message">우측 상단의 버튼으로 새로운 여행을 등록할 수 있습니다.\n즐거운 여행을 시작해보세요.</string>
+
+    <string name="user_native_app_key">native_app_key</string>
 </resources>

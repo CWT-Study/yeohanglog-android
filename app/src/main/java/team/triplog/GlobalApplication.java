@@ -9,5 +9,7 @@ public class GlobalApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+
+        KakaoSdk.init(this, getString(R.string.user_native_app_key));
     }
 }
