@@ -16,7 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 import team.triplog.R;
-import team.triplog.activity.TripLogInfoAcitivity;
+import team.triplog.activity.TripLogInfoActivity;
 import team.triplog.entity.TripLog;
 
 public class TripLogContentAdapter extends RecyclerView.Adapter<TripLogContentAdapter.ViewHolder> {
@@ -81,7 +81,7 @@ public class TripLogContentAdapter extends RecyclerView.Adapter<TripLogContentAd
                     if (pos != RecyclerView.NO_POSITION) {
                         if (pos == 0) {
                             Toast.makeText(context, "새로운 아이템 등록", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(context, TripLogInfoAcitivity.class);
+                            Intent intent = new Intent(context, TripLogInfoActivity.class);
                             context.startActivity(intent);
                         } else {
                             Toast.makeText(context, "기존 아이템", Toast.LENGTH_SHORT).show();
