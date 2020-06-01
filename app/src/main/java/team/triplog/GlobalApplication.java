@@ -13,7 +13,7 @@ import com.kakao.auth.KakaoSDK;
 public class GlobalApplication extends Application {
     private static GlobalApplication instance;
 
-    public static GlobalApplication getGlobalApplicationContext() {
+    public static GlobalApplication getInstance() {
         if (instance == null) {
             throw new IllegalStateException("This Application does not inherit com.kakao.GlobalApplication");
         }
@@ -71,7 +71,7 @@ public class GlobalApplication extends Application {
             return new IApplicationConfig() {
                 @Override
                 public Context getApplicationContext() {
-                    return GlobalApplication.getGlobalApplicationContext();
+                    return GlobalApplication.getInstance();
                 }
             };
         }
