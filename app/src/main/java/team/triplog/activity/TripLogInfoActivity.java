@@ -21,7 +21,7 @@ import team.triplog.adapter.TripLogInfoViewPagerAdapter;
 import team.triplog.entity.TripLogInfo;
 import team.triplog.entity.TripLogInfoChat;
 
-public class TripLogInfoAcitivity extends AppCompatActivity {
+public class TripLogInfoActivity extends AppCompatActivity {
 
     TextView textTitle;
     TextView textTripLogInfoDay;

@@ -1,5 +1,7 @@
 package team.triplog;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,7 +13,11 @@ import android.widget.TextView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 
+import com.kakao.usermgmt.UserManagement;
+import com.kakao.usermgmt.callback.LogoutResponseCallback;
+
 import team.triplog.activity.MoreUserActivity;
+import team.triplog.activity.SignInActivity;
 
 public class MainMoreFragment extends Fragment {
     private View rootView;
@@ -21,7 +27,7 @@ public class MainMoreFragment extends Fragment {
     private ConstraintLayout buttonProfile;
     private ConstraintLayout buttonSettingAppPush;
     private ConstraintLayout buttonSettingAdvertising;
-    private ConstraintLayout buttonWithdrawal;
+    private ConstraintLayout buttonSignOut;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -38,7 +44,7 @@ public class MainMoreFragment extends Fragment {
         buttonProfile = rootView.findViewById(R.id.button_profile_setting);
         buttonSettingAppPush = rootView.findViewById(R.id.layout_notice_app_push);
         buttonSettingAdvertising = rootView.findViewById(R.id.layout_notice_advertising);
-        buttonWithdrawal = rootView.findViewById(R.id.layout_withdrawal);
+        buttonSignOut = rootView.findViewById(R.id.layout_sign_out);
         switchSettingAppPush = rootView.findViewById(R.id.switch_notice_app_push);
         switchSettingAdvertising = rootView.findViewById(R.id.switch_notice_advertising);
 
@@ -47,7 +53,7 @@ public class MainMoreFragment extends Fragment {
         buttonProfile.setOnClickListener(onClickListener);
         buttonSettingAppPush.setOnClickListener(onClickListener);
         buttonSettingAdvertising.setOnClickListener(onClickListener);
-        buttonWithdrawal.setOnClickListener(onClickListener);
+        buttonSignOut.setOnClickListener(onClickListener);
     }
 
     private void setUi() {
@@ -71,8 +77,26 @@ public class MainMoreFragment extends Fragment {
                     switchSettingAdvertising.setChecked(!switchSettingAdvertising.isChecked());
                     break;
 
-                case R.id.layout_withdrawal:
-                    // TODO : 회원 탈퇴 기능 추가
+                case R.id.layout_sign_out:
+                    AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+                    builder.setTitle("로그아웃");
+                    builder.setMessage("로그아웃 하시겠습니까?");
+                    builder.setPositiveButton("예",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+                                    UserManagement.getInstance()
+                                            .requestLogout(new LogoutResponseCallback() {
+                                                @Override
+                                                public void onCompleteLogout() {
+                                                    Intent intent = new Intent(getContext(), SignInActivity.class);
+                                                    startActivity(intent);
+                                                    getActivity().finish();
+                                                }
+                                            });
+                                }
+                            });
+                    builder.setNegativeButton("아니오", null);
+                    builder.show();
                     break;
             }
         }

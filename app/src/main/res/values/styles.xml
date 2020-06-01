@@ -140,6 +140,13 @@
         <item name="android:textSize">10dp</item>
     </style>
 
+    <style name="main_more_sign_out">
+        <item name="android:textColor">@color/main_more_sign_out</item>
+        <item name="android:text">@string/main_more_sign_out</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">14dp</item>
+    </style>
+
     <style name="main_more_withdrawal">
         <item name="android:textColor">@color/main_more_setting_description</item>
         <item name="android:text">@string/main_more_withdrawal</item>

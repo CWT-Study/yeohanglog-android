@@ -9,10 +9,13 @@ import android.view.animation.Animation;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.kakao.auth.Session;
+
 import team.triplog.R;
 
 public class SplashActivity extends AppCompatActivity {
     long DURATION = 2500L;
+    boolean session = false;
     View viewLogo;
 
     @Override
@@ -30,6 +33,7 @@ public class SplashActivity extends AppCompatActivity {
 
     private void init() {
         viewLogo = findViewById(R.id.view_logo);
+        session = Session.getCurrentSession().checkAndImplicitOpen();
         setAnimation();
     }
 
@@ -42,7 +46,15 @@ public class SplashActivity extends AppCompatActivity {
         anim.setAnimationListener(new Animation.AnimationListener() {
             @Override
             public void onAnimationEnd(Animation animation) {
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                Intent intent;
+
+                if (session) {
+                    intent = new Intent(getApplicationContext(), MainActivity.class);
+                    // TODO : User 정보 가져오기
+                } else {
+                    intent = new Intent(getApplicationContext(), SignInActivity.class);
+                }
+
                 startActivity(intent);
                 finish();
             }

@@ -18,6 +18,7 @@
     <string name="main_more_title">MORE</string>
     <string name="main_more_profile">PROFILE</string>
     <string name="main_more_setting">SETTING</string>
+    <string name="main_more_sign_out">로그아웃</string>
     <string name="main_more_withdrawal">회원탈퇴</string>
     <string name="main_more_version">VER %s</string>
     <string name="main_more_user_title">프로필 관리</string>
@@ -42,4 +43,6 @@
     <string name="trip_log_info_day">DAY %s</string>
     <string name="main_trip_plan_no_contents_title">등록된 일정 없음</string>
     <string name="main_trip_plan_no_contents_message">우측 상단의 버튼으로 새로운 여행을 등록할 수 있습니다.\n즐거운 여행을 시작해보세요.</string>
+
+    <string name="kakao_app_key">native-app-key</string>
 </resources>

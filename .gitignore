@@ -21,7 +21,6 @@ build/
 
 # Configuration file
 local.properties
-gradle.properties
 fabric.properties
 
 # Keystore file
