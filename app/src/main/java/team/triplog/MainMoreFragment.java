@@ -13,7 +13,11 @@ import android.widget.TextView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 
+import com.kakao.usermgmt.UserManagement;
+import com.kakao.usermgmt.callback.LogoutResponseCallback;
+
 import team.triplog.activity.MoreUserActivity;
+import team.triplog.activity.SignInActivity;
 
 public class MainMoreFragment extends Fragment {
     private View rootView;
@@ -80,6 +84,15 @@ public class MainMoreFragment extends Fragment {
                     builder.setPositiveButton("예",
                             new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int which) {
+                                    UserManagement.getInstance()
+                                            .requestLogout(new LogoutResponseCallback() {
+                                                @Override
+                                                public void onCompleteLogout() {
+                                                    Intent intent = new Intent(getContext(), SignInActivity.class);
+                                                    startActivity(intent);
+                                                    getActivity().finish();
+                                                }
+                                            });
                                 }
                             });
                     builder.setNegativeButton("아니오", null);
