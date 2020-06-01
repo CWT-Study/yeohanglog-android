@@ -1,5 +1,6 @@
 package team.triplog;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -7,10 +8,13 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.constraintlayout.widget.Group;
+import androidx.core.app.ActivityOptionsCompat;
+import androidx.core.util.Pair;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -18,7 +22,9 @@ import team.triplog.activity.TripPlanActivity;
 import team.triplog.adapter.MainTripPlanAdapter;
 import team.triplog.entity.Trip;
 
+@SuppressLint("SimpleDateFormat")
 public class MainTripPlanFragment extends Fragment implements MainTripPlanAdapter.OnItemClickListener {
+    private SimpleDateFormat periodFormat = new SimpleDateFormat("yyyy.MM.dd");
     private View rootView;
     private Group groupNoContents;
     private RecyclerView recyclerTripPlan;
@@ -61,7 +67,17 @@ public class MainTripPlanFragment extends Fragment implements MainTripPlanAdapte
 
     @Override
     public void onItemClick(View view, int position) {
+        Trip trip = trips.get(position);
+
         Intent intent = new Intent(getContext(), TripPlanActivity.class);
+
+        // TODO : 임시로 String 형식으로 넘김.
+        intent.putExtra("EXTRA_TRIP_NAME", trip.name);
+        intent.putExtra("EXTRA_TRIP_PERIOD", String.format(
+                "%s - %s",
+                periodFormat.format(trip.startDate),
+                periodFormat.format(trip.startDate)
+        ));
 
         View layoutTrip = view.findViewById(R.id.layout_trip_info);
 

@@ -1,8 +1,10 @@
 package team.triplog.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -16,6 +18,9 @@ public class TripPlanActivity extends AppCompatActivity {
     private ConstraintLayout buttonCheck;
     private ConstraintLayout buttonMember;
     private ConstraintLayout buttonPhoto;
+    private TextView textTitle;
+    private TextView textTripName;
+    private TextView textTripPeriod;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +44,9 @@ public class TripPlanActivity extends AppCompatActivity {
 
     private void init() {
         toolbar = findViewById(R.id.toolbar);
+        textTitle = findViewById(R.id.text_title);
+        textTripName = findViewById(R.id.text_trip_name);
+        textTripPeriod = findViewById(R.id.text_trip_period);
         buttonAccount = findViewById(R.id.button_account);
         buttonCheck = findViewById(R.id.button_check);
         buttonMember = findViewById(R.id.button_member);
@@ -61,6 +69,11 @@ public class TripPlanActivity extends AppCompatActivity {
     }
 
     private void setUi() {
+        // TODO : String 형식이 아닌 Trip 객체를 받아서 처리 필요.
+        Intent intent = getIntent();
+        textTitle.setText(intent.getStringExtra("EXTRA_TRIP_NAME"));
+        textTripName.setText(intent.getStringExtra("EXTRA_TRIP_NAME"));
+        textTripPeriod.setText(intent.getStringExtra("EXTRA_TRIP_PERIOD"));
     }
 
     @Override

@@ -29,7 +29,6 @@
                 android:layout_width="0dp"
                 android:layout_height="?attr/actionBarSize"
                 android:gravity="center_vertical"
-                android:text="TEXT_TRIP"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
