@@ -15,6 +15,11 @@
         android:theme="@style/AppTheme"
         tools:ignore="LockedOrientationActivity"
         >
+
+        <meta-data
+            android:name="com.kakao.sdk.AppKey"
+            android:value="@string/kakao_app_key"
+            />
         <activity
             android:name=".activity.SplashActivity"
             android:screenOrientation="portrait"
@@ -62,20 +67,6 @@
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan|stateAlwaysHidden"
             />
-
-        <activity android:name="com.kakao.sdk.auth.AuthCodeCustomTabsActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-
-                <data
-                    android:host="oauth"
-                    android:scheme="@string/kakao_native_app_key"
-                    />
-            </intent-filter>
-        </activity>
 
     </application>
 
