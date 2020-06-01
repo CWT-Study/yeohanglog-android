@@ -41,7 +41,7 @@
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="#ffffff"
+        android:background="@color/white_ffffff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -57,7 +57,7 @@
                 android:id="@+id/map_view"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:background="@color/gray_999999"
+                android:background="@color/main"
                 app:layout_constraintDimensionRatio="3:2"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
