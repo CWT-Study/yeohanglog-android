@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.text.SimpleDateFormat;
@@ -20,21 +19,18 @@ import team.triplog.entity.Trip;
 
 @SuppressLint("SimpleDateFormat")
 public class MainTripPlanAdapter extends RecyclerView.Adapter<MainTripPlanAdapter.ViewHolder> {
-    private Context context;
     private ArrayList<Trip> trips;
-    private View.OnClickListener onClickListener;
+    private OnItemClickListener onItemClickListener;
     private SimpleDateFormat yearFormat = new SimpleDateFormat("yyyy");
     private SimpleDateFormat monthFormat = new SimpleDateFormat("MMM", Locale.US);
     private SimpleDateFormat dayFormat = new SimpleDateFormat("d");
 
     public MainTripPlanAdapter(
-            Context context,
             ArrayList<Trip> trips,
-            View.OnClickListener onClickListener
+            OnItemClickListener onItemClickListener
     ) {
-        this.context = context;
         this.trips = trips;
-        this.onClickListener = onClickListener;
+        this.onItemClickListener = onItemClickListener;
     }
 
     @Override
@@ -48,7 +44,8 @@ public class MainTripPlanAdapter extends RecyclerView.Adapter<MainTripPlanAdapte
         return new ViewHolder(
                 LayoutInflater
                         .from(parent.getContext())
-                        .inflate(R.layout.item_main_trip_plan, parent, false)
+                        .inflate(R.layout.item_main_trip_plan, parent, false),
+                onItemClickListener
         );
     }
 
@@ -66,12 +63,9 @@ public class MainTripPlanAdapter extends RecyclerView.Adapter<MainTripPlanAdapte
 
         holder.textTripName.setText(trip.name);
 //        holder.viewTrip.setBackgroundResource(trip.image);
-
-        holder.viewItem.setTag(trip);
-        holder.viewItem.setOnClickListener(onClickListener);
     }
 
-    static class ViewHolder extends RecyclerView.ViewHolder {
+    static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView textStartYear;
         TextView textStartMonth;
         TextView textStartDay;
@@ -79,12 +73,13 @@ public class MainTripPlanAdapter extends RecyclerView.Adapter<MainTripPlanAdapte
         TextView textEndMonth;
         TextView textEndDay;
         TextView textTripName;
-        View viewItem;
         View viewTrip;
+        OnItemClickListener onItemClickListener;
 
-        ViewHolder(View view) {
+        ViewHolder(View view, OnItemClickListener onItemClickListener) {
             super(view);
 
+            this.onItemClickListener = onItemClickListener;
             textStartYear = view.findViewById(R.id.text_trip_start_year);
             textStartMonth = view.findViewById(R.id.text_trip_start_month);
             textStartDay = view.findViewById(R.id.text_trip_start_day);
@@ -92,8 +87,18 @@ public class MainTripPlanAdapter extends RecyclerView.Adapter<MainTripPlanAdapte
             textEndMonth = view.findViewById(R.id.text_trip_end_month);
             textEndDay = view.findViewById(R.id.text_trip_end_day);
             textTripName = view.findViewById(R.id.text_trip_name);
-            viewItem = view.findViewById(R.id.view_item);
             viewTrip = view.findViewById(R.id.view_trip);
+
+            itemView.setOnClickListener(this);
         }
+
+        @Override
+        public void onClick(View view) {
+            onItemClickListener.onItemClick(getAdapterPosition());
+        }
+    }
+
+    public interface OnItemClickListener {
+        void onItemClick(int position);
     }
 }

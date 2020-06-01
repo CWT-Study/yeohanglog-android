@@ -17,7 +17,7 @@ import team.triplog.activity.TripInfoActivity;
 import team.triplog.adapter.MainTripPlanAdapter;
 import team.triplog.entity.Trip;
 
-public class MainTripPlanFragment extends Fragment {
+public class MainTripPlanFragment extends Fragment implements MainTripPlanAdapter.OnItemClickListener {
     private View rootView;
     private Group groupNoContents;
     private RecyclerView recyclerTripPlan;
@@ -43,7 +43,7 @@ public class MainTripPlanFragment extends Fragment {
         trips.add(new Trip());
         trips.add(new Trip());
 
-        mainTripPlanAdapter = new MainTripPlanAdapter(getContext(), trips, onClickListener);
+        mainTripPlanAdapter = new MainTripPlanAdapter(trips, this);
         recyclerTripPlan.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerTripPlan.setAdapter(mainTripPlanAdapter);
     }
@@ -58,15 +58,10 @@ public class MainTripPlanFragment extends Fragment {
         }
     }
 
-    private View.OnClickListener onClickListener = new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            switch (view.getId()) {
-                case R.id.view_item:
-                    Intent intent = new Intent(getContext(), TripInfoActivity.class);
-                    startActivity(intent);
-                    break;
-            }
-        }
-    };
+    @Override
+    public void onItemClick(int position) {
+        trips.get(position);
+        Intent intent = new Intent(getContext(), TripInfoActivity.class);
+        startActivity(intent);
+    }
 }
