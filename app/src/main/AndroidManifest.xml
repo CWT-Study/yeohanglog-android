@@ -5,6 +5,8 @@
     package="team.triplog"
     >
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".GlobalApplication"
         android:allowBackup="true"
