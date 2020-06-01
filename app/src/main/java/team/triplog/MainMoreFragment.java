@@ -21,7 +21,7 @@ public class MainMoreFragment extends Fragment {
     private ConstraintLayout buttonProfile;
     private ConstraintLayout buttonSettingAppPush;
     private ConstraintLayout buttonSettingAdvertising;
-    private ConstraintLayout buttonWithdrawal;
+    private ConstraintLayout buttonSignOut;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -38,7 +38,7 @@ public class MainMoreFragment extends Fragment {
         buttonProfile = rootView.findViewById(R.id.button_profile_setting);
         buttonSettingAppPush = rootView.findViewById(R.id.layout_notice_app_push);
         buttonSettingAdvertising = rootView.findViewById(R.id.layout_notice_advertising);
-        buttonWithdrawal = rootView.findViewById(R.id.layout_withdrawal);
+        buttonSignOut = rootView.findViewById(R.id.layout_sign_out);
         switchSettingAppPush = rootView.findViewById(R.id.switch_notice_app_push);
         switchSettingAdvertising = rootView.findViewById(R.id.switch_notice_advertising);
 
@@ -47,7 +47,7 @@ public class MainMoreFragment extends Fragment {
         buttonProfile.setOnClickListener(onClickListener);
         buttonSettingAppPush.setOnClickListener(onClickListener);
         buttonSettingAdvertising.setOnClickListener(onClickListener);
-        buttonWithdrawal.setOnClickListener(onClickListener);
+        buttonSignOut.setOnClickListener(onClickListener);
     }
 
     private void setUi() {
@@ -71,8 +71,7 @@ public class MainMoreFragment extends Fragment {
                     switchSettingAdvertising.setChecked(!switchSettingAdvertising.isChecked());
                     break;
 
-                case R.id.layout_withdrawal:
-                    // TODO : 회원 탈퇴 기능 추가
+                case R.id.layout_sign_out:
                     break;
             }
         }

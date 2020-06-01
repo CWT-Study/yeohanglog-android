@@ -24,6 +24,7 @@
     <color name="main_more_profile_user_code">@color/gray_999999</color>
     <color name="main_more_setting_title">@color/black_000000</color>
     <color name="main_more_setting_description">@color/gray_999999</color>
+    <color name="main_more_sign_out">@color/red_ff0000</color>
     <color name="main_more_withdrawal">@color/gray_999999</color>
     <color name="main_more_version">@color/gray_999999</color>
     <color name="more_user_title">@color/black_000000</color>
@@ -59,5 +60,6 @@
     <color name="gray_f0f0f0">#f0f0f0</color>
     <color name="white_ffffff">#ffffff</color>
     <color name="main">#e3bd8d</color>
+    <color name="red_ff0000">#ff0000</color>
 
 </resources>

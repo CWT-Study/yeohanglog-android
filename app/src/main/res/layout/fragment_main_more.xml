@@ -276,7 +276,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/layout_withdrawal"
+                android:id="@+id/layout_sign_out"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
@@ -290,10 +290,10 @@
                 >
 
                 <TextView
-                    style="@style/main_more_withdrawal"
+                    style="@style/main_more_sign_out"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/main_more_withdrawal"
+                    android:text="@string/main_more_sign_out"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
@@ -310,8 +310,8 @@
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="30dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintRight_toRightOf="@id/layout_withdrawal"
-                app:layout_constraintTop_toBottomOf="@id/layout_withdrawal"
+                app:layout_constraintRight_toRightOf="@id/layout_sign_out"
+                app:layout_constraintTop_toBottomOf="@id/layout_sign_out"
                 />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
