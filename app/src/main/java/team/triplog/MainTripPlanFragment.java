@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-import team.triplog.activity.TripInfoActivity;
+import team.triplog.activity.TripPlanActivity;
 import team.triplog.adapter.MainTripPlanAdapter;
 import team.triplog.entity.Trip;
 
@@ -61,7 +61,7 @@ public class MainTripPlanFragment extends Fragment implements MainTripPlanAdapte
     @Override
     public void onItemClick(int position) {
         trips.get(position);
-        Intent intent = new Intent(getContext(), TripInfoActivity.class);
+        Intent intent = new Intent(getContext(), TripPlanActivity.class);
         startActivity(intent);
     }
 }
