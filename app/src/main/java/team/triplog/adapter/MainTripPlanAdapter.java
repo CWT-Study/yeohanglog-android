@@ -94,11 +94,11 @@ public class MainTripPlanAdapter extends RecyclerView.Adapter<MainTripPlanAdapte
 
         @Override
         public void onClick(View view) {
-            onItemClickListener.onItemClick(getAdapterPosition());
+            onItemClickListener.onItemClick(view, getAdapterPosition());
         }
     }
 
     public interface OnItemClickListener {
-        void onItemClick(int position);
+        void onItemClick(View view, int position);
     }
 }

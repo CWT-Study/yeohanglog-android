@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 import team.triplog.activity.TripPlanActivity;
 import team.triplog.adapter.MainTripPlanAdapter;
@@ -59,9 +60,18 @@ public class MainTripPlanFragment extends Fragment implements MainTripPlanAdapte
     }
 
     @Override
-    public void onItemClick(int position) {
-        trips.get(position);
+    public void onItemClick(View view, int position) {
         Intent intent = new Intent(getContext(), TripPlanActivity.class);
-        startActivity(intent);
+
+        View layoutTrip = view.findViewById(R.id.layout_trip_info);
+
+        Pair<View, String> pairItem = Pair.create(layoutTrip, layoutTrip.getTransitionName());
+
+        ActivityOptionsCompat optionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(
+                Objects.requireNonNull(getActivity()),
+                pairItem
+        );
+
+        startActivity(intent, optionsCompat.toBundle());
     }
 }
