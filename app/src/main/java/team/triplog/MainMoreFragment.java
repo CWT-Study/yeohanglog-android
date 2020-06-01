@@ -1,5 +1,7 @@
 package team.triplog;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -72,6 +74,16 @@ public class MainMoreFragment extends Fragment {
                     break;
 
                 case R.id.layout_sign_out:
+                    AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+                    builder.setTitle("로그아웃");
+                    builder.setMessage("로그아웃 하시겠습니까?");
+                    builder.setPositiveButton("예",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+                                }
+                            });
+                    builder.setNegativeButton("아니오", null);
+                    builder.show();
                     break;
             }
         }
