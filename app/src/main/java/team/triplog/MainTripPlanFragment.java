@@ -79,7 +79,7 @@ public class MainTripPlanFragment extends Fragment implements MainTripPlanAdapte
                 periodFormat.format(trip.startDate)
         ));
 
-        View layoutTrip = view.findViewById(R.id.layout_trip_info);
+        View layoutTrip = view.findViewById(R.id.layout_item);
 
         Pair<View, String> pairItem = Pair.create(layoutTrip, layoutTrip.getTransitionName());
 

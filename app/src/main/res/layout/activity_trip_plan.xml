@@ -72,7 +72,7 @@
                 android:background="@drawable/background_layout_trip"
                 android:elevation="4dp"
                 android:padding="20dp"
-                android:transitionName="layout_plan_info"
+                android:transitionName="layout_trip"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/map_view"
