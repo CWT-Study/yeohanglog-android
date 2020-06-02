@@ -26,6 +26,10 @@ public class TripPlanActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_trip_plan);
+
+        init();
+        setData();
+        setUi();
     }
 
     @Override
@@ -37,9 +41,6 @@ public class TripPlanActivity extends AppCompatActivity {
     @Override
     public void onEnterAnimationComplete() {
         super.onEnterAnimationComplete();
-        init();
-        setData();
-        setUi();
     }
 
     private void init() {
@@ -79,7 +80,7 @@ public class TripPlanActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
-            onBackPressed();
+            supportFinishAfterTransition();
             return true;
         }
         return super.onOptionsItemSelected(item);
