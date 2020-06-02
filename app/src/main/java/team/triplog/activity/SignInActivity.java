@@ -7,7 +7,6 @@ import android.view.View;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.kakao.auth.AuthType;
 import com.kakao.auth.ISessionCallback;
@@ -25,7 +24,7 @@ import team.triplog.R;
 
 public class SignInActivity extends AppCompatActivity {
     private Session session;
-    private ConstraintLayout buttonKakao;
+    private View buttonKakao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +44,7 @@ public class SignInActivity extends AppCompatActivity {
         session = Session.getCurrentSession();
         session.addCallback(sessionCallback);
 
-        buttonKakao = findViewById(R.id.button_sign_in_kakao_talk);
+        buttonKakao = findViewById(R.id.view_sign_in_kakao);
         buttonKakao.setOnClickListener(onClickListener);
     }
 
@@ -127,7 +126,7 @@ public class SignInActivity extends AppCompatActivity {
         @Override
         public void onClick(View view) {
             switch (view.getId()) {
-                case R.id.button_sign_in_kakao_talk:
+                case R.id.view_sign_in_kakao:
                     session.open(AuthType.KAKAO_LOGIN_ALL, SignInActivity.this);
                     break;
             }
