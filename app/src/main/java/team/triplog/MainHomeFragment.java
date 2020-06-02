@@ -76,12 +76,7 @@ public class MainHomeFragment extends Fragment {
         recyclerLookBack.setAdapter(homeAdapter);
         recyclerLookBack.setNestedScrollingEnabled(false);
 
-        scrollView.post(new Runnable() {
-            @Override
-            public void run() {
-                scrollView.scrollTo(0, 0);
-            }
-        });
+        scrollView.post(() -> scrollView.scrollTo(0, 0));
     }
 
     private void setUi() {
