@@ -37,7 +37,7 @@
         <item name="android:textColor">@color/main_home_user_name</item>
         <item name="android:text">TEXT_USER_NAME</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textSize">35dp</item>
+        <item name="android:textSize">@dimen/size_30</item>
         <item name="android:maxLines">2</item>
         <item name="android:ellipsize">end</item>
     </style>
@@ -46,14 +46,14 @@
         <item name="android:textColor">@color/main_home_welcome</item>
         <item name="android:text">@string/main_home_welcome</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textSize">25dp</item>
+        <item name="android:textSize">@dimen/size_20</item>
     </style>
 
     <style name="text_main_home_trip_title">
         <item name="android:textColor">@color/main_home_trip_title</item>
         <item name="android:text">TEXT_TRIP_TITLE</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textSize">16dp</item>
+        <item name="android:textSize">14dp</item>
         <item name="android:ellipsize">end</item>
         <item name="android:maxLines">1</item>
     </style>
@@ -61,7 +61,7 @@
     <style name="text_main_home_trip_day">
         <item name="android:textColor">@color/main_home_trip_day</item>
         <item name="android:text">TEXT_TRIP_DAY</item>
-        <item name="android:textSize">16dp</item>
+        <item name="android:textSize">14dp</item>
     </style>
 
     <style name="text_main_home_trip_period">
@@ -74,7 +74,7 @@
         <item name="android:textColor">@color/main_home_look_back</item>
         <item name="android:text">@string/main_home_look_back</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textSize">24dp</item>
+        <item name="android:textSize">20dp</item>
     </style>
 
     <style name="search_view">
@@ -381,7 +381,7 @@
         <item name="android:text">@string/main_home_no_contents_title</item>
         <item name="android:textStyle">bold</item>
         <item name="android:gravity">center</item>
-        <item name="android:textSize">16dp</item>
+        <item name="android:textSize">14dp</item>
     </style>
 
     <style name="main_home_no_contents_message">
@@ -389,7 +389,7 @@
         <item name="android:text">@string/main_home_no_contents_message</item>
         <item name="android:textStyle">normal</item>
         <item name="android:gravity">center</item>
-        <item name="android:textSize">14dp</item>
+        <item name="android:textSize">12dp</item>
     </style>
 
     <style name="trip_plan_info_title">
