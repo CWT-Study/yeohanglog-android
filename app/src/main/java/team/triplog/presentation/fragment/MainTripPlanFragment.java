@@ -46,7 +46,7 @@ public class MainTripPlanFragment extends Fragment implements MainTripPlanAdapte
         groupNoContents = rootView.findViewById(R.id.group_no_contents);
         recyclerTripPlan = rootView.findViewById(R.id.recycler_trip_plan);
 
-        // TEST 코드
+        // TODO : Test code
         trips.add(new Trip());
         trips.add(new Trip());
         trips.add(new Trip());

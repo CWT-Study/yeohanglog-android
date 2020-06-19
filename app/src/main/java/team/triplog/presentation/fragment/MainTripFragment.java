@@ -42,7 +42,6 @@ public class MainTripFragment extends Fragment {
         buttonPlus.setOnClickListener(onClickListener);
     }
 
-
     private void initViewpager() {
         PagerAdapter adapter = new MainTripAdapter(getActivity().getSupportFragmentManager(), tabLayout.getTabCount());
         viewPager.setAdapter(adapter);
@@ -63,15 +62,12 @@ public class MainTripFragment extends Fragment {
         });
     }
 
-    private View.OnClickListener onClickListener = new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            switch (view.getId()) {
-                case R.id.button_plus:
-                    Intent intent = new Intent(getContext(), TripInfoActivity.class);
-                    startActivity(intent);
-                    break;
-            }
+    private View.OnClickListener onClickListener = view -> {
+        switch (view.getId()) {
+            case R.id.button_plus:
+                Intent intent = new Intent(getContext(), TripInfoActivity.class);
+                startActivity(intent);
+                break;
         }
     };
 }

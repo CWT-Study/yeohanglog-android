@@ -1,7 +1,6 @@
 package team.triplog.presentation.activity;
 
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.widget.FrameLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,11 +9,11 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import team.triplog.R;
 import team.triplog.presentation.fragment.MainHomeFragment;
 import team.triplog.presentation.fragment.MainMoreFragment;
 import team.triplog.presentation.fragment.MainSearchFragment;
 import team.triplog.presentation.fragment.MainTripFragment;
-import team.triplog.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -53,25 +52,22 @@ public class MainActivity extends AppCompatActivity {
     }
 
     BottomNavigationView.OnNavigationItemSelectedListener onNavigationItemSelectedListener =
-            new BottomNavigationView.OnNavigationItemSelectedListener() {
-                @Override
-                public boolean onNavigationItemSelected(MenuItem menuItem) {
-                    menuItem.setChecked(true);
-                    switch (menuItem.getItemId()) {
-                        case R.id.navigation_home:
-                            fragmentChange(new MainHomeFragment());
-                            break;
-                        case R.id.navigation_trip:
-                            fragmentChange(new MainTripFragment());
-                            break;
-                        case R.id.navigation_search:
-                            fragmentChange(new MainSearchFragment());
-                            break;
-                        case R.id.navigation_more:
-                            fragmentChange(new MainMoreFragment());
-                            break;
-                    }
-                    return false;
+            menuItem -> {
+                menuItem.setChecked(true);
+                switch (menuItem.getItemId()) {
+                    case R.id.navigation_home:
+                        fragmentChange(new MainHomeFragment());
+                        break;
+                    case R.id.navigation_trip:
+                        fragmentChange(new MainTripFragment());
+                        break;
+                    case R.id.navigation_search:
+                        fragmentChange(new MainSearchFragment());
+                        break;
+                    case R.id.navigation_more:
+                        fragmentChange(new MainMoreFragment());
+                        break;
                 }
+                return false;
             };
 }

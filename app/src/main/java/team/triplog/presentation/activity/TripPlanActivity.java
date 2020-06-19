@@ -86,22 +86,19 @@ public class TripPlanActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private View.OnClickListener onClickListener = new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            switch (view.getId()) {
-                case R.id.button_account:
-                    break;
+    private View.OnClickListener onClickListener = view -> {
+        switch (view.getId()) {
+            case R.id.button_account:
+                break;
 
-                case R.id.button_check:
-                    break;
+            case R.id.button_check:
+                break;
 
-                case R.id.button_member:
-                    break;
+            case R.id.button_member:
+                break;
 
-                case R.id.button_photo:
-                    break;
-            }
+            case R.id.button_photo:
+                break;
         }
     };
 }

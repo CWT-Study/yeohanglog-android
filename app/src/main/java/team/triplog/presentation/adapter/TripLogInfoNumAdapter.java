@@ -41,17 +41,13 @@ public class TripLogInfoNumAdapter extends RecyclerView.Adapter<TripLogInfoNumAd
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         TripLogInfo tripLog = tripLogs.get(position);
-        if (position == 0){
+        if (position == 0) {
             holder.viewFirst.setVisibility(View.GONE);
         }
 
-        if (position == tripLogs.size()-1){
+        if (position == tripLogs.size() - 1) {
             holder.viewLast.setVisibility(View.GONE);
         }
-
-
-
-
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder {
@@ -61,8 +57,8 @@ public class TripLogInfoNumAdapter extends RecyclerView.Adapter<TripLogInfoNumAd
 
         ViewHolder(View view) {
             super(view);
-            viewFirst =  view.findViewById(R.id.view_first);
-            viewLast =  view.findViewById(R.id.view_last);
+            viewFirst = view.findViewById(R.id.view_first);
+            viewLast = view.findViewById(R.id.view_last);
             tripLogInfoNum = view.findViewById(R.id.trip_log_info_num);
 
         }

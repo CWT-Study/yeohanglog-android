@@ -2,31 +2,30 @@ package team.triplog.presentation.activity;
 
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
+
+import java.util.ArrayList;
+
 import team.triplog.R;
+import team.triplog.entity.TripLogInfo;
+import team.triplog.entity.TripLogInfoChat;
 import team.triplog.presentation.adapter.TripLogInfoChatAdapter;
 import team.triplog.presentation.adapter.TripLogInfoNumAdapter;
 import team.triplog.presentation.adapter.TripLogInfoViewPagerAdapter;
-import team.triplog.entity.TripLogInfo;
-import team.triplog.entity.TripLogInfoChat;
 
 public class TripLogInfoActivity extends AppCompatActivity {
 
     TextView textTitle;
     TextView textTripLogInfoDay;
     RecyclerView recyclerViewNum;
-    ViewPager2 viewPager2;
+    ViewPager2 viewPager;
     RecyclerView recyclerViewChat;
     EditText editTripLogInfo;
 
@@ -50,14 +49,13 @@ public class TripLogInfoActivity extends AppCompatActivity {
         setData();
         setUi();
         setListener();
-        setasdas();
     }
 
     private void init() {
         textTitle = findViewById(R.id.text_title);
         textTripLogInfoDay = findViewById(R.id.text_trip_log_info_day);
         recyclerViewNum = findViewById(R.id.recyclerView_num);
-        viewPager2 = findViewById(R.id.viewpager);
+        viewPager = findViewById(R.id.viewpager);
         recyclerViewChat = findViewById(R.id.recyclerView_chat);
         editTripLogInfo = findViewById(R.id.edit_trip_log_info);
 
@@ -74,9 +72,7 @@ public class TripLogInfoActivity extends AppCompatActivity {
     }
 
     private void setData() {
-
-
-        tripLogInfos.add(new TripLogInfo()) ;
+        // TODO : Test code
         tripLogInfos.add(new TripLogInfo());
         tripLogInfos.add(new TripLogInfo());
         tripLogInfos.add(new TripLogInfo());
@@ -84,60 +80,49 @@ public class TripLogInfoActivity extends AppCompatActivity {
         tripLogInfos.add(new TripLogInfo());
         tripLogInfos.add(new TripLogInfo());
         tripLogInfos.add(new TripLogInfo());
-
-
-
+        tripLogInfos.add(new TripLogInfo());
         tripLogInfoChats.add(new TripLogInfoChat());
         tripLogInfoChats.add(new TripLogInfoChat());
-
 
         tripLogInfoViewPagerAdapter = new TripLogInfoViewPagerAdapter(getApplicationContext(), tripLogInfos);
         tripLogInfoNumAdapter = new TripLogInfoNumAdapter(getApplicationContext(), tripLogInfos);
         tripLogInfoChatAdapter = new TripLogInfoChatAdapter(getApplicationContext(), tripLogInfoChats);
 
-
-        viewPager2.setAdapter(tripLogInfoViewPagerAdapter);
+        viewPager.setAdapter(tripLogInfoViewPagerAdapter);
         recyclerViewNum.setAdapter(tripLogInfoNumAdapter);
-
-
 
 
         recyclerViewChat.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         recyclerViewChat.setAdapter(tripLogInfoChatAdapter);
 
 
-
-
     }
 
-    private void setUi(){
-        viewPager2.setOrientation(ViewPager2.ORIENTATION_HORIZONTAL);
-        viewPager2.setOffscreenPageLimit(3);
+    private void setUi() {
+        viewPager.setOrientation(ViewPager2.ORIENTATION_HORIZONTAL);
+        viewPager.setOffscreenPageLimit(3);
         final float pageMargin = 180;
         final float pageOffset = 180;
 
-        viewPager2.setPageTransformer(new ViewPager2.PageTransformer() {
-            @Override
-            public void transformPage(@NonNull View page, float position) {
-                float myoffset = position * -(2 * pageOffset+pageMargin);
-                if (position< -1){
-                    page.setTranslationX(-myoffset);
-                }else if (position <=1){
-                    float scaleFactor = Math.max(0.7F, (float)1 - Math.abs(position - 0.14285715F));
-                    page.setTranslationX(myoffset);
-                    page.setScaleY(scaleFactor);
-                    page.setAlpha(scaleFactor);
-                }else{
-                    page.setAlpha(0f);
-                    page.setTranslationX(myoffset);
-                }
+        viewPager.setPageTransformer((page, position) -> {
+            float myOffset = position * -(2 * pageOffset + pageMargin);
+            if (position < -1) {
+                page.setTranslationX(-myOffset);
+            } else if (position <= 1) {
+                float scaleFactor = Math.max(0.7F, (float) 1 - Math.abs(position - 0.14285715F));
+                page.setTranslationX(myOffset);
+                page.setScaleY(scaleFactor);
+                page.setAlpha(scaleFactor);
+            } else {
+                page.setAlpha(0f);
+                page.setTranslationX(myOffset);
             }
         });
     }
 
 
-    private void setListener(){
-        viewPager2.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
+    private void setListener() {
+        viewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
                 super.onPageScrolled(position, positionOffset, positionOffsetPixels);
@@ -155,9 +140,5 @@ public class TripLogInfoActivity extends AppCompatActivity {
                 super.onPageScrollStateChanged(state);
             }
         });
-    }
-
-    private void setasdas(){
-
     }
 }

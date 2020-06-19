@@ -16,8 +16,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 import team.triplog.R;
-import team.triplog.presentation.adapter.MainHomeAdapter;
 import team.triplog.entity.TripLog;
+import team.triplog.presentation.adapter.MainHomeAdapter;
 
 public class MainHomeFragment extends Fragment {
     private View rootView;

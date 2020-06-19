@@ -33,17 +33,13 @@ public class KakaoSessionCallback implements ISessionCallback {
 
                         UserAccount kakaoAccount = result.getKakaoAccount();
                         if (kakaoAccount != null) {
-
-                            // 이메일
                             String email = kakaoAccount.getEmail();
 
                             if (email != null) {
                                 Log.i("KAKAO_API", "email: " + email);
-
                             } else if (kakaoAccount.emailNeedsAgreement() == OptionalBoolean.TRUE) {
                                 // 동의 요청 후 이메일 획득 가능
                                 // 단, 선택 동의로 설정되어 있다면 서비스 이용 시나리오 상에서 반드시 필요한 경우에만 요청해야 합니다.
-
                             } else {
                                 // 이메일 획득 불가
                             }

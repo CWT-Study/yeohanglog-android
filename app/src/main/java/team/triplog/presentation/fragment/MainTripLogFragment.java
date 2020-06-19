@@ -14,9 +14,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 import team.triplog.R;
+import team.triplog.entity.TripLog;
 import team.triplog.presentation.activity.TripLogActivity;
 import team.triplog.presentation.adapter.MainTripLogAdapter;
-import team.triplog.entity.TripLog;
 
 public class MainTripLogFragment extends Fragment {
     private View rootView;
@@ -38,7 +38,7 @@ public class MainTripLogFragment extends Fragment {
     private void init() {
         recyclerTripLog = rootView.findViewById(R.id.recycler_trip_log);
 
-        // TEST code
+        // TODO : Test code
         TripLog tripLog = new TripLog();
         tripLog.title = "테수트1";
         tripLog.drawbleId = R.drawable.ic_launcher_background;
@@ -67,20 +67,17 @@ public class MainTripLogFragment extends Fragment {
         }
     }
 
-    private View.OnClickListener onClickListener = new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            switch (view.getId()) {
-                case R.id.layout_main:
-                    if (view.getTag() == null) {
-                        Toast.makeText(getContext(), "새로운 아이템 등록", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(getContext(), TripLogActivity.class);
-                        startActivity(intent);
-                    } else {
-                        Toast.makeText(getContext(), "기존 아이템", Toast.LENGTH_SHORT).show();
-                    }
-                    break;
-            }
+    private View.OnClickListener onClickListener = view -> {
+        switch (view.getId()) {
+            case R.id.layout_main:
+                if (view.getTag() == null) {
+                    Toast.makeText(getContext(), "새로운 아이템 등록", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(getContext(), TripLogActivity.class);
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(getContext(), "기존 아이템", Toast.LENGTH_SHORT).show();
+                }
+                break;
         }
     };
 }

@@ -16,8 +16,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 import team.triplog.R;
-import team.triplog.presentation.activity.TripLogInfoActivity;
 import team.triplog.entity.TripLog;
+import team.triplog.presentation.activity.TripLogInfoActivity;
 
 public class TripLogContentAdapter extends RecyclerView.Adapter<TripLogContentAdapter.ViewHolder> {
     private ArrayList<TripLog> tripLogs;
@@ -73,19 +73,15 @@ public class TripLogContentAdapter extends RecyclerView.Adapter<TripLogContentAd
             text_title = v.findViewById(R.id.text_trip_name);
             viewTrip = v.findViewById(R.id.view_trip);
 
-            //item click event
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    int pos = getAdapterPosition();
-                    if (pos != RecyclerView.NO_POSITION) {
-                        if (pos == 0) {
-                            Toast.makeText(context, "새로운 아이템 등록", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(context, TripLogInfoActivity.class);
-                            context.startActivity(intent);
-                        } else {
-                            Toast.makeText(context, "기존 아이템", Toast.LENGTH_SHORT).show();
-                        }
+            itemView.setOnClickListener(view -> {
+                int pos = getAdapterPosition();
+                if (pos != RecyclerView.NO_POSITION) {
+                    if (pos == 0) {
+                        Toast.makeText(context, "새로운 아이템 등록", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(context, TripLogInfoActivity.class);
+                        context.startActivity(intent);
+                    } else {
+                        Toast.makeText(context, "기존 아이템", Toast.LENGTH_SHORT).show();
                     }
                 }
             });
