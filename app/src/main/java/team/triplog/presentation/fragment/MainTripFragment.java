@@ -1,4 +1,4 @@
-package team.triplog;
+package team.triplog.presentation.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,9 +13,9 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.tabs.TabLayout;
 
-import java.util.ArrayList;
-
-import team.triplog.activity.TripInfoActivity;
+import team.triplog.R;
+import team.triplog.presentation.activity.TripInfoActivity;
+import team.triplog.presentation.adapter.MainTripAdapter;
 
 public class MainTripFragment extends Fragment {
 

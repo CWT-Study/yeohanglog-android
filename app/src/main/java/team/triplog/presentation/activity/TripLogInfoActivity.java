@@ -1,4 +1,4 @@
-package team.triplog.activity;
+package team.triplog.presentation.activity;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -15,9 +15,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 import team.triplog.R;
-import team.triplog.adapter.TripLogInfoChatAdapter;
-import team.triplog.adapter.TripLogInfoNumAdapter;
-import team.triplog.adapter.TripLogInfoViewPagerAdapter;
+import team.triplog.presentation.adapter.TripLogInfoChatAdapter;
+import team.triplog.presentation.adapter.TripLogInfoNumAdapter;
+import team.triplog.presentation.adapter.TripLogInfoViewPagerAdapter;
 import team.triplog.entity.TripLogInfo;
 import team.triplog.entity.TripLogInfoChat;
 

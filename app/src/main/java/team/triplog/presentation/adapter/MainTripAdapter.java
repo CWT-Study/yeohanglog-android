@@ -1,8 +1,11 @@
-package team.triplog;
+package team.triplog.presentation.adapter;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
+
+import team.triplog.presentation.fragment.MainTripLogFragment;
+import team.triplog.presentation.fragment.MainTripPlanFragment;
 
 public class MainTripAdapter extends FragmentStatePagerAdapter {
 
@@ -17,11 +20,9 @@ public class MainTripAdapter extends FragmentStatePagerAdapter {
     public Fragment getItem(int position) {
         switch (position) {
             case 0:
-                MainTripPlanFragment tabPlan = new MainTripPlanFragment();
-                return tabPlan;
+                return new MainTripPlanFragment();
             case 1:
-                MainTripLogFragment tabLog = new MainTripLogFragment();
-                return tabLog;
+                return new MainTripLogFragment();
             default:
                 return null;
         }

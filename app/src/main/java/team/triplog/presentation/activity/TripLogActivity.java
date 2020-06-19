@@ -1,4 +1,4 @@
-package team.triplog.activity;
+package team.triplog.presentation.activity;
 
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -12,8 +12,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 import team.triplog.R;
-import team.triplog.adapter.TripLogAdapter;
-import team.triplog.adapter.TripLogContentAdapter;
+import team.triplog.presentation.adapter.TripLogAdapter;
+import team.triplog.presentation.adapter.TripLogContentAdapter;
 import team.triplog.entity.TripLog;
 
 public class TripLogActivity extends AppCompatActivity {

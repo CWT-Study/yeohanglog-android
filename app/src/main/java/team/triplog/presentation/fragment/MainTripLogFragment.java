@@ -1,4 +1,4 @@
-package team.triplog;
+package team.triplog.presentation.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,8 +13,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-import team.triplog.activity.TripLogActivity;
-import team.triplog.adapter.MainTripLogAdapter;
+import team.triplog.R;
+import team.triplog.presentation.activity.TripLogActivity;
+import team.triplog.presentation.adapter.MainTripLogAdapter;
 import team.triplog.entity.TripLog;
 
 public class MainTripLogFragment extends Fragment {

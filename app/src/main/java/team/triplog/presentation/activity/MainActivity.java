@@ -1,4 +1,4 @@
-package team.triplog.activity;
+package team.triplog.presentation.activity;
 
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -10,10 +10,10 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import team.triplog.MainHomeFragment;
-import team.triplog.MainMoreFragment;
-import team.triplog.MainSearchFragment;
-import team.triplog.MainTripFragment;
+import team.triplog.presentation.fragment.MainHomeFragment;
+import team.triplog.presentation.fragment.MainMoreFragment;
+import team.triplog.presentation.fragment.MainSearchFragment;
+import team.triplog.presentation.fragment.MainTripFragment;
 import team.triplog.R;
 
 public class MainActivity extends AppCompatActivity {

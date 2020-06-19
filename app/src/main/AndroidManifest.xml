@@ -24,7 +24,7 @@
             />
 
         <activity
-            android:name=".activity.SplashActivity"
+            android:name=".presentation.activity.SplashActivity"
             android:screenOrientation="portrait"
             >
             <intent-filter>
@@ -36,43 +36,43 @@
         </activity>
 
         <activity
-            android:name=".activity.SignInActivity"
+            android:name=".presentation.activity.SignInActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan|stateAlwaysHidden"
             />
 
         <activity
-            android:name=".activity.MainActivity"
+            android:name=".presentation.activity.MainActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan|stateAlwaysHidden"
             />
 
         <activity
-            android:name=".activity.MoreUserActivity"
+            android:name=".presentation.activity.MoreUserActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan|stateAlwaysHidden"
             />
 
         <activity
-            android:name=".activity.TripInfoActivity"
+            android:name=".presentation.activity.TripInfoActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan|stateAlwaysHidden"
             />
 
         <activity
-            android:name=".activity.TripPlanActivity"
+            android:name=".presentation.activity.TripPlanActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan|stateAlwaysHidden"
             />
 
         <activity
-            android:name=".activity.TripLogActivity"
+            android:name=".presentation.activity.TripLogActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan|stateAlwaysHidden"
             />
 
         <activity
-            android:name=".activity.TripLogInfoActivity"
+            android:name=".presentation.activity.TripLogInfoActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan|stateAlwaysHidden"
             />

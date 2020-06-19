@@ -1,4 +1,4 @@
-package team.triplog;
+package team.triplog.presentation.fragment;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -16,8 +16,10 @@ import androidx.fragment.app.Fragment;
 import com.kakao.usermgmt.UserManagement;
 import com.kakao.usermgmt.callback.LogoutResponseCallback;
 
-import team.triplog.activity.MoreUserActivity;
-import team.triplog.activity.SignInActivity;
+import team.triplog.BuildConfig;
+import team.triplog.R;
+import team.triplog.presentation.activity.MoreUserActivity;
+import team.triplog.presentation.activity.SignInActivity;
 
 public class MainMoreFragment extends Fragment {
     private View rootView;

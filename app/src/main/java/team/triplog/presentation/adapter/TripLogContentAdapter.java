@@ -1,4 +1,4 @@
-package team.triplog.adapter;
+package team.triplog.presentation.adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -16,7 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 import team.triplog.R;
-import team.triplog.activity.TripLogInfoActivity;
+import team.triplog.presentation.activity.TripLogInfoActivity;
 import team.triplog.entity.TripLog;
 
 public class TripLogContentAdapter extends RecyclerView.Adapter<TripLogContentAdapter.ViewHolder> {

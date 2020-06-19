@@ -1,4 +1,4 @@
-package team.triplog;
+package team.triplog.presentation.fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -15,7 +15,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-import team.triplog.adapter.MainHomeAdapter;
+import team.triplog.R;
+import team.triplog.presentation.adapter.MainHomeAdapter;
 import team.triplog.entity.TripLog;
 
 public class MainHomeFragment extends Fragment {

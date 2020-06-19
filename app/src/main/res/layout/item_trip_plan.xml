@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_layout_trip"
-    tools:context=".activity.MainActivity"
+    tools:context=".presentation.activity.MainActivity"
     >
 
     <androidx.constraintlayout.widget.ConstraintLayout

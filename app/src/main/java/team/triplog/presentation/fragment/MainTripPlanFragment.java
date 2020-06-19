@@ -1,4 +1,4 @@
-package team.triplog;
+package team.triplog.presentation.fragment;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -18,8 +18,9 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Objects;
 
-import team.triplog.activity.TripPlanActivity;
-import team.triplog.adapter.MainTripPlanAdapter;
+import team.triplog.R;
+import team.triplog.presentation.activity.TripPlanActivity;
+import team.triplog.presentation.adapter.MainTripPlanAdapter;
 import team.triplog.entity.Trip;
 
 @SuppressLint("SimpleDateFormat")
