@@ -38,8 +38,9 @@ dependencies {
     implementation group: project.KAKAO_SDK_GROUP, name: 'usermgmt', version: project.KAKAO_SDK_VERSION
 
     // Retrofit2
-    implementation group: 'com.squareup.retrofit2', name: 'retrofit', version: '2.7.1'
-    implementation group: 'com.squareup.retrofit2', name: 'converter-gson', version: '2.6.4'
+    implementation "com.squareup.retrofit2:retrofit:2.7.1"
+    implementation "com.squareup.retrofit2:converter-gson:2.6.4"
+    implementation "com.squareup.okhttp3:logging-interceptor:4.0.0"
 
     // Glide
     def glide_version = "4.11.0"
