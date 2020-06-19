@@ -11,7 +11,7 @@ public class MainTripAdapter extends FragmentStatePagerAdapter {
 
     int tabCount;
 
-    MainTripAdapter(FragmentManager fm, int tabCount) {
+    public MainTripAdapter(FragmentManager fm, int tabCount) {
         super(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
         this.tabCount = tabCount;
     }
