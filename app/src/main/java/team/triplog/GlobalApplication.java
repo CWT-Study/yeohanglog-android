@@ -10,6 +10,8 @@ import com.kakao.auth.ISessionConfig;
 import com.kakao.auth.KakaoAdapter;
 import com.kakao.auth.KakaoSDK;
 
+import team.triplog.data.local.base.RealmManager;
+
 public class GlobalApplication extends Application {
     private static GlobalApplication instance;
 
@@ -27,6 +29,7 @@ public class GlobalApplication extends Application {
         instance = this;
 
         KakaoSDK.init(new KakaoSDKAdapter());
+        RealmManager.setRealmConfig(this);
     }
 
     @Override
