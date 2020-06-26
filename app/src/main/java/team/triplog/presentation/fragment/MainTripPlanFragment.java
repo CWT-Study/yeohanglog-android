@@ -21,7 +21,7 @@ import java.util.Objects;
 import team.triplog.R;
 import team.triplog.presentation.activity.TripPlanActivity;
 import team.triplog.presentation.adapter.MainTripPlanAdapter;
-import team.triplog.entity.Trip;
+import team.triplog.domain.entity.Trip;
 
 @SuppressLint("SimpleDateFormat")
 public class MainTripPlanFragment extends Fragment implements MainTripPlanAdapter.OnItemClickListener {

@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 import team.triplog.R;
-import team.triplog.entity.TripLogInfo;
+import team.triplog.domain.entity.TripLogInfo;
 
 public class TripLogInfoViewPagerAdapter extends RecyclerView.Adapter<TripLogInfoViewPagerAdapter.MyViewHolder> {
     private Context context;

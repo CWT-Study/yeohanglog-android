@@ -1,4 +1,4 @@
-package team.triplog.entity;
+package team.triplog.domain.entity;
 
 import java.util.Date;
 

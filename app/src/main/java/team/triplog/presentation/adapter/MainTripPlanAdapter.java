@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.Locale;
 
 import team.triplog.R;
-import team.triplog.entity.Trip;
+import team.triplog.domain.entity.Trip;
 
 @SuppressLint("SimpleDateFormat")
 public class MainTripPlanAdapter extends RecyclerView.Adapter<MainTripPlanAdapter.ViewHolder> {

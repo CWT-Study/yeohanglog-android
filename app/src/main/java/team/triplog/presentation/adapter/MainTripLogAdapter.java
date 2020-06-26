@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 import team.triplog.R;
-import team.triplog.entity.TripLog;
+import team.triplog.domain.entity.TripLog;
 
 public class MainTripLogAdapter extends RecyclerView.Adapter<MainTripLogAdapter.ViewHolder> {
     private Context context;

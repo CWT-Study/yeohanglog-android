@@ -1,4 +1,4 @@
-package team.triplog.entity;
+package team.triplog.domain.entity;
 
 public class TripLog {
     public int drawbleId;

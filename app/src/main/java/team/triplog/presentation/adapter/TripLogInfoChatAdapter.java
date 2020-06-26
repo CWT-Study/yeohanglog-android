@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import team.triplog.R;
-import team.triplog.entity.TripLogInfoChat;
+import team.triplog.domain.entity.TripLogInfoChat;
 
 public class TripLogInfoChatAdapter  extends RecyclerView.Adapter<TripLogInfoChatAdapter.ViewHolder> {
     private ArrayList<TripLogInfoChat> tripLogInfoChats;
