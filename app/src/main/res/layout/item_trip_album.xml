@@ -10,6 +10,7 @@
         android:id="@+id/view_album"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:background="@color/gray_999999"
         android:layout_margin="@dimen/size_3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintDimensionRatio="1"

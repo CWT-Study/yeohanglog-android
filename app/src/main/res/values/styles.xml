@@ -424,4 +424,12 @@
         <item name="android:maxLines">1</item>
     </style>
 
+    <style name="trip_album_no_contents">
+        <item name="android:textColor">@color/trip_album_no_contents</item>
+        <item name="android:text">@string/trip_album_no_contents</item>
+        <item name="android:textSize">@dimen/size_12</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:gravity">center</item>
+    </style>
+
 </resources>

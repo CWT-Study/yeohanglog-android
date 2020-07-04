@@ -51,6 +51,7 @@
     <color name="sign_in_button">@color/gray_494949</color>
     <color name="trip_account_total_title">@color/gray_666666</color>
     <color name="trip_account_total">@color/black_000000</color>
+    <color name="trip_album_no_contents">@color/black_000000</color>
 
     <!-- Palette colors -->
     <color name="transparent">#00000000</color>

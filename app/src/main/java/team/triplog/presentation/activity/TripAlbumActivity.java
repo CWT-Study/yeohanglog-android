@@ -3,6 +3,7 @@ package team.triplog.presentation.activity;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -21,6 +22,7 @@ public class TripAlbumActivity extends AppCompatActivity implements TripAlbumAda
     private Toolbar toolbar;
     private RecyclerView recyclerImage;
     private ConstraintLayout buttonAdd;
+    private TextView textNoContents;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +38,7 @@ public class TripAlbumActivity extends AppCompatActivity implements TripAlbumAda
         toolbar = findViewById(R.id.toolbar);
         recyclerImage = findViewById(R.id.recycler_image);
         buttonAdd = findViewById(R.id.button_add);
+        textNoContents = findViewById(R.id.text_no_contents);
 
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) {
@@ -50,22 +53,27 @@ public class TripAlbumActivity extends AppCompatActivity implements TripAlbumAda
     }
 
     private void setData() {
-        // TODO : Test code
-        imageList.add("");
-        imageList.add("");
-        imageList.add("");
-        imageList.add("");
 
-        tripAlbumAdapter.setItems(imageList);
     }
 
     private void setUi() {
+        updateImageList();
     }
 
     private void initImageList() {
         tripAlbumAdapter = new TripAlbumAdapter(this, imageList, this);
         recyclerImage.setLayoutManager(new GridLayoutManager(getApplicationContext(), 3));
         recyclerImage.setAdapter(tripAlbumAdapter);
+        recyclerImage.setNestedScrollingEnabled(false);
+    }
+
+    private void updateImageList() {
+        tripAlbumAdapter.setItems(imageList);
+        checkEmptyList();
+    }
+
+    private void checkEmptyList() {
+        textNoContents.setVisibility(imageList.isEmpty() ? View.VISIBLE : View.INVISIBLE);
     }
 
     private View.OnClickListener onClickListener = view -> {
