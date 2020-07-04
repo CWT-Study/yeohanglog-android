@@ -83,6 +83,14 @@ public class TripPlanActivity extends AppCompatActivity {
     }
 
     private void setData() {
+        //더미데이터ㅎㅎ
+        items.add("TEST_DAY1");
+        items.add("TEST_DAY2");
+        items.add("TEST_DAY3");
+        items.add("TEST_DAY4");
+        items.add("TEST_DAY5");
+
+        planDayAdapter.setItems(items);
     }
 
     private void setUi() {
