@@ -411,4 +411,17 @@
         <item name="android:textSize">12dp</item>
     </style>
 
+    <style name="trip_account_total_title">
+        <item name="android:textColor">@color/trip_account_total_title</item>
+        <item name="android:textSize">@dimen/size_10</item>
+    </style>
+
+    <style name="trip_account_total">
+        <item name="android:textColor">@color/trip_account_total</item>
+        <item name="android:textSize">@dimen/size_20</item>
+        <item name="android:text">TEXT_TOTAL</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
 </resources>

@@ -2,14 +2,17 @@ package team.triplog.presentation.activity;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import team.triplog.R;
+import team.triplog.presentation.util.TextCountAnimation;
 
 public class TripAccountActivity extends AppCompatActivity {
     private Toolbar toolbar;
+    private TextView textTotal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +26,7 @@ public class TripAccountActivity extends AppCompatActivity {
 
     private void init() {
         toolbar = findViewById(R.id.toolbar);
+        textTotal = findViewById(R.id.text_total);
 
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) {
@@ -36,6 +40,10 @@ public class TripAccountActivity extends AppCompatActivity {
     }
 
     private void setUi() {
+        // TODO : 임시로 1,000 을 주도록 설정
+        // TODO : 이후 실제 데이터로 변경 필요.
+
+        textTotal.startAnimation(new TextCountAnimation(textTotal, 1000));
     }
 
     @Override
