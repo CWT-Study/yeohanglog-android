@@ -80,9 +80,8 @@ public class MainTripPlanFragment extends Fragment implements MainTripPlanAdapte
                 periodFormat.format(trip.startDate)
         ));
 
-        View layoutTrip = view.findViewById(R.id.layout_item);
-
-        Pair<View, String> pairItem = Pair.create(layoutTrip, layoutTrip.getTransitionName());
+        View viewTrip = view.findViewById(R.id.view_trip);
+        Pair<View, String> pairItem = Pair.create(viewTrip, viewTrip.getTransitionName());
 
         ActivityOptionsCompat optionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(
                 Objects.requireNonNull(getActivity()),
