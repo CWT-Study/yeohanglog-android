@@ -37,20 +37,34 @@ public class TripPlanDayAdapter extends RecyclerView.Adapter<TripPlanDayAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        // TODO : entity 필드와 연결시키기
+
         String item = items.get(position);
         holder.textDay.setText(item);
 
-//        LinearLayoutManager layoutManager = new LinearLayoutManager(context);
-//
-//        planAdapter = new TripPlanAdapter(context, items);
-//        holder.recyclerTripPlanDay.setLayoutManager(layoutManager);
-//        holder.recyclerTripPlanDay.setAdapter(planAdapter);
-//        holder.recyclerTripPlanDay.setNestedScrollingEnabled(false);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(context);
+
+        planAdapter = new TripPlanAdapter(context, items);
+        holder.recyclerTripPlanDay.setLayoutManager(layoutManager);
+        holder.recyclerTripPlanDay.setAdapter(planAdapter);
+        holder.recyclerTripPlanDay.setNestedScrollingEnabled(false);
     }
+
 
     @Override
     public int getItemCount() {
         return items.size();
+    }
+
+    private void setData() {
+        //더미데이터ㅎㅎ
+        items.add("TEST_LOCATION1");
+        items.add("TEST_LOCATION2");
+        items.add("TEST_LOCATION3");
+        items.add("TEST_LOCATION4");
+        items.add("TEST_LOCATION5");
+
+        planAdapter.setItems(items);
     }
 
     public void setItems(ArrayList<String> items) {

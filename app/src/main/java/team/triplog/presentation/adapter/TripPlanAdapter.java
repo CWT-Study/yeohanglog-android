@@ -15,7 +15,7 @@ import team.triplog.R;
 
 public class TripPlanAdapter extends RecyclerView.Adapter<TripPlanAdapter.ViewHolder> {
     private Context context;
-    private ArrayList<String> items = new ArrayList<>();
+    private ArrayList<String> items;
 
     public TripPlanAdapter(Context context, ArrayList<String> items) {
         this.context = context;
@@ -35,11 +35,19 @@ public class TripPlanAdapter extends RecyclerView.Adapter<TripPlanAdapter.ViewHo
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         // TODO : entity 필드와 연결시키기
+
+        String item = items.get(position);
+        holder.textLocation.setText(item);
     }
 
     @Override
     public int getItemCount() {
         return items.size();
+    }
+
+    public void setItems(ArrayList<String> items) {
+        this.items = items;
+        notifyDataSetChanged();
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder {
