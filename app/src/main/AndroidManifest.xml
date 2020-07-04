@@ -77,6 +77,12 @@
             android:windowSoftInputMode="adjustPan|stateAlwaysHidden"
             />
 
+        <activity
+            android:name=".presentation.activity.TripAccountActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden"
+            />
+
     </application>
 
 </manifest>

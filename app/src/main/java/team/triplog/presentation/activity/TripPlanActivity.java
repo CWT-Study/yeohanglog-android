@@ -89,6 +89,8 @@ public class TripPlanActivity extends AppCompatActivity {
     private View.OnClickListener onClickListener = view -> {
         switch (view.getId()) {
             case R.id.button_account:
+                Intent intent = new Intent(this, TripAccountActivity.class);
+                startActivity(intent);
                 break;
 
             case R.id.button_check:
