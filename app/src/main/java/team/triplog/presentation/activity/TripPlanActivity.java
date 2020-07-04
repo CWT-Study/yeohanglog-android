@@ -9,8 +9,13 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.ArrayList;
 
 import team.triplog.R;
+import team.triplog.presentation.adapter.TripPlanDayAdapter;
 
 public class TripPlanActivity extends AppCompatActivity {
     private Toolbar toolbar;
@@ -21,6 +26,9 @@ public class TripPlanActivity extends AppCompatActivity {
     private TextView textTitle;
     private TextView textTripName;
     private TextView textTripPeriod;
+    private RecyclerView recyclerTripPlan;
+    private TripPlanDayAdapter planDayAdapter;
+    private ArrayList<String> items = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +60,14 @@ public class TripPlanActivity extends AppCompatActivity {
         buttonCheck = findViewById(R.id.button_check);
         buttonMember = findViewById(R.id.button_member);
         buttonPhoto = findViewById(R.id.button_photo);
+        recyclerTripPlan = findViewById(R.id.recycler_trip_plan);
+
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+
+        planDayAdapter = new TripPlanDayAdapter(this, items);
+        recyclerTripPlan.setLayoutManager(layoutManager);
+        recyclerTripPlan.setAdapter(planDayAdapter);
+        recyclerTripPlan.setNestedScrollingEnabled(false);
 
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) {
