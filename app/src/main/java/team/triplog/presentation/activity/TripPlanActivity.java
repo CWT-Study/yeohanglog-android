@@ -100,6 +100,8 @@ public class TripPlanActivity extends AppCompatActivity {
                 break;
 
             case R.id.button_photo:
+                intent = new Intent(this, TripAlbumActivity.class);
+                startActivity(intent);
                 break;
         }
     };

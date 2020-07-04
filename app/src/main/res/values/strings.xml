@@ -46,6 +46,8 @@
     <string name="trip_account_title">가계부</string>
     <string name="trip_account_total">총 금액</string>
     <string name="trip_account_won">원</string>
+    <string name="trip_album_title">사진</string>
+    <string name="trip_album_no_contents">아직 저장된 사진이 없어요!\n우측 상단의 버튼을 클릭하여 여행의 추억을 남겨보세요 :)</string>
 
     <string name="kakao_app_key">8f6abdf916b65498acf91a358491097b</string>
 </resources>
