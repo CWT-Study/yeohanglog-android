@@ -58,7 +58,7 @@ public class TripAlbumActivity extends AppCompatActivity implements TripAlbumAda
     }
 
     private void initImageList() {
-        tripAlbumAdapter = new TripAlbumAdapter(imageList, this);
+        tripAlbumAdapter = new TripAlbumAdapter(this, imageList, this);
         recyclerImage.setLayoutManager(new GridLayoutManager(getApplicationContext(), 3));
         recyclerImage.setAdapter(tripAlbumAdapter);
     }

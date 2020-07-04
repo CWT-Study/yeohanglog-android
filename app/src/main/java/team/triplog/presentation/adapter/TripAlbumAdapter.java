@@ -1,5 +1,6 @@
 package team.triplog.presentation.adapter;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,18 +9,23 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+
 import java.util.ArrayList;
 
 import team.triplog.R;
 
 public class TripAlbumAdapter extends RecyclerView.Adapter<TripAlbumAdapter.ViewHolder> {
-    private OnItemClickListener onItemClickListener;
+    private Context context;
     private ArrayList<String> items;
+    private OnItemClickListener onItemClickListener;
 
     public TripAlbumAdapter(
+            Context context,
             ArrayList<String> images,
             OnItemClickListener onItemClickListener
     ) {
+        this.context = context;
         this.items = images;
         this.onItemClickListener = onItemClickListener;
     }
@@ -42,8 +48,12 @@ public class TripAlbumAdapter extends RecyclerView.Adapter<TripAlbumAdapter.View
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        String image = items.get(position);
+        String imagePath = items.get(position);
 
+        Glide.with(context)
+                .load(imagePath)
+                .thumbnail(0.1f)
+                .into(holder.viewAlbum);
     }
 
     public void setItems(ArrayList<String> items) {
