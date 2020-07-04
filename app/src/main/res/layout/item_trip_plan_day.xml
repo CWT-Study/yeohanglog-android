@@ -20,6 +20,7 @@
             android:id="@+id/text_day"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_10"
             android:text="TEXT_DAY"
             android:textSize="@dimen/size_16"
             app:layout_constraintLeft_toLeftOf="parent"

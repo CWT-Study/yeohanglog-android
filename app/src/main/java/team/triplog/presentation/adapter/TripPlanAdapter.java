@@ -15,11 +15,11 @@ import team.triplog.R;
 
 public class TripPlanAdapter extends RecyclerView.Adapter<TripPlanAdapter.ViewHolder> {
     private Context context;
-    private ArrayList<String> items;
+    private ArrayList<String> plans;
 
-    public TripPlanAdapter(Context context, ArrayList<String> items) {
+    public TripPlanAdapter(Context context, ArrayList<String> plans) {
         this.context = context;
-        this.items = items;
+        this.plans = plans;
     }
 
     @NonNull
@@ -36,17 +36,17 @@ public class TripPlanAdapter extends RecyclerView.Adapter<TripPlanAdapter.ViewHo
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         // TODO : entity 필드와 연결시키기
 
-        String item = items.get(position);
+        String item = plans.get(position);
         holder.textLocation.setText(item);
     }
 
     @Override
     public int getItemCount() {
-        return items.size();
+        return plans.size();
     }
 
-    public void setItems(ArrayList<String> items) {
-        this.items = items;
+    public void setItems(ArrayList<String> plans) {
+        this.plans = plans;
         notifyDataSetChanged();
     }
 

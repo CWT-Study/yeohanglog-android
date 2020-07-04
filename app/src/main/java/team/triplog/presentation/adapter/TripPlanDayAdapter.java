@@ -18,6 +18,7 @@ import team.triplog.R;
 public class TripPlanDayAdapter extends RecyclerView.Adapter<TripPlanDayAdapter.ViewHolder> {
     private Context context;
     private ArrayList<String> items;
+    private ArrayList<String> plans = new ArrayList<>();
     private TripPlanAdapter planAdapter;
 
     public TripPlanDayAdapter(Context context, ArrayList<String> items) {
@@ -44,10 +45,10 @@ public class TripPlanDayAdapter extends RecyclerView.Adapter<TripPlanDayAdapter.
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(context);
 
-        planAdapter = new TripPlanAdapter(context, items);
+        planAdapter = new TripPlanAdapter(context, plans);
         holder.recyclerTripPlanDay.setLayoutManager(layoutManager);
         holder.recyclerTripPlanDay.setAdapter(planAdapter);
-        holder.recyclerTripPlanDay.setNestedScrollingEnabled(false);
+        setData();
     }
 
 
@@ -58,13 +59,15 @@ public class TripPlanDayAdapter extends RecyclerView.Adapter<TripPlanDayAdapter.
 
     private void setData() {
         //더미데이터ㅎㅎ
-        items.add("TEST_LOCATION1");
-        items.add("TEST_LOCATION2");
-        items.add("TEST_LOCATION3");
-        items.add("TEST_LOCATION4");
-        items.add("TEST_LOCATION5");
+        plans.clear();
 
-        planAdapter.setItems(items);
+        plans.add("TEST_LOCATION1");
+        plans.add("TEST_LOCATION2");
+        plans.add("TEST_LOCATION3");
+        plans.add("TEST_LOCATION4");
+        plans.add("TEST_LOCATION5");
+
+        planAdapter.setItems(plans);
     }
 
     public void setItems(ArrayList<String> items) {
