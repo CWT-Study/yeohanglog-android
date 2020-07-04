@@ -46,6 +46,7 @@
     <string name="trip_account_title">가계부</string>
     <string name="trip_account_total">총 금액</string>
     <string name="trip_account_won">원</string>
+    <string name="trip_album_title">사진</string>
 
     <string name="kakao_app_key">8f6abdf916b65498acf91a358491097b</string>
 </resources>
