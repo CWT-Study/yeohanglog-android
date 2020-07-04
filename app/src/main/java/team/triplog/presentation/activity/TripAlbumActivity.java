@@ -6,6 +6,7 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -19,6 +20,7 @@ public class TripAlbumActivity extends AppCompatActivity implements TripAlbumAda
     private ArrayList<String> imageList = new ArrayList<>();
     private Toolbar toolbar;
     private RecyclerView recyclerImage;
+    private ConstraintLayout buttonAdd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +35,7 @@ public class TripAlbumActivity extends AppCompatActivity implements TripAlbumAda
     private void init() {
         toolbar = findViewById(R.id.toolbar);
         recyclerImage = findViewById(R.id.recycler_image);
+        buttonAdd = findViewById(R.id.button_add);
 
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) {
@@ -40,6 +43,8 @@ public class TripAlbumActivity extends AppCompatActivity implements TripAlbumAda
             getSupportActionBar().setDisplayShowHomeEnabled(true);
             getSupportActionBar().setDisplayShowTitleEnabled(false);
         }
+
+        buttonAdd.setOnClickListener(onClickListener);
 
         initImageList();
     }
@@ -62,6 +67,14 @@ public class TripAlbumActivity extends AppCompatActivity implements TripAlbumAda
         recyclerImage.setLayoutManager(new GridLayoutManager(getApplicationContext(), 3));
         recyclerImage.setAdapter(tripAlbumAdapter);
     }
+
+    private View.OnClickListener onClickListener = view -> {
+        switch (view.getId()) {
+            case R.id.button_add:
+                // TODO :  팝업을 사용하여 [앨범에서 가져오기, 사진촬영] 추가
+                break;
+        }
+    };
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

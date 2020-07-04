@@ -42,6 +42,30 @@
                     app:layout_constraintTop_toTopOf="parent"
                     />
 
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/button_add"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/background_button_trans_circle"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintDimensionRatio="1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    >
+
+                    <View
+                        android:layout_width="@dimen/size_24"
+                        android:layout_height="0dp"
+                        android:background="@drawable/ic_add_photo_black"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintDimensionRatio="1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.appcompat.widget.Toolbar>
