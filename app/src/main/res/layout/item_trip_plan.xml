@@ -10,26 +10,6 @@
     >
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/layout_day"
-        android:layout_width="match_parent"
-        android:layout_height="63dp"
-        app:layout_constraintTop_toTopOf="parent"
-        >
-
-        <TextView
-            android:id="@+id/text_day"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="DAY 1"
-            android:textSize="16dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layout_trip_plan"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -40,16 +20,13 @@
 
         <View
             android:id="@+id/view_top"
-            android:layout_width="0dp"
+            android:layout_width="2dp"
             android:layout_height="24dp"
-            android:layout_marginStart="6dp"
-            android:layout_marginEnd="8dp"
             android:background="#D2AC7C"
             app:layout_constraintBottom_toTopOf="@+id/view_circle"
-            app:layout_constraintEnd_toStartOf="@+id/textView2"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            />
+            app:layout_constraintEnd_toEndOf="@+id/view_circle"
+            app:layout_constraintStart_toStartOf="@+id/view_circle"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <View
             android:id="@+id/view_circle"
@@ -58,8 +35,7 @@
             android:background="@drawable/background_trip_plan_circle"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <View
             android:id="@+id/view_bottom"
@@ -73,14 +49,27 @@
             />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/text_location"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="336dp"
-            android:text="TextView"
-            app:layout_constraintBottom_toTopOf="@+id/view_circle"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/view_top"
+            android:text="TEXT_LOCATION"
+            android:textSize="@dimen/size_14"
+            android:layout_marginLeft="@dimen/size_10"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:layout_constraintBottom_toTopOf="@+id/text_address"
+            app:layout_constraintStart_toEndOf="@+id/view_circle"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/text_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TEXT_ADDRESS"
+            android:textSize="@dimen/size_10"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/text_location"
+            app:layout_constraintTop_toBottomOf="@+id/text_location"
             />
 
 
