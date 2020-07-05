@@ -1,35 +1,51 @@
 package team.triplog.presentation.fragment;
 
 import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
+import com.bumptech.glide.request.RequestOptions;
 import com.kakao.usermgmt.UserManagement;
 import com.kakao.usermgmt.callback.LogoutResponseCallback;
 
+import io.realm.Realm;
 import team.triplog.BuildConfig;
 import team.triplog.R;
+import team.triplog.data.local.User;
 import team.triplog.presentation.activity.MoreUserActivity;
 import team.triplog.presentation.activity.SignInActivity;
 
 public class MainMoreFragment extends Fragment {
     private View rootView;
+    private TextView textUserName;
+    private TextView textUserCode;
     private TextView textVersion;
+    private ImageView viewUserProfile;
     private Switch switchSettingAppPush;
     private Switch switchSettingAdvertising;
     private ConstraintLayout buttonProfile;
     private ConstraintLayout buttonSettingAppPush;
     private ConstraintLayout buttonSettingAdvertising;
     private ConstraintLayout buttonSignOut;
+    private Realm realm;
+    private User user;
+
+    public MainMoreFragment(Realm realm, User user) {
+        this.realm = realm;
+        this.user = user;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -42,7 +58,10 @@ public class MainMoreFragment extends Fragment {
     }
 
     private void init() {
+        textUserName = rootView.findViewById(R.id.text_user_name);
+        textUserCode = rootView.findViewById(R.id.text_user_code);
         textVersion = rootView.findViewById(R.id.text_version);
+        viewUserProfile = rootView.findViewById(R.id.view_user_profile);
         buttonProfile = rootView.findViewById(R.id.button_profile_setting);
         buttonSettingAppPush = rootView.findViewById(R.id.layout_notice_app_push);
         buttonSettingAdvertising = rootView.findViewById(R.id.layout_notice_advertising);
@@ -60,6 +79,13 @@ public class MainMoreFragment extends Fragment {
 
     private void setUi() {
         textVersion.setText(getString(R.string.main_more_version, BuildConfig.VERSION_NAME));
+        textUserName.setText(user.getName());
+
+        Glide.with(this)
+                .load(user.getImage())
+                .apply(RequestOptions.bitmapTransform(new RoundedCorners(16)))
+                .thumbnail(0.1f)
+                .into(viewUserProfile);
     }
 
     private View.OnClickListener onClickListener = new View.OnClickListener() {
@@ -81,23 +107,26 @@ public class MainMoreFragment extends Fragment {
 
                 case R.id.layout_sign_out:
                     AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-                    builder.setTitle("로그아웃");
-                    builder.setMessage("로그아웃 하시겠습니까?");
-                    builder.setPositiveButton("예",
-                            new DialogInterface.OnClickListener() {
-                                public void onClick(DialogInterface dialog, int which) {
-                                    UserManagement.getInstance()
-                                            .requestLogout(new LogoutResponseCallback() {
-                                                @Override
-                                                public void onCompleteLogout() {
-                                                    Intent intent = new Intent(getContext(), SignInActivity.class);
-                                                    startActivity(intent);
-                                                    getActivity().finish();
-                                                }
-                                            });
-                                }
+                    builder.setTitle(getString(R.string.pop_up_sign_out_title));
+                    builder.setMessage(getString(R.string.pop_up_sign_out_message));
+                    builder.setPositiveButton(getString(R.string.button_ok),
+                            (dialog, which) -> {
+                                realm.executeTransactionAsync(
+                                        realm -> realm.delete(User.class),
+                                        () -> Log.i(":::::", "success !"),
+                                        error -> Log.e(":::::", error.toString()));
+
+                                UserManagement.getInstance()
+                                        .requestLogout(new LogoutResponseCallback() {
+                                            @Override
+                                            public void onCompleteLogout() {
+                                                Intent intent1 = new Intent(getContext(), SignInActivity.class);
+                                                startActivity(intent1);
+                                                getActivity().finish();
+                                            }
+                                        });
                             });
-                    builder.setNegativeButton("아니오", null);
+                    builder.setNegativeButton(getString(R.string.button_cancel), null);
                     builder.show();
                     break;
             }

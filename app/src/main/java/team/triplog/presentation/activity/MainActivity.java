@@ -9,6 +9,7 @@ import androidx.fragment.app.FragmentTransaction;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import team.triplog.R;
+import team.triplog.data.local.User;
 import team.triplog.presentation.fragment.MainHomeFragment;
 import team.triplog.presentation.fragment.MainMoreFragment;
 import team.triplog.presentation.fragment.MainSearchFragment;
@@ -18,6 +19,7 @@ public class MainActivity extends BaseActivity {
 
     FrameLayout fragmentMain;
     BottomNavigationView bottomNavigation;
+    User user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,11 +39,11 @@ public class MainActivity extends BaseActivity {
     }
 
     private void setData() {
-
+        user = realm.where(User.class).findFirst();
     }
 
     private void setUi() {
-        fragmentChange(new MainHomeFragment());
+        fragmentChange(new MainHomeFragment(user));
     }
 
     private void fragmentChange(Fragment fragment) {
@@ -55,7 +57,7 @@ public class MainActivity extends BaseActivity {
                 menuItem.setChecked(true);
                 switch (menuItem.getItemId()) {
                     case R.id.navigation_home:
-                        fragmentChange(new MainHomeFragment());
+                        fragmentChange(new MainHomeFragment(user));
                         break;
                     case R.id.navigation_trip:
                         fragmentChange(new MainTripFragment());
@@ -64,7 +66,7 @@ public class MainActivity extends BaseActivity {
                         fragmentChange(new MainSearchFragment());
                         break;
                     case R.id.navigation_more:
-                        fragmentChange(new MainMoreFragment());
+                        fragmentChange(new MainMoreFragment(realm, user));
                         break;
                 }
                 return false;
