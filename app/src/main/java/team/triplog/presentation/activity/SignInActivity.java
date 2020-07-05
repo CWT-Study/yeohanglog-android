@@ -20,6 +20,7 @@ import com.kakao.util.OptionalBoolean;
 import com.kakao.util.exception.KakaoException;
 
 import team.triplog.R;
+import team.triplog.data.local.User;
 
 public class SignInActivity extends BaseActivity {
     private Session session;
@@ -85,9 +86,13 @@ public class SignInActivity extends BaseActivity {
                             Profile profile = kakaoAccount.getProfile();
 
                             if (profile != null) {
-                                Log.d("KAKAO_API", "nickname: " + profile.getNickname());
-                                Log.d("KAKAO_API", "profile image: " + profile.getProfileImageUrl());
-                                Log.d("KAKAO_API", "thumbnail image: " + profile.getThumbnailImageUrl());
+                                realm.beginTransaction();
+                                User user = new User();
+                                user.setId((int) result.getId());
+                                user.setName(profile.getNickname());
+                                user.setImage(profile.getProfileImageUrl());
+                                realm.insertOrUpdate(user);
+                                realm.commitTransaction();
 
                                 callActivity();
 

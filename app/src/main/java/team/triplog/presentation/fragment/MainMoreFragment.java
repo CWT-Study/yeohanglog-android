@@ -16,8 +16,10 @@ import androidx.fragment.app.Fragment;
 import com.kakao.usermgmt.UserManagement;
 import com.kakao.usermgmt.callback.LogoutResponseCallback;
 
+import io.realm.Realm;
 import team.triplog.BuildConfig;
 import team.triplog.R;
+import team.triplog.data.local.User;
 import team.triplog.presentation.activity.MoreUserActivity;
 import team.triplog.presentation.activity.SignInActivity;
 
@@ -30,6 +32,13 @@ public class MainMoreFragment extends Fragment {
     private ConstraintLayout buttonSettingAppPush;
     private ConstraintLayout buttonSettingAdvertising;
     private ConstraintLayout buttonSignOut;
+    private Realm realm;
+    private User user;
+
+    public MainMoreFragment(Realm realm, User user) {
+        this.realm = realm;
+        this.user = user;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 import team.triplog.R;
+import team.triplog.data.local.User;
 import team.triplog.domain.entity.TripLog;
 import team.triplog.presentation.adapter.MainHomeAdapter;
 
@@ -30,6 +31,11 @@ public class MainHomeFragment extends Fragment {
     private NestedScrollView scrollView;
     private MainHomeAdapter homeAdapter;
     private ArrayList<TripLog> tripLookBacks = new ArrayList<>();
+    private User user;
+
+    public MainHomeFragment(User user){
+        this.user = user;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
