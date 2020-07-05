@@ -48,6 +48,10 @@
     <string name="trip_account_won">원</string>
     <string name="trip_album_title">사진</string>
     <string name="trip_album_no_contents">아직 저장된 사진이 없어요!\n우측 상단의 버튼을 클릭하여 여행의 추억을 남겨보세요 :)</string>
+    <string name="pop_up_sign_out_title">로그아웃</string>
+    <string name="pop_up_sign_out_message">로그아웃 하시겠습니까?</string>
+    <string name="button_ok">확인</string>
+    <string name="button_cancel">취소</string>
 
     <string name="kakao_app_key">8f6abdf916b65498acf91a358491097b</string>
 </resources>

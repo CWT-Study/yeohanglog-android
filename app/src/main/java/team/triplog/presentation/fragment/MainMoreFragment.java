@@ -1,9 +1,9 @@
 package team.triplog.presentation.fragment;
 
 import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,6 +25,8 @@ import team.triplog.presentation.activity.SignInActivity;
 
 public class MainMoreFragment extends Fragment {
     private View rootView;
+    private TextView textUserName;
+    private TextView textUserCode;
     private TextView textVersion;
     private Switch switchSettingAppPush;
     private Switch switchSettingAdvertising;
@@ -51,6 +53,8 @@ public class MainMoreFragment extends Fragment {
     }
 
     private void init() {
+        textUserName = rootView.findViewById(R.id.text_user_name);
+        textUserCode = rootView.findViewById(R.id.text_user_code);
         textVersion = rootView.findViewById(R.id.text_version);
         buttonProfile = rootView.findViewById(R.id.button_profile_setting);
         buttonSettingAppPush = rootView.findViewById(R.id.layout_notice_app_push);
@@ -69,6 +73,7 @@ public class MainMoreFragment extends Fragment {
 
     private void setUi() {
         textVersion.setText(getString(R.string.main_more_version, BuildConfig.VERSION_NAME));
+        textUserName.setText(user.getName());
     }
 
     private View.OnClickListener onClickListener = new View.OnClickListener() {
@@ -90,23 +95,26 @@ public class MainMoreFragment extends Fragment {
 
                 case R.id.layout_sign_out:
                     AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-                    builder.setTitle("로그아웃");
-                    builder.setMessage("로그아웃 하시겠습니까?");
-                    builder.setPositiveButton("예",
-                            new DialogInterface.OnClickListener() {
-                                public void onClick(DialogInterface dialog, int which) {
-                                    UserManagement.getInstance()
-                                            .requestLogout(new LogoutResponseCallback() {
-                                                @Override
-                                                public void onCompleteLogout() {
-                                                    Intent intent = new Intent(getContext(), SignInActivity.class);
-                                                    startActivity(intent);
-                                                    getActivity().finish();
-                                                }
-                                            });
-                                }
+                    builder.setTitle(getString(R.string.pop_up_sign_out_title));
+                    builder.setMessage(getString(R.string.pop_up_sign_out_message));
+                    builder.setPositiveButton(getString(R.string.button_ok),
+                            (dialog, which) -> {
+                                realm.executeTransactionAsync(
+                                        realm -> realm.delete(User.class),
+                                        () -> Log.i(":::::", "success !"),
+                                        error -> Log.e(":::::", error.toString()));
+
+                                UserManagement.getInstance()
+                                        .requestLogout(new LogoutResponseCallback() {
+                                            @Override
+                                            public void onCompleteLogout() {
+                                                Intent intent1 = new Intent(getContext(), SignInActivity.class);
+                                                startActivity(intent1);
+                                                getActivity().finish();
+                                            }
+                                        });
                             });
-                    builder.setNegativeButton("아니오", null);
+                    builder.setNegativeButton(getString(R.string.button_cancel), null);
                     builder.show();
                     break;
             }
