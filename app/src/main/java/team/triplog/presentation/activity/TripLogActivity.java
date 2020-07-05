@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -16,7 +15,7 @@ import team.triplog.domain.entity.TripLog;
 import team.triplog.presentation.adapter.TripLogAdapter;
 import team.triplog.presentation.adapter.TripLogContentAdapter;
 
-public class TripLogActivity extends AppCompatActivity {
+public class TripLogActivity extends BaseActivity {
 
     TextView text_save;
     RecyclerView recyclerView_title;

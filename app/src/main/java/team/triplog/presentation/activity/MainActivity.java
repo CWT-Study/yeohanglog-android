@@ -3,7 +3,6 @@ package team.triplog.presentation.activity;
 import android.os.Bundle;
 import android.widget.FrameLayout;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -15,7 +14,7 @@ import team.triplog.presentation.fragment.MainMoreFragment;
 import team.triplog.presentation.fragment.MainSearchFragment;
 import team.triplog.presentation.fragment.MainTripFragment;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     FrameLayout fragmentMain;
     BottomNavigationView bottomNavigation;

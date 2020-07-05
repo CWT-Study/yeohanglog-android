@@ -3,12 +3,11 @@ package team.triplog.presentation.activity;
 import android.os.Bundle;
 import android.view.MenuItem;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import team.triplog.R;
 
-public class MoreUserActivity extends AppCompatActivity {
+public class MoreUserActivity extends BaseActivity {
     private Toolbar toolbar;
 
     @Override

@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.constraintlayout.widget.Group;
 
@@ -15,7 +14,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import team.triplog.R;
 
-public class TripInfoActivity extends AppCompatActivity {
+public class TripInfoActivity extends BaseActivity {
     private Group groupInputName;
     private Group groupSelectPeriod;
     private Toolbar toolbar;

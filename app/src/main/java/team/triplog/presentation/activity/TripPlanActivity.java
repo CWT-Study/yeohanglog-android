@@ -6,7 +6,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -17,7 +16,7 @@ import java.util.ArrayList;
 import team.triplog.R;
 import team.triplog.presentation.adapter.TripPlanDayAdapter;
 
-public class TripPlanActivity extends AppCompatActivity {
+public class TripPlanActivity extends BaseActivity {
     private Toolbar toolbar;
     private ConstraintLayout buttonAccount;
     private ConstraintLayout buttonCheck;

@@ -4,13 +4,12 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import team.triplog.R;
 import team.triplog.presentation.util.TextCountAnimation;
 
-public class TripAccountActivity extends AppCompatActivity {
+public class TripAccountActivity extends BaseActivity {
     private Toolbar toolbar;
     private TextView textTotal;
 

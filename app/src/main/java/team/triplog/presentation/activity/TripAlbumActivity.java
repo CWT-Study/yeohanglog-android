@@ -5,7 +5,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -16,7 +15,7 @@ import java.util.ArrayList;
 import team.triplog.R;
 import team.triplog.presentation.adapter.TripAlbumAdapter;
 
-public class TripAlbumActivity extends AppCompatActivity implements TripAlbumAdapter.OnItemClickListener {
+public class TripAlbumActivity extends BaseActivity implements TripAlbumAdapter.OnItemClickListener {
     private TripAlbumAdapter tripAlbumAdapter;
     private ArrayList<String> imageList = new ArrayList<>();
     private Toolbar toolbar;

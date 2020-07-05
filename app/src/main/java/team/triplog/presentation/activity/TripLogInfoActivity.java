@@ -5,7 +5,6 @@ import android.util.Log;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -20,7 +19,7 @@ import team.triplog.presentation.adapter.TripLogInfoChatAdapter;
 import team.triplog.presentation.adapter.TripLogInfoNumAdapter;
 import team.triplog.presentation.adapter.TripLogInfoViewPagerAdapter;
 
-public class TripLogInfoActivity extends AppCompatActivity {
+public class TripLogInfoActivity extends BaseActivity {
 
     TextView textTitle;
     TextView textTripLogInfoDay;

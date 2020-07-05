@@ -6,7 +6,6 @@ import android.util.Log;
 import android.view.View;
 
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.kakao.auth.AuthType;
 import com.kakao.auth.ISessionCallback;
@@ -22,7 +21,7 @@ import com.kakao.util.exception.KakaoException;
 
 import team.triplog.R;
 
-public class SignInActivity extends AppCompatActivity {
+public class SignInActivity extends BaseActivity {
     private Session session;
     private View buttonKakao;
 

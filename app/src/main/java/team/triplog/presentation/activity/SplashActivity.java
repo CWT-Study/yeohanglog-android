@@ -6,13 +6,11 @@ import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.kakao.auth.Session;
 
 import team.triplog.R;
 
-public class SplashActivity extends AppCompatActivity {
+public class SplashActivity extends BaseActivity {
     long DURATION = 2500L;
     boolean session = false;
     View viewLogo;
