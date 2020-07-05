@@ -87,9 +87,7 @@ public class MainHomeFragment extends Fragment {
     }
 
     private void setUi() {
-        // TODO : User 이름으로 대체 필요.
-        String userName = "냉수마찰";
-        textUserName.setText(userName);
+        textUserName.setText(user.getName());
 
         if (tripLookBacks.isEmpty()) {
             groupNoContents.setVisibility(View.VISIBLE);
