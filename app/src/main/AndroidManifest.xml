@@ -5,7 +5,10 @@
     package="team.triplog"
     >
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
+        android:name=".GlobalApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -14,8 +17,14 @@
         android:theme="@style/AppTheme"
         tools:ignore="LockedOrientationActivity"
         >
+
+        <meta-data
+            android:name="com.kakao.sdk.AppKey"
+            android:value="@string/kakao_app_key"
+            />
+
         <activity
-            android:name=".activity.MainActivity"
+            android:name=".presentation.activity.SplashActivity"
             android:screenOrientation="portrait"
             >
             <intent-filter>
@@ -27,19 +36,55 @@
         </activity>
 
         <activity
-            android:name=".activity.MoreUserActivity"
+            android:name=".presentation.activity.SignInActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan|stateAlwaysHidden"
             />
 
         <activity
-            android:name=".activity.TripInfoActivity"
+            android:name=".presentation.activity.MainActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan|stateAlwaysHidden"
             />
 
         <activity
-            android:name=".activity.TripLogActivity"
+            android:name=".presentation.activity.MoreUserActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden"
+            />
+
+        <activity
+            android:name=".presentation.activity.TripInfoActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden"
+            />
+
+        <activity
+            android:name=".presentation.activity.TripPlanActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden"
+            />
+
+        <activity
+            android:name=".presentation.activity.TripLogActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden"
+            />
+
+        <activity
+            android:name=".presentation.activity.TripLogInfoActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden"
+            />
+
+        <activity
+            android:name=".presentation.activity.TripAccountActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden"
+            />
+
+        <activity
+            android:name=".presentation.activity.TripAlbumActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan|stateAlwaysHidden"
             />

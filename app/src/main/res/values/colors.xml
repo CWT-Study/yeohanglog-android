@@ -24,6 +24,7 @@
     <color name="main_more_profile_user_code">@color/gray_999999</color>
     <color name="main_more_setting_title">@color/black_000000</color>
     <color name="main_more_setting_description">@color/gray_999999</color>
+    <color name="main_more_sign_out">@color/red_ff0000</color>
     <color name="main_more_withdrawal">@color/gray_999999</color>
     <color name="main_more_version">@color/gray_999999</color>
     <color name="more_user_title">@color/black_000000</color>
@@ -36,19 +37,32 @@
     <color name="trip_check_item">@color/black_000000</color>
     <color name="trip_check_pic">@color/gray_999999</color>
     <color name="trip_log_item">@color/black_000000</color>
+    <color name="trip_log_info_edit">@color/black_000000</color>
+    <color name="trip_log_info_user">@color/black_000000</color>
+    <color name="trip_log_info_user_name">@color/black_000000</color>
+    <color name="trip_log_info_bottom">@color/gray_999999</color>
+    <color name="trip_log_info_num">@color/main</color>
+    <color name="trip_log_info_user_sentence">@color/black_000000</color>
     <color name="trip_member_name">@color/black_000000</color>
     <color name="trip_plan">@color/gray_666666</color>
+    <color name="trip_plan_info">@color/black_000000</color>
     <color name="main_trip_plan_no_contents_title">@color/black_000000</color>
     <color name="main_trip_plan_no_contents_message">@color/gray_999999</color>
+    <color name="sign_in_button">@color/gray_494949</color>
+    <color name="trip_account_total_title">@color/gray_666666</color>
+    <color name="trip_account_total">@color/black_000000</color>
+    <color name="trip_album_no_contents">@color/black_000000</color>
 
     <!-- Palette colors -->
     <color name="transparent">#00000000</color>
     <color name="black_000000">#000000</color>
     <color name="gray_333333">#333333</color>
+    <color name="gray_494949">#494949</color>
     <color name="gray_666666">#666666</color>
     <color name="gray_999999">#999999</color>
     <color name="gray_f0f0f0">#f0f0f0</color>
     <color name="white_ffffff">#ffffff</color>
     <color name="main">#e3bd8d</color>
+    <color name="red_ff0000">#ff0000</color>
 
 </resources>

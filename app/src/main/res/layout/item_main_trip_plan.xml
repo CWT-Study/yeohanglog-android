@@ -2,19 +2,18 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".activity.MainActivity"
     >
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layout_item"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
-        android:background="@drawable/background_main_trip_plan"
-        android:elevation="8dp"
+        android:layout_marginTop="@dimen/size_5"
+        android:layout_marginBottom="@dimen/size_10"
+        android:background="@drawable/background_layout_trip"
+        android:elevation="@dimen/size_4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -125,6 +124,7 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:background="@drawable/background_main_trip_plan_default"
+            android:transitionName="view_trip"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toRightOf="@id/layout_trip_info"
             app:layout_constraintRight_toRightOf="parent"

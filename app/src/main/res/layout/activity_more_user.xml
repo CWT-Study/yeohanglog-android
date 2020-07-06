@@ -39,7 +39,7 @@
 
     </androidx.appcompat.widget.Toolbar>
 
-    <View
+    <ImageView
         android:id="@+id/view_user_profile"
         android:layout_width="100dp"
         android:layout_height="0dp"
