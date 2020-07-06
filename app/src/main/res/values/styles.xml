@@ -432,4 +432,12 @@
         <item name="android:gravity">center</item>
     </style>
 
+    <style name="main_home_new_trip">
+        <item name="android:textColor">@color/main_home_new_trip</item>
+        <item name="android:text">@string/main_home_new_trip</item>
+        <item name="android:textSize">@dimen/size_12</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
 </resources>
