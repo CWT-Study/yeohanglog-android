@@ -52,6 +52,7 @@
     <string name="pop_up_sign_out_message">로그아웃 하시겠습니까?</string>
     <string name="button_ok">확인</string>
     <string name="button_cancel">취소</string>
+    <string name="main_home_new_trip">새로운 여행 계획하기</string>
 
     <string name="kakao_app_key">8f6abdf916b65498acf91a358491097b</string>
 </resources>

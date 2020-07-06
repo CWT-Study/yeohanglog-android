@@ -97,58 +97,87 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/layout_trip"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
                 android:layout_marginTop="@dimen/size_20"
-                android:background="@drawable/background_round_corner"
+                android:background="@drawable/background_button_main_trip"
                 android:elevation="@dimen/size_4"
                 android:padding="@dimen/size_20"
+                app:layout_constraintDimensionRatio="3.5:1"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/text_welcome"
                 app:layout_constraintWidth_percent="0.9"
                 >
 
-                <ImageView
-                    android:id="@+id/view_click"
-                    android:layout_width="@dimen/size_30"
-                    android:layout_height="0dp"
-                    android:src="@drawable/icon_search_black"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintDimensionRatio="1"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    />
-
                 <TextView
-                    android:id="@+id/text_trip_title"
-                    style="@style/text_main_home_trip_title"
+                    android:id="@+id/text_new_trip"
+                    style="@style/main_home_new_trip"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="0dp"
                     android:layout_marginEnd="@dimen/size_5"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toLeftOf="@id/view_click"
                     app:layout_constraintTop_toTopOf="parent"
                     />
 
-                <TextView
-                    android:id="@+id/txt_trip_content"
-                    style="@style/text_main_home_trip_day"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/size_3"
-                    app:layout_constraintStart_toStartOf="@+id/text_trip_title"
-                    app:layout_constraintTop_toBottomOf="@+id/text_trip_title"
-                    />
-
-                <TextView
-                    android:id="@+id/txt_trip_date"
-                    style="@style/text_main_home_trip_period"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/size_5"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_trip_info"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginEnd="@dimen/size_5"
+                    android:visibility="invisible"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="@+id/txt_trip_content"
-                    app:layout_constraintTop_toBottomOf="@+id/txt_trip_content"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@id/view_click"
+                    app:layout_constraintTop_toTopOf="parent"
+                    >
+
+                    <TextView
+                        android:id="@+id/text_trip_title"
+                        style="@style/text_main_home_trip_title"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toTopOf="@id/txt_trip_content"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_chainStyle="packed"
+                        />
+
+                    <TextView
+                        android:id="@+id/txt_trip_content"
+                        style="@style/text_main_home_trip_day"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/size_3"
+                        app:layout_constraintBottom_toTopOf="@id/txt_trip_date"
+                        app:layout_constraintStart_toStartOf="@+id/text_trip_title"
+                        app:layout_constraintTop_toBottomOf="@+id/text_trip_title"
+                        />
+
+                    <TextView
+                        android:id="@+id/txt_trip_date"
+                        style="@style/text_main_home_trip_period"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/size_5"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/txt_trip_content"
+                        app:layout_constraintTop_toBottomOf="@+id/txt_trip_content"
+                        />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <ImageView
+                    android:id="@+id/view_click"
+                    android:layout_width="@dimen/size_30"
+                    android:layout_height="0dp"
+                    android:src="@drawable/ic_touch_black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintDimensionRatio="1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
                     />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
