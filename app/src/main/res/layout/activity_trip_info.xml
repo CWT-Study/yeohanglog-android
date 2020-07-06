@@ -37,6 +37,7 @@
         style="@style/trip_info_edit_name"
         android:layout_width="0dp"
         android:layout_height="45dp"
+        android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
