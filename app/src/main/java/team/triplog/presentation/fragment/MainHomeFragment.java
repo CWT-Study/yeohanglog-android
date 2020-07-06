@@ -28,7 +28,6 @@ public class MainHomeFragment extends Fragment {
     private TextView textTripContent;
     private TextView textTripDate;
     private RecyclerView recyclerLookBack;
-    private NestedScrollView scrollView;
     private MainHomeAdapter homeAdapter;
     private ArrayList<TripLog> tripLookBacks = new ArrayList<>();
     private User user;
@@ -55,7 +54,6 @@ public class MainHomeFragment extends Fragment {
         textTripContent = rootView.findViewById(R.id.txt_trip_content);
         textTripDate = rootView.findViewById(R.id.txt_trip_date);
         recyclerLookBack = rootView.findViewById(R.id.recycler_look_back);
-        scrollView = rootView.findViewById(R.id.scroll_view);
     }
 
     private void setData() {
@@ -82,8 +80,6 @@ public class MainHomeFragment extends Fragment {
         recyclerLookBack.setLayoutManager(layoutManager);
         recyclerLookBack.setAdapter(homeAdapter);
         recyclerLookBack.setNestedScrollingEnabled(false);
-
-        scrollView.post(() -> scrollView.scrollTo(0, 0));
     }
 
     private void setUi() {
