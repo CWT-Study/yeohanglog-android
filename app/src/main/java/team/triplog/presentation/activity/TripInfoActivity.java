@@ -8,6 +8,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.appcompat.widget.Toolbar;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.constraintlayout.widget.Group;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -20,6 +21,7 @@ public class TripInfoActivity extends BaseActivity {
     private Toolbar toolbar;
     private EditText editName;
     private TextView textName;
+    private ConstraintLayout layoutParent;
     private FloatingActionButton buttonNext;
     private FloatingActionButton buttonPrev;
 
@@ -34,6 +36,7 @@ public class TripInfoActivity extends BaseActivity {
     }
 
     private void init() {
+        layoutParent = findViewById(R.id.layout_parent);
         groupInputName = findViewById(R.id.group_input_name);
         groupSelectPeriod = findViewById(R.id.group_select_date);
         editName = findViewById(R.id.edit_trip_name);
@@ -49,6 +52,7 @@ public class TripInfoActivity extends BaseActivity {
             getSupportActionBar().setDisplayShowTitleEnabled(false);
         }
 
+        layoutParent.setOnClickListener(onClickListener);
         buttonNext.setOnClickListener(onClickListener);
         buttonPrev.setOnClickListener(onClickListener);
     }
@@ -72,6 +76,13 @@ public class TripInfoActivity extends BaseActivity {
         @Override
         public void onClick(View view) {
             switch (view.getId()) {
+                case R.id.layout_parent: {
+                    if (getCurrentFocus() != null) {
+                        getCurrentFocus().clearFocus();
+                    }
+                    hideKeyboard(view);
+                    break;
+                }
                 case R.id.button_next:
                     // TODO : 이름 및 기간 설정 완료시 다음화면으로 넘어가도록 설정
 //                    groupInputName.setVisibility(View.GONE);

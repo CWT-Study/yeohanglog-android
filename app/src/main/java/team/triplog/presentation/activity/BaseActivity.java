@@ -1,30 +1,24 @@
 package team.triplog.presentation.activity;
 
+import android.content.Context;
 import android.os.Bundle;
-import android.widget.FrameLayout;
+import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
-
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import io.realm.Realm;
-import team.triplog.R;
-import team.triplog.presentation.fragment.MainHomeFragment;
-import team.triplog.presentation.fragment.MainMoreFragment;
-import team.triplog.presentation.fragment.MainSearchFragment;
-import team.triplog.presentation.fragment.MainTripFragment;
 
 public class BaseActivity extends AppCompatActivity {
-
     protected Realm realm;
+    private InputMethodManager imm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         realm = Realm.getDefaultInstance();
+        imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
     }
 
     @Override
@@ -32,5 +26,10 @@ public class BaseActivity extends AppCompatActivity {
         super.onDestroy();
 
         realm.close();
+    }
+
+    public void hideKeyboard(View view) {
+        // inputMethodManager 로 키보드를 내리도록 설정
+        imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
 }
