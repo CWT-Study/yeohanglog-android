@@ -9,9 +9,10 @@
     >
     <androidx.appcompat.widget.AppCompatCheckBox
         android:id="@+id/checkbox"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintEnd_toEndOf="@+id/guideline"
+        android:layout_width="@dimen/size_35"
+        android:layout_height="@dimen/size_35"
+        android:background="@drawable/background_trip_log_check"
+        android:button="@null"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -21,6 +22,7 @@
         android:id="@+id/layout_item"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/size_10"
         android:layout_marginBottom="15dp"
         android:layout_marginRight="15dp"
         android:background="@drawable/background_round_corner"

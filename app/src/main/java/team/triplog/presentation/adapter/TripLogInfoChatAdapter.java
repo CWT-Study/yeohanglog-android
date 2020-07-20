@@ -42,6 +42,11 @@ public class TripLogInfoChatAdapter  extends RecyclerView.Adapter<TripLogInfoCha
         TripLogInfoChat tripLog = tripLogInfoChats.get(position);
 
         holder.tripLogInfoUserName.setText("홍길동");
+        if (tripLog.sentence == null) {
+            holder.textUserSentence.setText("문장을 입력하세요");
+        }else{
+            holder.textUserSentence.setText(tripLog.sentence);
+        }
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder {

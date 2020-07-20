@@ -38,11 +38,15 @@ public class TripLogInfoNumAdapter extends RecyclerView.Adapter<TripLogInfoNumAd
         );
     }
 
+
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         TripLogInfo tripLog = tripLogs.get(position);
         if (position == 0) {
             holder.viewFirst.setVisibility(View.GONE);
+            holder.viewLocation.setVisibility(View.VISIBLE);
+            holder.viewSelectUser.setVisibility(View.VISIBLE);
+            holder.tripLogInfoNum.setTextColor(context.getResources().getColor(R.color.trip_log_info_select_num));
         }
 
         if (position == tripLogs.size() - 1) {
@@ -54,12 +58,16 @@ public class TripLogInfoNumAdapter extends RecyclerView.Adapter<TripLogInfoNumAd
         View viewFirst;
         View viewLast;
         TextView tripLogInfoNum;
+        View viewSelectUser;
+        View viewLocation;
 
         ViewHolder(View view) {
             super(view);
             viewFirst = view.findViewById(R.id.view_first);
             viewLast = view.findViewById(R.id.view_last);
             tripLogInfoNum = view.findViewById(R.id.trip_log_info_num);
+            viewSelectUser = view.findViewById(R.id.view_select_user);
+            viewLocation = view.findViewById(R.id.view_location);
 
         }
     }

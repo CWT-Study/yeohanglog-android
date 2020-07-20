@@ -2,6 +2,9 @@ package team.triplog.presentation.activity;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
+import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -18,6 +21,7 @@ import team.triplog.domain.entity.TripLogInfoChat;
 import team.triplog.presentation.adapter.TripLogInfoChatAdapter;
 import team.triplog.presentation.adapter.TripLogInfoNumAdapter;
 import team.triplog.presentation.adapter.TripLogInfoViewPagerAdapter;
+import team.triplog.presentation.util.CenterLayoutManager;
 
 public class TripLogInfoActivity extends BaseActivity {
 
@@ -30,7 +34,7 @@ public class TripLogInfoActivity extends BaseActivity {
 
     private ArrayList<TripLogInfo> tripLogInfos = new ArrayList<>();
     private ArrayList<TripLogInfoChat> tripLogInfoChats = new ArrayList<>();
-    private RecyclerView.LayoutManager layoutManager;
+    private CenterLayoutManager centerLayoutManager;
     private Toolbar toolbar;
 
     private TripLogInfoViewPagerAdapter tripLogInfoViewPagerAdapter;
@@ -66,8 +70,8 @@ public class TripLogInfoActivity extends BaseActivity {
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
 
-        layoutManager = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.HORIZONTAL, false);
-        recyclerViewNum.setLayoutManager(layoutManager);
+        centerLayoutManager = new CenterLayoutManager(getApplicationContext(),LinearLayoutManager.HORIZONTAL, false);
+        recyclerViewNum.setLayoutManager(centerLayoutManager);
     }
 
     private void setData() {
@@ -130,13 +134,61 @@ public class TripLogInfoActivity extends BaseActivity {
             @Override
             public void onPageSelected(int position) {
                 super.onPageSelected(position);
+                recyclerViewNum.smoothScrollToPosition(position);
 
-                Log.e("Selected_Page", String.valueOf(position));
+                RecyclerView.ViewHolder viewHolder = recyclerViewNum.findViewHolderForAdapterPosition(position);
+                View view = viewHolder.itemView;
+                View viewLocation = view.findViewById(R.id.view_location);
+                View viewSelectUser = view.findViewById(R.id.view_select_user);
+                TextView tripLogInfoNum = view.findViewById(R.id.trip_log_info_num);
+                viewLocation.setVisibility(View.VISIBLE);
+                viewSelectUser.setVisibility(View.VISIBLE);
+                tripLogInfoNum.setTextColor(getResources().getColor(R.color.trip_log_info_select_num));
+
+
+                if (position!=0) {
+                    viewHolder = recyclerViewNum.findViewHolderForAdapterPosition(position - 1);
+                    view = viewHolder.itemView;
+                    viewLocation = view.findViewById(R.id.view_location);
+                    viewSelectUser = view.findViewById(R.id.view_select_user);
+                    tripLogInfoNum = view.findViewById(R.id.trip_log_info_num);
+                    viewLocation.setVisibility(View.INVISIBLE);
+                    viewSelectUser.setVisibility(View.INVISIBLE);
+                    tripLogInfoNum.setTextColor(getResources().getColor(R.color.main));
+                }
+
+                if (position!=tripLogInfos.size()-1) {
+                    viewHolder = recyclerViewNum.findViewHolderForAdapterPosition(position + 1);
+                    view = viewHolder.itemView;
+                    viewLocation = view.findViewById(R.id.view_location);
+                    viewSelectUser = view.findViewById(R.id.view_select_user);
+                    tripLogInfoNum = view.findViewById(R.id.trip_log_info_num);
+                    viewLocation.setVisibility(View.INVISIBLE);
+                    viewSelectUser.setVisibility(View.INVISIBLE);
+                    tripLogInfoNum.setTextColor(getResources().getColor(R.color.main));
+                }
             }
 
             @Override
             public void onPageScrollStateChanged(int state) {
                 super.onPageScrollStateChanged(state);
+            }
+        });
+
+        editTripLogInfo.setImeOptions(EditorInfo.IME_ACTION_DONE);
+        editTripLogInfo.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView textView, int actionId, KeyEvent keyEvent) {
+                if (actionId == EditorInfo.IME_ACTION_DONE || KeyEvent.getMaxKeyCode() == KeyEvent.KEYCODE_ENTER){
+                    TripLogInfoChat tripLogInfoChat = new TripLogInfoChat();
+                    tripLogInfoChat.sentence = editTripLogInfo.getText().toString();
+                    tripLogInfoChats.add(tripLogInfoChat);
+                    tripLogInfoChatAdapter.notifyDataSetChanged();
+                    recyclerViewChat.scrollToPosition(tripLogInfoChatAdapter.getItemCount() - 1);
+                    editTripLogInfo.setText("");
+                    return true;
+                }
+                return false;
             }
         });
     }
