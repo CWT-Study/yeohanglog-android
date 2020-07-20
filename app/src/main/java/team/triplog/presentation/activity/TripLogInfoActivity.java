@@ -2,6 +2,8 @@ package team.triplog.presentation.activity;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
+import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -9,6 +11,8 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
+
+import com.google.android.material.textfield.TextInputLayout;
 
 import java.util.ArrayList;
 
@@ -137,6 +141,23 @@ public class TripLogInfoActivity extends BaseActivity {
             @Override
             public void onPageScrollStateChanged(int state) {
                 super.onPageScrollStateChanged(state);
+            }
+        });
+
+        editTripLogInfo.setImeOptions(EditorInfo.IME_ACTION_DONE);
+        editTripLogInfo.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView textView, int actionId, KeyEvent keyEvent) {
+                if (actionId == EditorInfo.IME_ACTION_DONE || KeyEvent.getMaxKeyCode() == KeyEvent.KEYCODE_ENTER){
+                    TripLogInfoChat tripLogInfoChat = new TripLogInfoChat();
+                    tripLogInfoChat.sentence = editTripLogInfo.getText().toString();
+                    tripLogInfoChats.add(tripLogInfoChat);
+                    tripLogInfoChatAdapter.notifyDataSetChanged();
+                    recyclerViewChat.scrollToPosition(tripLogInfoChatAdapter.getItemCount() - 1);
+                    editTripLogInfo.setText("");
+                    return true;
+                }
+                return false;
             }
         });
     }
