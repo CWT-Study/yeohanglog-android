@@ -246,7 +246,7 @@
     </style>
 
     <style name="trip_log_info_day">
-        <item name="android:textColor">@color/main</item>
+        <item name="android:textColor">@color/braun_A65D00</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">20dp</item>
     </style>

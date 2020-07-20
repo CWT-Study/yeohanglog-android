@@ -42,7 +42,9 @@
     <color name="trip_log_info_user_name">@color/black_000000</color>
     <color name="trip_log_info_bottom">@color/gray_999999</color>
     <color name="trip_log_info_num">@color/main</color>
+    <color name="trip_log_info_select_num">@color/braun_A65D00</color>
     <color name="trip_log_info_user_sentence">@color/black_000000</color>
+    <color name="trip_log_info_select_circle">@color/main</color>
     <color name="trip_member_name">@color/black_000000</color>
     <color name="trip_plan">@color/gray_666666</color>
     <color name="trip_plan_info">@color/black_000000</color>
@@ -54,6 +56,7 @@
     <color name="trip_album_no_contents">@color/black_000000</color>
     <color name="main_home_new_trip">@color/black_000000</color>
 
+
     <!-- Palette colors -->
     <color name="transparent">#00000000</color>
     <color name="black_000000">#000000</color>
@@ -63,6 +66,7 @@
     <color name="gray_999999">#999999</color>
     <color name="gray_f0f0f0">#f0f0f0</color>
     <color name="white_ffffff">#ffffff</color>
+    <color name="braun_A65D00">#A65D00</color>
     <color name="main">#e3bd8d</color>
     <color name="red_ff0000">#ff0000</color>
 
