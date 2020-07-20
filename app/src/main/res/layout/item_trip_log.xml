@@ -10,7 +10,7 @@
         android:id="@+id/view_trip_log_delee"
         android:layout_width="25dp"
         android:layout_height="25dp"
-        android:background="@drawable/button_plus"
+        android:background="@drawable/icon_close"
         android:elevation="6dp"
         app:layout_constraintBottom_toTopOf="@+id/constraintlayout"
         app:layout_constraintEnd_toEndOf="parent"

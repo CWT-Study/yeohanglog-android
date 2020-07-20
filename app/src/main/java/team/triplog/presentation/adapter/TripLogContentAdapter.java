@@ -47,8 +47,8 @@ public class TripLogContentAdapter extends RecyclerView.Adapter<TripLogContentAd
     public void onBindViewHolder(TripLogContentAdapter.ViewHolder holder, int position) {
         TripLog tripLog = tripLogs.get(position);
 
-        holder.viewTrip.setBackground(new ShapeDrawable(new OvalShape()));
-        holder.viewTrip.setClipToOutline(true);
+//        holder.viewTrip.setBackground(new ShapeDrawable(new OvalShape()));
+//        holder.viewTrip.setClipToOutline(true);
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
