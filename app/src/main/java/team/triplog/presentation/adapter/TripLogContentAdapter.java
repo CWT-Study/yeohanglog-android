@@ -76,13 +76,14 @@ public class TripLogContentAdapter extends RecyclerView.Adapter<TripLogContentAd
             itemView.setOnClickListener(view -> {
                 int pos = getAdapterPosition();
                 if (pos != RecyclerView.NO_POSITION) {
-                    if (pos == 0) {
-                        Toast.makeText(context, "새로운 아이템 등록", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(context, TripLogInfoActivity.class);
-                        context.startActivity(intent);
-                    } else {
+                    //아이템을 추가할건지 협의 필요
+//                    if (pos == 0) {
+//                        Toast.makeText(context, "새로운 아이템 등록", Toast.LENGTH_SHORT).show();
+//                        Intent intent = new Intent(context, TripLogInfoActivity.class);
+//                        context.startActivity(intent);
+//                    } else {
                         Toast.makeText(context, "기존 아이템", Toast.LENGTH_SHORT).show();
-                    }
+//                    }
                 }
             });
 
