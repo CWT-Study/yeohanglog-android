@@ -1,9 +1,6 @@
 package team.triplog.presentation.adapter;
 
 import android.content.Context;
-import android.content.Intent;
-import android.graphics.drawable.ShapeDrawable;
-import android.graphics.drawable.shapes.OvalShape;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,8 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 import team.triplog.R;
-import team.triplog.domain.entity.TripLog;
-import team.triplog.presentation.activity.TripLogInfoActivity;
+import team.triplog.domain.model.TripLog;
 
 public class TripLogContentAdapter extends RecyclerView.Adapter<TripLogContentAdapter.ViewHolder> {
     private ArrayList<TripLog> tripLogs;

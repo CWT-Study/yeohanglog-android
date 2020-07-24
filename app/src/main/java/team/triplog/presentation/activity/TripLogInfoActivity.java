@@ -1,7 +1,6 @@
 package team.triplog.presentation.activity;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
@@ -16,8 +15,8 @@ import androidx.viewpager2.widget.ViewPager2;
 import java.util.ArrayList;
 
 import team.triplog.R;
-import team.triplog.domain.entity.TripLogInfo;
-import team.triplog.domain.entity.TripLogInfoChat;
+import team.triplog.domain.model.TripLogInfo;
+import team.triplog.domain.model.TripLogInfoChat;
 import team.triplog.presentation.adapter.TripLogInfoChatAdapter;
 import team.triplog.presentation.adapter.TripLogInfoNumAdapter;
 import team.triplog.presentation.adapter.TripLogInfoViewPagerAdapter;

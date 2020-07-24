@@ -1,4 +1,4 @@
-package team.triplog.domain.entity;
+package team.triplog.domain.model;
 
 public class TripLogInfo {
     public int id;
