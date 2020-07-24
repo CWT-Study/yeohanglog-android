@@ -117,9 +117,13 @@ public class TripPlanActivity extends BaseActivity {
                 break;
 
             case R.id.button_check:
+                intent = new Intent(this, TripCheckActivity.class);
+                startActivity(intent);
                 break;
 
             case R.id.button_member:
+                intent = new Intent(this, TripMemberActivity.class);
+                startActivity(intent);
                 break;
 
             case R.id.button_photo:
