@@ -54,6 +54,7 @@
     <color name="trip_account_total_title">@color/gray_666666</color>
     <color name="trip_account_total">@color/black_000000</color>
     <color name="trip_album_no_contents">@color/black_000000</color>
+    <color name="trip_check_no_contents">@color/black_000000</color>
     <color name="main_home_new_trip">@color/black_000000</color>
 
 

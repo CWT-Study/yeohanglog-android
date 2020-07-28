@@ -432,6 +432,14 @@
         <item name="android:gravity">center</item>
     </style>
 
+    <style name="trip_check_no_contents">
+        <item name="android:textColor">@color/trip_check_no_contents</item>
+        <item name="android:text">@string/trip_check_no_contents</item>
+        <item name="android:textSize">@dimen/size_12</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:gravity">center</item>
+    </style>
+
     <style name="main_home_new_trip">
         <item name="android:textColor">@color/main_home_new_trip</item>
         <item name="android:text">@string/main_home_new_trip</item>
