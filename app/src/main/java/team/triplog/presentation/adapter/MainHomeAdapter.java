@@ -52,8 +52,8 @@ public class MainHomeAdapter extends RecyclerView.Adapter<MainHomeAdapter.ViewHo
 
         holder.layoutItem.setTag(trip);
         holder.layoutItem.setOnClickListener(onClickListener);
-        holder.textTripTitle.setText(trip.title);
-        holder.viewTrip.setImageResource(trip.drawbleId);
+        holder.textTripTitle.setText(trip.getTitle());
+        holder.viewTrip.setImageResource(trip.getDrawbleId());
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder {

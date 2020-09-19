@@ -70,17 +70,6 @@ public class MainHomeFragment extends Fragment {
     }
 
     private void setData() {
-        TripLog tripLog = new TripLog();
-        tripLog.title = "테스트";
-        tripLog.drawbleId = R.drawable.ic_launcher_background;
-
-        TripLog tripLog2 = new TripLog();
-        tripLog2.title = "테스트2";
-        tripLog2.drawbleId = R.drawable.ic_launcher_background;
-
-        TripLog tripLog3 = new TripLog();
-        tripLog3.title = "테스트3";
-        tripLog3.drawbleId = R.drawable.ic_launcher_background;
 
 //        tripLookBacks.add(tripLog);
 //        tripLookBacks.add(tripLog2);
@@ -124,7 +113,7 @@ public class MainHomeFragment extends Fragment {
                 }
                 case R.id.layout_item: {
                     TripLog trip = (TripLog) view.getTag();
-                    Toast.makeText(rootView.getContext(), trip.title + " 화면으로 이동", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(rootView.getContext(), trip.getTitle() + " 화면으로 이동", Toast.LENGTH_SHORT).show();
                     break;
                 }
             }
