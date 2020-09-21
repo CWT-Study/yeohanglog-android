@@ -7,8 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.GridLayoutManager
-import kotlinx.android.synthetic.main.fragment_main_trip_log.*
+import kotlinx.android.synthetic.main.fragment_main_trip_log.view.*
 import team.triplog.R
 import team.triplog.domain.model.TripLog
 import team.triplog.presentation.activity.TripLogActivity
@@ -16,12 +15,13 @@ import team.triplog.presentation.adapter.MainTripLogAdapter
 
 
 class MainTripLogFragment : Fragment() {
-
+    private lateinit var rootView: View
     private var mainTripLogAdapter: MainTripLogAdapter? = null
     private val tripLogs = arrayListOf<TripLog>()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val rootView = inflater.inflate(R.layout.fragment_main_trip_log, container, false)
+        rootView = inflater.inflate(R.layout.fragment_main_trip_log, container, false)
+
         init()
         setUi()
         return rootView
@@ -29,10 +29,8 @@ class MainTripLogFragment : Fragment() {
 
 
     private fun init() {
-
         mainTripLogAdapter = MainTripLogAdapter(context, tripLogs, onClickListener)
-        recycler_trip_log.layoutManager = GridLayoutManager(context, 3)
-        recycler_trip_log.adapter =mainTripLogAdapter
+        rootView.recycler_trip_log.adapter = mainTripLogAdapter
     }
 
     private fun setUi() {

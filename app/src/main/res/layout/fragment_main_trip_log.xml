@@ -11,13 +11,16 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:clipToPadding="false"
+        android:orientation="vertical"
         android:paddingTop="20dp"
         android:scrollbars="none"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintWidth_percent="0.9"
+        app:spanCount="3"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
