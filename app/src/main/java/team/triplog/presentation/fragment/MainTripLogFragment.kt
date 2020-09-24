@@ -12,9 +12,10 @@ import team.triplog.databinding.FragmentMainTripLogBinding
 import team.triplog.domain.model.TripLog
 import team.triplog.presentation.activity.TripLogActivity
 import team.triplog.presentation.adapter.MainTripLogAdapter
+import team.triplog.presentation.adapter.MainTripPlanAdapter
 
 
-class MainTripLogFragment : Fragment() {
+class MainTripLogFragment : Fragment(), MainTripLogAdapter.OnItemClickListener {
     private lateinit var binding: FragmentMainTripLogBinding
 
     private var mainTripLogAdapter: MainTripLogAdapter? = null
@@ -32,7 +33,7 @@ class MainTripLogFragment : Fragment() {
 
 
     private fun init() {
-        mainTripLogAdapter = MainTripLogAdapter(context, tripLogs, onClickListener)
+        mainTripLogAdapter = MainTripLogAdapter(context, tripLogs, this)
         binding.recyclerTripLog.adapter = mainTripLogAdapter
     }
 
@@ -53,4 +54,8 @@ class MainTripLogFragment : Fragment() {
                 }
             }
         }
+
+    override fun onItemClick(item: TripLog) {
+        // TODO : itemClick
+    }
 }

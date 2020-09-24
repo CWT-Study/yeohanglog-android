@@ -96,10 +96,12 @@
                     android:layout_marginStart="@dimen/size_3"
                     android:layout_marginEnd="@dimen/size_3"
                     android:layout_marginBottom="@dimen/size_3"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
+                    app:spanCount="3"
                     />
 
                 <TextView

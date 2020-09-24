@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
 import androidx.databinding.DataBindingUtil
-import androidx.recyclerview.widget.GridLayoutManager
 import team.triplog.R
 import team.triplog.databinding.ActivityTripAlbumBinding
 import team.triplog.presentation.adapter.TripAlbumAdapter
@@ -54,8 +53,9 @@ class TripAlbumActivity : BaseActivity(), TripAlbumAdapter.OnItemClickListener {
     private fun initImageList() {
         tripAlbumAdapter = TripAlbumAdapter(this, imageList, this)
         binding.recyclerImage.apply {
-            layoutManager = GridLayoutManager(applicationContext, 3)
             adapter = tripAlbumAdapter
+
+            // TODO : NestedScrolling 을 false 로 해버리면, 성능 저하의 원인이 될 수 있음. 추후 고려 예정.
             isNestedScrollingEnabled = false
         }
     }
@@ -77,7 +77,7 @@ class TripAlbumActivity : BaseActivity(), TripAlbumAdapter.OnItemClickListener {
         }
     }
 
-    override fun onItemClick(view: View, position: Int) {
+    override fun onItemClick(item: String) {
         // TODO : 사진 클릭시 디테일 화면 이동
     }
 }

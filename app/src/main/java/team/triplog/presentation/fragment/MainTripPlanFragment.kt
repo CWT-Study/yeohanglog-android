@@ -50,17 +50,16 @@ class MainTripPlanFragment : Fragment(), MainTripPlanAdapter.OnItemClickListener
         }
     }
 
-    override fun onItemClick(view: View, position: Int) {
-        val trip = trips[position]
+    override fun onItemClick(view: View, item: Trip) {
         val intent = Intent(context, TripPlanActivity::class.java)
 
         // TODO : 임시로 String 형식으로 넘김.
-        intent.putExtra("EXTRA_TRIP_NAME", trip.name)
+        intent.putExtra("EXTRA_TRIP_NAME", item.name)
         intent.putExtra(
             "EXTRA_TRIP_PERIOD", String.format(
                 "%s - %s",
-                periodFormat.format(trip.startDate),
-                periodFormat.format(trip.startDate)
+                periodFormat.format(item.startDate),
+                periodFormat.format(item.startDate)
             )
         )
         val viewTrip = view.findViewById<View>(R.id.view_trip)
