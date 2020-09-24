@@ -69,7 +69,7 @@
                     android:layout_marginStart="5dp"
                     android:layout_marginTop="20dp"
                     android:text="@string/main_more_profile"
-                    app:layout_constraintLeft_toLeftOf="@id/view_user_profile"
+                    app:layout_constraintLeft_toLeftOf="@id/iv_user_profile"
                     app:layout_constraintTop_toTopOf="parent"
                     />
 
@@ -96,9 +96,9 @@
                     android:layout_marginStart="15dp"
                     android:layout_marginEnd="10dp"
                     app:layout_constraintBottom_toTopOf="@id/text_user_code"
-                    app:layout_constraintLeft_toRightOf="@id/view_user_profile"
+                    app:layout_constraintLeft_toRightOf="@id/iv_user_profile"
                     app:layout_constraintRight_toLeftOf="@id/button_profile_setting"
-                    app:layout_constraintTop_toTopOf="@id/view_user_profile"
+                    app:layout_constraintTop_toTopOf="@id/iv_user_profile"
                     app:layout_constraintVertical_chainStyle="packed"
                     />
 
@@ -108,7 +108,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    app:layout_constraintBottom_toBottomOf="@id/view_user_profile"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_user_profile"
                     app:layout_constraintLeft_toLeftOf="@id/text_user_name"
                     app:layout_constraintRight_toRightOf="@id/text_user_name"
                     app:layout_constraintTop_toBottomOf="@id/text_user_name"
@@ -119,12 +119,12 @@
                     android:layout_width="45dp"
                     android:layout_height="0dp"
                     android:background="@drawable/background_button_trans_circle"
-                    app:layout_constraintBottom_toBottomOf="@id/view_user_profile"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_user_profile"
                     app:layout_constraintDimensionRatio="1"
                     app:layout_constraintHorizontal_bias="0.95"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/view_user_profile"
+                    app:layout_constraintTop_toTopOf="@id/iv_user_profile"
                     >
 
                     <View
