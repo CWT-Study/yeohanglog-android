@@ -7,6 +7,7 @@ import androidx.databinding.DataBindingUtil
 import team.triplog.R
 import team.triplog.databinding.ActivityTripAlbumBinding
 import team.triplog.presentation.adapter.TripAlbumAdapter
+import team.triplog.presentation.base.BaseActivity
 import java.util.*
 
 

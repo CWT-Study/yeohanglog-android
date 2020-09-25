@@ -5,6 +5,7 @@ import android.view.MenuItem
 import androidx.databinding.DataBindingUtil
 import team.triplog.R
 import team.triplog.databinding.ActivityTripAccountBinding
+import team.triplog.presentation.base.BaseActivity
 import team.triplog.presentation.util.TextCountAnimation
 
 

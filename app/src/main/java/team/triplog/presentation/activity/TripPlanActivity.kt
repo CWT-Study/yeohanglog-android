@@ -8,6 +8,7 @@ import androidx.databinding.DataBindingUtil
 import team.triplog.R
 import team.triplog.databinding.ActivityTripPlanBinding
 import team.triplog.presentation.adapter.TripPlanDayAdapter
+import team.triplog.presentation.base.BaseActivity
 import java.util.*
 
 class TripPlanActivity : BaseActivity() {

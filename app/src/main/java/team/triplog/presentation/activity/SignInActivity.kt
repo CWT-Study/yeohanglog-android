@@ -16,6 +16,7 @@ import com.kakao.util.exception.KakaoException
 import kotlinx.android.synthetic.main.activity_sign_in.*
 import team.triplog.R
 import team.triplog.data.local.User
+import team.triplog.presentation.base.BaseActivity
 
 class SignInActivity : BaseActivity() {
     private var session: Session? = null

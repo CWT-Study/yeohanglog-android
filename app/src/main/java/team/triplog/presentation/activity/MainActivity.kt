@@ -7,6 +7,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 import team.triplog.R
 import team.triplog.data.local.User
+import team.triplog.presentation.base.BaseActivity
 import team.triplog.presentation.fragment.MainHomeFragment
 import team.triplog.presentation.fragment.MainMoreFragment
 import team.triplog.presentation.fragment.MainSearchFragment

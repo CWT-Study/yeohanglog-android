@@ -8,6 +8,7 @@ import com.bumptech.glide.request.RequestOptions
 import kotlinx.android.synthetic.main.activity_more_user.*
 import team.triplog.R
 import team.triplog.data.local.User
+import team.triplog.presentation.base.BaseActivity
 
 class MoreUserActivity : BaseActivity() {
     private var user: User? = null

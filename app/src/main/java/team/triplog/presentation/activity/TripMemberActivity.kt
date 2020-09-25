@@ -2,12 +2,10 @@ package team.triplog.presentation.activity
 
 import android.os.Bundle
 import android.view.MenuItem
-import androidx.appcompat.widget.Toolbar
 import androidx.databinding.DataBindingUtil
-import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 import team.triplog.R
 import team.triplog.databinding.ActivityTripMemberBinding
+import team.triplog.presentation.base.BaseActivity
 
 class TripMemberActivity : BaseActivity() {
     private lateinit var binding: ActivityTripMemberBinding

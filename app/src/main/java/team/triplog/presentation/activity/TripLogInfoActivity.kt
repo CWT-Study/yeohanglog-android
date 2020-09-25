@@ -18,6 +18,7 @@ import team.triplog.domain.model.TripLogInfoChat
 import team.triplog.presentation.adapter.TripLogInfoChatAdapter
 import team.triplog.presentation.adapter.TripLogInfoNumAdapter
 import team.triplog.presentation.adapter.TripLogInfoViewPagerAdapter
+import team.triplog.presentation.base.BaseActivity
 import team.triplog.presentation.util.CenterLayoutManager
 
 class TripLogInfoActivity : BaseActivity() {

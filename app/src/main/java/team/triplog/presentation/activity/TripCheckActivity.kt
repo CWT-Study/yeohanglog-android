@@ -6,6 +6,7 @@ import android.view.View
 import kotlinx.android.synthetic.main.activity_trip_check.*
 import team.triplog.R
 import team.triplog.presentation.adapter.TripCheckAdapter
+import team.triplog.presentation.base.BaseActivity
 
 class TripCheckActivity : BaseActivity() {
     private var checkAdapter: TripCheckAdapter? = null

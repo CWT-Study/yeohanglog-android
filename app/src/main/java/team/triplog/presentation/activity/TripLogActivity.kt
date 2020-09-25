@@ -11,6 +11,7 @@ import team.triplog.databinding.ActivityTripLogBinding
 import team.triplog.domain.model.TripLog
 import team.triplog.presentation.adapter.TripLogAdapter
 import team.triplog.presentation.adapter.TripLogContentAdapter
+import team.triplog.presentation.base.BaseActivity
 
 class TripLogActivity : BaseActivity() {
     private lateinit var binding: ActivityTripLogBinding

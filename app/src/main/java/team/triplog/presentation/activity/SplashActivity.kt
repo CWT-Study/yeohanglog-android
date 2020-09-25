@@ -9,6 +9,7 @@ import com.kakao.auth.Session
 import kotlinx.android.synthetic.main.activity_splash.*
 import team.triplog.R
 import team.triplog.databinding.ActivitySplashBinding
+import team.triplog.presentation.base.BaseActivity
 
 class SplashActivity : BaseActivity() {
     private lateinit var binding: ActivitySplashBinding
