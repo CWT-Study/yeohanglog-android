@@ -1,4 +1,4 @@
-package team.triplog.presentation.viewModel
+package team.triplog.presentation.main.viewmodel
 
 import android.view.MenuItem
 import androidx.fragment.app.Fragment

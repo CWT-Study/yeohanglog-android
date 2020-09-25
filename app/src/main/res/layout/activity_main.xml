@@ -9,7 +9,7 @@
 
         <variable
             name="viewModel"
-            type="team.triplog.presentation.viewModel.MainViewModel" />
+            type="team.triplog.presentation.main.viewmodel.MainViewModel" />
         <import type="android.view.View"/>
     </data>
 
