@@ -23,7 +23,6 @@ import team.triplog.presentation.activity.MoreUserActivity
 import team.triplog.presentation.activity.SignInActivity
 
 class MainMoreFragment(
-    private val realm: Realm?,
     private val user: User?
 ) : Fragment() {
     private lateinit var binding: FragmentMainMoreBinding
@@ -74,10 +73,10 @@ class MainMoreFragment(
                 builder.setPositiveButton(
                     getString(R.string.button_ok)
                 ) { dialog: DialogInterface?, which: Int ->
-                    realm?.executeTransactionAsync(
-                        { realm: Realm -> realm.delete(User::class.java) },
-                        { Log.i(":::::", "success !") }
-                    ) { error: Throwable -> Log.e(":::::", error.toString()) }
+//                    realm?.executeTransactionAsync(
+//                        { realm: Realm -> realm.delete(User::class.java) },
+//                        { Log.i(":::::", "success !") }
+//                    ) { error: Throwable -> Log.e(":::::", error.toString()) }
                     UserManagement.getInstance()
                         .requestLogout(object : LogoutResponseCallback() {
                             override fun onCompleteLogout() {

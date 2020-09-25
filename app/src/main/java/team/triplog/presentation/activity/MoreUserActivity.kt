@@ -32,7 +32,8 @@ class MoreUserActivity : BaseActivity() {
     }
 
     private fun setData() {
-        user = realm?.where(User::class.java)?.findFirst()
+        // TODO : Room 으로 변경하기 위해 주석처리
+//        user = realm?.where(User::class.java)?.findFirst()
     }
 
     private fun setUi() {

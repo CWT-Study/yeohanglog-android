@@ -29,7 +29,8 @@ class MainActivity : BaseActivity() {
     }
 
     private fun setData() {
-        user = realm?.where(User::class.java)?.findFirst()
+        // TODO : Room 으로 변경하기 위해 주석처리
+//        user = realm?.where(User::class.java)?.findFirst()
     }
 
     private fun setUi() {
@@ -49,7 +50,7 @@ class MainActivity : BaseActivity() {
                 R.id.navigation_home -> fragmentChange(MainHomeFragment(user))
                 R.id.navigation_trip -> fragmentChange(MainTripFragment())
                 R.id.navigation_search -> fragmentChange(MainSearchFragment())
-                R.id.navigation_more -> fragmentChange(MainMoreFragment(realm, user))
+                R.id.navigation_more -> fragmentChange(MainMoreFragment(user))
             }
             false
         }

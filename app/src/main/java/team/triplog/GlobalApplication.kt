@@ -4,8 +4,8 @@ import android.app.Application
 import com.kakao.auth.*
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
-import team.triplog.data.local.base.RealmManager
 import team.triplog.di.mainModule
+import team.triplog.di.roomModule
 
 class GlobalApplication : Application() {
     override fun onCreate() {
@@ -13,7 +13,6 @@ class GlobalApplication : Application() {
 
         instance = this
         KakaoSDK.init(KakaoSDKAdapter())
-        RealmManager.setRealmConfig(this)
 
         setupKoin()
     }
@@ -58,7 +57,8 @@ class GlobalApplication : Application() {
             androidContext(this@GlobalApplication)
             modules(
                 listOf(
-                    mainModule
+                    mainModule,
+                    roomModule
                 )
             )
         }

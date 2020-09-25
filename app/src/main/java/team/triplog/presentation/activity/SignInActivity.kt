@@ -73,17 +73,18 @@ class SignInActivity : BaseActivity() {
                         val profile = kakaoAccount.profile
                         when {
                             profile != null -> {
-                                realm?.executeTransaction {
-                                    val user = User()
-                                    user.apply {
-                                        id = result.id.toInt()
-                                        name = profile.nickname
-                                        image = profile.profileImageUrl
-                                    }
-
-                                    it.insertOrUpdate(user)
-                                    it.commitTransaction()
-                                }
+                                // TODO : Room 으로 변경하기 위해 주석처리
+//                                realm?.executeTransaction {
+//                                    val user = User()
+//                                    user.apply {
+//                                        id = result.id.toInt()
+//                                        name = profile.nickname
+//                                        image = profile.profileImageUrl
+//                                    }
+//
+//                                    it.insertOrUpdate(user)
+//                                    it.commitTransaction()
+//                                }
                                 callActivity()
                             }
                             kakaoAccount.profileNeedsAgreement() == OptionalBoolean.TRUE -> {
