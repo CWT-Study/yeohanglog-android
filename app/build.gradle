@@ -48,6 +48,10 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-gson:2.6.4"
     implementation "com.squareup.okhttp3:logging-interceptor:4.0.0"
 
+    // Room
+    implementation "androidx.room:room-runtime:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+
     // Glide
     def glide_version = "4.11.0"
     implementation "com.github.bumptech.glide:glide:${glide_version}"
