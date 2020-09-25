@@ -10,6 +10,7 @@ import kotlinx.android.synthetic.main.activity_splash.*
 import team.triplog.R
 import team.triplog.databinding.ActivitySplashBinding
 import team.triplog.presentation.base.BaseActivity
+import team.triplog.presentation.signin.activity.SignInActivity
 
 class SplashActivity : BaseActivity() {
     private lateinit var binding: ActivitySplashBinding

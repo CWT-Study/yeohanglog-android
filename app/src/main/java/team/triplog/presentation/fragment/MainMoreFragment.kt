@@ -4,7 +4,6 @@ import android.app.AlertDialog
 import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,13 +13,12 @@ import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.request.RequestOptions
 import com.kakao.usermgmt.UserManagement
 import com.kakao.usermgmt.callback.LogoutResponseCallback
-import io.realm.Realm
 import team.triplog.BuildConfig
 import team.triplog.R
 import team.triplog.data.local.User
 import team.triplog.databinding.FragmentMainMoreBinding
 import team.triplog.presentation.activity.MoreUserActivity
-import team.triplog.presentation.activity.SignInActivity
+import team.triplog.presentation.signin.activity.SignInActivity
 
 class MainMoreFragment(
     private val user: User?

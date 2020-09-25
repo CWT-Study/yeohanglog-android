@@ -25,6 +25,9 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
     dataBinding {
         enabled = true
     }
@@ -33,12 +36,11 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-
     implementation group: 'androidx.appcompat', name: 'appcompat', version: '1.1.0'
     implementation group: 'androidx.constraintlayout', name: 'constraintlayout', version: '1.1.3'
-
     implementation group: 'com.google.code.gson', name: 'gson', version: '2.8.6'
     implementation group: 'com.google.android.material', name: 'material', version: '1.1.0'
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
 
     // kakao log-in
     implementation group: project.KAKAO_SDK_GROUP, name: 'usermgmt', version: project.KAKAO_SDK_VERSION
@@ -65,13 +67,6 @@ dependencies {
     implementation "org.koin:koin-androidx-scope:$koin_version"
     implementation "org.koin:koin-androidx-viewmodel:$koin_version"
 
-    // Test
-    testImplementation 'junit:junit:4.13'
-    testImplementation "org.koin:koin-test:$koin_version"
-    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-
-
     // aac dependencies
     implementation "androidx.lifecycle:lifecycle-viewmodel:${versions.lifecycle}"
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:${versions.lifecycle}"
@@ -82,14 +77,14 @@ dependencies {
     // Network dependencies
     implementation "com.squareup.okhttp3:okhttp:${versions.okhttp}"
     implementation "com.squareup.okhttp3:okhttp-urlconnection:${versions.okhttp}"
-    implementation "com.squareup.okhttp3:logging-interceptor:${versions.okhttp}"
 
     // coroutines
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:${versions.coroutines}"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:${versions.coroutines}"
 
-    // koin dependencies
-    implementation "org.koin:koin-android:${versions.koin}"
-    implementation "org.koin:koin-android-viewmodel:${versions.koin}"
-
+    // Test
+    testImplementation 'junit:junit:4.13'
+    testImplementation "org.koin:koin-test:$koin_version"
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 }

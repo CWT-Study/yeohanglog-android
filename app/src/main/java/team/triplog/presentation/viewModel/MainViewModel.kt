@@ -13,8 +13,8 @@ import team.triplog.presentation.fragment.MainMoreFragment
 import team.triplog.presentation.fragment.MainSearchFragment
 import team.triplog.presentation.fragment.MainTripFragment
 
-class MainViewModel(realm: Realm) : ViewModel() {
-    var user : User? = realm.where(User::class.java)?.findFirst()
+class MainViewModel() : ViewModel() {
+    var user : User? = null
 
      var onNavigationItemSelectedListener =
         BottomNavigationView.OnNavigationItemSelectedListener { menuItem: MenuItem ->
@@ -23,7 +23,7 @@ class MainViewModel(realm: Realm) : ViewModel() {
                 R.id.navigation_home -> fragment.value = MainHomeFragment(user)
                 R.id.navigation_trip -> fragment.value = MainTripFragment()
                 R.id.navigation_search -> fragment.value = MainSearchFragment()
-                R.id.navigation_more -> fragment.value = MainMoreFragment(realm, user)
+                R.id.navigation_more -> fragment.value = MainMoreFragment(user)
             }
             false
         }

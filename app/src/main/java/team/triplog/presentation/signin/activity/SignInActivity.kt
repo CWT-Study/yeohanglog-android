@@ -1,9 +1,10 @@
-package team.triplog.presentation.activity
+package team.triplog.presentation.signin.activity
 
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import androidx.databinding.DataBindingUtil
 import com.kakao.auth.AuthType
 import com.kakao.auth.ISessionCallback
 import com.kakao.auth.Session
@@ -13,17 +14,19 @@ import com.kakao.usermgmt.callback.MeV2ResponseCallback
 import com.kakao.usermgmt.response.MeV2Response
 import com.kakao.util.OptionalBoolean
 import com.kakao.util.exception.KakaoException
-import kotlinx.android.synthetic.main.activity_sign_in.*
 import team.triplog.R
-import team.triplog.data.local.User
+import team.triplog.databinding.ActivitySignInBinding
+import team.triplog.presentation.activity.MainActivity
 import team.triplog.presentation.base.BaseActivity
 
 class SignInActivity : BaseActivity() {
+    private lateinit var binding: ActivitySignInBinding
+
     private var session: Session? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_sign_in)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_sign_in)
 
         init()
     }
@@ -37,7 +40,20 @@ class SignInActivity : BaseActivity() {
         session = Session.getCurrentSession()
         session?.addCallback(sessionCallback)
 
-        view_sign_in_kakao.setOnClickListener(onClickListener)
+        binding.viewSignInKakao.setOnClickListener {
+            session?.open(AuthType.KAKAO_LOGIN_ALL, this@SignInActivity)
+        }
+
+        setupViewModel()
+        subscription()
+    }
+
+    private fun setupViewModel() {
+
+    }
+
+    private fun subscription() {
+
     }
 
     private fun getUser() {
@@ -118,7 +134,6 @@ class SignInActivity : BaseActivity() {
     private val onClickListener = View.OnClickListener { view ->
         when (view.id) {
             R.id.view_sign_in_kakao -> {
-                session?.open(AuthType.KAKAO_LOGIN_ALL, this@SignInActivity)
             }
         }
     }
