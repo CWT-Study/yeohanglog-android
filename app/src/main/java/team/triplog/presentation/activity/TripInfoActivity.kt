@@ -8,6 +8,7 @@ import androidx.databinding.DataBindingUtil
 import team.triplog.R
 import team.triplog.databinding.ActivityTripInfoBinding
 import team.triplog.presentation.base.BaseActivity
+import team.triplog.presentation.trip.plan.activity.TripPlanActivity
 
 class TripInfoActivity : BaseActivity() {
     private lateinit var binding: ActivityTripInfoBinding

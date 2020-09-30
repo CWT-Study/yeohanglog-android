@@ -1,9 +1,9 @@
-package team.triplog.presentation.adapter
+package team.triplog.presentation.trip.plan.adapter
 
 import android.content.Context
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import team.triplog.presentation.viewholder.TripPlanViewHolder
+import team.triplog.presentation.trip.plan.viewholder.TripPlanViewHolder
 import java.util.*
 
 class TripPlanAdapter(

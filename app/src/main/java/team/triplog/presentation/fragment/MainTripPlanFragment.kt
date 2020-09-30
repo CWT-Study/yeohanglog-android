@@ -11,7 +11,7 @@ import androidx.fragment.app.Fragment
 import team.triplog.R
 import team.triplog.databinding.FragmentMainTripPlanBinding
 import team.triplog.domain.model.Trip
-import team.triplog.presentation.activity.TripPlanActivity
+import team.triplog.presentation.trip.plan.activity.TripPlanActivity
 import team.triplog.presentation.adapter.MainTripPlanAdapter
 import java.text.SimpleDateFormat
 import java.util.*

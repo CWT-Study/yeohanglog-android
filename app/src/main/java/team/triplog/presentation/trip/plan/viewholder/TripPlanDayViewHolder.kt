@@ -1,4 +1,4 @@
-package team.triplog.presentation.viewholder
+package team.triplog.presentation.trip.plan.viewholder
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import team.triplog.databinding.ItemTripPlanDayBinding
-import team.triplog.presentation.adapter.TripPlanAdapter
+import team.triplog.presentation.trip.plan.adapter.TripPlanAdapter
 import java.util.*
 
 class TripPlanDayViewHolder(

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/trip_plan_graph"
+    app:startDestination="@id/tripPlanFragment">
+
+    <fragment
+        android:id="@+id/tripPlanFragment"
+        android:name="team.triplog.presentation.trip.plan.fragment.TripPlanFragment"
+        android:label="TripPlanFragment"
+        tools:layout="@layout/fragment_trip_plan" />
+</navigation>

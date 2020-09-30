@@ -67,7 +67,7 @@
 
 
         <activity
-            android:name=".presentation.activity.TripPlanActivity"
+            android:name=".presentation.trip.plan.activity.TripPlanActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan|stateAlwaysHidden"
             />

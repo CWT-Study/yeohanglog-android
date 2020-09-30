@@ -13,7 +13,7 @@ import team.triplog.databinding.FragmentMainHomeBinding
 import team.triplog.domain.model.Trip
 import team.triplog.domain.model.TripLog
 import team.triplog.presentation.activity.TripInfoActivity
-import team.triplog.presentation.activity.TripPlanActivity
+import team.triplog.presentation.trip.plan.activity.TripPlanActivity
 import team.triplog.presentation.adapter.MainHomeAdapter
 import java.util.*
 
