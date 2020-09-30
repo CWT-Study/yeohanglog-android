@@ -42,6 +42,10 @@ dependencies {
     implementation group: 'com.google.android.material', name: 'material', version: '1.1.0'
     implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
 
+    // Navigation
+    implementation "androidx.navigation:navigation-fragment-ktx:$navigation_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$navigation_version"
+
     // kakao log-in
     implementation group: project.KAKAO_SDK_GROUP, name: 'usermgmt', version: project.KAKAO_SDK_VERSION
 
