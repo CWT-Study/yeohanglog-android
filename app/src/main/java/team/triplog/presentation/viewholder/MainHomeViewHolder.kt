@@ -3,11 +3,9 @@ package team.triplog.presentation.viewholder
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import team.triplog.data.local.TripLog
 import team.triplog.databinding.ItemMainHomeTripBinding
-
-import team.triplog.presentation.main.adapter.MainHomeAdapter
-
+import team.triplog.domain.model.TripLog
+import team.triplog.presentation.adapter.MainHomeAdapter
 
 class MainHomeViewHolder(
     private val binding: ItemMainHomeTripBinding
@@ -21,12 +19,12 @@ class MainHomeViewHolder(
         }
     }
 
-    fun bind(item: TripLog, itemClickListener: MainHomeAdapter.OnItemClickListener?) {
+    fun bind(item: TripLog, itemClickListener: MainHomeAdapter.OnItemClickListener) {
         binding.textTripTitle.text = item.title
         binding.viewTrip.setImageResource(item.drawbleId)
         binding.layoutItem.tag = item
         binding.layoutItem.setOnClickListener {
-            itemClickListener?.onItemClick(item)
+            itemClickListener.onItemClick(item)
         }
     }
 }
