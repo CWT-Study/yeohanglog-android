@@ -3,16 +3,18 @@ package team.triplog.data.local
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import androidx.room.TypeConverters
 import java.util.*
 
 @Entity(tableName = "TripLog")
+@TypeConverters(DateConverter::class)
 data class TripLog (
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
     var id: Long?,
 
-    @ColumnInfo(name = "drawbleId")
-    var drawbleId: Int,
+    @ColumnInfo(name = "drawableId")
+    var drawableId: Int,
 
     @ColumnInfo(name = "title")
     var title: String,

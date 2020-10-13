@@ -11,7 +11,7 @@ import team.triplog.data.repository.TripReopository
 import team.triplog.data.repository.UserRepository
 
 class MainHomeViewModel(application: Application): AndroidViewModel(application) {
-    private val tripLogRepository: TripLogRepository
+    private val tripLogRepository: TripLogRepository = TripLogRepository(application)
     private var tripLogItems: LiveData<List<TripLog>>
 
     private val tripRepository: TripReopository
@@ -19,7 +19,6 @@ class MainHomeViewModel(application: Application): AndroidViewModel(application)
     private val userRepository: UserRepository
 
     init {
-        tripLogRepository = TripLogRepository(application)
         tripLogItems = tripLogRepository.getTripLogList()
 
         tripRepository = TripReopository(application)

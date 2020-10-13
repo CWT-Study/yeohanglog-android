@@ -3,7 +3,7 @@ package team.triplog.domain.model
 import java.util.*
 
 data class TripLog(
-    var drawbleId: Int,
+    var drawableId: Int,
     var title: String,
     var prevYear: Date,
     var nextYear: Date,

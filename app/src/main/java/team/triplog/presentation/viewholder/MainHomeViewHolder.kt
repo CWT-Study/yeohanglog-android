@@ -23,7 +23,7 @@ class MainHomeViewHolder(
 
     fun bind(item: TripLog, itemClickListener: MainHomeAdapter.OnItemClickListener?) {
         binding.textTripTitle.text = item.title
-        binding.viewTrip.setImageResource(item.drawbleId)
+        binding.viewTrip.setImageResource(item.drawableId)
         binding.layoutItem.tag = item
         binding.layoutItem.setOnClickListener {
             itemClickListener?.onItemClick(item)

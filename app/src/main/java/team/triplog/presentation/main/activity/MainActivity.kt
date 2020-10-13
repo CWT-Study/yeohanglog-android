@@ -4,17 +4,16 @@ import android.os.Bundle
 import android.view.MenuItem
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.observe
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import team.triplog.R
 import team.triplog.databinding.ActivityMainBinding
 import team.triplog.presentation.base.BaseActivity
-import team.triplog.presentation.fragment.MainHomeFragment
 import team.triplog.presentation.fragment.MainMoreFragment
 import team.triplog.presentation.fragment.MainSearchFragment
 import team.triplog.presentation.fragment.MainTripFragment
+import team.triplog.presentation.main.fragment.MainHomeFragment
 import team.triplog.presentation.main.viewmodel.MainViewModel
 
 
@@ -24,7 +23,7 @@ class MainActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this,R.layout.activity_main)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
         binding.apply {
             lifecycleOwner = this@MainActivity
@@ -35,12 +34,12 @@ class MainActivity : BaseActivity() {
         addObservableData()
     }
 
-    private fun init(){
+    private fun init() {
         bottom_navigation.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
     }
 
     private fun addObservableData() {
-        fragmentChange(MainHomeFragment(viewModel.readUser("").value))
+        fragmentChange(MainHomeFragment())
 
     }
 
@@ -55,7 +54,7 @@ class MainActivity : BaseActivity() {
         BottomNavigationView.OnNavigationItemSelectedListener { menuItem: MenuItem ->
             menuItem.isChecked = true
             when (menuItem.itemId) {
-                R.id.navigation_home -> fragmentChange(MainHomeFragment(viewModel.readUser("").value))
+                R.id.navigation_home -> fragmentChange(MainHomeFragment())
                 R.id.navigation_trip -> fragmentChange(MainTripFragment())
                 R.id.navigation_search -> fragmentChange(MainSearchFragment())
                 R.id.navigation_more -> fragmentChange(MainMoreFragment(viewModel.readUser("").value))

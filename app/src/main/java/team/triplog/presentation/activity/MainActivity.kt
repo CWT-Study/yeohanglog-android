@@ -8,10 +8,10 @@ import kotlinx.android.synthetic.main.activity_main.*
 import team.triplog.R
 import team.triplog.data.local.User
 import team.triplog.presentation.base.BaseActivity
-import team.triplog.presentation.fragment.MainHomeFragment
 import team.triplog.presentation.fragment.MainMoreFragment
 import team.triplog.presentation.fragment.MainSearchFragment
 import team.triplog.presentation.fragment.MainTripFragment
+import team.triplog.presentation.main.fragment.MainHomeFragment
 
 class MainActivity : BaseActivity() {
     private var user: User? = null
@@ -34,7 +34,7 @@ class MainActivity : BaseActivity() {
     }
 
     private fun setUi() {
-        fragmentChange(MainHomeFragment(user))
+        fragmentChange(MainHomeFragment())
     }
 
     private fun fragmentChange(fragment: Fragment) {
@@ -47,7 +47,7 @@ class MainActivity : BaseActivity() {
         BottomNavigationView.OnNavigationItemSelectedListener { menuItem: MenuItem ->
             menuItem.isChecked = true
             when (menuItem.itemId) {
-                R.id.navigation_home -> fragmentChange(MainHomeFragment(user))
+                R.id.navigation_home -> fragmentChange(MainHomeFragment())
                 R.id.navigation_trip -> fragmentChange(MainTripFragment())
                 R.id.navigation_search -> fragmentChange(MainSearchFragment())
                 R.id.navigation_more -> fragmentChange(MainMoreFragment(user))

@@ -38,11 +38,8 @@ class TripLogAdapter (
         }
 
         holder.textView.text = item.title
-        holder.view_trip_log_image.setBackgroundResource(item.drawbleId)
+        holder.view_trip_log_image.setBackgroundResource(item.drawableId)
     }
-
-
-
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         var textView = view.text

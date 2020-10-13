@@ -10,7 +10,7 @@ import io.reactivex.schedulers.Schedulers
 import team.triplog.data.local.TripLog
 import team.triplog.presentation.viewholder.MainHomeViewHolder
 
-class MainHomeAdapter() : RecyclerView.Adapter<MainHomeViewHolder>() {
+class MainHomeAdapter : RecyclerView.Adapter<MainHomeViewHolder>() {
 
     private var items: List<TripLog> = listOf()
 
@@ -33,15 +33,15 @@ class MainHomeAdapter() : RecyclerView.Adapter<MainHomeViewHolder>() {
     }
 
     @SuppressLint("CheckResult")
-    fun setTripLogItems(tripLogItems: List<TripLog>){
+    fun setTripLogItems(tripLogItems: List<TripLog>) {
         Observable.just(tripLogItems)
             .subscribeOn(AndroidSchedulers.mainThread())
             .observeOn(Schedulers.io())
-            .map { DiffUtil.calculateDiff(MainHomeDiffCallback(this.items,tripLogItems)) }
+            .map { DiffUtil.calculateDiff(MainHomeDiffCallback(this.items, tripLogItems)) }
             .subscribe({
                 this.items = tripLogItems
                 it.dispatchUpdatesTo(this)
-            },{
+            }, {
 
             }
             )

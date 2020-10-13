@@ -20,7 +20,6 @@ import team.triplog.presentation.main.viewmodel.MainHomeViewModel
 import team.triplog.presentation.trip.plan.activity.TripPlanActivity
 
 class MainHomeFragment: Fragment() {
-
     private lateinit var binding: FragmentMainHomeBinding
     private val viewModel: MainHomeViewModel by viewModel()
 
@@ -30,7 +29,6 @@ class MainHomeFragment: Fragment() {
         binding = FragmentMainHomeBinding.inflate(inflater, container, false)
         binding.apply {
             lifecycleOwner = this@MainHomeFragment
-            viewModel = this@MainHomeFragment.viewModel
         }
 
         return binding.root

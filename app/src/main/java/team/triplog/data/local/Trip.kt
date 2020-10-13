@@ -3,9 +3,11 @@ package team.triplog.data.local
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import androidx.room.TypeConverters
 import java.util.*
 
 @Entity(tableName = "Trip")
+@TypeConverters(DateConverter::class)
 data class Trip (
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
