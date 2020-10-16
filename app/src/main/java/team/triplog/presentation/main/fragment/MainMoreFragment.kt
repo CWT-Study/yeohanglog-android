@@ -1,4 +1,4 @@
-package team.triplog.presentation.fragment
+package team.triplog.presentation.main.fragment
 
 import android.app.AlertDialog
 import android.content.DialogInterface
@@ -8,41 +8,57 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.LifecycleOwner
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.request.RequestOptions
 import com.kakao.usermgmt.UserManagement
 import com.kakao.usermgmt.callback.LogoutResponseCallback
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import team.triplog.BuildConfig
 import team.triplog.R
 import team.triplog.data.local.User
 import team.triplog.databinding.FragmentMainMoreBinding
 import team.triplog.presentation.activity.MoreUserActivity
+import team.triplog.presentation.main.viewmodel.MainMoreViewModel
 import team.triplog.presentation.signin.activity.SignInActivity
 
 class MainMoreFragment(
     private val user: User?
 ) : Fragment() {
+
     private lateinit var binding: FragmentMainMoreBinding
+    private val viewModel: MainMoreViewModel by viewModel()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentMainMoreBinding.inflate(inflater, container, false)
-        binding.lifecycleOwner = this
-
-        init()
-        setUi()
-
+        binding.apply {
+            lifecycleOwner = this@MainMoreFragment
+            binding.viewModel = this@MainMoreFragment.viewModel
+        }
         return binding.root
     }
 
-    private fun init() {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        init()
+        setData()
+        setUi()
+        addObservableData()
+    }
+
+    fun  init(){
         binding.buttonProfileSetting.setOnClickListener(onClickListener)
         binding.layoutNoticeAppPush.setOnClickListener(onClickListener)
         binding.layoutNoticeAdvertising.setOnClickListener(onClickListener)
         binding.layoutSignOut.setOnClickListener(onClickListener)
     }
 
-    private fun setUi() {
+    private fun setData(){
+
+    }
+
+    private fun setUi(){
         binding.textVersion.text = getString(R.string.main_more_version, BuildConfig.VERSION_NAME)
         user?.let {
             binding.textUserName.text = it.name
@@ -53,6 +69,11 @@ class MainMoreFragment(
                 .into(binding.ivUserProfile)
         }
     }
+
+    fun addObservableData(){
+
+    }
+
 
     private val onClickListener = View.OnClickListener { view ->
         when (view.id) {
@@ -90,4 +111,8 @@ class MainMoreFragment(
             }
         }
     }
+
+
+
+
 }
