@@ -56,11 +56,14 @@
     <color name="trip_album_no_contents">@color/black_000000</color>
     <color name="trip_check_no_contents">@color/black_000000</color>
     <color name="main_home_new_trip">@color/black_000000</color>
+    <color name="trip_plan_title">@color/black_000000</color>
+    <color name="trip_plan_period">@color/gray_666666</color>
 
 
     <!-- Palette colors -->
     <color name="transparent">#00000000</color>
     <color name="black_000000">#000000</color>
+    <color name="black_000000_50">#80000000</color>
     <color name="gray_333333">#333333</color>
     <color name="gray_494949">#494949</color>
     <color name="gray_666666">#666666</color>

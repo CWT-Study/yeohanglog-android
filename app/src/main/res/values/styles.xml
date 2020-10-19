@@ -448,4 +448,18 @@
         <item name="android:gravity">center_vertical</item>
     </style>
 
+    <style name="trip_plan_title">
+        <item name="android:textColor">@color/trip_plan_title</item>
+        <item name="android:textSize">@dimen/size_12</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="trip_plan_period">
+        <item name="android:textColor">@color/trip_plan_period</item>
+        <item name="android:textSize">@dimen/size_10</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
 </resources>

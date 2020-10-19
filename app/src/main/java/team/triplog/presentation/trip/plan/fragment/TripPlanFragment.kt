@@ -49,10 +49,10 @@ class TripPlanFragment : BaseFragment() {
 //            setDisplayShowTitleEnabled(false)
 //        }
 
-        binding.buttonAccount.setOnClickListener(onClickListener)
-        binding.buttonCheck.setOnClickListener(onClickListener)
-        binding.buttonMember.setOnClickListener(onClickListener)
-        binding.buttonPhoto.setOnClickListener(onClickListener)
+//        binding.buttonAccount.setOnClickListener(onClickListener)
+//        binding.buttonCheck.setOnClickListener(onClickListener)
+//        binding.buttonMember.setOnClickListener(onClickListener)
+//        binding.buttonPhoto.setOnClickListener(onClickListener)
     }
 
     private fun setData() {
