@@ -29,6 +29,7 @@ class MainHomeFragment: Fragment() {
         binding = FragmentMainHomeBinding.inflate(inflater, container, false)
         binding.apply {
             lifecycleOwner = this@MainHomeFragment
+            binding.viewModel = this@MainHomeFragment.viewModel
         }
 
         return binding.root
