@@ -1,4 +1,4 @@
-package team.triplog.presentation.fragment
+package team.triplog.presentation.main.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater

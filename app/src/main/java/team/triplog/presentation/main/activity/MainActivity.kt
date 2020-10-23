@@ -10,7 +10,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 import team.triplog.R
 import team.triplog.databinding.ActivityMainBinding
 import team.triplog.presentation.base.BaseActivity
-import team.triplog.presentation.fragment.MainSearchFragment
+import team.triplog.presentation.main.fragment.MainSearchFragment
 import team.triplog.presentation.fragment.MainTripFragment
 import team.triplog.presentation.main.fragment.MainHomeFragment
 import team.triplog.presentation.main.fragment.MainMoreFragment

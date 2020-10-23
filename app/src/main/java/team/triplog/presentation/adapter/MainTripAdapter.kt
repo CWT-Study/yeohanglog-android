@@ -3,7 +3,7 @@ package team.triplog.presentation.adapter
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentStatePagerAdapter
-import team.triplog.presentation.fragment.MainTripLogFragment
+import team.triplog.presentation.main.fragment.MainTripLogFragment
 import team.triplog.presentation.fragment.MainTripPlanFragment
 
 class MainTripAdapter(

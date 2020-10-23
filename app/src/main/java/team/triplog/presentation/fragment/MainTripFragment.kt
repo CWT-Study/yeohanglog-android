@@ -33,7 +33,11 @@ class MainTripFragment : Fragment() {
     }
 
     private fun initViewpager() {
-        val adapter: PagerAdapter = MainTripAdapter(activity!!.supportFragmentManager, binding.tlMainTrip.tabCount)
+        val adapter: PagerAdapter =
+            MainTripAdapter(
+                requireActivity().supportFragmentManager,
+                binding.tlMainTrip.tabCount
+            )
         binding.viewpager.adapter = adapter
         binding.viewpager.addOnPageChangeListener(TabLayoutOnPageChangeListener(binding.tlMainTrip))
         binding.tlMainTrip.addOnTabSelectedListener(object : OnTabSelectedListener {
