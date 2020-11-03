@@ -1,15 +1,12 @@
 package team.triplog.presentation.trip.plan.adapter
 
-import android.content.Context
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import team.triplog.presentation.trip.plan.viewholder.TripPlanDayViewHolder
 import java.util.*
 
-class TripPlanDayAdapter(
-    private val context: Context,
-    private var items: ArrayList<String>
-) : RecyclerView.Adapter<TripPlanDayViewHolder>() {
+class TripPlanDayAdapter : RecyclerView.Adapter<TripPlanDayViewHolder>() {
+    private var items: ArrayList<String> = arrayListOf()
 
     override fun getItemCount(): Int = items.size
 
@@ -19,7 +16,7 @@ class TripPlanDayAdapter(
 
     override fun onBindViewHolder(holder: TripPlanDayViewHolder, position: Int) {
         val item = items[position]
-        holder.bind(context, item)
+        holder.bind(item)
     }
 
     fun setItems(items: ArrayList<String>) {

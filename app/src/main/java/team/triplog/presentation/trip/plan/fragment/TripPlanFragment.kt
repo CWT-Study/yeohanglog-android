@@ -19,7 +19,9 @@ import java.util.*
 class TripPlanFragment : BaseFragment() {
     private lateinit var binding: FragmentTripPlanBinding
 
-    private var planDayAdapter: TripPlanDayAdapter? = null
+    private val planDayAdapter: TripPlanDayAdapter by lazy {
+        TripPlanDayAdapter()
+    }
     private val items = ArrayList<String>()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -37,7 +39,6 @@ class TripPlanFragment : BaseFragment() {
     }
 
     private fun init() {
-        planDayAdapter = TripPlanDayAdapter(requireContext(), items)
         binding.recyclerTripPlan.adapter = planDayAdapter
 
         // TODO : toolbar 설정 관련해서 navigation 찾아보기.
@@ -62,7 +63,7 @@ class TripPlanFragment : BaseFragment() {
         items.add("TEST_DAY3")
         items.add("TEST_DAY4")
         items.add("TEST_DAY5")
-        planDayAdapter!!.setItems(items)
+        planDayAdapter.setItems(items)
     }
 
     private fun setUi() {
