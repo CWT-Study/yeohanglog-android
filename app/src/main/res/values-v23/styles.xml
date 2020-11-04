@@ -4,7 +4,7 @@
     <style name="AppTheme"
         parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">#ffffff</item>
+        <item name="colorPrimaryDark">@color/white_ffffff</item>
         <item name="android:windowLightStatusBar">true</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
