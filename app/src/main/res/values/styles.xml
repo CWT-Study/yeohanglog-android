@@ -8,6 +8,13 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="SplashTheme"
+        parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_background</item>
+        <item name="android:statusBarColor">@color/main</item>
+        <item name="android:navigationBarColor">@color/main</item>
+    </style>
+
     <style name="bottom_navigation_text">
         <item name="android:textSize">10dp</item>
     </style>
