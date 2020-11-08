@@ -9,46 +9,48 @@
 
         <variable
             name="viewModel"
-            type="team.triplog.presentation.main.viewmodel.MainViewModel" />
-        <import type="android.view.View"/>
+            type="team.triplog.presentation.main.viewmodel.MainViewModel"
+            />
+
+        <import type="android.view.View" />
     </data>
 
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/background_main"
-    tools:context=".presentation.activity.MainActivity"
-    >
-
-    <FrameLayout
-        android:id="@+id/fragment_main"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:paddingBottom="56dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:background="@drawable/background_main"
-        app:itemIconSize="24dp"
-        app:itemIconTint="@color/color_bottom_navigation"
-        app:itemTextAppearanceActive="@style/bottom_navigation_text"
-        app:itemTextAppearanceInactive="@style/bottom_navigation_text"
-        app:itemTextColor="@color/color_bottom_navigation"
-        app:labelVisibilityMode="unlabeled"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:menu="@menu/bottom_navigation_menu"
-        />
+        >
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fragment_main"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:defaultNavHost="true"
+            app:layout_constraintBottom_toTopOf="@id/bottom_navigation"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:navGraph="@navigation/main_graph"
+            />
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_main"
+            app:itemIconSize="24dp"
+            app:itemIconTint="@color/color_bottom_navigation"
+            app:itemTextAppearanceActive="@style/bottom_navigation_text"
+            app:itemTextAppearanceInactive="@style/bottom_navigation_text"
+            app:itemTextColor="@color/color_bottom_navigation"
+            app:labelVisibilityMode="unlabeled"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:menu="@menu/bottom_navigation_menu"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

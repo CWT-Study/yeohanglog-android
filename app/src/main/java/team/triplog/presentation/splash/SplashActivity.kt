@@ -3,8 +3,7 @@ package team.triplog.presentation.splash
 import android.os.Bundle
 import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
-import team.triplog.R
-import team.triplog.presentation.activity.startMainActivity
+import team.triplog.presentation.main.activity.startMainActivity
 
 class SplashActivity : AppCompatActivity() {
 
@@ -18,7 +17,6 @@ class SplashActivity : AppCompatActivity() {
         // TODO : SharedPreference 로 로그인 관리 필요
         // TODO : Login 된 UserId 가 있을 경우, 분기처리 필요
         startMainActivity()
-        overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
         finish()
     }
 }

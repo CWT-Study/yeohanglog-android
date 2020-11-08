@@ -16,7 +16,7 @@ import com.kakao.util.OptionalBoolean
 import com.kakao.util.exception.KakaoException
 import team.triplog.R
 import team.triplog.databinding.ActivitySignInBinding
-import team.triplog.presentation.activity.MainActivity
+import team.triplog.presentation.main.activity.MainActivity
 import team.triplog.presentation.base.BaseActivity
 
 class SignInActivity : BaseActivity() {

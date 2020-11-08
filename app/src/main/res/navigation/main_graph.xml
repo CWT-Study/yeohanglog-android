@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="team.triplog.presentation.main.fragment.MainHomeFragment"
+        android:label="MainHomeFragment"
+        tools:layout="@layout/fragment_main_home" />
+    <fragment
+        android:id="@+id/navigation_trip"
+        android:name="team.triplog.presentation.fragment.MainTripFragment"
+        android:label="MainTripFragment"
+        tools:layout="@layout/fragment_main_trip" />
+    <fragment
+        android:id="@+id/navigation_search"
+        android:name="team.triplog.presentation.main.fragment.MainSearchFragment"
+        android:label="MainSearchFragment"
+        tools:layout="@layout/fragment_main_search" />
+    <fragment
+        android:id="@+id/navigation_more"
+        android:name="team.triplog.presentation.main.fragment.MainMoreFragment"
+        android:label="MainMoreFragment"
+        tools:layout="@layout/fragment_main_more" />
+
+</navigation>
