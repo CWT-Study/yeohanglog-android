@@ -27,28 +27,23 @@ class MainHomeFragment: Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentMainHomeBinding.inflate(inflater, container, false)
-        binding.apply {
-            lifecycleOwner = this@MainHomeFragment
-            binding.viewModel = this@MainHomeFragment.viewModel
-        }
+        binding.lifecycleOwner = this
 
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         init()
-        setData()
         setUi()
-        addObservableData()
+        setup()
     }
 
     fun  init(){
         binding.layoutTrip.setOnClickListener(onClickListener)
     }
 
-    private fun setData() {
+    private fun setup() {
 
         mainHomeAdapter = MainHomeAdapter().apply {
             listener = object: MainHomeAdapter.OnItemClickListener{
@@ -63,13 +58,17 @@ class MainHomeFragment: Fragment() {
             adapter = mainHomeAdapter
             isNestedScrollingEnabled = false
         }
+
+        setViewModel()
     }
 
     private fun setUi() {
 
     }
 
-    fun addObservableData(){
+    fun setViewModel(){
+        binding.viewModel = viewModel
+
         viewModel.getTripLogList().observe(requireActivity(), Observer {
             mainHomeAdapter.setTripLogItems(it)
             binding.groupNoContents.visibility = if (it.isEmpty()) View.VISIBLE else View.INVISIBLE
