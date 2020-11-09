@@ -12,7 +12,7 @@
         tools:layout="@layout/fragment_main_home" />
     <fragment
         android:id="@+id/navigation_trip"
-        android:name="team.triplog.presentation.fragment.MainTripFragment"
+        android:name="team.triplog.presentation.main.fragment.MainTripFragment"
         android:label="MainTripFragment"
         tools:layout="@layout/fragment_main_trip" />
     <fragment

@@ -4,6 +4,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     >
 
+    <data>
+
+        <variable
+            name="vm"
+            type="team.triplog.presentation.main.viewmodel.MainTripViewModel"
+            />
+    </data>
+
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -63,30 +71,20 @@
 
                     </com.google.android.material.tabs.TabLayout>
 
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:id="@+id/button_plus"
+                    <ImageView
+                        android:id="@+id/view_plus"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
-                        android:background="@drawable/background_button_trans_circle"
-                        app:layout_constraintBottom_toBottomOf="@id/tl_main_trip"
+                        android:layout_gravity="center"
+                        android:onClick="@{() -> vm.createTrip()}"
+                        android:padding="@dimen/size_12"
+                        android:src="@drawable/ic_add_trip_24"
+                        android:tint="@color/color_black_click"
+                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintDimensionRatio="1"
-                        app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toTopOf="@id/tl_main_trip"
-                        >
-
-                        <View
-                            android:id="@+id/view_plus"
-                            android:layout_width="24dp"
-                            android:layout_height="0dp"
-                            android:background="@drawable/icon_plus_black"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintDimensionRatio="1"
-                            app:layout_constraintLeft_toLeftOf="parent"
-                            app:layout_constraintRight_toRightOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            />
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
