@@ -25,19 +25,17 @@ class MainMoreFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentMainMoreBinding.inflate(inflater, container, false)
-        binding.apply {
-            lifecycleOwner = this@MainMoreFragment
-            binding.viewModel = this@MainMoreFragment.viewModel
-        }
+        binding.lifecycleOwner = this
+
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         init()
-        setData()
         setUi()
-        addObservableData()
+        setup()
+
     }
 
     fun init() {
@@ -47,24 +45,16 @@ class MainMoreFragment : Fragment() {
         binding.layoutSignOut.setOnClickListener(onClickListener)
     }
 
-    private fun setData() {
-
-    }
-
     private fun setUi() {
         binding.textVersion.text = getString(R.string.main_more_version, BuildConfig.VERSION_NAME)
-//        user?.let {
-//            binding.textUserName.text = it.name
-//            Glide.with(this)
-//                .load(it.image)
-//                .apply(RequestOptions.bitmapTransform(RoundedCorners(16)))
-//                .thumbnail(0.1f)
-//                .into(binding.ivUserProfile)
-//        }
     }
 
-    fun addObservableData() {
+    private fun setup() {
+        setViewModel()
+    }
 
+    fun setViewModel(){
+        binding.viewModel = viewModel
     }
 
 

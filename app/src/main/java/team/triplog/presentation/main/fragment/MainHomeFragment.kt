@@ -18,12 +18,14 @@ import team.triplog.presentation.main.adapter.MainHomeAdapter
 
 import team.triplog.presentation.main.viewmodel.MainHomeViewModel
 import team.triplog.presentation.trip.plan.activity.TripPlanActivity
+import team.triplog.presentation.trip.plan.adapter.TripPlanDayAdapter
 
 class MainHomeFragment: Fragment() {
     private lateinit var binding: FragmentMainHomeBinding
     private val viewModel: MainHomeViewModel by viewModel()
-
-    private lateinit var mainHomeAdapter: MainHomeAdapter
+    private val mainHomeAdapter: MainHomeAdapter by lazy {
+        MainHomeAdapter()
+    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentMainHomeBinding.inflate(inflater, container, false)
@@ -35,7 +37,6 @@ class MainHomeFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         init()
-        setUi()
         setup()
     }
 
@@ -45,7 +46,7 @@ class MainHomeFragment: Fragment() {
 
     private fun setup() {
 
-        mainHomeAdapter = MainHomeAdapter().apply {
+        mainHomeAdapter.apply {
             listener = object: MainHomeAdapter.OnItemClickListener{
                 override fun onItemClick(item: TripLog) {
                     Toast.makeText(requireContext(), "ItemClick!", Toast.LENGTH_SHORT).show()
@@ -60,10 +61,6 @@ class MainHomeFragment: Fragment() {
         }
 
         setViewModel()
-    }
-
-    private fun setUi() {
-
     }
 
     fun setViewModel(){
