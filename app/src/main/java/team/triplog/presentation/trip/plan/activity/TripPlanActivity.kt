@@ -1,5 +1,6 @@
 package team.triplog.presentation.trip.plan.activity
 
+import android.app.Activity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
@@ -18,4 +19,8 @@ class TripPlanActivity : BaseActivity() {
         val navController = findNavController(R.id.fragment_trip_plan)
         navController.graph = navController.navInflater.inflate(R.navigation.trip_plan_graph)
     }
+}
+
+fun Activity.startTripPlanActivity() {
+
 }

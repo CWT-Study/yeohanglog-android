@@ -9,5 +9,6 @@ val mainModule = module {
     viewModel { MainHomeViewModel(get()) }
     viewModel { MainMoreViewModel(get()) }
     viewModel { MainTripViewModel() }
+    viewModel { MainTripPlanViewModel() }
     viewModel { MainTripLogViewModel(get()) }
 }

@@ -4,7 +4,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentStatePagerAdapter
 import team.triplog.presentation.main.fragment.MainTripLogFragment
-import team.triplog.presentation.fragment.MainTripPlanFragment
+import team.triplog.presentation.main.fragment.MainTripPlanFragment
 
 class MainTripAdapter(
     fm: FragmentManager?,
