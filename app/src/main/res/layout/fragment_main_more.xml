@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    >
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
@@ -14,27 +12,23 @@
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/background_main"
-        >
+        android:background="@drawable/background_main">
 
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/appbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:liftOnScroll="true"
-            >
+            app:liftOnScroll="true">
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:background="@color/white_ffffff"
-                >
+                android:background="@color/white_ffffff">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    >
+                    android:layout_height="match_parent">
 
                     <TextView
                         android:id="@+id/text_title"
@@ -45,8 +39,7 @@
                         android:text="@string/main_more_title"
                         app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        />
+                        app:layout_constraintTop_toTopOf="parent" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -59,14 +52,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:overScrollMode="never"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior"
-            >
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:descendantFocusability="blocksDescendants"
-                >
+                android:descendantFocusability="blocksDescendants">
 
                 <TextView
                     android:id="@+id/text_profile_title"
@@ -77,8 +68,7 @@
                     android:layout_marginTop="20dp"
                     android:text="@string/main_more_profile"
                     app:layout_constraintLeft_toLeftOf="@id/iv_user_profile"
-                    app:layout_constraintTop_toTopOf="parent"
-                    />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
                     android:id="@+id/iv_user_profile"
@@ -92,8 +82,7 @@
                     app:layout_constraintHorizontal_bias="0.07"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/text_profile_title"
-                    />
+                    app:layout_constraintTop_toBottomOf="@id/text_profile_title" />
 
                 <TextView
                     android:id="@+id/text_user_name"
@@ -106,8 +95,7 @@
                     app:layout_constraintLeft_toRightOf="@id/iv_user_profile"
                     app:layout_constraintRight_toLeftOf="@id/button_profile_setting"
                     app:layout_constraintTop_toTopOf="@id/iv_user_profile"
-                    app:layout_constraintVertical_chainStyle="packed"
-                    />
+                    app:layout_constraintVertical_chainStyle="packed" />
 
                 <TextView
                     android:id="@+id/text_user_code"
@@ -118,8 +106,7 @@
                     app:layout_constraintBottom_toBottomOf="@id/iv_user_profile"
                     app:layout_constraintLeft_toLeftOf="@id/text_user_name"
                     app:layout_constraintRight_toRightOf="@id/text_user_name"
-                    app:layout_constraintTop_toBottomOf="@id/text_user_name"
-                    />
+                    app:layout_constraintTop_toBottomOf="@id/text_user_name" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/button_profile_setting"
@@ -131,8 +118,7 @@
                     app:layout_constraintHorizontal_bias="0.95"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/iv_user_profile"
-                    >
+                    app:layout_constraintTop_toTopOf="@id/iv_user_profile">
 
                     <View
                         android:layout_width="30dp"
@@ -142,8 +128,7 @@
                         app:layout_constraintDimensionRatio="1"
                         app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        />
+                        app:layout_constraintTop_toTopOf="parent" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -156,8 +141,7 @@
                     android:layout_marginTop="40dp"
                     android:text="@string/main_more_setting"
                     app:layout_constraintLeft_toLeftOf="@id/iv_user_profile"
-                    app:layout_constraintTop_toBottomOf="@id/iv_user_profile"
-                    />
+                    app:layout_constraintTop_toBottomOf="@id/iv_user_profile" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/layout_setting"
@@ -169,8 +153,7 @@
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/text_setting_title"
-                    app:layout_constraintWidth_percent="0.9"
-                    >
+                    app:layout_constraintWidth_percent="0.9">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/layout_notice_app_push"
@@ -180,8 +163,7 @@
                         android:padding="20dp"
                         app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        >
+                        app:layout_constraintTop_toTopOf="parent">
 
                         <TextView
                             android:id="@+id/text_notice_app_push_title"
@@ -192,8 +174,7 @@
                             android:text="@string/main_more_setting_app_push_title"
                             app:layout_constraintLeft_toLeftOf="parent"
                             app:layout_constraintRight_toLeftOf="@id/switch_notice_app_push"
-                            app:layout_constraintTop_toTopOf="parent"
-                            />
+                            app:layout_constraintTop_toTopOf="parent" />
 
                         <TextView
                             android:id="@+id/text_notice_app_push"
@@ -204,8 +185,7 @@
                             android:text="@string/main_more_setting_app_push_desc"
                             app:layout_constraintLeft_toLeftOf="@id/text_notice_app_push_title"
                             app:layout_constraintRight_toRightOf="@id/text_notice_app_push_title"
-                            app:layout_constraintTop_toBottomOf="@id/text_notice_app_push_title"
-                            />
+                            app:layout_constraintTop_toBottomOf="@id/text_notice_app_push_title" />
 
                         <Switch
                             android:id="@+id/switch_notice_app_push"
@@ -214,8 +194,7 @@
                             android:clickable="false"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintRight_toRightOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            />
+                            app:layout_constraintTop_toTopOf="parent" />
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -227,8 +206,7 @@
                         app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintRight_toRightOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/layout_notice_app_push"
-                        app:layout_constraintWidth_percent="0.9"
-                        />
+                        app:layout_constraintWidth_percent="0.9" />
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/layout_notice_advertising"
@@ -239,8 +217,7 @@
                         android:padding="20dp"
                         app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/layout_notice_app_push"
-                        >
+                        app:layout_constraintTop_toBottomOf="@id/layout_notice_app_push">
 
                         <TextView
                             android:id="@+id/text_notice_advertising_title"
@@ -251,8 +228,7 @@
                             android:text="@string/main_more_setting_notice_advertising_title"
                             app:layout_constraintLeft_toLeftOf="parent"
                             app:layout_constraintRight_toLeftOf="@id/switch_notice_advertising"
-                            app:layout_constraintTop_toTopOf="parent"
-                            />
+                            app:layout_constraintTop_toTopOf="parent" />
 
                         <TextView
                             android:id="@+id/text_notice_advertising"
@@ -263,8 +239,7 @@
                             android:text="@string/main_more_setting_notice_advertising_desc"
                             app:layout_constraintLeft_toLeftOf="@id/text_notice_advertising_title"
                             app:layout_constraintRight_toRightOf="@id/text_notice_advertising_title"
-                            app:layout_constraintTop_toBottomOf="@id/text_notice_advertising_title"
-                            />
+                            app:layout_constraintTop_toBottomOf="@id/text_notice_advertising_title" />
 
                         <Switch
                             android:id="@+id/switch_notice_advertising"
@@ -273,8 +248,7 @@
                             android:clickable="false"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintRight_toRightOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            />
+                            app:layout_constraintTop_toTopOf="parent" />
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -291,8 +265,7 @@
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/layout_setting"
-                    app:layout_constraintWidth_percent="0.9"
-                    >
+                    app:layout_constraintWidth_percent="0.9">
 
                     <TextView
                         style="@style/main_more_sign_out"
@@ -301,8 +274,7 @@
                         android:text="@string/main_more_sign_out"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        />
+                        app:layout_constraintTop_toTopOf="parent" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -316,8 +288,7 @@
                     android:layout_marginBottom="30dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintRight_toRightOf="@id/layout_sign_out"
-                    app:layout_constraintTop_toBottomOf="@id/layout_sign_out"
-                    />
+                    app:layout_constraintTop_toBottomOf="@id/layout_sign_out" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
