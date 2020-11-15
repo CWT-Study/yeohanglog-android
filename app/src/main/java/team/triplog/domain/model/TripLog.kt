@@ -11,5 +11,5 @@ data class TripLog(
     var nextMonth: String,
     var prevDay: String,
     var nextDay: String,
-    var conent: String
+    var content: String
 ) : BaseModel

@@ -12,16 +12,16 @@ import team.triplog.data.local.dao.TripLogDao
 class TripLogRepository(application: Application) {
     private var tripLogDatabase: TripLogDatabase
     private var tripLogDao: TripLogDao
-    private var tripLogItmes: LiveData<List<TripLog>>
+    private var tripLogItems: LiveData<List<TripLog>>
 
     init {
         tripLogDatabase = TripLogDatabase.getInstance(application)
         tripLogDao = tripLogDatabase.tripDao()
-        tripLogItmes = tripLogDao.getTripLogList()
+        tripLogItems = tripLogDao.getTripLogList()
     }
 
     fun getTripLogList(): LiveData<List<TripLog>> {
-        return tripLogItmes
+        return tripLogItems
     }
 
     @SuppressLint("CheckResult")

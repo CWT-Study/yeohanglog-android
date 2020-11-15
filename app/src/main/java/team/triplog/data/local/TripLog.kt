@@ -37,9 +37,9 @@ data class TripLog (
     @ColumnInfo(name = "nextDay")
     var nextDay: String,
 
-    @ColumnInfo(name = "conent")
-    var conent: String
+    @ColumnInfo(name = "content")
+    var content: String
 ) {
-    constructor(): this(null, -1, "", Date(),Date(), "","","","","")
+    constructor(): this(null, -1, "", Date(), Date(), "","","","","")
 }
 
