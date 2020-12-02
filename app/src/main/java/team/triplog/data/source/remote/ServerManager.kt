@@ -1,8 +1,8 @@
-package team.triplog.data.remote
+package team.triplog.data.source.remote
 
 import retrofit2.Response
-import team.triplog.data.remote.response.TripResponse
-import team.triplog.data.remote.response.UserResponse
+import team.triplog.data.source.remote.response.TripResponse
+import team.triplog.data.source.remote.response.UserResponse
 import java.util.*
 
 class ServerManager {

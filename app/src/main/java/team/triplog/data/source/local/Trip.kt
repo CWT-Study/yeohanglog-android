@@ -1,9 +1,10 @@
-package team.triplog.data.local
+package team.triplog.data.source.local
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import androidx.room.TypeConverters
+import team.triplog.data.source.local.DateConverter
 import java.util.*
 
 @Entity(tableName = "Trip")

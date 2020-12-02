@@ -2,7 +2,7 @@ package team.triplog.di
 
 import androidx.room.Room
 import org.koin.dsl.module
-import team.triplog.data.local.AppDatabase
+import team.triplog.data.source.local.AppDatabase
 
 val roomModule = module {
     single {

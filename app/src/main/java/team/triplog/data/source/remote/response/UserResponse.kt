@@ -1,4 +1,4 @@
-package team.triplog.data.remote.response
+package team.triplog.data.source.remote.response
 
 import com.google.gson.annotations.SerializedName
 

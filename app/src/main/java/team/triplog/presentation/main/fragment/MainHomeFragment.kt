@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
-import team.triplog.data.local.TripLog
+import team.triplog.data.source.local.TripLog
 import team.triplog.databinding.FragmentMainHomeBinding
 import team.triplog.presentation.main.adapter.MainHomeAdapter
 import team.triplog.presentation.main.viewmodel.MainViewModel

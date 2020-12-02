@@ -1,10 +1,10 @@
-package team.triplog.data.local
+package team.triplog.data.source.local
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import team.triplog.data.local.dao.TripLogDao
+import team.triplog.data.source.local.dao.TripLogDao
 
 @Database(entities = [TripLog::class], version = 1)
 abstract class TripLogDatabase: RoomDatabase() {
@@ -13,9 +13,12 @@ abstract class TripLogDatabase: RoomDatabase() {
     companion object{
         @Volatile private var INSTANCE: TripLogDatabase? = null
 
-        fun getInstance(context: Context): TripLogDatabase = INSTANCE ?:
+        fun getInstance(context: Context): TripLogDatabase = INSTANCE
+            ?:
         synchronized(this) {
-            INSTANCE ?: buildDatabase(context).also { INSTANCE = it }
+            INSTANCE
+                ?: buildDatabase(context)
+                    .also { INSTANCE = it }
         }
 
         private  fun buildDatabase(context: Context) =

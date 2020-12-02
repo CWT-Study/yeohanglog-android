@@ -5,10 +5,9 @@ import android.app.Application
 import androidx.lifecycle.LiveData
 import io.reactivex.Observable
 import io.reactivex.schedulers.Schedulers
-import team.triplog.data.local.TripLog
-import team.triplog.data.local.User
-import team.triplog.data.local.UserDatabase
-import team.triplog.data.local.dao.UserDao
+import team.triplog.data.source.local.User
+import team.triplog.data.source.local.UserDatabase
+import team.triplog.data.source.local.dao.UserDao
 
 class UserRepository(application: Application) {
     private var userDatabase: UserDatabase

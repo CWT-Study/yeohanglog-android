@@ -1,9 +1,10 @@
-package team.triplog.data.remote.mapper
+package team.triplog.data.source.remote.mapper
 
-import team.triplog.data.remote.response.TripResponse
+import team.triplog.data.source.remote.response.TripResponse
 import team.triplog.domain.model.TripModel
 
-object TripRemoteMapper : BaseRemoteMapper<TripResponse, TripModel> {
+object TripRemoteMapper :
+    BaseRemoteMapper<TripResponse, TripModel> {
     override fun mapToRemote(from: TripModel): TripResponse {
         return TripResponse(
             id = from.id,

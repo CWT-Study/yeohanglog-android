@@ -4,7 +4,7 @@
  * Last modified 6/5/20 5:03 PM
  */
 
-package team.triplog.data.local
+package team.triplog.data.source.local
 
 import androidx.room.TypeConverter
 import java.util.*

@@ -5,9 +5,9 @@ import android.app.Application
 import androidx.lifecycle.LiveData
 import io.reactivex.Observable
 import io.reactivex.schedulers.Schedulers
-import team.triplog.data.local.TripLog
-import team.triplog.data.local.TripLogDatabase
-import team.triplog.data.local.dao.TripLogDao
+import team.triplog.data.source.local.TripLog
+import team.triplog.data.source.local.TripLogDatabase
+import team.triplog.data.source.local.dao.TripLogDao
 
 class TripLogRepository(application: Application) {
     private var tripLogDatabase: TripLogDatabase

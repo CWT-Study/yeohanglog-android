@@ -5,7 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import team.triplog.R
-import team.triplog.data.local.TripLog
+import team.triplog.data.source.local.TripLog
 import team.triplog.databinding.ItemMainTripLogBinding
 import team.triplog.presentation.main.adapter.MainTripLogAdapter
 

@@ -1,4 +1,4 @@
-package team.triplog.data.local
+package team.triplog.data.source.local
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

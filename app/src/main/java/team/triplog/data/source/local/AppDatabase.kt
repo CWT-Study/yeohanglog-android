@@ -1,9 +1,9 @@
-package team.triplog.data.local
+package team.triplog.data.source.local
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import team.triplog.data.local.AppDatabase.Companion.DB_VERSION
-import team.triplog.data.local.dao.UserDao
+import team.triplog.data.source.local.AppDatabase.Companion.DB_VERSION
+import team.triplog.data.source.local.dao.UserDao
 
 @Database(
     entities = [User::class],
