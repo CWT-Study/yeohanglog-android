@@ -5,10 +5,14 @@ import org.koin.dsl.module
 import team.triplog.presentation.main.viewmodel.*
 
 val mainModule = module {
-    viewModel { MainViewModel(get()) }
-    viewModel { MainHomeViewModel(get()) }
+    viewModel { MainViewModel() }
+    viewModel { MainHomeViewModel() }
     viewModel { MainMoreViewModel(get()) }
     viewModel { MainTripViewModel() }
     viewModel { MainTripPlanViewModel() }
     viewModel { MainTripLogViewModel(get()) }
+
+    viewModel { UserViewModel() }
+
+    viewModel { TripLogViewModel() }
 }
