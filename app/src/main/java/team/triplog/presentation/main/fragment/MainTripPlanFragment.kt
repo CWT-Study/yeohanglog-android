@@ -11,7 +11,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 import team.triplog.databinding.FragmentMainTripPlanBinding
 import team.triplog.domain.model.Trip
 import team.triplog.presentation.activity.startTripInfoActivity
-import team.triplog.presentation.adapter.MainTripPlanAdapter
+import team.triplog.presentation.main.adapter.MainTripPlanAdapter
 import team.triplog.presentation.main.viewmodel.MainTripPlanViewModel
 
 class MainTripPlanFragment : Fragment(), MainTripPlanAdapter.OnItemClickListener {

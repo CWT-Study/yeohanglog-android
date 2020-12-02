@@ -3,12 +3,11 @@ package team.triplog.presentation.trip.plan.fragment
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
-import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import team.triplog.R
 import team.triplog.databinding.FragmentTripPlanBinding
-import team.triplog.presentation.activity.TripAccountActivity
+import team.triplog.presentation.activity.TripPayActivity
 import team.triplog.presentation.activity.TripAlbumActivity
 import team.triplog.presentation.activity.TripCheckActivity
 import team.triplog.presentation.activity.TripMemberActivity
@@ -91,7 +90,7 @@ class TripPlanFragment : BaseFragment() {
          */
         when (view.id) {
             R.id.button_account -> {
-                Intent(context, TripAccountActivity::class.java).apply {
+                Intent(context, TripPayActivity::class.java).apply {
                     startActivity(this)
                 }
             }
