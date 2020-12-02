@@ -8,7 +8,7 @@ import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import team.triplog.data.local.TripLog
-import team.triplog.presentation.viewholder.MainHomeViewHolder
+import team.triplog.presentation.main.viewholder.MainHomeViewHolder
 
 class MainHomeAdapter : RecyclerView.Adapter<MainHomeViewHolder>() {
 

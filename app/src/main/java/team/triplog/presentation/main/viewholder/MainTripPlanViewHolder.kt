@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import team.triplog.databinding.ItemMainTripPlanBinding
 import team.triplog.domain.model.Trip
-import team.triplog.presentation.adapter.MainTripPlanAdapter
+import team.triplog.presentation.main.adapter.MainTripPlanAdapter
 import java.text.SimpleDateFormat
 import java.util.*
 

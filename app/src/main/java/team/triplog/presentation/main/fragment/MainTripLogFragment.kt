@@ -7,9 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import team.triplog.R
 import team.triplog.databinding.FragmentMainTripLogBinding
-import team.triplog.presentation.activity.TripLogActivity
+import team.triplog.presentation.trip.log.activity.TripLogActivity
 import team.triplog.presentation.main.adapter.MainTripLogAdapter
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import team.triplog.data.local.TripLog

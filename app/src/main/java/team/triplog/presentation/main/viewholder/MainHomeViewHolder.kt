@@ -1,4 +1,4 @@
-package team.triplog.presentation.viewholder
+package team.triplog.presentation.main.viewholder
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

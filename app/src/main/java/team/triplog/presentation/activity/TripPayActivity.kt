@@ -4,17 +4,17 @@ import android.os.Bundle
 import android.view.MenuItem
 import androidx.databinding.DataBindingUtil
 import team.triplog.R
-import team.triplog.databinding.ActivityTripAccountBinding
+import team.triplog.databinding.ActivityTripPayBinding
 import team.triplog.presentation.base.BaseActivity
 import team.triplog.presentation.util.TextCountAnimation
 
 
-class TripAccountActivity : BaseActivity() {
-    private lateinit var binding: ActivityTripAccountBinding
+class TripPayActivity : BaseActivity() {
+    private lateinit var binding: ActivityTripPayBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_trip_account)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_trip_pay)
 
         init()
         setData()
@@ -39,6 +39,7 @@ class TripAccountActivity : BaseActivity() {
     }
 
     private fun setData() {}
+
     private fun setUi() {
         // TODO : 임시로 1,000 을 주도록 설정
         // TODO : 이후 실제 데이터로 변경 필요.

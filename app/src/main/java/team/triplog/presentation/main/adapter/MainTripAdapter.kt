@@ -1,4 +1,4 @@
-package team.triplog.presentation.adapter
+package team.triplog.presentation.main.adapter
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
