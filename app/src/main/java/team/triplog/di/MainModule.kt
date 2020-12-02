@@ -14,5 +14,5 @@ val mainModule = module {
 
     viewModel { UserViewModel() }
 
-    viewModel { TripLogViewModel() }
+    viewModel { TripLogViewModel(get()) }
 }

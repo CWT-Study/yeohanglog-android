@@ -1,59 +1,25 @@
 package team.triplog.data.repository
 
-import android.annotation.SuppressLint
-import android.app.Application
-import androidx.lifecycle.LiveData
-import io.reactivex.Observable
-import io.reactivex.schedulers.Schedulers
 import team.triplog.data.source.local.TripLog
-import team.triplog.data.source.local.TripLogDatabase
-import team.triplog.data.source.local.dao.TripLogDao
 
-class TripLogRepository(application: Application) {
-    private var tripLogDatabase: TripLogDatabase
-    private var tripLogDao: TripLogDao
-    private var tripLogItems: LiveData<List<TripLog>>
+interface TripLogRepository {
 
-    init {
-        tripLogDatabase = TripLogDatabase.getInstance(application)
-        tripLogDao = tripLogDatabase.tripDao()
-        tripLogItems = tripLogDao.getTripLogList()
-    }
+    /** 새로운 여행 기록하기 */
+    fun createTripLog()
 
-    fun getTripLogList(): LiveData<List<TripLog>> {
-        return tripLogItems
-    }
+    /** 여행 기록 전체 가져오기 */
+    fun readAllTripLogs(): List<TripLog>
 
-    @SuppressLint("CheckResult")
-    fun insertTripLog(tripLog: TripLog) {
-        Observable.just(tripLog)
-            .subscribeOn(Schedulers.io())
-            .subscribe({
-                tripLogDao.insertTripLog(tripLog)
-            }, {
-                // Handle error.
-            })
-    }
+    /** 특정 개수만큼 여행 기록 가져오기 */
+    fun readTripLogs(count: Int): List<TripLog>
 
-    @SuppressLint("CheckResult")
-    fun updateTripLog(tripLog: TripLog) {
-        Observable.just(tripLog)
-            .subscribeOn(Schedulers.io())
-            .subscribe({
-                tripLogDao.updateTripLog(tripLog)
-            }, {
-                // Handle error.
-            })
-    }
+    /** 여행 기록 가져오기 */
+    fun readTripLog(id: Long): TripLog
 
-    @SuppressLint("CheckResult")
-    fun deleteTripLog(tripLog: TripLog) {
-        Observable.just(tripLog)
-            .subscribeOn(Schedulers.io())
-            .subscribe({
-                tripLogDao.deleteTripLog(tripLog)
-            }, {
-                // Handle error.
-            })
-    }
+    /** 여행 기록 업데이트 */
+    fun updateTripLog(id: Long)
+
+    /** 여행 기록 삭제하기 */
+    fun deleteTripLog(id: Long)
+
 }

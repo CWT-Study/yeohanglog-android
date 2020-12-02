@@ -6,6 +6,8 @@
 
     <data>
 
+        <import type="android.view.View" />
+
         <variable
             name="mainViewModel"
             type="team.triplog.presentation.main.viewmodel.MainViewModel"
@@ -210,6 +212,7 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycler_look_back"
+                tripLogList="@{tripLogViewModel.tripLogList}"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_marginTop="@dimen/size_10"
@@ -253,6 +256,7 @@
                 android:id="@+id/group_no_contents"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:visibility="@{tripLogViewModel.tripLogList.size() == 0 ? View.VISIBLE : View.GONE }"
                 app:constraint_referenced_ids="text_no_contents_title,text_no_contents_message"
                 />
 
