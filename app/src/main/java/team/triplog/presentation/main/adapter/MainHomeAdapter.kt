@@ -3,7 +3,7 @@ package team.triplog.presentation.main.adapter
 import android.view.ViewGroup
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
-import team.triplog.data.local.TripLog
+import team.triplog.data.source.local.TripLog
 import team.triplog.presentation.main.viewholder.MainHomeViewHolder
 
 class MainHomeAdapter(
