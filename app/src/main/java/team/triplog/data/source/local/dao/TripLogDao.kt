@@ -19,5 +19,4 @@ interface TripLogDao: BaseDao<TripLog> {
     @Delete
     fun deleteTripLog(tripLog: TripLog)
 
-
 }

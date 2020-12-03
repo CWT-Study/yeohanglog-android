@@ -1,5 +1,11 @@
 package team.triplog.data.repository
 
-import android.app.Application
+import com.kakao.usermgmt.response.model.User
 
-class UserRepository(application: Application)
+interface UserRepository {
+
+    /**
+     * 유저 정보 업데이트
+     */
+    fun updateUser(user: User)
+}
