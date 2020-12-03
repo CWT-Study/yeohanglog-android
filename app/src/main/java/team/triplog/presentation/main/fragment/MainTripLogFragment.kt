@@ -11,7 +11,7 @@ import team.triplog.databinding.FragmentMainTripLogBinding
 import team.triplog.presentation.trip.log.activity.TripLogActivity
 import team.triplog.presentation.main.adapter.MainTripLogAdapter
 import org.koin.androidx.viewmodel.ext.android.viewModel
-import team.triplog.data.source.local.TripLog
+import team.triplog.data.source.local.entity.TripLog
 import team.triplog.presentation.main.viewmodel.MainTripLogViewModel
 
 

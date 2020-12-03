@@ -1,7 +1,7 @@
 package team.triplog.data.repository.impl
 
 import team.triplog.data.repository.TripLogRepository
-import team.triplog.data.source.local.TripLog
+import team.triplog.data.source.local.entity.TripLog
 
 
 /**
@@ -27,9 +27,9 @@ class TripLogRepositoryImpl : TripLogRepository {
     }
 
     /** 여행 기록 가져오기 */
-    override fun readTripLog(id: Long): TripLog {
-        // TODO
-        return TripLog()
+    override fun readTripLog(id: Long): TripLog? {
+        // TODO : 나중에 non-null 타입으로 변경 예정
+        return null
     }
 
     /** 여행 기록 업데이트 */

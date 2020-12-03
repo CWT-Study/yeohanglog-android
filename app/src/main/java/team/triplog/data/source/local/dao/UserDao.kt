@@ -2,7 +2,7 @@ package team.triplog.data.source.local.dao
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
-import team.triplog.data.source.local.User
+import team.triplog.data.source.local.entity.User
 
 @Dao
 interface UserDao : BaseDao<User> {

@@ -3,7 +3,7 @@ package team.triplog.presentation.main.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import team.triplog.data.source.local.TripLog
+import team.triplog.data.source.local.entity.TripLog
 import team.triplog.domain.usecase.trip.log.TripLogReadUseCase
 
 
