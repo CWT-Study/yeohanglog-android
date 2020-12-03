@@ -1,4 +1,4 @@
-package team.triplog.presentation.viewholder
+package team.triplog.presentation.trip.add.viewholder
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import team.triplog.databinding.ItemTripAlbumBinding
-import team.triplog.presentation.adapter.TripAlbumAdapter
+import team.triplog.presentation.trip.add.adapter.TripAlbumAdapter
 
 class TripAlbumViewHolder(
     private val binding: ItemTripAlbumBinding

@@ -191,42 +191,42 @@
         <item name="android:textSize">14dp</item>
     </style>
 
-    <style name="trip_info_description">
-        <item name="android:textColor">@color/trip_info_description</item>
-        <item name="android:text">@string/trip_info_description</item>
+    <style name="trip_add_description">
+        <item name="android:textColor">@color/trip_add_description</item>
+        <item name="android:text">@string/trip_add_description</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">16dp</item>
     </style>
 
-    <style name="trip_info_edit_name">
-        <item name="android:textColor">@color/trip_info_description</item>
-        <item name="android:textColorHint">@color/trip_info_hint</item>
-        <item name="android:hint">@string/trip_info_name_hint</item>
+    <style name="trip_add_edit_name">
+        <item name="android:textColor">@color/trip_add_description</item>
+        <item name="android:textColorHint">@color/trip_add_hint</item>
+        <item name="android:hint">@string/trip_add_name_hint</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textSize">14dp</item>
         <item name="android:paddingStart">15dp</item>
         <item name="android:paddingEnd">15dp</item>
     </style>
 
-    <style name="trip_info_name_limit">
-        <item name="android:textColor">@color/trip_info_description</item>
-        <item name="android:text">@string/trip_info_name_limit</item>
+    <style name="trip_add_name_limit">
+        <item name="android:textColor">@color/trip_add_description</item>
+        <item name="android:text">@string/trip_add_name_limit</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textSize">10dp</item>
         <item name="android:paddingStart">15dp</item>
         <item name="android:paddingEnd">15dp</item>
     </style>
 
-    <style name="trip_info_trip_name">
-        <item name="android:textColor">@color/trip_info_trip_name</item>
+    <style name="trip_add_trip_name">
+        <item name="android:textColor">@color/trip_add_trip_name</item>
         <item name="android:text">TEXT_TRIP_NAME</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">18dp</item>
     </style>
 
-    <style name="trip_info_select_date">
-        <item name="android:textColor">@color/trip_info_select_date</item>
-        <item name="android:text">@string/trip_info_select_date</item>
+    <style name="trip_add_select_date">
+        <item name="android:textColor">@color/trip_add_select_date</item>
+        <item name="android:text">@string/trip_add_select_date</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">14dp</item>
     </style>

@@ -1,4 +1,4 @@
-package team.triplog.presentation.activity
+package team.triplog.presentation.trip.add.activity
 
 import android.content.Context
 import android.content.Intent
@@ -7,16 +7,16 @@ import android.view.MenuItem
 import android.view.View
 import androidx.databinding.DataBindingUtil
 import team.triplog.R
-import team.triplog.databinding.ActivityTripInfoBinding
+import team.triplog.databinding.ActivityTripAddBinding
 import team.triplog.presentation.base.BaseActivity
 import team.triplog.presentation.trip.plan.activity.TripPlanActivity
 
 class TripInfoActivity : BaseActivity() {
-    private lateinit var binding: ActivityTripInfoBinding
+    private lateinit var binding: ActivityTripAddBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_trip_info)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_trip_add)
         binding.lifecycleOwner = this
 
         init()

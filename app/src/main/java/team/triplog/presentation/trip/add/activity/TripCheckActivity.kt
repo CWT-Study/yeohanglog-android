@@ -1,11 +1,11 @@
-package team.triplog.presentation.activity
+package team.triplog.presentation.trip.add.activity
 
 import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
 import kotlinx.android.synthetic.main.activity_trip_check.*
 import team.triplog.R
-import team.triplog.presentation.adapter.TripCheckAdapter
+import team.triplog.presentation.trip.add.adapter.TripCheckAdapter
 import team.triplog.presentation.base.BaseActivity
 
 class TripCheckActivity : BaseActivity() {
