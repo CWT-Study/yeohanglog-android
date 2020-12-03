@@ -2,7 +2,7 @@ package team.triplog.data.source.local.dao
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
-import team.triplog.data.source.local.TripLog
+import team.triplog.data.source.local.entity.TripLog
 
 @Dao
 interface TripLogDao: BaseDao<TripLog> {
@@ -18,6 +18,5 @@ interface TripLogDao: BaseDao<TripLog> {
 
     @Delete
     fun deleteTripLog(tripLog: TripLog)
-
 
 }

@@ -1,39 +1,11 @@
 package team.triplog.data.repository
 
-import android.annotation.SuppressLint
-import android.app.Application
-import androidx.lifecycle.LiveData
-import io.reactivex.Observable
-import io.reactivex.schedulers.Schedulers
-import team.triplog.data.source.local.User
-import team.triplog.data.source.local.UserDatabase
-import team.triplog.data.source.local.dao.UserDao
+import com.kakao.usermgmt.response.model.User
 
-class UserRepository(application: Application) {
-    private var userDatabase: UserDatabase
-    private var userDao: UserDao
-    private var user: LiveData<User?>
+interface UserRepository {
 
-    init {
-        userDatabase = UserDatabase.getInstance(application)
-        userDao = userDatabase.userDao()
-        user = userDao.read("")
-    }
-
-
-    fun readUser(userId: String): LiveData<User?> {
-        return userDao.read(userId)
-    }
-
-    @SuppressLint("CheckResult")
-    fun createUser(user: User) {
-        Observable.just(user)
-            .subscribeOn(Schedulers.io())
-            .subscribe({
-                userDao.create(user)
-            }, {
-                // Handle error.
-            })
-    }
-
+    /**
+     * 유저 정보 업데이트
+     */
+    fun updateUser(user: User)
 }

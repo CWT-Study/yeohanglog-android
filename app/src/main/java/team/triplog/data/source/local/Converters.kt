@@ -9,10 +9,10 @@ package team.triplog.data.source.local
 import androidx.room.TypeConverter
 import java.util.*
 
-class DateConverter {
+class Converters {
     @TypeConverter
-    fun toDate(value: Long): Date = Date(value)
+    fun longToDate(value: Long): Date = Date(value)
 
     @TypeConverter
-    fun toLong(date: Date): Long = date.time
+    fun dateToLong(date: Date): Long = date.time
 }
