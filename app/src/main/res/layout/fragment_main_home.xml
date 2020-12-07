@@ -19,6 +19,11 @@
             />
 
         <variable
+            name="tripPlanViewModel"
+            type="team.triplog.presentation.main.viewmodel.TripPlanViewModel"
+            />
+
+        <variable
             name="tripLogViewModel"
             type="team.triplog.presentation.main.viewmodel.TripLogViewModel"
             />
@@ -113,12 +118,12 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/layout_trip"
                 android:layout_width="0dp"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/size_20"
                 android:background="@drawable/background_button_main_trip"
                 android:elevation="@dimen/size_4"
+                android:onClick="@{() -> tripPlanViewModel.clickTripButton()}"
                 android:padding="@dimen/size_20"
-                app:layout_constraintDimensionRatio="3.5:1"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/text_welcome"
@@ -140,7 +145,7 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/layout_trip_info"
                     android:layout_width="0dp"
-                    android:layout_height="0dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginEnd="@dimen/size_5"
                     android:visibility="invisible"
                     app:layout_constraintBottom_toBottomOf="parent"

@@ -14,5 +14,6 @@ val mainModule = module {
 
     viewModel { UserViewModel() }
 
+    viewModel { TripPlanViewModel(get()) }
     viewModel { TripLogViewModel(get()) }
 }
