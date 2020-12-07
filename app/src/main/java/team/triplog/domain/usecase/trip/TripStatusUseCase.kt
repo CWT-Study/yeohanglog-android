@@ -20,8 +20,8 @@ class TripStatusUseCase {
         val today = Date()
 
         return trip?.let {
-            val isPlanned = today.before(trip.startDate)
-            val isTraveling = (today.time >= trip.startDate.time) && (today.time <= trip.endDate.time)
+            val isPlanned = today.before(it.startDate)
+            val isTraveling = (today.time >= it.startDate.time) && (today.time <= it.endDate.time)
             when {
                 isPlanned -> TripStatus.PLANNED_TRIP
                 isTraveling -> TripStatus.TRAVELING
