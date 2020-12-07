@@ -7,7 +7,8 @@ import androidx.lifecycle.ViewModel
 class MainTripViewModel : ViewModel() {
 
     private val _eventCreateTrip = MutableLiveData<Unit>()
-    val eventCreateTrip: LiveData<Unit> = _eventCreateTrip
+    val eventCreateTrip: LiveData<Unit>
+        get() = _eventCreateTrip
 
     /**
      * 새로운 여행 등록 메소드

@@ -8,6 +8,7 @@ import android.view.View
 import androidx.databinding.DataBindingUtil
 import team.triplog.R
 import team.triplog.databinding.ActivityTripInfoBinding
+import team.triplog.presentation.activity.TripInfoActivity.Companion.EXTRA_TRIP_ID
 import team.triplog.presentation.base.BaseActivity
 import team.triplog.presentation.trip.plan.activity.TripPlanActivity
 
@@ -71,8 +72,14 @@ class TripInfoActivity : BaseActivity() {
             }
         }
     }
+
+    companion object {
+        const val EXTRA_TRIP_ID = "EXTRA_TRIP_ID"
+    }
 }
 
-fun Context.startTripInfoActivity() {
-    startActivity(Intent(this, TripInfoActivity::class.java))
+fun Context.startTripInfoActivity(tripId: Int? = null) {
+    startActivity(Intent(this, TripInfoActivity::class.java).apply {
+        tripId?.let { putExtra(EXTRA_TRIP_ID, it) }
+    })
 }
