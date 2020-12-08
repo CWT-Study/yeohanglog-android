@@ -8,19 +8,22 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
-import team.triplog.data.source.local.TripLog
+import team.triplog.data.source.local.entity.TripLog
 import team.triplog.databinding.FragmentMainHomeBinding
+import team.triplog.presentation.activity.startTripInfoActivity
 import team.triplog.presentation.main.adapter.MainHomeAdapter
 import team.triplog.presentation.main.viewmodel.MainViewModel
 import team.triplog.presentation.main.viewmodel.TripLogViewModel
+import team.triplog.presentation.main.viewmodel.TripPlanViewModel
 import team.triplog.presentation.main.viewmodel.UserViewModel
 
 class MainHomeFragment : Fragment(), MainHomeAdapter.OnItemClickListener {
     private lateinit var binding: FragmentMainHomeBinding
 
     private val mainViewModel: MainViewModel by sharedViewModel()
-    private val tripLogViewModel: TripLogViewModel by viewModel()
     private val userViewModel: UserViewModel by viewModel()
+    private val tripPlanViewModel: TripPlanViewModel by viewModel()
+    private val tripLogViewModel: TripLogViewModel by viewModel()
 
     private val mainHomeAdapter: MainHomeAdapter by lazy {
         MainHomeAdapter(this)
@@ -45,7 +48,12 @@ class MainHomeFragment : Fragment(), MainHomeAdapter.OnItemClickListener {
     private fun setViewModel() {
         binding.mainViewModel = mainViewModel
         binding.userViewModel = userViewModel
+        binding.tripPlanViewModel = tripPlanViewModel
         binding.tripLogViewModel = tripLogViewModel
+
+        tripPlanViewModel.eventClickTripButton.observe(viewLifecycleOwner, Observer { trip ->
+            binding.root.context.startTripInfoActivity(trip?.id)
+        })
     }
 
     private fun setRecyclerView() {

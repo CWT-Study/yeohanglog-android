@@ -1,4 +1,4 @@
-package team.triplog.presentation.trip.add.activity
+package team.triplog.presentation.activity
 
 import android.content.Context
 import android.content.Intent
@@ -8,6 +8,7 @@ import android.view.View
 import androidx.databinding.DataBindingUtil
 import team.triplog.R
 import team.triplog.databinding.ActivityTripAddBinding
+import team.triplog.presentation.activity.TripAddActivity.Companion.EXTRA_TRIP_ID
 import team.triplog.presentation.base.BaseActivity
 import team.triplog.presentation.trip.plan.activity.TripPlanActivity
 
@@ -71,8 +72,14 @@ class TripAddActivity : BaseActivity() {
             }
         }
     }
+
+    companion object {
+        const val EXTRA_TRIP_ID = "EXTRA_TRIP_ID"
+    }
 }
 
-fun Context.startTripAddActivity() {
-    startActivity(Intent(this, TripAddActivity::class.java))
+fun Context.startTripInfoActivity(tripId: Int? = null) {
+    startActivity(Intent(this, TripAddActivity::class.java).apply {
+        tripId?.let { putExtra(EXTRA_TRIP_ID, it) }
+    })
 }

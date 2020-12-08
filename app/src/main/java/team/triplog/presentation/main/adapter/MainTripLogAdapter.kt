@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
-import team.triplog.data.source.local.TripLog
+import team.triplog.data.source.local.entity.TripLog
 import team.triplog.presentation.main.viewholder.MainTripLogViewHolder
 
 class MainTripLogAdapter() : RecyclerView.Adapter<MainTripLogViewHolder>() {

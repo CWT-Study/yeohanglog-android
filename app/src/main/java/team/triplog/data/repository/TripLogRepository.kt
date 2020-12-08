@@ -1,6 +1,6 @@
 package team.triplog.data.repository
 
-import team.triplog.data.source.local.TripLog
+import team.triplog.data.source.local.entity.TripLog
 
 interface TripLogRepository {
 
@@ -14,7 +14,7 @@ interface TripLogRepository {
     fun readTripLogs(count: Int): List<TripLog>
 
     /** 여행 기록 가져오기 */
-    fun readTripLog(id: Long): TripLog
+    fun readTripLog(id: Long): TripLog?
 
     /** 여행 기록 업데이트 */
     fun updateTripLog(id: Long)

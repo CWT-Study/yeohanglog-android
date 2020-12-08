@@ -1,7 +1,7 @@
 package team.triplog.domain.usecase.trip.log
 
 import team.triplog.data.repository.TripLogRepository
-import team.triplog.data.source.local.TripLog
+import team.triplog.data.source.local.entity.TripLog
 
 
 /**
@@ -20,7 +20,7 @@ class TripLogReadUseCase(private val tripLogRepository: TripLogRepository) {
     }
 
     /** 여행 기록 가져오기 */
-    fun getTripLog(id: Long): TripLog {
+    fun getTripLog(id: Long): TripLog? {
         return tripLogRepository.readTripLog(id)
     }
 

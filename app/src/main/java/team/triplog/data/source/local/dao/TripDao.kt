@@ -2,7 +2,7 @@ package team.triplog.data.source.local.dao
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
-import team.triplog.data.source.local.Trip
+import team.triplog.data.source.local.entity.Trip
 
 @Dao
 interface TripDao: BaseDao<Trip> {
