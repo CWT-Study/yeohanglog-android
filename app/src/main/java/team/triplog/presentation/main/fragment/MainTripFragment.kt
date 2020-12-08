@@ -12,7 +12,7 @@ import com.google.android.material.tabs.TabLayout.OnTabSelectedListener
 import com.google.android.material.tabs.TabLayout.TabLayoutOnPageChangeListener
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import team.triplog.databinding.FragmentMainTripBinding
-import team.triplog.presentation.trip.add.activity.startTripAddActivity
+import team.triplog.presentation.activity.startTripAddActivity
 import team.triplog.presentation.main.adapter.MainTripAdapter
 import team.triplog.presentation.main.viewmodel.MainTripViewModel
 

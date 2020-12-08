@@ -10,7 +10,7 @@ import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import team.triplog.data.source.local.entity.TripLog
 import team.triplog.databinding.FragmentMainHomeBinding
-import team.triplog.presentation.activity.startTripInfoActivity
+import team.triplog.presentation.activity.startTripAddActivity
 import team.triplog.presentation.main.adapter.MainHomeAdapter
 import team.triplog.presentation.main.viewmodel.MainViewModel
 import team.triplog.presentation.main.viewmodel.TripLogViewModel
@@ -52,7 +52,7 @@ class MainHomeFragment : Fragment(), MainHomeAdapter.OnItemClickListener {
         binding.tripLogViewModel = tripLogViewModel
 
         tripPlanViewModel.eventClickTripButton.observe(viewLifecycleOwner, Observer { trip ->
-            binding.root.context.startTripInfoActivity(trip?.id)
+            binding.root.context.startTripAddActivity(trip?.id)
         })
     }
 

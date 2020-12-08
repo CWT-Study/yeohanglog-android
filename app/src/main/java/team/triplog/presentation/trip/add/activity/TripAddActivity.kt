@@ -78,7 +78,7 @@ class TripAddActivity : BaseActivity() {
     }
 }
 
-fun Context.startTripInfoActivity(tripId: Int? = null) {
+fun Context.startTripAddActivity(tripId: Int? = null) {
     startActivity(Intent(this, TripAddActivity::class.java).apply {
         tripId?.let { putExtra(EXTRA_TRIP_ID, it) }
     })
