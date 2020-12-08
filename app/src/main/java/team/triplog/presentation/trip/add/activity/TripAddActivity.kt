@@ -11,7 +11,7 @@ import team.triplog.databinding.ActivityTripAddBinding
 import team.triplog.presentation.base.BaseActivity
 import team.triplog.presentation.trip.plan.activity.TripPlanActivity
 
-class TripInfoActivity : BaseActivity() {
+class TripAddActivity : BaseActivity() {
     private lateinit var binding: ActivityTripAddBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -73,6 +73,6 @@ class TripInfoActivity : BaseActivity() {
     }
 }
 
-fun Context.startTripInfoActivity() {
-    startActivity(Intent(this, TripInfoActivity::class.java))
+fun Context.startTripAddActivity() {
+    startActivity(Intent(this, TripAddActivity::class.java))
 }
