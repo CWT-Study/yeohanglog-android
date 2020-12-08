@@ -11,6 +11,7 @@
     <color name="main_home_trip_day">@color/gray_999999</color>
     <color name="main_home_trip_period">@color/gray_999999</color>
     <color name="main_home_look_back">@color/gray_333333</color>
+    <color name="main_home_trip_log_item">@color/white_ffffff</color>
     <color name="main_home_no_contents_title">@color/main</color>
     <color name="main_home_no_contents_message">@color/black_000000</color>
     <color name="search">@color/black_000000</color>
@@ -58,6 +59,9 @@
     <color name="main_home_new_trip">@color/black_000000</color>
     <color name="trip_plan_title">@color/black_000000</color>
     <color name="trip_plan_period">@color/gray_666666</color>
+
+    <color name="main_home_trip_log_item_dim_start">@color/transparent</color>
+    <color name="main_home_trip_log_item_dim_end">@color/black_000000_50</color>
 
 
     <!-- Palette colors -->
