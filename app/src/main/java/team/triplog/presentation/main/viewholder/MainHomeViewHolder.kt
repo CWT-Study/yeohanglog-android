@@ -3,10 +3,11 @@ package team.triplog.presentation.main.viewholder
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import team.triplog.data.source.local.entity.TripLog
+import team.triplog.data.source.local.entity.Trip
 import team.triplog.databinding.ItemMainHomeTripBinding
-
 import team.triplog.presentation.main.adapter.MainHomeAdapter
+import team.triplog.presentation.util.extension.toDefaultFormat
+import java.util.*
 
 
 class MainHomeViewHolder(
@@ -21,12 +22,19 @@ class MainHomeViewHolder(
         }
     }
 
-    fun bind(item: TripLog, itemClickListener: MainHomeAdapter.OnItemClickListener?) {
-        binding.textTripTitle.text = item.title
-        binding.viewTrip.setImageResource(item.drawableId)
-        binding.layoutItem.tag = item
-        binding.layoutItem.setOnClickListener {
-            itemClickListener?.onItemClick(item)
+    fun bind(item: Trip, itemClickListener: MainHomeAdapter.OnItemClickListener) {
+        // TODO : 여행기록 대표 이미지 표시 추가
+
+        binding.tvTripTitle.text = item.name
+        binding.tvTripTitle.isSelected = true
+        binding.tvTripTitle.setHorizontallyScrolling(true)
+        binding.tvTripPeriod.text = setPeriodString(item.startDate, item.endDate)
+        itemView.setOnClickListener {
+            itemClickListener.onItemClick(item)
         }
+    }
+
+    private fun setPeriodString(start: Date, end: Date): String {
+        return String.format("${start.toDefaultFormat()} - ${end.toDefaultFormat()}")
     }
 }

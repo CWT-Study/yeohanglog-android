@@ -1,15 +1,13 @@
 <resources>
 
-    <style name="AppTheme"
-        parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowContentTransitions">true</item>
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="SplashTheme"
-        parent="Theme.AppCompat.NoActionBar">
+    <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
         <item name="android:windowBackground">@drawable/splash_background</item>
         <item name="android:statusBarColor">@color/main</item>
         <item name="android:navigationBarColor">@color/main</item>
@@ -19,8 +17,7 @@
         <item name="android:textSize">10dp</item>
     </style>
 
-    <style name="tab_text"
-        parent="TextAppearance.Design.Tab">
+    <style name="tab_text" parent="TextAppearance.Design.Tab">
         <item name="android:textSize">20dp</item>
         <item name="android:textStyle">bold</item>
     </style>
@@ -32,8 +29,7 @@
         <item name="android:textSize">20dp</item>
     </style>
 
-    <style name="text_sub_title"
-        parent="text_title">
+    <style name="text_sub_title" parent="text_title">
         <item name="android:textSize">18dp</item>
         <item name="android:ellipsize">end</item>
         <item name="android:maxLines">1</item>
@@ -52,7 +48,7 @@
         <item name="android:textColor">@color/main_home_welcome</item>
         <item name="android:text">@string/main_home_welcome</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textSize">@dimen/size_20</item>
+        <item name="android:textSize">@dimen/size_16</item>
     </style>
 
     <style name="text_main_home_trip_title">
@@ -73,14 +69,29 @@
     <style name="text_main_home_trip_period">
         <item name="android:textColor">@color/main_home_trip_period</item>
         <item name="android:text">TEXT_TRIP_PERIOD</item>
-        <item name="android:textSize">10dp</item>
+        <item name="android:textSize">@dimen/size_10</item>
     </style>
 
     <style name="text_main_home_look_back">
         <item name="android:textColor">@color/main_home_look_back</item>
         <item name="android:text">@string/main_home_look_back</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textSize">20dp</item>
+        <item name="android:textSize">@dimen/size_20</item>
+    </style>
+
+    <style name="text_main_home_trip_log_item">
+        <item name="android:textColor">@color/main_home_trip_log_item</item>
+    </style>
+
+    <style name="text_main_home_trip_log_item_title" parent="text_main_home_trip_log_item">
+        <item name="android:textSize">@dimen/size_20</item>
+        <item name="android:ellipsize">marquee</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <style name="text_main_home_trip_log_item_period" parent="text_main_home_trip_log_item">
+        <item name="android:textSize">@dimen/size_10</item>
     </style>
 
     <style name="search_view">
@@ -90,8 +101,7 @@
         <item name="android:theme">@style/search_view_theme</item>
     </style>
 
-    <style name="search_view_theme"
-        parent="Widget.AppCompat.SearchView">
+    <style name="search_view_theme" parent="Widget.AppCompat.SearchView">
         <item name="android:textColorHint">@color/search_hint</item>
         <item name="android:editTextColor">@color/search</item>
         <item name="android:textSize">14dp</item>

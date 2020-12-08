@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
-import team.triplog.data.source.local.entity.TripLog
+import team.triplog.data.source.local.entity.Trip
 import team.triplog.databinding.FragmentMainHomeBinding
 import team.triplog.presentation.activity.startTripAddActivity
 import team.triplog.presentation.main.adapter.MainHomeAdapter
@@ -43,6 +43,9 @@ class MainHomeFragment : Fragment(), MainHomeAdapter.OnItemClickListener {
     private fun setup() {
         setViewModel()
         setRecyclerView()
+
+        // TODO : TEST CODE
+        tripLogViewModel.updateTripLogList()
     }
 
     private fun setViewModel() {
@@ -63,7 +66,7 @@ class MainHomeFragment : Fragment(), MainHomeAdapter.OnItemClickListener {
     /**
      * 톺아보기 메뉴 아이템 클릭
      */
-    override fun onItemClick(item: TripLog) {
+    override fun onItemClick(item: Trip) {
         // TODO : 아이템 클릭시 화면 출력
     }
 }

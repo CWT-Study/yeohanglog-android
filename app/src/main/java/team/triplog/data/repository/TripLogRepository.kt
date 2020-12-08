@@ -1,6 +1,6 @@
 package team.triplog.data.repository
 
-import team.triplog.data.source.local.entity.TripLog
+import team.triplog.data.source.local.entity.Trip
 
 interface TripLogRepository {
 
@@ -8,13 +8,13 @@ interface TripLogRepository {
     fun createTripLog()
 
     /** 여행 기록 전체 가져오기 */
-    fun readAllTripLogs(): List<TripLog>
+    fun readAllTripLogs(): List<Trip>
 
     /** 특정 개수만큼 여행 기록 가져오기 */
-    fun readTripLogs(count: Int): List<TripLog>
+    fun readTripLogs(count: Int): List<Trip>
 
     /** 여행 기록 가져오기 */
-    fun readTripLog(id: Long): TripLog?
+    fun readTripLog(id: Long): Trip?
 
     /** 여행 기록 업데이트 */
     fun updateTripLog(id: Long)
