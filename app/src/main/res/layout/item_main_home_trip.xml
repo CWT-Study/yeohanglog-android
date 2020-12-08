@@ -1,56 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    >
+    xmlns:tools="http://schemas.android.com/tools">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="198dp"
-        android:layout_height="271dp"
-        >
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
 
         <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="10dp"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="6dp"
-            app:cardMaxElevation="6dp"
-            >
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="@dimen/size_5"
+            android:layout_marginBottom="@dimen/size_15"
+            android:foreground="@drawable/foreground_button_main_trip_log_item"
+            app:cardCornerRadius="@dimen/size_10"
+            app:cardElevation="@dimen/size_4"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1:1.5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/layout_item"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                >
+                android:layout_height="match_parent">
 
                 <ImageView
                     android:id="@+id/view_trip"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/ic_launcher_background"
+                    android:scaleType="centerCrop"
+                    android:src="@color/main"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/v_dim"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/background_main_trip_log_item_dim"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHeight_percent="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    />
+                    app:layout_constraintVertical_bias="1" />
 
                 <TextView
-                    android:id="@+id/text_trip_title"
+                    android:id="@+id/tv_trip_title"
+                    style="@style/text_main_home_trip_log_item_title"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="여행 내용"
+                    android:layout_marginHorizontal="@dimen/size_10"
+                    android:layout_marginBottom="@dimen/size_5"
                     android:textColor="@color/trip_title"
-                    android:textSize="20dp"
                     android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@id/tv_trip_period"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:text="TEXT_TRIP_LOG_TITLE" />
+
+                <TextView
+                    android:id="@+id/tv_trip_period"
+                    style="@style/text_main_home_trip_log_item_period"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/size_15"
+                    android:layout_marginBottom="@dimen/size_15"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.1"
-                    app:layout_constraintWidth_percent="0.88"
-                    />
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:text="2020.12.24 - 2020.12.25" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
