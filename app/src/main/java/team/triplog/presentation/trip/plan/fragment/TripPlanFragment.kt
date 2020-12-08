@@ -7,10 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import team.triplog.R
 import team.triplog.databinding.FragmentTripPlanBinding
-import team.triplog.presentation.activity.TripPayActivity
-import team.triplog.presentation.activity.TripAlbumActivity
-import team.triplog.presentation.activity.TripCheckActivity
-import team.triplog.presentation.activity.TripMemberActivity
+import team.triplog.presentation.trip.add.activity.TripPayActivity
+import team.triplog.presentation.trip.add.activity.TripAlbumActivity
+import team.triplog.presentation.trip.add.activity.TripCheckActivity
+import team.triplog.presentation.trip.add.activity.TripMemberActivity
 import team.triplog.presentation.base.BaseFragment
 import team.triplog.presentation.trip.plan.adapter.TripPlanDayAdapter
 import java.util.*

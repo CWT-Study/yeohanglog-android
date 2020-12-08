@@ -55,7 +55,7 @@
             />
 
         <activity
-            android:name=".presentation.activity.TripInfoActivity"
+            android:name=".presentation.trip.add.activity.TripAddActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan|stateAlwaysHidden"
             />
@@ -80,25 +80,25 @@
             />
 
         <activity
-            android:name=".presentation.activity.TripPayActivity"
+            android:name=".presentation.trip.add.activity.TripPayActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan|stateAlwaysHidden"
             />
 
         <activity
-            android:name=".presentation.activity.TripCheckActivity"
+            android:name=".presentation.trip.add.activity.TripCheckActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan|stateAlwaysHidden"
             />
 
         <activity
-            android:name=".presentation.activity.TripMemberActivity"
+            android:name=".presentation.trip.add.activity.TripMemberActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan|stateAlwaysHidden"
             />
 
         <activity
-            android:name=".presentation.activity.TripAlbumActivity"
+            android:name=".presentation.trip.add.activity.TripAlbumActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan|stateAlwaysHidden"
             />

@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    >
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layout_parent"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/background_main"
-        >
+        android:background="@drawable/background_main">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
@@ -20,12 +16,11 @@
             app:contentInsetStart="0dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/text_trip_info"
-            style="@style/trip_info_description"
+            android:id="@+id/text_trip_add"
+            style="@style/trip_add_description"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:lineSpacingExtra="10dp"
@@ -34,36 +29,33 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/toolbar"
             app:layout_constraintVertical_bias="0.1"
-            app:layout_constraintWidth_percent="0.9"
-            />
+            app:layout_constraintWidth_percent="0.9" />
 
         <EditText
             android:id="@+id/edit_trip_name"
-            style="@style/trip_info_edit_name"
+            style="@style/trip_add_edit_name"
             android:layout_width="0dp"
             android:layout_height="45dp"
             android:inputType="text"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/text_trip_info"
+            app:layout_constraintTop_toBottomOf="@id/text_trip_add"
             app:layout_constraintVertical_bias="0.15"
-            app:layout_constraintWidth_percent="0.9"
-            />
+            app:layout_constraintWidth_percent="0.9" />
 
         <TextView
             android:id="@+id/text_trip_name_limit"
-            style="@style/trip_info_name_limit"
+            style="@style/trip_add_name_limit"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintLeft_toLeftOf="@id/edit_trip_name"
             app:layout_constraintRight_toRightOf="@id/edit_trip_name"
-            app:layout_constraintTop_toBottomOf="@id/edit_trip_name"
-            />
+            app:layout_constraintTop_toBottomOf="@id/edit_trip_name" />
 
         <TextView
             android:id="@+id/text_trip_name"
-            style="@style/trip_info_trip_name"
+            style="@style/trip_add_trip_name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -71,20 +63,18 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/toolbar"
             app:layout_constraintVertical_bias="0.1"
-            app:layout_constraintWidth_percent="0.9"
-            />
+            app:layout_constraintWidth_percent="0.9" />
 
         <TextView
             android:id="@+id/text_select_date"
-            style="@style/trip_info_select_date"
+            style="@style/trip_add_select_date"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/text_trip_name"
-            app:layout_constraintWidth_percent="0.9"
-            />
+            app:layout_constraintWidth_percent="0.9" />
 
         <CalendarView
             android:id="@+id/calendar_trip"
@@ -96,8 +86,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/text_select_date"
-            app:layout_constraintWidth_percent="0.9"
-            />
+            app:layout_constraintWidth_percent="0.9" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/button_next"
@@ -110,8 +99,7 @@
             app:fabSize="normal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintDimensionRatio="1"
-            app:layout_constraintRight_toRightOf="parent"
-            />
+            app:layout_constraintRight_toRightOf="parent" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/button_previous"
@@ -124,23 +112,20 @@
             app:fabSize="normal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintDimensionRatio="1"
-            app:layout_constraintLeft_toLeftOf="parent"
-            />
+            app:layout_constraintLeft_toLeftOf="parent" />
 
         <androidx.constraintlayout.widget.Group
             android:id="@+id/group_input_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:constraint_referenced_ids="text_trip_info,edit_trip_name,text_trip_name_limit"
-            />
+            app:constraint_referenced_ids="text_trip_add,edit_trip_name,text_trip_name_limit" />
 
         <androidx.constraintlayout.widget.Group
             android:id="@+id/group_select_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:visibility="invisible"
-            app:constraint_referenced_ids="text_trip_name,text_select_date,calendar_trip,button_previous"
-            />
+            app:constraint_referenced_ids="text_trip_name,text_select_date,calendar_trip,button_previous" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

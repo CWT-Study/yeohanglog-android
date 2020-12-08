@@ -7,17 +7,17 @@ import android.view.MenuItem
 import android.view.View
 import androidx.databinding.DataBindingUtil
 import team.triplog.R
-import team.triplog.databinding.ActivityTripInfoBinding
-import team.triplog.presentation.activity.TripInfoActivity.Companion.EXTRA_TRIP_ID
+import team.triplog.databinding.ActivityTripAddBinding
+import team.triplog.presentation.activity.TripAddActivity.Companion.EXTRA_TRIP_ID
 import team.triplog.presentation.base.BaseActivity
 import team.triplog.presentation.trip.plan.activity.TripPlanActivity
 
-class TripInfoActivity : BaseActivity() {
-    private lateinit var binding: ActivityTripInfoBinding
+class TripAddActivity : BaseActivity() {
+    private lateinit var binding: ActivityTripAddBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_trip_info)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_trip_add)
         binding.lifecycleOwner = this
 
         init()
@@ -78,8 +78,8 @@ class TripInfoActivity : BaseActivity() {
     }
 }
 
-fun Context.startTripInfoActivity(tripId: Int? = null) {
-    startActivity(Intent(this, TripInfoActivity::class.java).apply {
+fun Context.startTripAddActivity(tripId: Int? = null) {
+    startActivity(Intent(this, TripAddActivity::class.java).apply {
         tripId?.let { putExtra(EXTRA_TRIP_ID, it) }
     })
 }

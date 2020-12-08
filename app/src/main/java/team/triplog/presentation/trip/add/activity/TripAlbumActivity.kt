@@ -1,4 +1,4 @@
-package team.triplog.presentation.activity
+package team.triplog.presentation.trip.add.activity
 
 import android.os.Bundle
 import android.view.MenuItem
@@ -6,7 +6,7 @@ import android.view.View
 import androidx.databinding.DataBindingUtil
 import team.triplog.R
 import team.triplog.databinding.ActivityTripAlbumBinding
-import team.triplog.presentation.adapter.TripAlbumAdapter
+import team.triplog.presentation.trip.add.adapter.TripAlbumAdapter
 import team.triplog.presentation.base.BaseActivity
 import java.util.*
 

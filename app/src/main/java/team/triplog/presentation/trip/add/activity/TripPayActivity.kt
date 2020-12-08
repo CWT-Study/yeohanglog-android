@@ -1,4 +1,4 @@
-package team.triplog.presentation.activity
+package team.triplog.presentation.trip.add.activity
 
 import android.os.Bundle
 import android.view.MenuItem
