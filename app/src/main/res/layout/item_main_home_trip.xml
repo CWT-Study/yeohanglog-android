@@ -69,7 +69,7 @@
                     style="@style/text_main_home_trip_log_item_period"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="@dimen/size_15"
+                    android:layout_marginHorizontal="@dimen/size_10"
                     android:layout_marginBottom="@dimen/size_15"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
