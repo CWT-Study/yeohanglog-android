@@ -12,9 +12,9 @@ import com.google.android.material.tabs.TabLayout.OnTabSelectedListener
 import com.google.android.material.tabs.TabLayout.TabLayoutOnPageChangeListener
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import team.triplog.databinding.FragmentMainTripBinding
-import team.triplog.presentation.activity.startTripAddActivity
 import team.triplog.presentation.main.adapter.MainTripAdapter
 import team.triplog.presentation.main.viewmodel.MainTripViewModel
+import team.triplog.presentation.trip.plan.activity.startTripPlanActivity
 
 class MainTripFragment : Fragment() {
     private lateinit var binding: FragmentMainTripBinding
@@ -45,7 +45,7 @@ class MainTripFragment : Fragment() {
 
         /** 새로운 여행 등록 클릭 */
         viewModel.eventCreateTrip.observe(viewLifecycleOwner, Observer {
-            binding.root.context.startTripAddActivity()
+            binding.root.context.startTripPlanActivity()
         })
     }
 

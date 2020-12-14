@@ -10,9 +10,9 @@ import androidx.lifecycle.Observer
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import team.triplog.databinding.FragmentMainTripPlanBinding
 import team.triplog.domain.model.Trip
-import team.triplog.presentation.trip.add.activity.startTripAddActivity
 import team.triplog.presentation.main.adapter.MainTripPlanAdapter
 import team.triplog.presentation.main.viewmodel.MainTripPlanViewModel
+import team.triplog.presentation.trip.plan.activity.startTripPlanActivity
 
 class MainTripPlanFragment : Fragment(), MainTripPlanAdapter.OnItemClickListener {
     private lateinit var binding: FragmentMainTripPlanBinding
@@ -50,6 +50,6 @@ class MainTripPlanFragment : Fragment(), MainTripPlanAdapter.OnItemClickListener
     }
 
     override fun onItemClick(view: View, item: Trip) {
-        binding.root.context.startTripAddActivity()
+        binding.root.context.startTripPlanActivity()
     }
 }
