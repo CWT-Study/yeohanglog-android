@@ -45,7 +45,7 @@ class TripCheckActivity : BaseActivity() {
     }
 
     private fun checkEmptyList() {
-        text_no_contents.visibility = if (checkList.isEmpty()) View.VISIBLE else View.INVISIBLE
+        tv_no_contents.visibility = if (checkList.isEmpty()) View.VISIBLE else View.INVISIBLE
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

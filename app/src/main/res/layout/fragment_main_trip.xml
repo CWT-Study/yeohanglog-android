@@ -62,7 +62,7 @@
                     </com.google.android.material.tabs.TabLayout>
 
                     <ImageView
-                        android:id="@+id/view_plus"
+                        android:id="@+id/v_plus"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
                         android:layout_gravity="center"

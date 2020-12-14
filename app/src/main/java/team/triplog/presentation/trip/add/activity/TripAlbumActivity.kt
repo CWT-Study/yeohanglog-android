@@ -6,8 +6,8 @@ import android.view.View
 import androidx.databinding.DataBindingUtil
 import team.triplog.R
 import team.triplog.databinding.ActivityTripAlbumBinding
-import team.triplog.presentation.trip.add.adapter.TripAlbumAdapter
 import team.triplog.presentation.base.BaseActivity
+import team.triplog.presentation.trip.add.adapter.TripAlbumAdapter
 import java.util.*
 
 
@@ -42,7 +42,7 @@ class TripAlbumActivity : BaseActivity(), TripAlbumAdapter.OnItemClickListener {
             it.setDisplayShowTitleEnabled(false)
         }
 
-        binding.buttonAdd.setOnClickListener(onClickListener)
+        binding.btnAdd.setOnClickListener(onClickListener)
         initImageList()
     }
 
@@ -67,12 +67,12 @@ class TripAlbumActivity : BaseActivity(), TripAlbumAdapter.OnItemClickListener {
     }
 
     private fun checkEmptyList() {
-        binding.textNoContents.visibility = if (imageList.isEmpty()) View.VISIBLE else View.INVISIBLE
+        binding.tvNoContents.visibility = if (imageList.isEmpty()) View.VISIBLE else View.INVISIBLE
     }
 
     private val onClickListener = View.OnClickListener { view: View ->
         when (view.id) {
-            R.id.button_add -> {
+            R.id.btn_add -> {
                 // TODO : 사진 추가
             }
         }

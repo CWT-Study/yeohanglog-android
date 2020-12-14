@@ -67,7 +67,7 @@
     </androidx.core.widget.NestedScrollView>
 
     <TextView
-        android:id="@+id/text_no_contents"
+        android:id="@+id/tv_no_contents"
         style="@style/trip_check_no_contents"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -75,7 +75,7 @@
         />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/button_add"
+        android:id="@+id/btn_add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
