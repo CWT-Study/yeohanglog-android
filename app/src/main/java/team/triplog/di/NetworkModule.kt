@@ -1,11 +1,5 @@
 package team.triplog.di
 
-
-/**
- * Created by Minjae Kim on 2020.12.20.
- *
- * DESC : 네트워크 DI
- */
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.core.qualifier.named
@@ -17,6 +11,12 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
+
+/**
+ * Created by Minjae Kim on 2020.12.20.
+ *
+ * DESC : 네트워크 DI
+ */
 const val DI_RETROFIT_NO_AUTH = "DI_RETROFIT_NO_AUTH"
 const val DI_RETROFIT_NO_AUTH_CLIENT = "DI_RETROFIT_NO_AUTH_CLIENT"
 const val SERVER_URL = "http://210.102.178.24:5000/tr"

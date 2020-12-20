@@ -56,6 +56,7 @@ class GlobalApplication : Application() {
             androidContext(this@GlobalApplication)
             modules(
                 listOf(
+                    apiModule,
                     mainModule,
                     roomModule,
                     dataModule,
