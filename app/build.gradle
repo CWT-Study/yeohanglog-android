@@ -2,7 +2,6 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android-extensions'
-apply plugin: 'realm-android'
 
 android {
     compileSdkVersion BuildSdkVersion
@@ -35,47 +34,46 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation group: 'androidx.appcompat', name: 'appcompat', version: '1.1.0'
-    implementation group: 'androidx.constraintlayout', name: 'constraintlayout', version: '1.1.3'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:${versions.kotlin}"
+    implementation group: 'androidx.appcompat', name: 'appcompat', version: '1.2.0'
+    implementation group: 'androidx.constraintlayout', name: 'constraintlayout', version: '2.0.4'
     implementation group: 'com.google.code.gson', name: 'gson', version: '2.8.6'
-    implementation group: 'com.google.android.material', name: 'material', version: '1.1.0'
-    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
+    implementation group: 'com.google.android.material', name: 'material', version: '1.2.1'
+    implementation "androidx.lifecycle:lifecycle-extensions:${versions.lifecycle}"
 
     // Navigation
-    implementation "androidx.navigation:navigation-fragment-ktx:$navigation_version"
-    implementation "androidx.navigation:navigation-ui-ktx:$navigation_version"
+    implementation "androidx.navigation:navigation-fragment-ktx:${versions.navigation}"
+    implementation "androidx.navigation:navigation-ui-ktx:${versions.navigation}"
 
     // kakao log-in
     implementation group: project.KAKAO_SDK_GROUP, name: 'usermgmt', version: project.KAKAO_SDK_VERSION
 
     // Retrofit2
-    implementation "com.squareup.retrofit2:retrofit:2.7.1"
-    implementation "com.squareup.retrofit2:converter-gson:2.6.4"
+    implementation "com.squareup.retrofit2:retrofit:${versions.retrofit}"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:${versions.retrofit}"
+    implementation "com.squareup.retrofit2:converter-gson:${versions.retrofit}"
     implementation "com.squareup.okhttp3:logging-interceptor:4.0.0"
 
     // Room
-    implementation "androidx.room:room-runtime:$room_version"
-    kapt "androidx.room:room-compiler:$room_version"
+    implementation "androidx.room:room-runtime:${versions.room}"
+    kapt "androidx.room:room-compiler:${versions.room}"
 
     // Glide
-    def glide_version = "4.11.0"
-    implementation "com.github.bumptech.glide:glide:${glide_version}"
-    annotationProcessor "com.github.bumptech.glide:compiler:${glide_version}"
-    implementation "jp.wasabeef:glide-transformations:4.0.0"
+    implementation "com.github.bumptech.glide:glide:${versions.glide}"
+    annotationProcessor "com.github.bumptech.glide:compiler:${versions.glide}"
+    implementation "jp.wasabeef:glide-transformations:4.1.0"
     implementation "jp.co.cyberagent.android:gpuimage:2.0.0"
 
     // Koin
-    implementation "org.koin:koin-android:$koin_version"
-    implementation "org.koin:koin-core:$koin_version"
-    implementation "org.koin:koin-androidx-scope:$koin_version"
-    implementation "org.koin:koin-androidx-viewmodel:$koin_version"
+    implementation "org.koin:koin-android:${versions.koin}"
+    implementation "org.koin:koin-core:${versions.koin}"
+    implementation "org.koin:koin-androidx-scope:${versions.koin}"
+    implementation "org.koin:koin-androidx-viewmodel:${versions.koin}"
 
     // aac dependencies
-    implementation "androidx.lifecycle:lifecycle-viewmodel:${versions.lifecycle}"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:${versions.lifecycle}"
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:${versions.lifecycle}"
     implementation "androidx.lifecycle:lifecycle-extensions:${versions.lifecycle}"
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:${versions.lifecycle}"
     kapt "androidx.lifecycle:lifecycle-compiler:${versions.archLifecycle}"
 
     // Network dependencies
@@ -88,9 +86,9 @@ dependencies {
 
     // Test
     testImplementation 'junit:junit:4.13'
-    testImplementation "org.koin:koin-test:$koin_version"
-    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    testImplementation "org.koin:koin-test:${versions.koin}"
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
     //reactive
     implementation 'io.reactivex.rxjava2:rxkotlin:2.4.0'
