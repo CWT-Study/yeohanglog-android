@@ -4,10 +4,7 @@ import android.app.Application
 import com.kakao.auth.*
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
-import team.triplog.di.dataModule
-import team.triplog.di.mainModule
-import team.triplog.di.roomModule
-import team.triplog.di.useCaseModule
+import team.triplog.di.*
 
 class GlobalApplication : Application() {
     override fun onCreate() {
@@ -62,6 +59,7 @@ class GlobalApplication : Application() {
                     mainModule,
                     roomModule,
                     dataModule,
+                    networkModule,
                     useCaseModule
                 )
             )
