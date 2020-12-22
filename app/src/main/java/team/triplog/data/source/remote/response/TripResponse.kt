@@ -1,12 +1,59 @@
 package team.triplog.data.source.remote.response
 
 import com.google.gson.annotations.SerializedName
-import java.util.*
 
 data class TripResponse(
-    @SerializedName("id") var id: Int = 0,
-    @SerializedName("name") var name: String = "",
-    @SerializedName("start_at") var startDate: Date = Date(),
-    @SerializedName("end_at") var endDate: Date = Date(),
-    @SerializedName("image") var image: String = ""
-) : BaseResponse
+    @SerializedName("_id")
+    var id: String,
+
+    @SerializedName("title")
+    var title: String,
+
+    @SerializedName("startDt")
+    var startDate: String,
+
+    @SerializedName("endDt")
+    var endDate: String,
+
+    @SerializedName("masterId")
+    var masterId: String,
+
+    @SerializedName("repPhoto")
+    var repPhoto: String,
+
+    @SerializedName("members")
+    var members: List<Member>,
+
+    @SerializedName("preparations")
+    var preparations: List<String>,
+
+    @SerializedName("readCnt")
+    var readCount: String,
+
+    @SerializedName("createdAt")
+    var createdTime: String,
+
+    @SerializedName("updatedAt")
+    var updatedAt: String
+
+) : BaseResponse {
+
+    data class Member(
+        @SerializedName("uuid")
+        var memberId: String,
+
+        @SerializedName("authority")
+        var authority: Authority
+    ) {
+        data class Authority(
+            @SerializedName("plan")
+            var plan: Boolean,
+
+            @SerializedName("file")
+            var file: Boolean,
+
+            @SerializedName("cost")
+            var cost: Boolean
+        )
+    }
+}
