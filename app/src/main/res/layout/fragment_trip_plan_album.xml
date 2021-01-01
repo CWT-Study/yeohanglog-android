@@ -44,7 +44,7 @@
                             android:layout_height="18dp"
                             android:layout_gravity="center"
                             android:src="@drawable/icon_back"
-                            android:tint="@color/color_black_click" />
+                            app:tint="@color/color_black_click" />
 
                     </FrameLayout>
 
@@ -66,7 +66,7 @@
                         android:layout_gravity="center"
                         android:padding="@dimen/size_12"
                         android:src="@drawable/ic_add_photo_black"
-                        android:tint="@color/color_black_click"
+                        app:tint="@color/color_black_click"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintDimensionRatio="1"
                         app:layout_constraintEnd_toEndOf="parent"

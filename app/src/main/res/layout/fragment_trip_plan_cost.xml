@@ -44,7 +44,7 @@
                             android:layout_height="18dp"
                             android:layout_gravity="center"
                             android:src="@drawable/icon_back"
-                            android:tint="@color/color_black_click" />
+                            app:tint="@color/color_black_click" />
 
                     </FrameLayout>
 

@@ -44,7 +44,7 @@
                             android:layout_height="@dimen/size_24"
                             android:layout_gravity="center"
                             android:src="@drawable/ic_baseline_close_24"
-                            android:tint="@color/color_black_click" />
+                            app:tint="@color/color_black_click" />
 
                     </FrameLayout>
 

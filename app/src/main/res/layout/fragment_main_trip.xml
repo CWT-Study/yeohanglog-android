@@ -69,7 +69,7 @@
                         android:onClick="@{() -> vm.createTrip()}"
                         android:padding="@dimen/size_12"
                         android:src="@drawable/ic_add_trip_24"
-                        android:tint="@color/color_black_click"
+                        app:tint="@color/color_black_click"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintDimensionRatio="1"
                         app:layout_constraintEnd_toEndOf="parent"
