@@ -4,12 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import team.triplog.data.source.local.entity.Trip
 import team.triplog.databinding.FragmentMainHomeBinding
+import team.triplog.presentation.base.BaseFragment
 import team.triplog.presentation.main.adapter.MainHomeAdapter
 import team.triplog.presentation.main.viewmodel.MainViewModel
 import team.triplog.presentation.main.viewmodel.TripLogViewModel
@@ -17,7 +17,7 @@ import team.triplog.presentation.main.viewmodel.TripPlanViewModel
 import team.triplog.presentation.main.viewmodel.UserViewModel
 import team.triplog.presentation.trip.plan.activity.startTripPlanActivity
 
-class MainHomeFragment : Fragment(), MainHomeAdapter.OnItemClickListener {
+class MainHomeFragment : BaseFragment(), MainHomeAdapter.OnItemClickListener {
     private lateinit var binding: FragmentMainHomeBinding
 
     private val mainViewModel: MainViewModel by sharedViewModel()
@@ -43,6 +43,7 @@ class MainHomeFragment : Fragment(), MainHomeAdapter.OnItemClickListener {
     private fun setup() {
         setViewModel()
         setRecyclerView()
+        setupButton(binding.layoutTrip)
 
         // TODO : TEST CODE
         tripLogViewModel.updateTripLogList()
