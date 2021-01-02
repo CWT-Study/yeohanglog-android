@@ -68,6 +68,7 @@
     <color name="transparent">#00000000</color>
     <color name="black_000000">#000000</color>
     <color name="black_000000_50">#80000000</color>
+    <color name="black_000000_10">#1a000000</color>
     <color name="gray_333333">#333333</color>
     <color name="gray_494949">#494949</color>
     <color name="gray_666666">#666666</color>
