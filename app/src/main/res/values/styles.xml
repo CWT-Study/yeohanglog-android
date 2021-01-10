@@ -428,6 +428,14 @@
         <item name="android:textSize">14dp</item>
     </style>
 
+    <style name="trip_plan_name">
+        <item name="android:textColor">@color/trip_plan_info</item>
+        <item name="android:textSize">@dimen/size_14</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
     <style name="trip_plan_button">
         <item name="android:textColor">@color/trip_plan_info</item>
         <item name="android:textStyle">bold</item>

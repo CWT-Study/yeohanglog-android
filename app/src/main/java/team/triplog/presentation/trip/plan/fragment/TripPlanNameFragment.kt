@@ -45,6 +45,11 @@ class TripPlanNameFragment : BaseFragment() {
             binding.tietTripName.hideKeyboard()
         }
 
+        binding.ivEditName.setupButton()
+        binding.ivEditName.setOnClickListener {
+            // TODO : 이름 설정으로 변경
+        }
+
         binding.ivClose.setupButton()
         binding.ivClose.setOnClickListener {
             activity?.finish()
