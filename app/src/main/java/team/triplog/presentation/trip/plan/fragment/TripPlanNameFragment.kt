@@ -4,7 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.fragment.findNavController
+import androidx.core.view.isVisible
+import androidx.lifecycle.Observer
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import team.triplog.R
 import team.triplog.databinding.FragmentTripPlanNameBinding
@@ -12,6 +13,7 @@ import team.triplog.presentation.base.BaseFragment
 import team.triplog.presentation.trip.plan.viewmodel.TripPlanInfoViewModel
 import team.triplog.presentation.util.extension.hideKeyboard
 import team.triplog.presentation.util.extension.setupButton
+import team.triplog.presentation.util.extension.showKeyboard
 
 
 /**
@@ -42,6 +44,15 @@ class TripPlanNameFragment : BaseFragment() {
 
     private fun setViewModel() {
         binding.viewModel = tripPlanInfoViewModel
+
+        tripPlanInfoViewModel.hasName.observe(viewLifecycleOwner, Observer {
+            binding.groupTripName.isVisible = !it
+            binding.groupTripPeriod.isVisible = it
+            when (it) {
+                true -> binding.tietTripName.hideKeyboard()
+                else -> binding.tietTripName.showKeyboard()
+            }
+        })
     }
 
     private fun setView() {
@@ -51,17 +62,24 @@ class TripPlanNameFragment : BaseFragment() {
 
         binding.ivEditName.setupButton()
         binding.ivEditName.setOnClickListener {
-            // TODO : 이름 설정으로 변경
+            tripPlanInfoViewModel.setName(false)
         }
 
         binding.ivClose.setupButton()
         binding.ivClose.setOnClickListener {
-            activity?.finish()
+            checkExit()
         }
 
         binding.btnNext.setupButton()
         binding.btnNext.setOnClickListener {
-            findNavController().navigate(R.id.action_tripPlanNameFragment_to_tripPlanPeriodFragment)
+            tripPlanInfoViewModel.setName(true)
+        }
+    }
+
+    private fun checkExit() {
+        if (tripPlanInfoViewModel.checkHasData()) {
+        } else {
+            activity?.finish()
         }
     }
 }
