@@ -94,6 +94,13 @@
         <item name="android:textSize">@dimen/size_10</item>
     </style>
 
+    <style name="text_trip_name_info">
+        <item name="android:textColor">@color/trip_plan_name_info</item>
+        <item name="android:text">@string/trip_add_description</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/size_20</item>
+    </style>
+
     <style name="search_view">
         <item name="android:background">@drawable/background_search</item>
         <item name="android:queryHint">@string/search_search_hint</item>

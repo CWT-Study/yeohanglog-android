@@ -59,6 +59,7 @@
     <color name="main_home_new_trip">@color/black_000000</color>
     <color name="trip_plan_title">@color/black_000000</color>
     <color name="trip_plan_period">@color/gray_666666</color>
+    <color name="trip_plan_name_info">@color/gray_666666</color>
 
     <color name="main_home_trip_log_item_dim_start">@color/transparent</color>
     <color name="main_home_trip_log_item_dim_end">@color/black_000000_50</color>
