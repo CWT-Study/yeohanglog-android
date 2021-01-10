@@ -27,7 +27,7 @@
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/background_main">
+        android:background="@color/background_main">
 
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/appbar"
@@ -39,7 +39,7 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:background="@color/white_ffffff">
+                android:background="@color/background_main">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
@@ -175,6 +175,7 @@
                     android:layout_width="@dimen/size_30"
                     android:layout_height="0dp"
                     android:src="@drawable/ic_touch_black"
+                    android:tint="@color/main_home_new_trip_button_tint"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintDimensionRatio="1"
                     app:layout_constraintEnd_toEndOf="parent"
