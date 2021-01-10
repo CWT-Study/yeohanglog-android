@@ -70,8 +70,8 @@ class TripPlanNameFragment : BaseFragment() {
             checkExit()
         }
 
-        binding.btnNext.setupButton()
-        binding.btnNext.setOnClickListener {
+        binding.clNext.setupButton()
+        binding.clNext.setOnClickListener {
             tripPlanInfoViewModel.setName(true)
         }
     }

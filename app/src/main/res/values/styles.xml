@@ -436,6 +436,13 @@
         <item name="android:maxLines">1</item>
     </style>
 
+    <style name="trip_plan_button_next">
+        <item name="android:textColor">@color/color_button_next</item>
+        <item name="android:text">@string/button_next</item>
+        <item name="android:textSize">@dimen/size_20</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
     <style name="trip_plan_button">
         <item name="android:textColor">@color/trip_plan_info</item>
         <item name="android:textStyle">bold</item>
