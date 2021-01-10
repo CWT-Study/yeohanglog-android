@@ -78,6 +78,14 @@ class TripPlanNameFragment : BaseFragment() {
 
     private fun checkExit() {
         if (tripPlanInfoViewModel.checkHasData()) {
+            showAlert(
+                message = getString(R.string.trip_plan_dialog_message),
+                positive = getString(R.string.button_yes),
+                negative = getString(R.string.button_no),
+                positiveAction = { _, _ ->
+                    activity?.finish()
+                }
+            )
         } else {
             activity?.finish()
         }
