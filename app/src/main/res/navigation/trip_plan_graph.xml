@@ -15,8 +15,8 @@
             android:id="@+id/action_tripPlanNameFragment_to_tripPlanPeriodFragment"
             app:destination="@id/tripPlanPeriodFragment"
             app:enterAnim="@anim/slide_in_right"
-            app:exitAnim="@anim/slide_out_left"
-            app:popEnterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
             app:popExitAnim="@anim/slide_out_right" />
 
     </fragment>
@@ -31,8 +31,8 @@
             android:id="@+id/action_tripPlanPeriodFragment_to_tripPlanMainFragment"
             app:destination="@id/tripPlanMainFragment"
             app:enterAnim="@anim/slide_in_right"
-            app:exitAnim="@anim/slide_out_left"
-            app:popEnterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
             app:popExitAnim="@anim/slide_out_right"
             app:popUpTo="@id/trip_plan_graph"
             app:popUpToInclusive="true" />
