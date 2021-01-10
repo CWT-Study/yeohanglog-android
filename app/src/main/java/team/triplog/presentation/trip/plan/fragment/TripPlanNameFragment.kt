@@ -5,9 +5,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import team.triplog.R
 import team.triplog.databinding.FragmentTripPlanNameBinding
 import team.triplog.presentation.base.BaseFragment
+import team.triplog.presentation.trip.plan.viewmodel.TripPlanInfoViewModel
 import team.triplog.presentation.util.extension.hideKeyboard
 import team.triplog.presentation.util.extension.setupButton
 
@@ -19,6 +21,8 @@ import team.triplog.presentation.util.extension.setupButton
  */
 class TripPlanNameFragment : BaseFragment() {
     private lateinit var binding: FragmentTripPlanNameBinding
+
+    private val tripPlanInfoViewModel: TripPlanInfoViewModel by viewModel()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentTripPlanNameBinding.inflate(inflater, container, false)
@@ -37,7 +41,7 @@ class TripPlanNameFragment : BaseFragment() {
     }
 
     private fun setViewModel() {
-        // TODO : ViewModel 초기화
+        binding.viewModel = tripPlanInfoViewModel
     }
 
     private fun setView() {
