@@ -8,6 +8,7 @@ import androidx.navigation.fragment.findNavController
 import team.triplog.R
 import team.triplog.databinding.FragmentTripPlanNameBinding
 import team.triplog.presentation.base.BaseFragment
+import team.triplog.presentation.util.extension.setupButton
 
 
 /**
@@ -39,10 +40,12 @@ class TripPlanNameFragment : BaseFragment() {
     }
 
     private fun setView() {
-        binding.flClose.setOnClickListener {
+        binding.ivClose.setupButton()
+        binding.ivClose.setOnClickListener {
             activity?.finish()
         }
 
+        binding.btnNext.setupButton()
         binding.btnNext.setOnClickListener {
             findNavController().navigate(R.id.action_tripPlanNameFragment_to_tripPlanPeriodFragment)
         }
