@@ -5,6 +5,8 @@
 
     <data>
 
+        <import type="android.view.View" />
+
         <variable
             name="viewModel"
             type="team.triplog.presentation.trip.plan.viewmodel.TripPlanInfoViewModel" />
@@ -14,6 +16,7 @@
         android:id="@+id/cl_main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
         android:background="@drawable/background_main">
 
         <com.google.android.material.appbar.AppBarLayout
@@ -41,6 +44,8 @@
                         android:layout_height="0dp"
                         android:gravity="center_vertical"
                         android:paddingHorizontal="@dimen/size_15"
+                        android:text="@{viewModel.tripName}"
+                        android:visibility="@{viewModel.hasName ? View.VISIBLE : View.GONE}"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@id/iv_edit_name"
                         app:layout_constraintStart_toStartOf="parent"
@@ -53,6 +58,7 @@
                         android:layout_height="0dp"
                         android:padding="@dimen/size_14"
                         android:src="@drawable/ic_baseline_edit_24"
+                        android:visibility="@{viewModel.hasName ? View.VISIBLE : View.GONE}"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintDimensionRatio="1"
                         app:layout_constraintEnd_toStartOf="@id/iv_close"
@@ -100,13 +106,14 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/size_40"
+                android:layout_marginBottom="@dimen/size_80"
                 android:hint="@string/trip_add_name_hint"
                 app:counterEnabled="true"
                 app:counterMaxLength="20"
                 app:endIconMode="clear_text"
                 app:helperText="@string/trip_add_name_limit"
                 app:helperTextEnabled="true"
-                app:layout_constraintBottom_toTopOf="@id/btn_next"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_input_name_info"
@@ -116,22 +123,36 @@
                     android:id="@+id/tiet_trip_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:maxLength="20" />
+                    android:maxLength="20"
+                    android:text="@={viewModel.tripName}" />
 
             </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/group_trip_name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:constraint_referenced_ids="tv_input_name_info, til_trip_name" />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/group_trip_period"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/btn_next"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
-                android:backgroundTint="@color/floating_button"
+                android:backgroundTint="@color/color_floating_button"
+                android:enabled="@{viewModel.tripName.length() != 0}"
                 android:src="@drawable/icon_arrow_right"
                 app:borderWidth="0dp"
                 app:fabSize="normal"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintDimensionRatio="1"
-                app:layout_constraintRight_toRightOf="parent" />
+                app:layout_constraintRight_toRightOf="parent"
+                tools:ignore="ContentDescription" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
