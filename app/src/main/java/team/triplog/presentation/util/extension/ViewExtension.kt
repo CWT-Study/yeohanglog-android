@@ -3,12 +3,15 @@ package team.triplog.presentation.util.extension
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
 import android.annotation.SuppressLint
+import android.content.Context
 import android.view.MotionEvent
 import android.view.View
+import android.view.inputmethod.InputMethodManager
 
 
 /**
- * Created by Minjae Kim on 2021.01.02.
+ * Created on 2021.01.02.
+ *  @author Man-jae
  */
 
 @SuppressLint("ClickableViewAccessibility")
@@ -31,4 +34,14 @@ fun View.setClickAnimation(isDown: Boolean) {
         set.play(x).with(y)
         set.start()
     }
+}
+
+fun View.hideKeyboard() {
+    val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+    imm.hideSoftInputFromWindow(windowToken, 0)
+}
+
+fun View.showKeyboard() {
+    val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+    imm.toggleSoftInput(InputMethodManager.SHOW_IMPLICIT, InputMethodManager.HIDE_IMPLICIT_ONLY)
 }

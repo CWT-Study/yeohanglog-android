@@ -8,6 +8,7 @@ import androidx.navigation.fragment.findNavController
 import team.triplog.R
 import team.triplog.databinding.FragmentTripPlanNameBinding
 import team.triplog.presentation.base.BaseFragment
+import team.triplog.presentation.util.extension.hideKeyboard
 import team.triplog.presentation.util.extension.setupButton
 
 
@@ -40,6 +41,10 @@ class TripPlanNameFragment : BaseFragment() {
     }
 
     private fun setView() {
+        binding.clMain.setOnClickListener {
+            binding.root.hideKeyboard()
+        }
+
         binding.ivClose.setupButton()
         binding.ivClose.setOnClickListener {
             activity?.finish()
