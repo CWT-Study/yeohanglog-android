@@ -42,7 +42,7 @@ class TripPlanNameFragment : BaseFragment() {
 
     private fun setView() {
         binding.clMain.setOnClickListener {
-            binding.root.hideKeyboard()
+            binding.tietTripName.hideKeyboard()
         }
 
         binding.ivClose.setupButton()
