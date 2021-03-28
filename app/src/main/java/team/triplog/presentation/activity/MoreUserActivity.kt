@@ -7,11 +7,11 @@ import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.request.RequestOptions
 import kotlinx.android.synthetic.main.activity_more_user.*
 import team.triplog.R
-import team.triplog.data.source.local.entity.User
+import team.triplog.data.source.local.entity.UserEntity
 import team.triplog.presentation.base.BaseActivity
 
 class MoreUserActivity : BaseActivity() {
-    private var user: User? = null
+    private var user: UserEntity? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

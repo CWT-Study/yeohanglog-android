@@ -5,10 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
-import androidx.recyclerview.widget.RecyclerView
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
-import team.triplog.data.source.local.entity.Trip
+import team.triplog.data.source.local.entity.TripEntity
 import team.triplog.databinding.FragmentMainHomeBinding
 import team.triplog.presentation.base.BaseFragment
 import team.triplog.presentation.main.adapter.MainHomeAdapter
@@ -57,7 +56,7 @@ class MainHomeFragment : BaseFragment(), MainHomeAdapter.OnItemClickListener {
         binding.tripPlanViewModel = tripPlanViewModel
         binding.tripLogViewModel = tripLogViewModel
 
-        tripPlanViewModel.eventClickTripButton.observe(viewLifecycleOwner, Observer { trip ->
+        tripPlanViewModel.eventClickTripEntityButton.observe(viewLifecycleOwner, Observer { trip ->
             binding.root.context.startTripPlanActivity(trip?.id)
         })
     }
@@ -73,7 +72,7 @@ class MainHomeFragment : BaseFragment(), MainHomeAdapter.OnItemClickListener {
     /**
      * 톺아보기 메뉴 아이템 클릭
      */
-    override fun onItemClick(item: Trip) {
+    override fun onItemClick(item: TripEntity) {
         // TODO : 아이템 클릭시 화면 출력
     }
 }

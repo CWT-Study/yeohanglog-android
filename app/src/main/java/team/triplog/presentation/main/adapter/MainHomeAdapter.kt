@@ -3,14 +3,14 @@ package team.triplog.presentation.main.adapter
 import android.view.ViewGroup
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
-import team.triplog.data.source.local.entity.Trip
+import team.triplog.data.source.local.entity.TripEntity
 import team.triplog.presentation.main.viewholder.MainHomeViewHolder
 
 class MainHomeAdapter(
     var onItemClickListener: OnItemClickListener
 ) : RecyclerView.Adapter<MainHomeViewHolder>() {
 
-    private var items: List<Trip> = listOf()
+    private var items: List<TripEntity> = listOf()
 
     override fun getItemCount(): Int = items.size
 
@@ -23,18 +23,18 @@ class MainHomeAdapter(
         holder.bind(item, onItemClickListener)
     }
 
-    fun updateItems(items: List<Trip>?) {
+    fun updateItems(items: List<TripEntity>?) {
         this.items = items ?: listOf()
         notifyDataSetChanged()
     }
 
     interface OnItemClickListener {
-        fun onItemClick(item: Trip)
+        fun onItemClick(item: TripEntity)
     }
 }
 
 @BindingAdapter("tripLogList")
-fun bindItems(recycler: RecyclerView, items: List<Trip>?) {
+fun bindItems(recycler: RecyclerView, items: List<TripEntity>?) {
     val adapter = recycler.adapter as MainHomeAdapter?
     adapter?.updateItems(items)
 }

@@ -1,7 +1,7 @@
-package team.triplog.data.repository.impl
+package team.triplog.data.repository
 
 import com.kakao.usermgmt.response.model.User
-import team.triplog.data.repository.UserRepository
+import team.triplog.domain.repository.UserRepository
 
 class UserRepositoryImpl : UserRepository {
 

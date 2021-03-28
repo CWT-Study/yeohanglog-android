@@ -1,6 +1,7 @@
 package team.triplog.domain.model
 
-data class UserModel(
+data class User(
     val id: Int,
-    val name: String
+    val name: String,
+    val image: String?
 ) : BaseModel

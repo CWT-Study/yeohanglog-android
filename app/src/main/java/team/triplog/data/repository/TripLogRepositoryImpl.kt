@@ -1,7 +1,7 @@
-package team.triplog.data.repository.impl
+package team.triplog.data.repository
 
-import team.triplog.data.repository.TripLogRepository
-import team.triplog.data.source.local.entity.Trip
+import team.triplog.domain.repository.TripLogRepository
+import team.triplog.data.source.local.entity.TripEntity
 
 
 /**
@@ -15,19 +15,19 @@ class TripLogRepositoryImpl : TripLogRepository {
     }
 
     /** 여행 기록 전체 가져오기 */
-    override fun readAllTripLogs(): List<Trip> {
+    override fun readAllTripLogs(): List<TripEntity> {
         // TODO
         return arrayListOf()
     }
 
     /** 특정 개수만큼 여행 기록 가져오기 */
-    override fun readTripLogs(count: Int): List<Trip> {
+    override fun readTripLogs(count: Int): List<TripEntity> {
         // TODO
         return arrayListOf()
     }
 
     /** 여행 기록 가져오기 */
-    override fun readTripLog(id: Long): Trip? {
+    override fun readTripLog(id: Long): TripEntity? {
         // TODO : 나중에 non-null 타입으로 변경 예정
         return null
     }

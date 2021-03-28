@@ -7,12 +7,12 @@ import androidx.recyclerview.widget.RecyclerView
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
-import team.triplog.data.source.local.entity.TripLog
+import team.triplog.data.source.local.entity.TripLogEntity
 import team.triplog.presentation.main.viewholder.MainTripLogViewHolder
 
 class MainTripLogAdapter() : RecyclerView.Adapter<MainTripLogViewHolder>() {
 
-    private var items: List<TripLog> = listOf()
+    private var items: List<TripLogEntity> = listOf()
     var listener: OnItemClickListener? = null
 
     override fun getItemCount(): Int = items.size
@@ -29,11 +29,11 @@ class MainTripLogAdapter() : RecyclerView.Adapter<MainTripLogViewHolder>() {
     }
 
     interface OnItemClickListener {
-        fun onItemClick(item: TripLog)
+        fun onItemClick(item: TripLogEntity)
     }
 
     @SuppressLint("CheckResult")
-    fun setTripLogItems(tripLogItems: List<TripLog>) {
+    fun setTripLogItems(tripLogItems: List<TripLogEntity>) {
         Observable.just(tripLogItems)
             .subscribeOn(AndroidSchedulers.mainThread())
             .observeOn(Schedulers.io())

@@ -11,7 +11,7 @@ import team.triplog.databinding.FragmentMainTripLogBinding
 import team.triplog.presentation.trip.log.activity.TripLogActivity
 import team.triplog.presentation.main.adapter.MainTripLogAdapter
 import org.koin.androidx.viewmodel.ext.android.viewModel
-import team.triplog.data.source.local.entity.TripLog
+import team.triplog.data.source.local.entity.TripLogEntity
 import team.triplog.presentation.main.viewmodel.MainTripLogViewModel
 
 
@@ -43,7 +43,7 @@ class MainTripLogFragment : Fragment(){
     private fun init() {
         mainTripLogAdapter = MainTripLogAdapter().apply {
             listener = object : MainTripLogAdapter.OnItemClickListener {
-                override fun onItemClick(item: TripLog) {
+                override fun onItemClick(item: TripLogEntity) {
                     item.drawableId.let {
                         if (it == -1) {
                             Toast.makeText(context, "새로운 아이템 등록", Toast.LENGTH_SHORT).show()

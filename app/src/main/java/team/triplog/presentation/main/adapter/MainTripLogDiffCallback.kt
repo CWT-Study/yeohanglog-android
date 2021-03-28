@@ -1,9 +1,9 @@
 package team.triplog.presentation.main.adapter
 
 import androidx.recyclerview.widget.DiffUtil
-import team.triplog.data.source.local.entity.TripLog
+import team.triplog.data.source.local.entity.TripLogEntity
 
-class MainTripLogDiffCallback(val oldTripLogList: List<TripLog>, val newTripLogList: List<TripLog>): DiffUtil.Callback() {
+class MainTripLogDiffCallback(val oldTripLogList: List<TripLogEntity>, val newTripLogList: List<TripLogEntity>): DiffUtil.Callback() {
     override fun areItemsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
         return oldTripLogList[oldItemPosition].id == newTripLogList[newItemPosition].id
     }

@@ -5,7 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import team.triplog.R
-import team.triplog.data.source.local.entity.TripLog
+import team.triplog.data.source.local.entity.TripLogEntity
 import team.triplog.databinding.ItemMainTripLogBinding
 import team.triplog.presentation.main.adapter.MainTripLogAdapter
 
@@ -21,7 +21,7 @@ class MainTripLogViewHolder(
         }
     }
 
-    fun bind(item: TripLog, isAdd: Boolean, itemClickListener: MainTripLogAdapter.OnItemClickListener?) {
+    fun bind(item: TripLogEntity, isAdd: Boolean, itemClickListener: MainTripLogAdapter.OnItemClickListener?) {
         if (isAdd) {
             binding.viewGroupImage.setBackgroundResource(R.drawable.button_plus)
             binding.textGroupName.visibility = View.INVISIBLE

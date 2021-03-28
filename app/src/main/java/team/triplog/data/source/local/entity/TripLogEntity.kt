@@ -9,7 +9,7 @@ import java.util.*
 
 @Entity(tableName = "TripLog")
 @TypeConverters(Converters::class)
-data class TripLog(
+data class TripLogEntity(
     @PrimaryKey
     @ColumnInfo(name = "id")
     var id: Long,
@@ -40,5 +40,5 @@ data class TripLog(
 
     @ColumnInfo(name = "content")
     var content: String
-)
+) : BaseEntity
 

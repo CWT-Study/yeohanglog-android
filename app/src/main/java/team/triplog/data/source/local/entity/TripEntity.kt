@@ -9,7 +9,7 @@ import java.util.*
 
 @Entity(tableName = "Trip")
 @TypeConverters(Converters::class)
-data class Trip(
+data class TripEntity(
     @PrimaryKey
     @ColumnInfo(name = "id")
     var id: Int = 0,
@@ -25,4 +25,4 @@ data class Trip(
 
     @ColumnInfo(name = "image")
     var image: String
-)
+) : BaseEntity

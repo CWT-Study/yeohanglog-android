@@ -1,4 +1,4 @@
-package team.triplog.data.repository
+package team.triplog.domain.repository
 
 import com.kakao.usermgmt.response.model.User
 

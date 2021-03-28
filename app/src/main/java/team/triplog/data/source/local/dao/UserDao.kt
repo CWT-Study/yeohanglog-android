@@ -2,13 +2,13 @@ package team.triplog.data.source.local.dao
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
-import team.triplog.data.source.local.entity.User
+import team.triplog.data.source.local.entity.UserEntity
 
 @Dao
-interface UserDao : BaseDao<User> {
+interface UserDao : BaseDao<UserEntity> {
     @Query("select * from user where user_id = :userId")
-    fun read(userId: String): LiveData<User?>
+    fun read(userId: String): LiveData<UserEntity?>
 
     @Insert
-    fun create(user: User)
+    fun create(user: UserEntity)
 }

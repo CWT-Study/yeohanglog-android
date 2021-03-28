@@ -6,15 +6,15 @@ import team.triplog.data.source.local.AppDatabase.Companion.DB_VERSION
 import team.triplog.data.source.local.dao.TripDao
 import team.triplog.data.source.local.dao.TripLogDao
 import team.triplog.data.source.local.dao.UserDao
-import team.triplog.data.source.local.entity.Trip
-import team.triplog.data.source.local.entity.TripLog
-import team.triplog.data.source.local.entity.User
+import team.triplog.data.source.local.entity.TripEntity
+import team.triplog.data.source.local.entity.TripLogEntity
+import team.triplog.data.source.local.entity.UserEntity
 
 @Database(
     entities = [
-        User::class,
-        Trip::class,
-        TripLog::class
+        UserEntity::class,
+        TripEntity::class,
+        TripLogEntity::class
     ],
     version = DB_VERSION
 )

@@ -5,10 +5,14 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "user")
-data class User(
+data class UserEntity(
     @PrimaryKey
     @ColumnInfo(name = "user_id")
     var id: Int = 0,
-    var name: String? = null,
+
+    @ColumnInfo(name = "name")
+    var name: String,
+
+    @ColumnInfo(name = "image")
     var image: String? = null
-)
+) : BaseEntity
