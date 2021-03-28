@@ -1,4 +1,4 @@
-package team.triplog;
+package team.triplog.presentation.util;
 
 import android.util.Log;
 
