@@ -1,9 +1,7 @@
-package team.triplog.data.source.local.mapper
+package team.triplog.domain.mapper
 
 import team.triplog.data.source.local.entity.TripEntity
-import team.triplog.data.source.local.entity.UserEntity
 import team.triplog.domain.model.Trip
-import team.triplog.domain.model.User
 
 
 /**
