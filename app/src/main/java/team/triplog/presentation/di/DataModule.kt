@@ -1,4 +1,4 @@
-package team.triplog.di
+package team.triplog.presentation.di
 
 import androidx.room.Room
 import org.koin.dsl.module

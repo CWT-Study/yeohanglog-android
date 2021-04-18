@@ -1,4 +1,4 @@
-package team.triplog.di
+package team.triplog.presentation.di
 
 import org.koin.dsl.module
 import team.triplog.domain.usecase.trip.TripStatusUseCase

@@ -1,4 +1,4 @@
-package team.triplog.di
+package team.triplog.presentation.di
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

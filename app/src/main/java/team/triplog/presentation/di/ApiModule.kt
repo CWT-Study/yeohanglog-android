@@ -1,4 +1,4 @@
-package team.triplog.di
+package team.triplog.presentation.di
 
 import org.koin.core.qualifier.named
 import org.koin.dsl.module
