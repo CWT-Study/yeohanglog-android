@@ -3,8 +3,8 @@ package team.triplog.presentation.main.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import team.triplog.data.source.local.entity.TripEntity
-import team.triplog.data.status.TripStatus
+import team.triplog.domain.model.TripStatus
+import team.triplog.domain.model.Trip
 import team.triplog.domain.usecase.trip.TripStatusUseCase
 
 
@@ -15,12 +15,12 @@ class TripPlanViewModel(
     private val tripStatusUseCase: TripStatusUseCase
 ) : ViewModel() {
 
-    private var _mainTripPlan = MutableLiveData<TripEntity>()
-    val mainTripPlan: LiveData<TripEntity>
+    private var _mainTripPlan = MutableLiveData<Trip>()
+    val mainTripPlan: LiveData<Trip>
         get() = _mainTripPlan
 
-    private var _eventClickTripButton = MutableLiveData<TripEntity?>()
-    val eventClickTripEntityButton: LiveData<TripEntity?>
+    private var _eventClickTripButton = MutableLiveData<Trip?>()
+    val eventClickTripEntityButton: LiveData<Trip?>
         get() = _eventClickTripButton
 
     private var currentTripStatus = TripStatus.NO_TRIP
