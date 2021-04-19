@@ -61,7 +61,9 @@ class GlobalApplication : Application() {
                     roomModule,
                     dataModule,
                     networkModule,
-                    useCaseModule
+                    useCaseModule,
+                    remoteDataSourceModule,
+                    localDataSourceModule
                 )
             )
         }
