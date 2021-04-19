@@ -63,7 +63,8 @@ class GlobalApplication : Application() {
                     networkModule,
                     useCaseModule,
                     remoteDataSourceModule,
-                    localDataSourceModule
+                    localDataSourceModule,
+                    repositoryModule
                 )
             )
         }
