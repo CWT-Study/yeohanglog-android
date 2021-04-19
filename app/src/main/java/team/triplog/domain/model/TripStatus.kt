@@ -1,4 +1,4 @@
-package team.triplog.data.status
+package team.triplog.domain.model
 
 enum class TripStatus {
     NO_TRIP,
