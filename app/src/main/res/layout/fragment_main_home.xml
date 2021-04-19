@@ -175,11 +175,11 @@
                     android:layout_width="@dimen/size_30"
                     android:layout_height="0dp"
                     android:src="@drawable/ic_touch_black"
-                    android:tint="@color/main_home_new_trip_button_tint"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintDimensionRatio="1"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/main_home_new_trip_button_tint" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
