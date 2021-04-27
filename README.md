@@ -6,7 +6,7 @@
 - MVVM Pattern
 
 ## Language
-- Kotlin 100%
+- Pure Kotlin
 
 ## Library
 - Retrofit
