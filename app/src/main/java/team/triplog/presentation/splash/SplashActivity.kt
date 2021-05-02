@@ -3,7 +3,7 @@ package team.triplog.presentation.splash
 import android.os.Bundle
 import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
-import team.triplog.presentation.main.activity.startMainActivity
+import team.triplog.presentation.main.startMainActivity
 
 class SplashActivity : AppCompatActivity() {
 

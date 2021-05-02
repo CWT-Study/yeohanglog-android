@@ -14,9 +14,9 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 import team.triplog.BuildConfig
 import team.triplog.R
 import team.triplog.databinding.FragmentMainMoreBinding
-import team.triplog.presentation.activity.MoreUserActivity
+import team.triplog.presentation.MoreUserActivity
 import team.triplog.presentation.main.viewmodel.MainMoreViewModel
-import team.triplog.presentation.signin.activity.SignInActivity
+import team.triplog.presentation.signin.SignInActivity
 
 class MainMoreFragment : Fragment() {
     private lateinit var binding: FragmentMainMoreBinding

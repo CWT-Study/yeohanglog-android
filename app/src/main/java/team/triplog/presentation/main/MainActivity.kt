@@ -1,4 +1,4 @@
-package team.triplog.presentation.main.activity
+package team.triplog.presentation.main
 
 import android.app.Activity
 import android.content.Intent
