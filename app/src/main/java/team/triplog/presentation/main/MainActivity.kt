@@ -10,7 +10,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 import team.triplog.R
 import team.triplog.databinding.ActivityMainBinding
 import team.triplog.presentation.base.BaseActivity
-import team.triplog.presentation.main.viewmodel.MainViewModel
+import team.triplog.presentation.viewmodel.MainViewModel
 
 class MainActivity : BaseActivity() {
     private lateinit var binding: ActivityMainBinding

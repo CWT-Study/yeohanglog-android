@@ -37,7 +37,7 @@
             android:windowSoftInputMode="adjustPan|stateAlwaysHidden" />
 
         <activity
-            android:name=".presentation.main.activity.MainActivity"
+            android:name=".presentation.main.MainActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan|stateAlwaysHidden" />
 

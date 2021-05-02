@@ -11,12 +11,12 @@ import team.triplog.data.source.local.entity.TripEntity
 import team.triplog.databinding.FragmentMainHomeBinding
 import team.triplog.presentation.base.BaseFragment
 import team.triplog.presentation.main.adapter.MainHomeAdapter
-import team.triplog.presentation.main.viewmodel.MainViewModel
-import team.triplog.presentation.main.viewmodel.TripLogViewModel
-import team.triplog.presentation.main.viewmodel.TripPlanViewModel
-import team.triplog.presentation.main.viewmodel.UserViewModel
 import team.triplog.presentation.trip.plan.activity.startTripPlanActivity
 import team.triplog.presentation.util.extension.setupButton
+import team.triplog.presentation.viewmodel.MainViewModel
+import team.triplog.presentation.viewmodel.TripLogViewModel
+import team.triplog.presentation.viewmodel.TripPlanViewModel
+import team.triplog.presentation.viewmodel.UserViewModel
 
 class MainHomeFragment : BaseFragment(), MainHomeAdapter.OnItemClickListener {
     private lateinit var binding: FragmentMainHomeBinding
@@ -30,7 +30,11 @@ class MainHomeFragment : BaseFragment(), MainHomeAdapter.OnItemClickListener {
         MainHomeAdapter(this)
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         binding = FragmentMainHomeBinding.inflate(inflater, container, false)
         binding.lifecycleOwner = this
         return binding.root

@@ -10,7 +10,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 import team.triplog.R
 import team.triplog.databinding.FragmentTripPlanNameBinding
 import team.triplog.presentation.base.BaseFragment
-import team.triplog.presentation.trip.plan.viewmodel.TripPlanInfoViewModel
+import team.triplog.presentation.viewmodel.TripPlanInfoViewModel
 import team.triplog.presentation.util.extension.hideKeyboard
 import team.triplog.presentation.util.extension.setupButton
 import team.triplog.presentation.util.extension.showKeyboard

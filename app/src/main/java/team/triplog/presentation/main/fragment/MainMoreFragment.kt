@@ -15,7 +15,7 @@ import team.triplog.BuildConfig
 import team.triplog.R
 import team.triplog.databinding.FragmentMainMoreBinding
 import team.triplog.presentation.MoreUserActivity
-import team.triplog.presentation.main.viewmodel.MainMoreViewModel
+import team.triplog.presentation.viewmodel.MainMoreViewModel
 import team.triplog.presentation.signin.SignInActivity
 
 class MainMoreFragment : Fragment() {
