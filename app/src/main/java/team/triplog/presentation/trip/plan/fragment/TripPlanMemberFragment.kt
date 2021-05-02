@@ -1,33 +1,18 @@
 package team.triplog.presentation.trip.plan.fragment
 
-import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import team.triplog.R
 import team.triplog.databinding.FragmentTripPlanMemberBinding
 import team.triplog.presentation.base.BaseFragment
 
 
 /**
- * Created by Minjae Kim on 2020.12.14.
-
- * DESC : 여행 참가 인원 관리 화면
+ * @author mjkim
+ * @since  2021.05.02
  */
-class TripPlanMemberFragment : BaseFragment() {
-    private lateinit var binding: FragmentTripPlanMemberBinding
+class TripPlanMemberFragment :
+    BaseFragment<FragmentTripPlanMemberBinding>(R.layout.fragment_trip_plan_member) {
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        binding = FragmentTripPlanMemberBinding.inflate(inflater, container, false)
-        binding.lifecycleOwner = this
-        return binding.root
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        setup()
-    }
-
-    private fun setup() {
+    override fun setup() {
         setViewModel()
     }
 

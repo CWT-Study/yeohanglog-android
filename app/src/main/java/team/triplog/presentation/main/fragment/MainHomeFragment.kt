@@ -1,12 +1,9 @@
 package team.triplog.presentation.main.fragment
 
-import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import team.triplog.R
 import team.triplog.data.source.local.entity.TripEntity
 import team.triplog.databinding.FragmentMainHomeBinding
 import team.triplog.presentation.base.BaseFragment
@@ -18,8 +15,14 @@ import team.triplog.presentation.viewmodel.TripLogViewModel
 import team.triplog.presentation.viewmodel.TripPlanViewModel
 import team.triplog.presentation.viewmodel.UserViewModel
 
-class MainHomeFragment : BaseFragment(), MainHomeAdapter.OnItemClickListener {
-    private lateinit var binding: FragmentMainHomeBinding
+
+/**
+ * @author mjkim
+ * @since  2021.05.02
+ */
+class MainHomeFragment :
+    BaseFragment<FragmentMainHomeBinding>(R.layout.fragment_main_home),
+    MainHomeAdapter.OnItemClickListener {
 
     private val mainViewModel: MainViewModel by sharedViewModel()
     private val userViewModel: UserViewModel by viewModel()
@@ -30,22 +33,7 @@ class MainHomeFragment : BaseFragment(), MainHomeAdapter.OnItemClickListener {
         MainHomeAdapter(this)
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        binding = FragmentMainHomeBinding.inflate(inflater, container, false)
-        binding.lifecycleOwner = this
-        return binding.root
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        setup()
-    }
-
-    private fun setup() {
+    override fun setup() {
         setViewModel()
         setRecyclerView()
         setupView()

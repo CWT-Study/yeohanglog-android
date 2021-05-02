@@ -1,9 +1,5 @@
 package team.triplog.presentation.trip.plan.fragment
 
-import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import team.triplog.R
 import team.triplog.databinding.FragmentTripPlanPeriodBinding
@@ -11,25 +7,13 @@ import team.triplog.presentation.base.BaseFragment
 
 
 /**
- * Created by Minjae Kim on 2020.12.14.
-
- * DESC : 여행 기간 설정 화면
+ * @author mjkim
+ * @since  2021.05.02
  */
-class TripPlanPeriodFragment : BaseFragment() {
-    private lateinit var binding: FragmentTripPlanPeriodBinding
+class TripPlanPeriodFragment :
+    BaseFragment<FragmentTripPlanPeriodBinding>(R.layout.fragment_trip_plan_period) {
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        binding = FragmentTripPlanPeriodBinding.inflate(inflater, container, false)
-        binding.lifecycleOwner = this
-        return binding.root
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        setup()
-    }
-
-    private fun setup() {
+    override fun setup() {
         setViewModel()
         setView()
     }
