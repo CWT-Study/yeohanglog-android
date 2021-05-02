@@ -1,9 +1,7 @@
 package team.triplog.presentation.trip.add.activity
 
-import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
-import androidx.databinding.DataBindingUtil
 import team.triplog.R
 import team.triplog.databinding.ActivityTripAlbumBinding
 import team.triplog.presentation.base.BaseActivity
@@ -11,16 +9,13 @@ import team.triplog.presentation.trip.add.adapter.TripAlbumAdapter
 import java.util.*
 
 
-class TripAlbumActivity : BaseActivity(), TripAlbumAdapter.OnItemClickListener {
-    private lateinit var binding: ActivityTripAlbumBinding
+class TripAlbumActivity : BaseActivity<ActivityTripAlbumBinding>(R.layout.activity_trip_album),
+    TripAlbumAdapter.OnItemClickListener {
 
     private var tripAlbumAdapter: TripAlbumAdapter? = null
     private val imageList = ArrayList<String>()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_trip_album)
-
+    override fun setup() {
         init()
         setData()
         setUi()

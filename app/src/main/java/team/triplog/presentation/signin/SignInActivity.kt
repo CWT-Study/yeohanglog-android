@@ -1,8 +1,6 @@
 package team.triplog.presentation.signin
 
 import android.content.Intent
-import android.os.Bundle
-import androidx.databinding.DataBindingUtil
 import com.kakao.auth.AuthType
 import com.kakao.auth.ISessionCallback
 import com.kakao.auth.Session
@@ -18,16 +16,19 @@ import team.triplog.presentation.base.BaseActivity
 import team.triplog.presentation.main.MainActivity
 import timber.log.Timber
 
-class SignInActivity : BaseActivity() {
-    private lateinit var binding: ActivitySignInBinding
+
+/**
+ * @author  mjkim
+ * @version 1.0.0
+ * @since   2021.05.02
+ */
+class SignInActivity : BaseActivity<ActivitySignInBinding>(R.layout.activity_sign_in) {
 
     private var session: Session? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_sign_in)
-
+    override fun setup() {
         init()
+        setupViewModel()
     }
 
     override fun onDestroy() {
@@ -42,17 +43,10 @@ class SignInActivity : BaseActivity() {
         binding.viewSignInKakao.setOnClickListener {
             session?.open(AuthType.KAKAO_LOGIN_ALL, this@SignInActivity)
         }
-
-        setupViewModel()
-        subscription()
     }
 
     private fun setupViewModel() {
-
-    }
-
-    private fun subscription() {
-
+        // TODO
     }
 
     private fun getUser() {
@@ -89,17 +83,6 @@ class SignInActivity : BaseActivity() {
                         when {
                             profile != null -> {
                                 // TODO : Room 으로 변경하기 위해 주석처리
-//                                realm?.executeTransaction {
-//                                    val user = User()
-//                                    user.apply {
-//                                        id = result.id.toInt()
-//                                        name = profile.nickname
-//                                        image = profile.profileImageUrl
-//                                    }
-//
-//                                    it.insertOrUpdate(user)
-//                                    it.commitTransaction()
-//                                }
                                 callActivity()
                             }
                             kakaoAccount.profileNeedsAgreement() == OptionalBoolean.TRUE -> {

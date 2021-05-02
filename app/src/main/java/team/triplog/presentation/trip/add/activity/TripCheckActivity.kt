@@ -1,21 +1,24 @@
 package team.triplog.presentation.trip.add.activity
 
-import android.os.Bundle
 import android.view.MenuItem
-import android.view.View
+import androidx.core.view.isVisible
 import kotlinx.android.synthetic.main.activity_trip_check.*
 import team.triplog.R
-import team.triplog.presentation.trip.add.adapter.TripCheckAdapter
+import team.triplog.databinding.ActivityTripCheckBinding
 import team.triplog.presentation.base.BaseActivity
+import team.triplog.presentation.trip.add.adapter.TripCheckAdapter
 
-class TripCheckActivity : BaseActivity() {
+
+/**
+ * @author mjkim
+ * @since  2021.05.02
+ */
+class TripCheckActivity : BaseActivity<ActivityTripCheckBinding>(R.layout.activity_trip_check) {
+
     private var checkAdapter: TripCheckAdapter? = null
     private val checkList = arrayListOf<String>()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_trip_check)
-
+    override fun setup() {
         init()
         setData()
         setUi()
@@ -34,9 +37,7 @@ class TripCheckActivity : BaseActivity() {
 
     private fun setData() {}
 
-    private fun setUi() {
-
-    }
+    private fun setUi() {}
 
     private fun initList() {
         checkAdapter = TripCheckAdapter(this, checkList)
@@ -45,7 +46,7 @@ class TripCheckActivity : BaseActivity() {
     }
 
     private fun checkEmptyList() {
-        tv_no_contents.visibility = if (checkList.isEmpty()) View.VISIBLE else View.INVISIBLE
+        binding.tvNoContents.isVisible = checkList.isEmpty()
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

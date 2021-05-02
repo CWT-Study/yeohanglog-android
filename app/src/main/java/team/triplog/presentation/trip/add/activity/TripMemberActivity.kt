@@ -1,19 +1,18 @@
 package team.triplog.presentation.trip.add.activity
 
-import android.os.Bundle
 import android.view.MenuItem
-import androidx.databinding.DataBindingUtil
 import team.triplog.R
 import team.triplog.databinding.ActivityTripMemberBinding
 import team.triplog.presentation.base.BaseActivity
 
-class TripMemberActivity : BaseActivity() {
-    private lateinit var binding: ActivityTripMemberBinding
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_trip_member)
+/**
+ * @author mjkim
+ * @since  2021.05.02
+ */
+class TripMemberActivity : BaseActivity<ActivityTripMemberBinding>(R.layout.activity_trip_member) {
 
+    override fun setup() {
         init()
         setData()
         setUi()
@@ -21,7 +20,6 @@ class TripMemberActivity : BaseActivity() {
 
     private fun init() {
         setSupportActionBar(binding.toolbar)
-
         supportActionBar?.apply {
             setDisplayHomeAsUpEnabled(true)
             setDisplayShowHomeEnabled(true)

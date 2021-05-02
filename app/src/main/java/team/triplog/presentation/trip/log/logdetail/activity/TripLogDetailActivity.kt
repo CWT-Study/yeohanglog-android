@@ -1,23 +1,21 @@
 package team.triplog.presentation.trip.log.logdetail.activity
 
-import android.os.Bundle
 import android.view.View
-import androidx.databinding.DataBindingUtil
 import androidx.viewpager2.widget.ViewPager2
 import team.triplog.R
 import team.triplog.databinding.ActivityTripLogDetailBinding
 import team.triplog.presentation.base.BaseActivity
 import kotlin.math.abs
 
-class TripLogDetailActivity : BaseActivity() {
-    private lateinit var binding: ActivityTripLogDetailBinding
 
+/**
+ * @author mjkim
+ * @since  2021.05.02
+ */
+class TripLogDetailActivity :
+    BaseActivity<ActivityTripLogDetailBinding>(R.layout.activity_trip_log_detail) {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_trip_log_detail)
-        binding.lifecycleOwner = this
-
+    override fun setup() {
         init()
         setData()
         setUi()
@@ -30,7 +28,6 @@ class TripLogDetailActivity : BaseActivity() {
             setDisplayShowHomeEnabled(true)
             setDisplayShowTitleEnabled(false)
         }
-
     }
 
     private fun setData() {}
