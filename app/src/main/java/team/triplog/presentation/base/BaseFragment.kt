@@ -4,7 +4,7 @@ import android.app.AlertDialog
 import android.content.DialogInterface
 import androidx.fragment.app.Fragment
 
-open class BaseFragment : Fragment() {
+abstract class BaseFragment : Fragment() {
 
     fun showAlert(
         message: String,
