@@ -1,32 +1,26 @@
-package team.triplog.presentation.main.activity
+package team.triplog.presentation.main
 
 import android.app.Activity
 import android.content.Intent
-import android.os.Bundle
-import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import team.triplog.R
 import team.triplog.databinding.ActivityMainBinding
 import team.triplog.presentation.base.BaseActivity
-import team.triplog.presentation.main.viewmodel.MainViewModel
+import team.triplog.presentation.viewmodel.MainViewModel
 
-class MainActivity : BaseActivity() {
-    private lateinit var binding: ActivityMainBinding
+
+/**
+ * @author  mjkim
+ * @version 1.0.0
+ * @since   2021.05.02
+ */
+class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
 
     private val viewModel: MainViewModel by viewModel()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-        binding.lifecycleOwner = this
-
-        setup()
-    }
-
-    private fun setup() {
+    override fun setup() {
         val navHostFragment = supportFragmentManager
             .findFragmentById(R.id.fragment_main) as NavHostFragment
 

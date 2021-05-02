@@ -13,8 +13,8 @@ import com.google.android.material.tabs.TabLayout.TabLayoutOnPageChangeListener
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import team.triplog.databinding.FragmentMainTripBinding
 import team.triplog.presentation.main.adapter.MainTripAdapter
-import team.triplog.presentation.main.viewmodel.MainTripViewModel
 import team.triplog.presentation.trip.plan.activity.startTripPlanActivity
+import team.triplog.presentation.viewmodel.MainTripViewModel
 
 class MainTripFragment : Fragment() {
     private lateinit var binding: FragmentMainTripBinding

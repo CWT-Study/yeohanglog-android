@@ -1,4 +1,4 @@
-package team.triplog.presentation.main.viewmodel
+package team.triplog.presentation.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel

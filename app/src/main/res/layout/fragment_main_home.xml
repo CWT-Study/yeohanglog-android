@@ -9,19 +9,19 @@
 
         <variable
             name="mainViewModel"
-            type="team.triplog.presentation.main.viewmodel.MainViewModel" />
+            type="team.triplog.presentation.viewmodel.MainViewModel" />
 
         <variable
             name="userViewModel"
-            type="team.triplog.presentation.main.viewmodel.UserViewModel" />
+            type="team.triplog.presentation.viewmodel.UserViewModel" />
 
         <variable
             name="tripPlanViewModel"
-            type="team.triplog.presentation.main.viewmodel.TripPlanViewModel" />
+            type="team.triplog.presentation.viewmodel.TripPlanViewModel" />
 
         <variable
             name="tripLogViewModel"
-            type="team.triplog.presentation.main.viewmodel.TripLogViewModel" />
+            type="team.triplog.presentation.viewmodel.TripLogViewModel" />
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout

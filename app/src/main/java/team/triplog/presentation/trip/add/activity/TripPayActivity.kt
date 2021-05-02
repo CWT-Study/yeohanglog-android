@@ -1,21 +1,19 @@
 package team.triplog.presentation.trip.add.activity
 
-import android.os.Bundle
 import android.view.MenuItem
-import androidx.databinding.DataBindingUtil
 import team.triplog.R
 import team.triplog.databinding.ActivityTripPayBinding
 import team.triplog.presentation.base.BaseActivity
 import team.triplog.presentation.util.TextCountAnimation
 
 
-class TripPayActivity : BaseActivity() {
-    private lateinit var binding: ActivityTripPayBinding
+/**
+ * @author mjkim
+ * @since  2021.05.02
+ */
+class TripPayActivity : BaseActivity<ActivityTripPayBinding>(R.layout.activity_trip_pay) {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_trip_pay)
-
+    override fun setup() {
         init()
         setData()
         setUi()

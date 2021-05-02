@@ -1,4 +1,4 @@
-package team.triplog
+package team.triplog.presentation
 
 import android.app.Application
 import com.kakao.auth.*
@@ -6,6 +6,12 @@ import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 import team.triplog.presentation.di.*
 
+
+/**
+ * @author  mjkim
+ * @version 1.0.0
+ * @since   2021.05.02
+ */
 class GlobalApplication : Application() {
     override fun onCreate() {
         super.onCreate()
@@ -19,36 +25,6 @@ class GlobalApplication : Application() {
     override fun onTerminate() {
         super.onTerminate()
         instance = null
-    }
-
-    class KakaoSDKAdapter : KakaoAdapter() {
-        override fun getSessionConfig(): ISessionConfig {
-            return object : ISessionConfig {
-                override fun getAuthTypes(): Array<AuthType> {
-                    return arrayOf(AuthType.KAKAO_LOGIN_ALL)
-                }
-
-                override fun isUsingWebviewTimer(): Boolean {
-                    return false
-                }
-
-                override fun isSecureMode(): Boolean {
-                    return false
-                }
-
-                override fun getApprovalType(): ApprovalType? {
-                    return ApprovalType.INDIVIDUAL
-                }
-
-                override fun isSaveFormData(): Boolean {
-                    return true
-                }
-            }
-        }
-
-        override fun getApplicationConfig(): IApplicationConfig {
-            return IApplicationConfig { getInstance()!! }
-        }
     }
 
     private fun setupKoin() {
@@ -67,6 +43,36 @@ class GlobalApplication : Application() {
                     repositoryModule
                 )
             )
+        }
+    }
+
+    class KakaoSDKAdapter : KakaoAdapter() {
+        override fun getSessionConfig(): ISessionConfig {
+            return object : ISessionConfig {
+                override fun getAuthTypes(): Array<AuthType> {
+                    return arrayOf(AuthType.KAKAO_LOGIN_ALL)
+                }
+
+                override fun isUsingWebviewTimer(): Boolean {
+                    return false
+                }
+
+                override fun isSecureMode(): Boolean {
+                    return false
+                }
+
+                override fun getApprovalType(): ApprovalType {
+                    return ApprovalType.INDIVIDUAL
+                }
+
+                override fun isSaveFormData(): Boolean {
+                    return true
+                }
+            }
+        }
+
+        override fun getApplicationConfig(): IApplicationConfig {
+            return IApplicationConfig { getInstance()!! }
         }
     }
 

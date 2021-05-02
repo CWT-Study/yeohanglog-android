@@ -6,7 +6,7 @@
 
         <variable
             name="viewModel"
-            type="team.triplog.presentation.main.viewmodel.MainMoreViewModel" />
+            type="team.triplog.presentation.viewmodel.MainMoreViewModel" />
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout

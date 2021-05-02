@@ -11,8 +11,8 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 import team.triplog.databinding.FragmentMainTripPlanBinding
 import team.triplog.domain.model.Trip
 import team.triplog.presentation.main.adapter.MainTripPlanAdapter
-import team.triplog.presentation.main.viewmodel.MainTripPlanViewModel
 import team.triplog.presentation.trip.plan.activity.startTripPlanActivity
+import team.triplog.presentation.viewmodel.MainTripPlanViewModel
 
 class MainTripPlanFragment : Fragment(), MainTripPlanAdapter.OnItemClickListener {
     private lateinit var binding: FragmentMainTripPlanBinding
@@ -23,7 +23,11 @@ class MainTripPlanFragment : Fragment(), MainTripPlanAdapter.OnItemClickListener
         MainTripPlanAdapter(this)
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         binding = FragmentMainTripPlanBinding.inflate(inflater, container, false)
         binding.lifecycleOwner = this
 

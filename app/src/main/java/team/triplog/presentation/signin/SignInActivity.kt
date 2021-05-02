@@ -1,10 +1,6 @@
-package team.triplog.presentation.signin.activity
+package team.triplog.presentation.signin
 
 import android.content.Intent
-import android.os.Bundle
-import android.util.Log
-import android.view.View
-import androidx.databinding.DataBindingUtil
 import com.kakao.auth.AuthType
 import com.kakao.auth.ISessionCallback
 import com.kakao.auth.Session
@@ -16,19 +12,23 @@ import com.kakao.util.OptionalBoolean
 import com.kakao.util.exception.KakaoException
 import team.triplog.R
 import team.triplog.databinding.ActivitySignInBinding
-import team.triplog.presentation.main.activity.MainActivity
 import team.triplog.presentation.base.BaseActivity
+import team.triplog.presentation.main.MainActivity
+import timber.log.Timber
 
-class SignInActivity : BaseActivity() {
-    private lateinit var binding: ActivitySignInBinding
+
+/**
+ * @author  mjkim
+ * @version 1.0.0
+ * @since   2021.05.02
+ */
+class SignInActivity : BaseActivity<ActivitySignInBinding>(R.layout.activity_sign_in) {
 
     private var session: Session? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_sign_in)
-
+    override fun setup() {
         init()
+        setupViewModel()
     }
 
     override fun onDestroy() {
@@ -43,38 +43,31 @@ class SignInActivity : BaseActivity() {
         binding.viewSignInKakao.setOnClickListener {
             session?.open(AuthType.KAKAO_LOGIN_ALL, this@SignInActivity)
         }
-
-        setupViewModel()
-        subscription()
     }
 
     private fun setupViewModel() {
-
-    }
-
-    private fun subscription() {
-
+        // TODO
     }
 
     private fun getUser() {
         UserManagement.getInstance()
             .me(object : MeV2ResponseCallback() {
                 override fun onSessionClosed(errorResult: ErrorResult) {
-                    Log.e("::::: KAKAO_API", "세션이 닫혀 있음: $errorResult")
+                    Timber.e("세션이 닫혀 있음: $errorResult")
                 }
 
                 override fun onFailure(errorResult: ErrorResult) {
-                    Log.e("::::: KAKAO_API", "사용자 정보 요청 실패: $errorResult")
+                    Timber.e("사용자 정보 요청 실패: $errorResult")
                 }
 
                 override fun onSuccess(result: MeV2Response) {
-                    Log.i("::::: KAKAO_API", "사용자 아이디: " + result.id)
+                    Timber.i("사용자 아이디: ${result.id}")
                     val kakaoAccount = result.kakaoAccount
                     if (kakaoAccount != null) {
 
                         // 이메일
                         val email = kakaoAccount.email
-                        Log.i("::::: KAKAO_API", "email: $email")
+                        Timber.i("email: $email")
                         when (OptionalBoolean.TRUE) {
                             kakaoAccount.emailNeedsAgreement() -> {
                                 // 동의 요청 후 이메일 획득 가능
@@ -90,17 +83,6 @@ class SignInActivity : BaseActivity() {
                         when {
                             profile != null -> {
                                 // TODO : Room 으로 변경하기 위해 주석처리
-//                                realm?.executeTransaction {
-//                                    val user = User()
-//                                    user.apply {
-//                                        id = result.id.toInt()
-//                                        name = profile.nickname
-//                                        image = profile.profileImageUrl
-//                                    }
-//
-//                                    it.insertOrUpdate(user)
-//                                    it.commitTransaction()
-//                                }
                                 callActivity()
                             }
                             kakaoAccount.profileNeedsAgreement() == OptionalBoolean.TRUE -> {
@@ -123,18 +105,12 @@ class SignInActivity : BaseActivity() {
 
     private val sessionCallback: ISessionCallback = object : ISessionCallback {
         override fun onSessionOpened() {
-            Log.i("::::: KAKAO_SESSION", "onSessionOpened : ")
+            Timber.i("onSessionOpened : ")
             getUser()
         }
 
         override fun onSessionOpenFailed(exception: KakaoException) {
-            Log.e("::::: KAKAO_SESSION", "onSessionOpenFailed : ", exception)
-        }
-    }
-    private val onClickListener = View.OnClickListener { view ->
-        when (view.id) {
-            R.id.view_sign_in_kakao -> {
-            }
+            Timber.e(exception, "onSessionOpenFailed : ")
         }
     }
 

@@ -12,7 +12,7 @@ import team.triplog.presentation.trip.log.activity.TripLogActivity
 import team.triplog.presentation.main.adapter.MainTripLogAdapter
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import team.triplog.data.source.local.entity.TripLogEntity
-import team.triplog.presentation.main.viewmodel.MainTripLogViewModel
+import team.triplog.presentation.viewmodel.MainTripLogViewModel
 
 
 class MainTripLogFragment : Fragment(){

@@ -8,7 +8,7 @@
 
         <variable
             name="vm"
-            type="team.triplog.presentation.main.viewmodel.MainTripPlanViewModel"
+            type="team.triplog.presentation.viewmodel.MainTripPlanViewModel"
             />
     </data>
 

@@ -1,4 +1,4 @@
-package team.triplog.presentation.signin.viewmodel
+package team.triplog.presentation.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

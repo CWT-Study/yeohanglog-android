@@ -2,8 +2,7 @@ package team.triplog.presentation.di
 
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
-import team.triplog.presentation.main.viewmodel.*
-import team.triplog.presentation.trip.plan.viewmodel.TripPlanInfoViewModel
+import team.triplog.presentation.viewmodel.*
 
 val mainModule = module {
     viewModel { MainViewModel() }

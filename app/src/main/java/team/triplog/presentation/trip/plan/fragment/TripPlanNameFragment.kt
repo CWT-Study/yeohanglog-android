@@ -1,43 +1,27 @@
 package team.triplog.presentation.trip.plan.fragment
 
-import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.lifecycle.Observer
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import team.triplog.R
 import team.triplog.databinding.FragmentTripPlanNameBinding
 import team.triplog.presentation.base.BaseFragment
-import team.triplog.presentation.trip.plan.viewmodel.TripPlanInfoViewModel
 import team.triplog.presentation.util.extension.hideKeyboard
 import team.triplog.presentation.util.extension.setupButton
 import team.triplog.presentation.util.extension.showKeyboard
+import team.triplog.presentation.viewmodel.TripPlanInfoViewModel
 
 
 /**
- * Created by Minjae Kim on 2020.12.14.
-
- * DESC : 여행 이름 설정 화면
+ * @author mjkim
+ * @since  2021.05.02
  */
-class TripPlanNameFragment : BaseFragment() {
-    private lateinit var binding: FragmentTripPlanNameBinding
+class TripPlanNameFragment :
+    BaseFragment<FragmentTripPlanNameBinding>(R.layout.fragment_trip_plan_name) {
 
     private val tripPlanInfoViewModel: TripPlanInfoViewModel by viewModel()
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        binding = FragmentTripPlanNameBinding.inflate(inflater, container, false)
-        binding.lifecycleOwner = this
-        return binding.root
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        setup()
-    }
-
-    private fun setup() {
+    override fun setup() {
         setViewModel()
         setView()
     }
