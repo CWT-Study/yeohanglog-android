@@ -20,7 +20,7 @@ class TripPlanViewModel(
         get() = _mainTripPlan
 
     private var _eventClickTripButton = MutableLiveData<Trip?>()
-    val eventClickTripEntityButton: LiveData<Trip?>
+    val eventClickTripButton: LiveData<Trip?>
         get() = _eventClickTripButton
 
     private var currentTripStatus = TripStatus.NO_TRIP

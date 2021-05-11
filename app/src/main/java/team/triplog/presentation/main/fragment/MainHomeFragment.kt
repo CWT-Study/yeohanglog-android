@@ -48,7 +48,7 @@ class MainHomeFragment :
         binding.tripPlanViewModel = tripPlanViewModel
         binding.tripLogViewModel = tripLogViewModel
 
-        tripPlanViewModel.eventClickTripEntityButton.observe(viewLifecycleOwner, Observer { trip ->
+        tripPlanViewModel.eventClickTripButton.observe(viewLifecycleOwner, Observer { trip ->
             binding.root.context.startTripPlanActivity(trip?.id)
         })
     }
