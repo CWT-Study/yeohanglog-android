@@ -11,9 +11,9 @@ import team.triplog.presentation.trip.plan.adapter.TripPlanDayAdapter
  * @author mjkim
  * @since  2021.05.02
  */
-class TripPlanMainFragment :
-    BaseFragment<FragmentTripPlanMainBinding>(R.layout.fragment_trip_plan_main) {
-
+class TripPlanMainFragment : BaseFragment<FragmentTripPlanMainBinding>(
+    R.layout.fragment_trip_plan_main
+) {
     private val planDayAdapter: TripPlanDayAdapter by lazy {
         TripPlanDayAdapter()
     }

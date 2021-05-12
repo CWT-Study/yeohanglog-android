@@ -16,9 +16,9 @@ import team.triplog.presentation.viewmodel.TripPlanInfoViewModel
  * @author mjkim
  * @since  2021.05.02
  */
-class TripPlanNameFragment :
-    BaseFragment<FragmentTripPlanNameBinding>(R.layout.fragment_trip_plan_name) {
-
+class TripPlanNameFragment : BaseFragment<FragmentTripPlanNameBinding>(
+    R.layout.fragment_trip_plan_name
+) {
     private val tripPlanInfoViewModel: TripPlanInfoViewModel by viewModel()
 
     override fun setup() {

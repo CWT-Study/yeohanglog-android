@@ -1,15 +1,20 @@
 package team.triplog.presentation.trip.plan.adapter
 
-import android.content.Context
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import team.triplog.presentation.trip.plan.viewholder.TripPlanViewHolder
 import java.util.*
 
-class TripPlanAdapter(
-    private val context: Context,
-    private var items: ArrayList<String>
-) : RecyclerView.Adapter<TripPlanViewHolder>() {
+
+/**
+ * 일정화면 날짜별 일정 리스트
+ * @author mjkim
+ * @since  2021.05.12
+ */
+class TripPlanAdapter : RecyclerView.Adapter<TripPlanViewHolder>() {
+
+    private var items: ArrayList<String> = arrayListOf()
+
     override fun getItemCount(): Int = items.size
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TripPlanViewHolder {

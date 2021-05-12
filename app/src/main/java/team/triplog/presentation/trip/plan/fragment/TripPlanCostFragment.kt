@@ -9,9 +9,9 @@ import team.triplog.presentation.base.BaseFragment
  * @author mjkim
  * @since  2021.05.02
  */
-class TripPlanCostFragment :
-    BaseFragment<FragmentTripPlanCostBinding>(R.layout.fragment_trip_plan_cost) {
-
+class TripPlanCostFragment : BaseFragment<FragmentTripPlanCostBinding>(
+    R.layout.fragment_trip_plan_cost
+) {
     override fun setup() {
         setViewModel()
     }

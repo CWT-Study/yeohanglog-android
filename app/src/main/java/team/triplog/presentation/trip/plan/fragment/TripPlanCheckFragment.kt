@@ -9,9 +9,9 @@ import team.triplog.presentation.base.BaseFragment
  * @author mjkim
  * @since  2021.05.02
  */
-class TripPlanCheckFragment :
-    BaseFragment<FragmentTripPlanCheckBinding>(R.layout.fragment_trip_plan_check) {
-
+class TripPlanCheckFragment : BaseFragment<FragmentTripPlanCheckBinding>(
+    R.layout.fragment_trip_plan_check
+) {
     override fun setup() {
         setViewModel()
     }

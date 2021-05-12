@@ -11,8 +11,11 @@ class TripPlanDayViewHolder(
 
     companion object {
         fun getViewHolder(parent: ViewGroup): TripPlanDayViewHolder {
-            val binding =
-                ItemTripPlanDayBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+            val binding = ItemTripPlanDayBinding.inflate(
+                LayoutInflater.from(parent.context),
+                parent,
+                false
+            )
             return TripPlanDayViewHolder(binding)
         }
     }

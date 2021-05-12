@@ -5,7 +5,13 @@ import androidx.recyclerview.widget.RecyclerView
 import team.triplog.presentation.trip.plan.viewholder.TripPlanDayViewHolder
 import java.util.*
 
+
+/**
+ * @author mjkim
+ * @since  2021.05.12
+ */
 class TripPlanDayAdapter : RecyclerView.Adapter<TripPlanDayViewHolder>() {
+
     private var items: ArrayList<String> = arrayListOf()
 
     override fun getItemCount(): Int = items.size

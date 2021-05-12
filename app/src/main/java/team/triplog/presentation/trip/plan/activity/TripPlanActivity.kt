@@ -10,10 +10,13 @@ import team.triplog.presentation.trip.plan.activity.TripPlanActivity.Companion.E
 
 
 /**
+ * 여행 등록/관리 화면
  * @author mjkim
  * @since  2021.05.02
  */
-class TripPlanActivity : BaseActivity<ActivityTripPlanBinding>(R.layout.activity_trip_plan) {
+class TripPlanActivity : BaseActivity<ActivityTripPlanBinding>(
+    R.layout.activity_trip_plan
+) {
 
     override fun setup() {
         val tripId = intent.getIntExtra(EXTRA_TRIP_ID, NO_TRIP_ID)

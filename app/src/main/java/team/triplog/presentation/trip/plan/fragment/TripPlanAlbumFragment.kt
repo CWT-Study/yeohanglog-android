@@ -9,9 +9,9 @@ import team.triplog.presentation.base.BaseFragment
  * @author mjkim
  * @since  2021.05.02
  */
-class TripPlanAlbumFragment :
-    BaseFragment<FragmentTripPlanAlbumBinding>(R.layout.fragment_trip_plan_album) {
-
+class TripPlanAlbumFragment : BaseFragment<FragmentTripPlanAlbumBinding>(
+    R.layout.fragment_trip_plan_album
+) {
     override fun setup() {
         setViewModel()
     }
