@@ -7,10 +7,10 @@ import team.triplog.presentation.viewmodel.*
 val mainModule = module {
     viewModel { MainViewModel() }
     viewModel { MainHomeViewModel() }
-    viewModel { MainMoreViewModel(get()) }
+    viewModel { MainMoreViewModel() }
     viewModel { MainTripViewModel() }
     viewModel { MainTripPlanViewModel() }
-    viewModel { MainTripLogViewModel(get()) }
+    viewModel { MainTripLogViewModel() }
 
     viewModel { UserViewModel() }
 

@@ -1,11 +1,10 @@
 package team.triplog.presentation.viewmodel
 
-import androidx.lifecycle.ViewModel
+import team.triplog.presentation.base.BaseViewModel
 
 
 /**
- * Created by Minjae Kim 2020. 12. 02.
+ * @author mjkim
+ * @since 2021.05.14
  */
-class MainHomeViewModel : ViewModel() {
-
-}
+class MainHomeViewModel : BaseViewModel()

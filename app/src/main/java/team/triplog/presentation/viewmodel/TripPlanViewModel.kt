@@ -2,18 +2,19 @@ package team.triplog.presentation.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import team.triplog.domain.model.TripStatus
 import team.triplog.domain.model.Trip
+import team.triplog.domain.model.TripStatus
 import team.triplog.domain.usecase.trip.TripStatusUseCase
+import team.triplog.presentation.base.BaseViewModel
 
 
 /**
- * Created by Minjae Kim 2020.12.03.
+ * @author mjkim
+ * @since 2021.05.14
  */
 class TripPlanViewModel(
     private val tripStatusUseCase: TripStatusUseCase
-) : ViewModel() {
+) : BaseViewModel() {
 
     private var _mainTripPlan = MutableLiveData<Trip>()
     val mainTripPlan: LiveData<Trip>

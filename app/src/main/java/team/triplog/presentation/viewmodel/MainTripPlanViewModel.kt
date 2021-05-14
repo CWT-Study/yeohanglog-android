@@ -2,12 +2,15 @@ package team.triplog.presentation.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import team.triplog.domain.model.Trip
+import team.triplog.presentation.base.BaseViewModel
 
-class MainTripPlanViewModel : ViewModel() {
 
+/**
+ * @author mjkim
+ * @since 2021.05.14
+ */
+class MainTripPlanViewModel : BaseViewModel() {
     private val _tripPlanList = MutableLiveData<MutableList<Trip>>()
     val tripPlanList: LiveData<MutableList<Trip>> = _tripPlanList
-
 }

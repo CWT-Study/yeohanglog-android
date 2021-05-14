@@ -2,12 +2,17 @@ package team.triplog.presentation.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import com.kakao.usermgmt.response.model.User
+import team.triplog.presentation.base.BaseViewModel
 
-class SignInViewModel : ViewModel() {
+
+/**
+ * @author mjkim
+ * @since 2021.05.14
+ */
+class SignInViewModel : BaseViewModel() {
+
     private val _user = MutableLiveData<User>()
     val user: LiveData<User> = _user
-
 
 }

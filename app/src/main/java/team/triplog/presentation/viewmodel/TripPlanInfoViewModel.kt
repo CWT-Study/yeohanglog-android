@@ -2,14 +2,14 @@ package team.triplog.presentation.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import team.triplog.presentation.base.BaseViewModel
 
 
 /**
- * Created on 2020.12.03.
- *  @author Man-jae
+ * @author mjkim
+ * @since 2021.05.14
  */
-class TripPlanInfoViewModel : ViewModel() {
+class TripPlanInfoViewModel : BaseViewModel() {
 
     /** 이름 설정 여부 */
     private val _hasName = MutableLiveData<Boolean>()

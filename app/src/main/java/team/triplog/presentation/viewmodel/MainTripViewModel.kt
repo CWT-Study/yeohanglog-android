@@ -2,9 +2,14 @@ package team.triplog.presentation.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import team.triplog.presentation.base.BaseViewModel
 
-class MainTripViewModel : ViewModel() {
+
+/**
+ * @author mjkim
+ * @since 2021.05.14
+ */
+class MainTripViewModel : BaseViewModel() {
 
     private val _eventCreateTrip = MutableLiveData<Unit>()
     val eventCreateTrip: LiveData<Unit>

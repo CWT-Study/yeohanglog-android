@@ -1,7 +1,10 @@
 package team.triplog.presentation.viewmodel
 
-import android.app.Application
-import androidx.lifecycle.AndroidViewModel
+import team.triplog.presentation.base.BaseViewModel
 
-class MainTripLogViewModel (application: Application): AndroidViewModel(application){
-}
+
+/**
+ * @author mjkim
+ * @since 2021.05.14
+ */
+class MainTripLogViewModel : BaseViewModel()
