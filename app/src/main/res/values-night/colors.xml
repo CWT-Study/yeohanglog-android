@@ -65,7 +65,7 @@
     <color name="trip_plan_name_info">@color/gray_666666</color>
     <color name="trip_plan_button_next">@color/main_cfa571</color>
     <color name="trip_plan_button_next_click">@color/main_cfa571_70</color>
-    <color name="main_home_trip_log_item_dim_start">@color/transparent</color>
+    <color name="main_home_trip_log_item_dim_start">@android:color/transparent</color>
     <color name="main_home_trip_log_item_dim_end">@color/white_ffffff_50</color>
     <color name="bottom_navigation_selected">@android:color/white</color>
     <color name="bottom_navigation_unselected">@color/gray_666666</color>
