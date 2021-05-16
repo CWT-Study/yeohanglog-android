@@ -1,6 +1,5 @@
 package team.triplog.presentation.trip.plan.fragment
 
-import androidx.navigation.fragment.findNavController
 import team.triplog.R
 import team.triplog.databinding.FragmentTripPlanMainBinding
 import team.triplog.presentation.base.BaseFragment
@@ -9,7 +8,7 @@ import team.triplog.presentation.trip.plan.adapter.TripPlanDayAdapter
 
 /**
  * @author mjkim
- * @since  2021.05.02
+ * @since 2021.05.02
  */
 class TripPlanMainFragment : BaseFragment<FragmentTripPlanMainBinding>(
     R.layout.fragment_trip_plan_main
@@ -33,10 +32,5 @@ class TripPlanMainFragment : BaseFragment<FragmentTripPlanMainBinding>(
     }
 
     private fun setView() {
-        binding.flBack.setOnClickListener {
-            if (!findNavController().popBackStack()) {
-                activity?.finish()
-            }
-        }
     }
 }

@@ -44,16 +44,6 @@ class TripPlanNameFragment : BaseFragment<FragmentTripPlanNameBinding>(
             binding.tietTripName.hideKeyboard()
         }
 
-        binding.ivEditName.setupButton()
-        binding.ivEditName.setOnClickListener {
-            tripPlanInfoViewModel.setName(false)
-        }
-
-        binding.ivClose.setupButton()
-        binding.ivClose.setOnClickListener {
-            checkExit()
-        }
-
         binding.clNext.setupButton()
         binding.clNext.setOnClickListener {
             tripPlanInfoViewModel.setName(true)
