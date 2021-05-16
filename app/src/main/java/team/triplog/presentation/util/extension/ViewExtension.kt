@@ -10,24 +10,25 @@ import android.view.inputmethod.InputMethodManager
 
 
 /**
- * Created on 2021.01.02.
- *  @author Man-jae
+ * @author mjkim
+ * @since 2021.01.02
  */
 
 @SuppressLint("ClickableViewAccessibility")
-fun View.setupButton() {
+fun View.setupButton(clickSize: Float = 0.98F) {
     this.setOnTouchListener { _, event ->
         when (event.action) {
             MotionEvent.ACTION_UP,
-            MotionEvent.ACTION_CANCEL -> this.setClickAnimation(false)
-            MotionEvent.ACTION_DOWN -> this.setClickAnimation(true)
+            MotionEvent.ACTION_CANCEL -> this.setClickAnimation(false, clickSize)
+            MotionEvent.ACTION_DOWN -> this.setClickAnimation(true, clickSize)
         }
         false
     }
 }
 
-fun View.setClickAnimation(isDown: Boolean) {
-    val value = if (isDown) 0.98F else 1F
+@SuppressLint("Recycle")
+fun View.setClickAnimation(isDown: Boolean, clickSize: Float) {
+    val value = if (isDown) clickSize else 1F
     val x = ObjectAnimator.ofFloat(this, "scaleX", value).apply { duration = 50L }
     val y = ObjectAnimator.ofFloat(this, "scaleY", value).apply { duration = 50L }
     AnimatorSet().let { set ->
