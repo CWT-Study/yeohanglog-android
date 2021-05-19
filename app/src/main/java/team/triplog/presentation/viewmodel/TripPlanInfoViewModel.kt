@@ -3,6 +3,7 @@ package team.triplog.presentation.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import team.triplog.presentation.base.BaseViewModel
+import team.triplog.presentation.util.event.Event
 
 
 /**
@@ -11,28 +12,24 @@ import team.triplog.presentation.base.BaseViewModel
  */
 class TripPlanInfoViewModel : BaseViewModel() {
 
-    /** 이름 설정 여부 */
-    private val _hasName = MutableLiveData<Boolean>()
-    val hasName: LiveData<Boolean>
-        get() = _hasName
-
-    /** 기간 설정 여부 */
-    private val _hasPeriod = MutableLiveData<Boolean>()
-    val hasPeriod: LiveData<Boolean>
-        get() = _hasPeriod
-
-    /** 여행 이름 */
     val tripName = MutableLiveData<String>()
+    val startDate = MutableLiveData<Long>()
+    val endDate = MutableLiveData<Long>()
+
+    private val _eventClickNext = MutableLiveData<Event<Unit>>()
+    val eventClickNext: LiveData<Event<Unit>>
+        get() = _eventClickNext
 
 
-    fun setName(set: Boolean) {
-        _hasName.value = set
+    // TODO : 기간 설정 여부 확인
+    fun checkHasData(): Boolean {
+        val hasName = !tripName.value.isNullOrBlank()
+        val hasPeriod = false
+
+        return hasName || hasPeriod
     }
 
-    fun checkHasData(): Boolean {
-        val name = hasName.value ?: false
-        val period = hasPeriod.value ?: false
-
-        return name || period
+    fun clickNext() {
+        _eventClickNext.value = Event(Unit)
     }
 }

@@ -6,11 +6,17 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
 import android.widget.Toast
 import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import org.koin.androidx.viewmodel.ext.android.sharedViewModel
+import team.triplog.R
+import team.triplog.presentation.util.event.EventObserver
+import team.triplog.presentation.viewmodel.ToolbarViewModel
 
 
 /**
@@ -20,7 +26,11 @@ import androidx.fragment.app.Fragment
 abstract class BaseFragment<T : ViewDataBinding>(
     @LayoutRes val layoutResId: Int
 ) : Fragment() {
-    lateinit var binding: T
+
+    protected lateinit var binding: T
+    protected val toolbarViewModel: ToolbarViewModel by sharedViewModel()
+    protected var currentFocus: EditText? = null
+    protected var hasData: Boolean = false
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -34,10 +44,24 @@ abstract class BaseFragment<T : ViewDataBinding>(
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.lifecycleOwner = this
+        setupToolbar()
         setup()
     }
 
     abstract fun setup()
+
+    private fun setupToolbar() {
+        toolbarViewModel.eventClickBack.observe(
+            viewLifecycleOwner, EventObserver {
+                if (!findNavController().popBackStack()) {
+                    when (hasData) {
+                        true -> showInitDataAlert()
+                        else -> activity?.finish()
+                    }
+                }
+            }
+        )
+    }
 
     protected fun showToast(msg: String) {
         Toast.makeText(context, msg, Toast.LENGTH_SHORT).show()
@@ -59,5 +83,16 @@ abstract class BaseFragment<T : ViewDataBinding>(
                 negative?.let { negative -> setNegativeButton(negative, negativeAction) }
             }.show()
         }
+    }
+
+    private fun showInitDataAlert() {
+        showAlert(
+            message = getString(R.string.dialog_init_setting_info),
+            positive = getString(R.string.button_yes),
+            negative = getString(R.string.button_no),
+            positiveAction = { _, _ ->
+                activity?.finish()
+            }
+        )
     }
 }
