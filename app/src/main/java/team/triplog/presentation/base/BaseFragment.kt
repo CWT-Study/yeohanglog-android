@@ -14,6 +14,7 @@ import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
+import team.triplog.R
 import team.triplog.presentation.util.event.EventObserver
 import team.triplog.presentation.viewmodel.ToolbarViewModel
 
@@ -27,8 +28,9 @@ abstract class BaseFragment<T : ViewDataBinding>(
 ) : Fragment() {
 
     protected lateinit var binding: T
-    private val toolbarViewModel: ToolbarViewModel by sharedViewModel()
+    protected val toolbarViewModel: ToolbarViewModel by sharedViewModel()
     protected var currentFocus: EditText? = null
+    protected var hasData: Boolean = false
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -52,7 +54,10 @@ abstract class BaseFragment<T : ViewDataBinding>(
         toolbarViewModel.eventClickBack.observe(
             viewLifecycleOwner, EventObserver {
                 if (!findNavController().popBackStack()) {
-                    activity?.finish()
+                    when (hasData) {
+                        true -> showInitDataAlert()
+                        else -> activity?.finish()
+                    }
                 }
             }
         )
@@ -78,5 +83,16 @@ abstract class BaseFragment<T : ViewDataBinding>(
                 negative?.let { negative -> setNegativeButton(negative, negativeAction) }
             }.show()
         }
+    }
+
+    private fun showInitDataAlert() {
+        showAlert(
+            message = getString(R.string.dialog_init_setting_info),
+            positive = getString(R.string.button_yes),
+            negative = getString(R.string.button_no),
+            positiveAction = { _, _ ->
+                activity?.finish()
+            }
+        )
     }
 }

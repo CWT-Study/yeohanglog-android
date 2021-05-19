@@ -1,6 +1,7 @@
 package team.triplog.presentation.trip.plan.fragment
 
 import android.widget.EditText
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import team.triplog.R
@@ -39,6 +40,12 @@ class TripPlanNameFragment : BaseFragment<FragmentTripPlanNameBinding>(
             viewLifecycleOwner, EventObserver {
                 currentFocus?.hideKeyboard()
                 movePeriod()
+            }
+        )
+
+        tripPlanInfoViewModel.tripName.observe(
+            viewLifecycleOwner, Observer {
+                hasData = tripPlanInfoViewModel.checkHasData()
             }
         )
     }
