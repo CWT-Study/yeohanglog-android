@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
 import android.widget.Toast
 import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
@@ -27,6 +28,7 @@ abstract class BaseFragment<T : ViewDataBinding>(
 
     protected lateinit var binding: T
     private val toolbarViewModel: ToolbarViewModel by sharedViewModel()
+    protected var currentFocus: EditText? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -40,7 +42,6 @@ abstract class BaseFragment<T : ViewDataBinding>(
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.lifecycleOwner = this
-
         setupToolbar()
         setup()
     }

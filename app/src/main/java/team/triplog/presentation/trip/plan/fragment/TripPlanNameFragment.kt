@@ -1,5 +1,7 @@
 package team.triplog.presentation.trip.plan.fragment
 
+import android.widget.EditText
+import androidx.navigation.fragment.findNavController
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import team.triplog.R
 import team.triplog.databinding.FragmentTripPlanNameBinding
@@ -29,12 +31,28 @@ class TripPlanNameFragment : BaseFragment<FragmentTripPlanNameBinding>(
 
         tripPlanInfoViewModel.eventClickBackground.observe(
             viewLifecycleOwner, EventObserver {
-                binding.tietTripName.hideKeyboard()
+                currentFocus?.hideKeyboard()
+            }
+        )
+
+        tripPlanInfoViewModel.eventClickNext.observe(
+            viewLifecycleOwner, EventObserver {
+                currentFocus?.hideKeyboard()
+                movePeriod()
             }
         )
     }
 
     private fun setView() {
         binding.clNext.setupButton()
+        binding.tietTripName.setOnFocusChangeListener { view, hasFocus ->
+            if (hasFocus) currentFocus = view as EditText
+        }
+    }
+
+    private fun movePeriod() {
+        findNavController().navigate(
+            R.id.action_tripPlanNameFragment_to_tripPlanPeriodFragment
+        )
     }
 }
