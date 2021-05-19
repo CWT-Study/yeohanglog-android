@@ -5,6 +5,7 @@ import org.koin.dsl.module
 import team.triplog.presentation.viewmodel.*
 
 val mainModule = module {
+    viewModel { ToolbarViewModel() }
     viewModel { MainViewModel() }
     viewModel { MainHomeViewModel() }
     viewModel { MainMoreViewModel() }
