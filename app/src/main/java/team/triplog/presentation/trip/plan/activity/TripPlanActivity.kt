@@ -39,7 +39,6 @@ class TripPlanActivity : BaseActivity<ActivityTripPlanBinding>(
     }
 
     private fun setupButton() {
-        binding.btnClose.setupButton(CLICK_SIZE)
         binding.btnBack.setupButton(CLICK_SIZE)
     }
 

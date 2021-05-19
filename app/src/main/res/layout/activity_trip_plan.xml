@@ -41,18 +41,6 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
-                    <ImageButton
-                        android:id="@+id/btn_close"
-                        android:layout_width="0dp"
-                        android:layout_height="0dp"
-                        android:background="@android:color/transparent"
-                        android:src="@drawable/ic_baseline_close_24"
-                        android:tint="@color/color_click_button"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintDimensionRatio="1"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
             </androidx.appcompat.widget.Toolbar>
