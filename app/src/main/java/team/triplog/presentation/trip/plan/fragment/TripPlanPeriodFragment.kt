@@ -1,9 +1,11 @@
 package team.triplog.presentation.trip.plan.fragment
 
+import androidx.navigation.fragment.findNavController
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 import team.triplog.R
 import team.triplog.databinding.FragmentTripPlanPeriodBinding
 import team.triplog.presentation.base.BaseFragment
+import team.triplog.presentation.util.event.EventObserver
 import team.triplog.presentation.viewmodel.TripPlanInfoViewModel
 
 
@@ -17,5 +19,22 @@ class TripPlanPeriodFragment : BaseFragment<FragmentTripPlanPeriodBinding>(
     private val tripPlanInfoViewModel: TripPlanInfoViewModel by sharedViewModel()
 
     override fun setup() {
+        setViewModel()
+    }
+
+    private fun setViewModel() {
+        binding.viewModel = tripPlanInfoViewModel
+
+        tripPlanInfoViewModel.eventClickNext.observe(
+            viewLifecycleOwner, EventObserver {
+                moveMain()
+            }
+        )
+    }
+
+    private fun moveMain() {
+        findNavController().navigate(
+            R.id.action_tripPlanPeriodFragment_to_tripPlanMainFragment
+        )
     }
 }
