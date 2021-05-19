@@ -9,7 +9,6 @@ import team.triplog.R
 import team.triplog.databinding.ActivityTripPlanBinding
 import team.triplog.presentation.base.BaseActivity
 import team.triplog.presentation.trip.plan.activity.TripPlanActivity.Companion.EXTRA_TRIP_ID
-import team.triplog.presentation.util.event.EventObserver
 import team.triplog.presentation.util.extension.setupButton
 import team.triplog.presentation.viewmodel.ToolbarViewModel
 
@@ -37,13 +36,6 @@ class TripPlanActivity : BaseActivity<ActivityTripPlanBinding>(
 
     private fun setupViewModel() {
         binding.toolbarViewModel = toolbarViewModel
-        toolbarViewModel.eventClickBack.observe(
-            this, EventObserver {
-                if (!navController.popBackStack()) {
-                    finish()
-                }
-            }
-        )
     }
 
     private fun setupDestination() {

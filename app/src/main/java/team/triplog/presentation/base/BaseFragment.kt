@@ -11,6 +11,10 @@ import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import org.koin.androidx.viewmodel.ext.android.sharedViewModel
+import team.triplog.presentation.util.event.EventObserver
+import team.triplog.presentation.viewmodel.ToolbarViewModel
 
 
 /**
@@ -22,6 +26,7 @@ abstract class BaseFragment<T : ViewDataBinding>(
 ) : Fragment() {
 
     protected lateinit var binding: T
+    private val toolbarViewModel: ToolbarViewModel by sharedViewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -35,10 +40,22 @@ abstract class BaseFragment<T : ViewDataBinding>(
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.lifecycleOwner = this
+
+        setupToolbar()
         setup()
     }
 
     abstract fun setup()
+
+    private fun setupToolbar() {
+        toolbarViewModel.eventClickBack.observe(
+            viewLifecycleOwner, EventObserver {
+                if (!findNavController().popBackStack()) {
+                    activity?.finish()
+                }
+            }
+        )
+    }
 
     protected fun showToast(msg: String) {
         Toast.makeText(context, msg, Toast.LENGTH_SHORT).show()
