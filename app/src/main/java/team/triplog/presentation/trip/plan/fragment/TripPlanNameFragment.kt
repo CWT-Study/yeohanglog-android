@@ -1,14 +1,12 @@
 package team.triplog.presentation.trip.plan.fragment
 
-import androidx.core.view.isVisible
-import androidx.lifecycle.Observer
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import team.triplog.R
 import team.triplog.databinding.FragmentTripPlanNameBinding
 import team.triplog.presentation.base.BaseFragment
+import team.triplog.presentation.util.event.EventObserver
 import team.triplog.presentation.util.extension.hideKeyboard
 import team.triplog.presentation.util.extension.setupButton
-import team.triplog.presentation.util.extension.showKeyboard
 import team.triplog.presentation.viewmodel.TripPlanInfoViewModel
 
 
@@ -29,21 +27,14 @@ class TripPlanNameFragment : BaseFragment<FragmentTripPlanNameBinding>(
     private fun setViewModel() {
         binding.viewModel = tripPlanInfoViewModel
 
-        tripPlanInfoViewModel.hasName.observe(viewLifecycleOwner, Observer {
-            binding.groupTripName.isVisible = !it
-            binding.groupTripPeriod.isVisible = it
-            when (it) {
-                true -> binding.tietTripName.hideKeyboard()
-                else -> binding.tietTripName.showKeyboard()
+        tripPlanInfoViewModel.eventClickBackground.observe(
+            viewLifecycleOwner, EventObserver {
+                binding.tietTripName.hideKeyboard()
             }
-        })
+        )
     }
 
     private fun setView() {
-        binding.clMain.setOnClickListener {
-            binding.tietTripName.hideKeyboard()
-        }
-
         binding.clNext.setupButton()
         binding.clNext.setOnClickListener {
             tripPlanInfoViewModel.setName(true)

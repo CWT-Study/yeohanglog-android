@@ -15,99 +15,110 @@
         android:id="@+id/cl_main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:animateLayoutChanges="true"
-        android:background="@drawable/background_main">
+        android:background="@drawable/background_main"
+        android:onClick="@{() -> viewModel.clickBackground()}">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/tv_input_name_info"
-                style="@style/text_trip_name_info"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                app:layout_constraintBottom_toTopOf="@id/til_trip_name"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.3"
-                app:layout_constraintVertical_chainStyle="packed"
-                app:layout_constraintWidth_percent="0.9" />
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/til_trip_name"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/size_40"
-                android:hint="@string/trip_add_name_hint"
-                app:counterEnabled="true"
-                app:counterMaxLength="20"
-                app:endIconMode="clear_text"
-                app:helperText="@string/trip_add_name_limit"
-                app:helperTextEnabled="true"
-                app:layout_constraintBottom_toTopOf="@id/cl_next"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_input_name_info"
-                app:layout_constraintWidth_percent="0.9">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/tiet_trip_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:maxLength="20"
-                    android:text="@={viewModel.tripName}" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <androidx.constraintlayout.widget.Group
-                android:id="@+id/group_trip_name"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:constraint_referenced_ids="tv_input_name_info, til_trip_name" />
-
-            <androidx.constraintlayout.widget.Group
-                android:id="@+id/group_trip_period"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+        <ScrollView
+            android:id="@+id/sv_main"
+            style="@style/DefaultScrollView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/cl_next"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/cl_next"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/size_16"
-                android:enabled="@{viewModel.tripName.length() != 0}"
-                android:padding="@dimen/size_15"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent">
+                android:onClick="@{() -> viewModel.clickBackground()}">
 
                 <TextView
-                    android:id="@+id/tv_next"
-                    style="@style/trip_plan_button_next"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/tv_input_name_info"
+                    style="@style/text_trip_name_info"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:enabled="@{viewModel.tripName.length() != 0}"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@id/iv_next"
-                    app:layout_constraintHorizontal_chainStyle="packed"
+                    android:layout_marginHorizontal="@dimen/size_20"
+                    android:layout_marginTop="@dimen/size_40"
+                    android:layout_marginBottom="@dimen/size_40"
+                    app:layout_constraintBottom_toTopOf="@id/til_trip_name"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="1"
+                    app:layout_constraintVertical_chainStyle="packed" />
 
-                <ImageView
-                    android:id="@+id/iv_next"
-                    android:layout_width="wrap_content"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_trip_name"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/size_5"
-                    android:enabled="@{viewModel.tripName.length() != 0}"
-                    android:src="@drawable/ic_baseline_arrow_forward_ios_24"
+                    android:layout_marginHorizontal="@dimen/size_20"
+                    android:hint="@string/trip_add_name_hint"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="20"
+                    app:endIconMode="clear_text"
+                    app:helperText="@string/trip_add_name_limit"
+                    app:helperTextEnabled="true"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/tv_next"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:tint="@color/color_button_next" />
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_input_name_info"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/tiet_trip_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:maxLength="20"
+                        android:maxLines="1"
+                        android:text="@={viewModel.tripName}" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <androidx.constraintlayout.widget.Group
+                    android:id="@+id/group_trip_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:constraint_referenced_ids="tv_input_name_info, til_trip_name" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/size_15"
+            android:enabled="@{viewModel.tripName.length() != 0}"
+            android:padding="@dimen/size_15"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <TextView
+                android:id="@+id/tv_next"
+                style="@style/trip_plan_button_next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:enabled="@{viewModel.tripName.length() != 0}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/iv_next"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_next"
+                android:layout_width="@dimen/size_15"
+                android:layout_height="@dimen/size_15"
+                android:layout_marginStart="@dimen/size_5"
+                android:enabled="@{viewModel.tripName.length() != 0}"
+                android:src="@drawable/ic_baseline_arrow_forward_ios_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tv_next"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/color_button_next" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

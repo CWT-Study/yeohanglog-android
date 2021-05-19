@@ -17,6 +17,11 @@
         <item name="android:textSize">10dp</item>
     </style>
 
+    <style name="DefaultScrollView">
+        <item name="android:fillViewport">true</item>
+        <item name="android:scrollbars">none</item>
+    </style>
+
     <style name="tab_text" parent="TextAppearance.Design.Tab">
         <item name="android:textSize">20dp</item>
         <item name="android:textStyle">bold</item>
@@ -439,7 +444,7 @@
     <style name="trip_plan_button_next">
         <item name="android:textColor">@color/color_button_next</item>
         <item name="android:text">@string/button_next</item>
-        <item name="android:textSize">@dimen/size_20</item>
+        <item name="android:textSize">@dimen/size_15</item>
         <item name="android:textStyle">bold</item>
     </style>
 
