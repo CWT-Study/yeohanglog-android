@@ -36,9 +36,6 @@ class TripPlanNameFragment : BaseFragment<FragmentTripPlanNameBinding>(
 
     private fun setView() {
         binding.clNext.setupButton()
-        binding.clNext.setOnClickListener {
-            tripPlanInfoViewModel.setName(true)
-        }
     }
 
     private fun checkExit() {

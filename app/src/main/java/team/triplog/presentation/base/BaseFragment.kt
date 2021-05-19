@@ -20,7 +20,8 @@ import androidx.fragment.app.Fragment
 abstract class BaseFragment<T : ViewDataBinding>(
     @LayoutRes val layoutResId: Int
 ) : Fragment() {
-    lateinit var binding: T
+
+    protected lateinit var binding: T
 
     override fun onCreateView(
         inflater: LayoutInflater,
