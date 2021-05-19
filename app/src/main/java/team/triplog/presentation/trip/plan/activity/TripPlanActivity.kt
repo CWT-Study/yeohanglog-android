@@ -4,11 +4,14 @@ import android.content.Context
 import android.content.Intent
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import team.triplog.R
 import team.triplog.databinding.ActivityTripPlanBinding
 import team.triplog.presentation.base.BaseActivity
 import team.triplog.presentation.trip.plan.activity.TripPlanActivity.Companion.EXTRA_TRIP_ID
+import team.triplog.presentation.util.event.EventObserver
 import team.triplog.presentation.util.extension.setupButton
+import team.triplog.presentation.viewmodel.ToolbarViewModel
 
 
 /**
@@ -19,6 +22,7 @@ import team.triplog.presentation.util.extension.setupButton
 class TripPlanActivity : BaseActivity<ActivityTripPlanBinding>(
     R.layout.activity_trip_plan
 ) {
+    private val toolbarViewModel: ToolbarViewModel by viewModel()
     private val navController: NavController by lazy {
         supportFragmentManager.findFragmentById(R.id.fragment_trip_plan).let { fragment ->
             (fragment as NavHostFragment).navController
@@ -26,8 +30,20 @@ class TripPlanActivity : BaseActivity<ActivityTripPlanBinding>(
     }
 
     override fun setup() {
+        setupViewModel()
         setupDestination()
         setupButton()
+    }
+
+    private fun setupViewModel() {
+        binding.toolbarViewModel = toolbarViewModel
+        toolbarViewModel.eventClickBack.observe(
+            this, EventObserver {
+                if (!navController.popBackStack()) {
+                    finish()
+                }
+            }
+        )
     }
 
     private fun setupDestination() {
