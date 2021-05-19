@@ -90,6 +90,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/size_15"
+            android:onClick="@{() -> viewModel.clickBackground()}"
             android:enabled="@{viewModel.tripName.length() != 0}"
             android:padding="@dimen/size_15"
             app:layout_constraintBottom_toBottomOf="parent"
