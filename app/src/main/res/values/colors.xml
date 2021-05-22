@@ -52,6 +52,10 @@
     <color name="trip_member_name">@android:color/black</color>
     <color name="trip_plan">@color/gray_666666</color>
     <color name="trip_plan_info">@android:color/black</color>
+    <color name="trip_plan_period_title">@color/main</color>
+    <color name="trip_plan_period_date">@color/gray_666666</color>
+    <color name="trip_plan_period_date_click">@color/gray_666666_50</color>
+    <color name="trip_plan_period_date_disabled">@color/gray_666666_20</color>
     <color name="main_trip_plan_no_contents_title">@android:color/black</color>
     <color name="main_trip_plan_no_contents_message">@color/gray_999999</color>
     <color name="sign_in_button">@color/gray_494949</color>
@@ -83,6 +87,8 @@
     <color name="gray_333333">#333333</color>
     <color name="gray_494949">#494949</color>
     <color name="gray_666666">#666666</color>
+    <color name="gray_666666_50">#80666666</color>
+    <color name="gray_666666_20">#33666666</color>
     <color name="gray_999999">#999999</color>
     <color name="gray_999999_50">#80999999</color>
     <color name="gray_999999_20">#33999999</color>

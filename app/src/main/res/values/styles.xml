@@ -22,6 +22,18 @@
         <item name="android:scrollbars">none</item>
     </style>
 
+    <style name="TextTripPeriodTitle">
+        <item name="android:textColor">@color/trip_plan_period_title</item>
+        <item name="android:textSize">@dimen/size_15</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextTripPeriodDate">
+        <item name="android:textColor">@color/color_click_trip_period</item>
+        <item name="android:textSize">@dimen/size_30</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
     <style name="tab_text" parent="TextAppearance.Design.Tab">
         <item name="android:textSize">20dp</item>
         <item name="android:textStyle">bold</item>

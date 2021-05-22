@@ -39,6 +39,8 @@
     <string name="trip_check_pic">담당자 : %s</string>
     <string name="trip_member_title">일행</string>
     <string name="trip_plan_period">여행기간</string>
+    <string name="trip_plan_period_start">시작 날짜</string>
+    <string name="trip_plan_period_end">종료 날짜</string>
     <string name="trip_plan_name">여행이름</string>
     <string name="trip_log_info_day">DAY %s</string>
     <string name="main_trip_plan_no_contents_title">등록된 일정 없음</string>
