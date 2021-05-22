@@ -32,7 +32,7 @@ fun <T> Result<T>.successOr(fallback: T): T {
 }
 
 val <T> Result<T>.data: T?
-    get() = (this as? Result.Success).data
+    get() = (this as? Result.Success)?.data
 
 /**
  * Updates value of [liveData] if [Result] is of type [Success]

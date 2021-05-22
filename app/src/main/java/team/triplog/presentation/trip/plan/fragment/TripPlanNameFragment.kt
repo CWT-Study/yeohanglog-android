@@ -3,7 +3,7 @@ package team.triplog.presentation.trip.plan.fragment
 import android.widget.EditText
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
-import org.koin.androidx.viewmodel.ext.android.viewModel
+import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 import team.triplog.R
 import team.triplog.databinding.FragmentTripPlanNameBinding
 import team.triplog.presentation.base.BaseFragment
@@ -20,7 +20,7 @@ import team.triplog.presentation.viewmodel.TripPlanInfoViewModel
 class TripPlanNameFragment : BaseFragment<FragmentTripPlanNameBinding>(
     R.layout.fragment_trip_plan_name
 ) {
-    private val tripPlanInfoViewModel: TripPlanInfoViewModel by viewModel()
+    private val tripPlanInfoViewModel: TripPlanInfoViewModel by sharedViewModel()
 
     override fun setup() {
         setViewModel()

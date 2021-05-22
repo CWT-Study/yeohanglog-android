@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
+        <variable
+            name="viewModel"
+            type="team.triplog.presentation.viewmodel.TripPlanInfoViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -11,7 +16,123 @@
         android:layout_height="match_parent"
         android:background="@drawable/background_main">
 
-        <!-- 여행 날짜 설정 화면 추가 필요 -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="@dimen/size_15"
+            app:layout_constraintBottom_toTopOf="@id/cl_next"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tv_start_date_title"
+                style="@style/TextTripPeriodTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_15"
+                android:text="@string/trip_plan_period_start"
+                app:layout_constraintBottom_toTopOf="@id/tv_start_date"
+                app:layout_constraintEnd_toEndOf="@id/tv_start_date"
+                app:layout_constraintStart_toStartOf="@id/tv_start_date"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_start_date"
+                style="@style/TextTripPeriodDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/size_20"
+                android:layout_marginStart="@dimen/size_10"
+                android:layout_marginTop="@dimen/size_5"
+                android:text="@{viewModel.startDate.toString()}"
+                app:layout_constraintEnd_toStartOf="@id/tv_end_date"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_start_date_title"
+                tools:text="2021.02.26" />
+
+            <TextView
+                android:id="@+id/tv_end_date_title"
+                style="@style/TextTripPeriodTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/trip_plan_period_end"
+                app:layout_constraintBottom_toBottomOf="@id/tv_start_date_title"
+                app:layout_constraintEnd_toEndOf="@id/tv_end_date"
+                app:layout_constraintStart_toStartOf="@id/tv_end_date"
+                app:layout_constraintTop_toTopOf="@id/tv_start_date_title" />
+
+            <TextView
+                android:id="@+id/tv_end_date"
+                style="@style/TextTripPeriodDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/size_20"
+                android:layout_marginTop="@dimen/size_5"
+                android:layout_marginEnd="@dimen/size_10"
+                android:text="@{viewModel.endDate.toString()}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tv_start_date"
+                app:layout_constraintTop_toBottomOf="@id/tv_end_date_title"
+                tools:text="2021.02.26" />
+
+            <com.applikeysolutions.cosmocalendar.view.CalendarView
+                android:id="@+id/calendar"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/size_15"
+                android:onClick="@{() -> viewModel.clickDate()}"
+                app:firstDayOfTheWeek="sunday"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_end_date"
+                app:selectedDayBackgroundColor="@color/main_50"
+                app:selectedDayBackgroundEndColor="@color/main"
+                app:selectedDayBackgroundStartColor="@color/main"
+                app:selectionType="range"
+                app:weekDayTitleTextColor="@color/main"
+                app:weekendDayTextColor="@color/main" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/size_15"
+            android:enabled="@{viewModel.tripName.length() != 0}"
+            android:onClick="@{() -> viewModel.clickNext()}"
+            android:padding="@dimen/size_15"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <TextView
+                android:id="@+id/tv_next"
+                style="@style/trip_plan_button_next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:enabled="@{viewModel.tripName.length() != 0}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/iv_next"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_next"
+                android:layout_width="@dimen/size_15"
+                android:layout_height="@dimen/size_15"
+                android:layout_marginStart="@dimen/size_5"
+                android:enabled="@{viewModel.tripName.length() != 0}"
+                android:src="@drawable/ic_baseline_arrow_forward_ios_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tv_next"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/color_button_next" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

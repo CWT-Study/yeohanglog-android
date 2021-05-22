@@ -6,7 +6,10 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.view.MotionEvent
 import android.view.View
+import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
+import androidx.core.view.isVisible
+import androidx.transition.TransitionManager
 
 
 /**
@@ -34,6 +37,13 @@ fun View.setClickAnimation(isDown: Boolean, clickSize: Float) {
     AnimatorSet().let { set ->
         set.play(x).with(y)
         set.start()
+    }
+}
+
+fun View.setVisible(visible: Boolean = !isVisible) {
+    if (isVisible != visible) {
+        TransitionManager.beginDelayedTransition(rootView as ViewGroup)
+        isVisible = visible
     }
 }
 

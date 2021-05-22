@@ -1,12 +1,8 @@
 package team.triplog.presentation.util.extension
 
+import java.text.ParseException
 import java.text.SimpleDateFormat
 import java.util.*
-
-
-/**
- * Created by Minjae Kim on 2020.12.08.
- */
 
 
 /**
@@ -15,4 +11,13 @@ import java.util.*
 fun Date.toDefaultFormat(): String {
     val format = SimpleDateFormat("yyyy.MM.dd", Locale.getDefault())
     return format.format(this)
+}
+
+fun String.toDate(): Date? {
+    val format = SimpleDateFormat("yyyy.MM.dd", Locale.getDefault())
+    return try {
+        format.parse(this)
+    } catch (e: ParseException) {
+        null
+    }
 }
