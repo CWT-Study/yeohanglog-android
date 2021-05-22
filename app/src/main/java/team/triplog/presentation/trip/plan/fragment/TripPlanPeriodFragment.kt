@@ -1,12 +1,15 @@
 package team.triplog.presentation.trip.plan.fragment
 
+import android.util.Log
 import androidx.navigation.fragment.findNavController
+import com.applikeysolutions.cosmocalendar.dialog.CalendarDialog
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 import team.triplog.R
 import team.triplog.databinding.FragmentTripPlanPeriodBinding
 import team.triplog.presentation.base.BaseFragment
 import team.triplog.presentation.util.event.EventObserver
 import team.triplog.presentation.viewmodel.TripPlanInfoViewModel
+import timber.log.Timber
 
 
 /**
@@ -20,6 +23,7 @@ class TripPlanPeriodFragment : BaseFragment<FragmentTripPlanPeriodBinding>(
 
     override fun setup() {
         setViewModel()
+        setCalendar()
     }
 
     private fun setViewModel() {
@@ -30,6 +34,16 @@ class TripPlanPeriodFragment : BaseFragment<FragmentTripPlanPeriodBinding>(
                 moveMain()
             }
         )
+
+        tripPlanInfoViewModel.eventClickDate.observe(
+            viewLifecycleOwner, EventObserver {
+                Timber.e(":::::")
+            }
+        )
+    }
+
+    private fun setCalendar() {
+
     }
 
     private fun moveMain() {
