@@ -13,6 +13,9 @@ data class UserEntity(
     @ColumnInfo(name = "name")
     var name: String,
 
+    @ColumnInfo(name = "code")
+    var code: String,
+
     @ColumnInfo(name = "image")
     var image: String? = null
 ) : BaseEntity

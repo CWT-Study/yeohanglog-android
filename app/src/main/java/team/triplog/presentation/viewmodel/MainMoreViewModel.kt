@@ -7,4 +7,4 @@ import team.triplog.presentation.base.BaseViewModel
  * @author mjkim
  * @since 2021.05.14
  */
-class MainMoreViewModel : BaseViewModel()
+class MainProfileViewModel : BaseViewModel()

@@ -8,7 +8,7 @@ val mainModule = module {
     viewModel { ToolbarViewModel() }
     viewModel { MainViewModel() }
     viewModel { MainHomeViewModel() }
-    viewModel { MainMoreViewModel() }
+    viewModel { MainProfileViewModel() }
     viewModel { MainTripViewModel() }
     viewModel { MainTripPlanViewModel() }
     viewModel { MainTripLogViewModel() }

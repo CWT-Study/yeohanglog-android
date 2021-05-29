@@ -5,8 +5,8 @@
     <data>
 
         <variable
-            name="viewModel"
-            type="team.triplog.presentation.viewmodel.MainMoreViewModel" />
+            name="userViewModel"
+            type="team.triplog.presentation.viewmodel.UserViewModel" />
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -91,6 +91,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="15dp"
                     android:layout_marginEnd="10dp"
+                    android:text="@{userViewModel.user.name}"
                     app:layout_constraintBottom_toTopOf="@id/text_user_code"
                     app:layout_constraintLeft_toRightOf="@id/iv_user_profile"
                     app:layout_constraintRight_toLeftOf="@id/button_profile_setting"
@@ -103,6 +104,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
+                    android:text="@{userViewModel.user.code}"
                     app:layout_constraintBottom_toBottomOf="@id/iv_user_profile"
                     app:layout_constraintLeft_toLeftOf="@id/text_user_name"
                     app:layout_constraintRight_toRightOf="@id/text_user_name"

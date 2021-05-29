@@ -13,6 +13,7 @@ fun UserEntity.toModel(): User {
     return User(
         id = this.id,
         name = this.name,
+        code = this.code,
         image = this.image
     )
 }
@@ -21,6 +22,7 @@ fun User.toEntity(): UserEntity {
     return UserEntity(
         id = this.id,
         name = this.name,
+        code = this.code,
         image = this.image
     )
 }

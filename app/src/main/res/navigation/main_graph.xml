@@ -37,9 +37,9 @@
 
     <fragment
         android:id="@+id/navigation_profile"
-        android:name="team.triplog.presentation.main.fragment.MainMoreFragment"
+        android:name="team.triplog.presentation.main.fragment.MainProfileFragment"
         android:label="MainProfileFragment"
-        tools:layout="@layout/fragment_main_more">
+        tools:layout="@layout/fragment_main_profile">
         <action
             android:id="@+id/action_navigation_profile_to_navigation_home"
             app:destination="@id/navigation_home"
