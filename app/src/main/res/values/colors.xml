@@ -24,6 +24,7 @@
     <color name="main_home_no_contents_message">@android:color/black</color>
     <color name="main_home_button">@android:color/white</color>
     <color name="main_home_new_trip_button_tint">@android:color/black</color>
+    <color name="main_profile_background">@android:color/white</color>
     <color name="search">@android:color/black</color>
     <color name="search_hint">@color/gray_999999</color>
     <color name="search_no_contents_title">@android:color/black</color>
@@ -77,6 +78,14 @@
     <color name="trip_plan_button_next">@color/main_cfa571</color>
     <color name="trip_plan_button_next_click">@color/main_cfa571_70</color>
 
+    <color name="menu_background">@android:color/white</color>
+    <color name="menu">@android:color/black</color>
+    <color name="menu_click">@color/black_70</color>
+    <color name="menu_disabled">@color/black_20</color>
+    <color name="menu_value">@color/gray_333333</color>
+    <color name="menu_value_click">@color/gray_333333_70</color>
+    <color name="menu_value_disabled">@color/gray_333333_20</color>
+
     <color name="main_home_trip_log_item_dim_start">@android:color/transparent</color>
     <color name="main_home_trip_log_item_dim_end">@color/black_000000_50</color>
 
@@ -86,11 +95,15 @@
 
 
     <!-- Palette colors -->
+    <color name="black_70">#B3000000</color>
     <color name="black_000000_50">#80000000</color>
     <color name="black_30">#4D000000</color>
+    <color name="black_20">#33000000</color>
     <color name="black_000000_10">#1a000000</color>
     <color name="black_121212">#121212</color>
     <color name="gray_333333">#333333</color>
+    <color name="gray_333333_70">#B3333333</color>
+    <color name="gray_333333_20">#33333333</color>
     <color name="gray_494949">#494949</color>
     <color name="gray_666666">#666666</color>
     <color name="gray_666666_50">#80666666</color>

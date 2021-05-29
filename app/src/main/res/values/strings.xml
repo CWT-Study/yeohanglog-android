@@ -2,6 +2,7 @@
     <string name="app_name">여행록</string>
     <string name="main_trip">여행</string>
     <string name="main_profile">프로필</string>
+    <string name="main_profile_need_sign_in">로그인이 필요해요</string>
     <string name="main_home_user_name">님,</string>
     <string name="main_home_welcome">설레는 여행이 기다리고 있어요 :)</string>
     <string name="main_home_trip_day">%d 일째 여행중!</string>
@@ -57,6 +58,8 @@
     <string name="button_next">다음</string>
     <string name="main_home_new_trip">새로운 여행 계획하기</string>
     <string name="dialog_init_setting_info">해당 창을 닫으면 설정한 정보가 초기화됩니다.\n닫으시겠습니까?</string>
+    <string name="setting_theme">테마 설정</string>
+    <string name="setting_open_source">오픈 소스 라이브러리</string>
 
     <string name="kakao_app_key">8f6abdf916b65498acf91a358491097b</string>
 </resources>
