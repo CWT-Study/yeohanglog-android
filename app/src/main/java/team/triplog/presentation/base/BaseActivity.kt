@@ -43,6 +43,15 @@ abstract class BaseActivity<T : ViewDataBinding>(
         }
     }
 
+    protected fun moveFragment(action: Int) {
+        navController.navigate(action)
+    }
+
+    protected fun moveTap(action: Int) {
+        navController.currentDestination?.id?.let { navController.popBackStack(it, true) }
+        navController.navigate(action)
+    }
+
     protected fun showToast(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
