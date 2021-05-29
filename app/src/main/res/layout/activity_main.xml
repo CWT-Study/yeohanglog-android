@@ -23,27 +23,48 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:defaultNavHost="true"
-            app:layout_constraintBottom_toTopOf="@id/bottom_navigation"
+            app:layout_constraintBottom_toTopOf="@id/rg_navigation"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:navGraph="@navigation/main_graph" />
 
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bottom_navigation"
+        <View
+            android:id="@+id/v_line"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/background_main"
-            app:itemIconSize="24dp"
-            app:itemIconTint="@color/color_bottom_navigation"
-            app:itemTextAppearanceActive="@style/bottom_navigation_text"
-            app:itemTextAppearanceInactive="@style/bottom_navigation_text"
-            app:itemTextColor="@color/color_bottom_navigation"
-            app:labelVisibilityMode="unlabeled"
+            android:layout_height="0.1dp"
+            android:background="@color/gray_CCCCCC"
+            app:layout_constraintBottom_toTopOf="@id/rg_navigation"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <RadioGroup
+            android:id="@+id/rg_navigation"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:gravity="center"
+            android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:menu="@menu/bottom_navigation_menu" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <RadioButton
+                android:id="@+id/btn_home"
+                style="@style/bottom_navigation"
+                android:checked="true"
+                android:drawableTop="@drawable/btn_navigation_home" />
+
+            <RadioButton
+                android:id="@+id/btn_trip"
+                style="@style/bottom_navigation"
+                android:drawableTop="@drawable/btn_navigation_trip" />
+
+            <RadioButton
+                android:id="@+id/btn_profile"
+                style="@style/bottom_navigation"
+                android:drawableTop="@drawable/btn_navigation_profile" />
+
+        </RadioGroup>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

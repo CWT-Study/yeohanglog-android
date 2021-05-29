@@ -2,37 +2,52 @@ package team.triplog.presentation.main
 
 import android.app.Activity
 import android.content.Intent
-import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.setupWithNavController
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import team.triplog.R
 import team.triplog.databinding.ActivityMainBinding
 import team.triplog.presentation.base.BaseActivity
+import team.triplog.presentation.util.extension.setupButton
 import team.triplog.presentation.viewmodel.MainViewModel
 
 
 /**
- * @author  mjkim
- * @version 1.0.0
- * @since   2021.05.02
+ * @author mjkim
+ * @since 2021.05.02
  */
-class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
-
+class MainActivity : BaseActivity<ActivityMainBinding>(
+    R.layout.activity_main
+) {
     private val viewModel: MainViewModel by viewModel()
 
     override fun setup() {
-        val navHostFragment = supportFragmentManager
-            .findFragmentById(R.id.fragment_main) as NavHostFragment
-
-        binding.bottomNavigation.apply {
-            setupWithNavController(navHostFragment.navController)
-        }
-
-        setViewModel()
+        setupNavController(R.id.fragment_main)
+        setupViewModel()
+        setupView()
     }
 
-    private fun setViewModel() {
+    private fun setupViewModel() {
         binding.viewModel = viewModel
+    }
+
+    private fun setupView() {
+        binding.btnHome.setupButton(CLICK)
+        binding.btnTrip.setupButton(CLICK)
+        binding.btnProfile.setupButton(CLICK)
+        setupBottomNavigation()
+    }
+
+    private fun setupBottomNavigation() {
+        binding.rgNavigation.setOnCheckedChangeListener { _, id ->
+            when (id) {
+                binding.btnHome.id -> moveTap(R.id.navigation_home)
+                binding.btnTrip.id -> moveTap(R.id.navigation_trip)
+                binding.btnProfile.id -> moveTap(R.id.navigation_profile)
+            }
+        }
+    }
+
+    companion object {
+        private const val CLICK = 0.9F
     }
 }
 
