@@ -63,6 +63,10 @@ abstract class BaseFragment<T : ViewDataBinding>(
         )
     }
 
+    protected fun setTitle(title: String) {
+        toolbarViewModel.title.value = title
+    }
+
     protected fun showToast(msg: String) {
         Toast.makeText(context, msg, Toast.LENGTH_SHORT).show()
     }

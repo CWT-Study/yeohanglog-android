@@ -6,11 +6,13 @@ import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
+import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment
 
 
 /**
  * @author  mjkim
- * @version 1.0.0
+ * @version 1.1.0
  * @since   2021.05.02
  */
 abstract class BaseActivity<T : ViewDataBinding>(
@@ -18,6 +20,7 @@ abstract class BaseActivity<T : ViewDataBinding>(
 ) : AppCompatActivity() {
 
     protected lateinit var binding: T
+    private lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,7 +29,19 @@ abstract class BaseActivity<T : ViewDataBinding>(
         setup()
     }
 
+    override fun onBackPressed() {
+        if (!navController.popBackStack()) {
+            super.onBackPressed()
+        }
+    }
+
     abstract fun setup()
+
+    protected fun setupNavController(id: Int) {
+        navController = supportFragmentManager.findFragmentById(id).let { fragment ->
+            (fragment as NavHostFragment).navController
+        }
+    }
 
     protected fun showToast(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
