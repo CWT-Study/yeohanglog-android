@@ -1,60 +1,43 @@
 package team.triplog.presentation.main.fragment
 
-import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.viewpager.widget.PagerAdapter
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayout.OnTabSelectedListener
 import com.google.android.material.tabs.TabLayout.TabLayoutOnPageChangeListener
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import team.triplog.R
 import team.triplog.databinding.FragmentMainTripBinding
+import team.triplog.presentation.base.BaseFragment
 import team.triplog.presentation.main.adapter.MainTripAdapter
 import team.triplog.presentation.trip.plan.activity.startTripPlanActivity
 import team.triplog.presentation.viewmodel.MainTripViewModel
 
-class MainTripFragment : Fragment() {
-    private lateinit var binding: FragmentMainTripBinding
-
+class MainTripFragment : BaseFragment<FragmentMainTripBinding>(
+    R.layout.fragment_main_trip
+) {
     private val viewModel: MainTripViewModel by viewModel()
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        binding = FragmentMainTripBinding.inflate(inflater, container, false)
-        binding.lifecycleOwner = this
-
-        setup()
-
-        return binding.root
+    override fun setup() {
+        setupViewModel()
+        setupViewpager()
     }
 
-    private fun setup() {
-        setViewModel()
-        setViewpager()
-    }
-
-
-    private fun setViewModel() {
+    private fun setupViewModel() {
         binding.vm = viewModel
 
         /** 새로운 여행 등록 클릭 */
-        viewModel.eventCreateTrip.observe(viewLifecycleOwner, Observer {
-            binding.root.context.startTripPlanActivity()
-        })
+        viewModel.eventCreateTrip.observe(
+            viewLifecycleOwner, {
+                binding.root.context.startTripPlanActivity()
+            }
+        )
     }
 
-    private fun setViewpager() {
-        val adapter: PagerAdapter =
-            MainTripAdapter(
-                requireActivity().supportFragmentManager,
-                binding.tlMainTrip.tabCount
-            )
+    private fun setupViewpager() {
+        val adapter: PagerAdapter = MainTripAdapter(
+            activity?.supportFragmentManager,
+            binding.tlMainTrip.tabCount
+        )
 
         binding.viewpager.adapter = adapter
         binding.viewpager.addOnPageChangeListener(TabLayoutOnPageChangeListener(binding.tlMainTrip))
@@ -65,5 +48,10 @@ class MainTripFragment : Fragment() {
                 binding.viewpager.currentItem = tab.position
             }
         })
+    }
+
+    override fun onResume() {
+        super.onResume()
+        setTitle(getString(R.string.main_trip))
     }
 }

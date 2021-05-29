@@ -8,6 +8,7 @@ import team.triplog.databinding.ActivityMainBinding
 import team.triplog.presentation.base.BaseActivity
 import team.triplog.presentation.util.extension.setupButton
 import team.triplog.presentation.viewmodel.MainViewModel
+import team.triplog.presentation.viewmodel.ToolbarViewModel
 
 
 /**
@@ -17,7 +18,8 @@ import team.triplog.presentation.viewmodel.MainViewModel
 class MainActivity : BaseActivity<ActivityMainBinding>(
     R.layout.activity_main
 ) {
-    private val viewModel: MainViewModel by viewModel()
+    private val mainViewModel: MainViewModel by viewModel()
+    private val toolbarViewModel: ToolbarViewModel by viewModel()
 
     override fun setup() {
         setupNavController(R.id.fragment_main)
@@ -26,7 +28,8 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
     }
 
     private fun setupViewModel() {
-        binding.viewModel = viewModel
+        binding.viewModel = mainViewModel
+        binding.toolbarViewModel = toolbarViewModel
     }
 
     private fun setupView() {

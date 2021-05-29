@@ -67,4 +67,9 @@ class MainHomeFragment :
     override fun onItemClick(item: TripEntity) {
         // TODO : 아이템 클릭시 화면 출력
     }
+
+    override fun onResume() {
+        super.onResume()
+        setTitle()
+    }
 }

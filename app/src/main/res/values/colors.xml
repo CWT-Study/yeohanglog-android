@@ -7,7 +7,10 @@
     <color name="bottom_navigation_unselected">@color/black_30</color>
     <color name="bottom_navigation_selected">@color/main</color>
 
-    <color name="background_main">@android:color/white</color>
+    <color name="background_main">@color/gray_eeeeee</color>
+    <color name="toolbar_background">@android:color/white</color>
+    <color name="toolbar_title">@color/gray_333333</color>
+    <color name="bottom_navigation_background">@android:color/white</color>
     <color name="title">@android:color/black</color>
     <color name="main_home_user_name">@color/main</color>
     <color name="main_home_welcome">@android:color/black</color>
@@ -95,6 +98,7 @@
     <color name="gray_999999_50">#80999999</color>
     <color name="gray_999999_20">#33999999</color>
     <color name="gray_CCCCCC">#CCCCCC</color>
+    <color name="gray_eeeeee">#EEEEEE</color>
     <color name="gray_f0f0f0">#f0f0f0</color>
     <color name="white_ffffff">#ffffff</color>
     <color name="white_ffffff_50">#80FFFFFF</color>

@@ -24,4 +24,9 @@ class MainProfileFragment : BaseFragment<FragmentMainProfileBinding>(
     private fun setupView() {
         binding.textVersion.text = getString(R.string.main_more_version, BuildConfig.VERSION_NAME)
     }
+
+    override fun onResume() {
+        super.onResume()
+        setTitle(getString(R.string.main_profile))
+    }
 }

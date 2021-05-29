@@ -63,7 +63,7 @@ abstract class BaseFragment<T : ViewDataBinding>(
         )
     }
 
-    protected fun setTitle(title: String) {
+    protected fun setTitle(title: String = "") {
         toolbarViewModel.title.value = title
     }
 

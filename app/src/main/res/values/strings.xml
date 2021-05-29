@@ -1,9 +1,7 @@
 <resources>
     <string name="app_name">여행록</string>
-    <string name="bottom_navigation_home">홈</string>
-    <string name="bottom_navigation_trip">여행록</string>
-    <string name="bottom_navigation_search">검색</string>
-    <string name="bottom_navigation_more">더보기</string>
+    <string name="main_trip">여행</string>
+    <string name="main_profile">프로필</string>
     <string name="main_home_user_name">님,</string>
     <string name="main_home_welcome">설레는 여행이 기다리고 있어요 :)</string>
     <string name="main_home_trip_day">%d 일째 여행중!</string>
