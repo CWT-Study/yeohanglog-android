@@ -4,6 +4,9 @@
     <color name="colorPrimaryDark">@android:color/black</color>
     <color name="colorAccent">@color/main</color>
 
+    <color name="bottom_navigation_unselected">@color/black_30</color>
+    <color name="bottom_navigation_selected">@color/main</color>
+
     <color name="background_main">@android:color/white</color>
     <color name="title">@android:color/black</color>
     <color name="main_home_user_name">@color/main</color>
@@ -72,8 +75,6 @@
 
     <color name="main_home_trip_log_item_dim_start">@android:color/transparent</color>
     <color name="main_home_trip_log_item_dim_end">@color/black_000000_50</color>
-    <color name="bottom_navigation_selected">@android:color/black</color>
-    <color name="bottom_navigation_unselected">@color/gray_CCCCCC</color>
 
     <color name="button">@color/gray_999999</color>
     <color name="button_click">@color/gray_999999_50</color>
@@ -82,6 +83,7 @@
 
     <!-- Palette colors -->
     <color name="black_000000_50">#80000000</color>
+    <color name="black_30">#4D000000</color>
     <color name="black_000000_10">#1a000000</color>
     <color name="black_121212">#121212</color>
     <color name="gray_333333">#333333</color>
@@ -96,6 +98,7 @@
     <color name="gray_f0f0f0">#f0f0f0</color>
     <color name="white_ffffff">#ffffff</color>
     <color name="white_ffffff_50">#80FFFFFF</color>
+    <color name="white_30">#4DFFFFFF</color>
     <color name="braun_A65D00">#A65D00</color>
     <color name="braun_A65D00_70">#B3A65D00</color>
     <color name="main">#e3bd8d</color>
