@@ -9,21 +9,45 @@
         android:id="@+id/navigation_home"
         android:name="team.triplog.presentation.main.fragment.MainHomeFragment"
         android:label="MainHomeFragment"
-        tools:layout="@layout/fragment_main_home" />
+        tools:layout="@layout/fragment_main_home">
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_trip"
+            app:destination="@id/navigation_trip"
+            app:launchSingleTop="true" />
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_profile"
+            app:destination="@id/navigation_profile"
+            app:launchSingleTop="true" />
+    </fragment>
+
     <fragment
         android:id="@+id/navigation_trip"
         android:name="team.triplog.presentation.main.fragment.MainTripFragment"
         android:label="MainTripFragment"
-        tools:layout="@layout/fragment_main_trip" />
+        tools:layout="@layout/fragment_main_trip">
+        <action
+            android:id="@+id/action_navigation_trip_to_navigation_home"
+            app:destination="@id/navigation_home"
+            app:launchSingleTop="true" />
+        <action
+            android:id="@+id/action_navigation_trip_to_navigation_profile"
+            app:destination="@id/navigation_profile"
+            app:launchSingleTop="true" />
+    </fragment>
+
     <fragment
-        android:id="@+id/navigation_search"
-        android:name="team.triplog.presentation.main.fragment.MainSearchFragment"
-        android:label="MainSearchFragment"
-        tools:layout="@layout/fragment_main_search" />
-    <fragment
-        android:id="@+id/navigation_more"
+        android:id="@+id/navigation_profile"
         android:name="team.triplog.presentation.main.fragment.MainMoreFragment"
-        android:label="MainMoreFragment"
-        tools:layout="@layout/fragment_main_more" />
+        android:label="MainProfileFragment"
+        tools:layout="@layout/fragment_main_more">
+        <action
+            android:id="@+id/action_navigation_profile_to_navigation_home"
+            app:destination="@id/navigation_home"
+            app:launchSingleTop="true" />
+        <action
+            android:id="@+id/action_navigation_profile_to_navigation_trip"
+            app:destination="@id/navigation_trip"
+            app:launchSingleTop="true" />
+    </fragment>
 
 </navigation>
