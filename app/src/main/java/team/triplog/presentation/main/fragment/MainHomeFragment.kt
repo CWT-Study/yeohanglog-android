@@ -1,6 +1,5 @@
 package team.triplog.presentation.main.fragment
 
-import androidx.lifecycle.Observer
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import team.triplog.R
@@ -20,12 +19,12 @@ import team.triplog.presentation.viewmodel.UserViewModel
  * @author mjkim
  * @since  2021.05.02
  */
-class MainHomeFragment :
-    BaseFragment<FragmentMainHomeBinding>(R.layout.fragment_main_home),
-    MainHomeAdapter.OnItemClickListener {
+class MainHomeFragment : BaseFragment<FragmentMainHomeBinding>(
+    R.layout.fragment_main_home
+), MainHomeAdapter.OnItemClickListener {
 
     private val mainViewModel: MainViewModel by sharedViewModel()
-    private val userViewModel: UserViewModel by viewModel()
+    private val userViewModel: UserViewModel by sharedViewModel()
     private val tripPlanViewModel: TripPlanViewModel by viewModel()
     private val tripLogViewModel: TripLogViewModel by viewModel()
 
@@ -37,9 +36,6 @@ class MainHomeFragment :
         setViewModel()
         setRecyclerView()
         setupView()
-
-        // TODO : TEST CODE
-        tripLogViewModel.updateTripLogList()
     }
 
     private fun setViewModel() {
@@ -48,9 +44,11 @@ class MainHomeFragment :
         binding.tripPlanViewModel = tripPlanViewModel
         binding.tripLogViewModel = tripLogViewModel
 
-        tripPlanViewModel.eventClickTripButton.observe(viewLifecycleOwner, Observer { trip ->
-            binding.root.context.startTripPlanActivity(trip?.id)
-        })
+        tripPlanViewModel.eventClickTripButton.observe(
+            viewLifecycleOwner, { trip ->
+                binding.root.context.startTripPlanActivity(trip?.id)
+            }
+        )
     }
 
     private fun setRecyclerView() {

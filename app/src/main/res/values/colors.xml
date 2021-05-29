@@ -12,6 +12,7 @@
     <color name="toolbar_title">@color/gray_333333</color>
     <color name="bottom_navigation_background">@android:color/white</color>
     <color name="title">@android:color/black</color>
+    <color name="main_home_background">@android:color/white</color>
     <color name="main_home_user_name">@color/main</color>
     <color name="main_home_welcome">@android:color/black</color>
     <color name="main_home_trip_title">@android:color/black</color>
