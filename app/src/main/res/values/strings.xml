@@ -3,6 +3,7 @@
     <string name="main_trip">여행</string>
     <string name="main_profile">프로필</string>
     <string name="main_profile_need_sign_in">로그인이 필요해요</string>
+    <string name="main_home_guest">여행자</string>
     <string name="main_home_user_name">님,</string>
     <string name="main_home_welcome">설레는 여행이 기다리고 있어요 :)</string>
     <string name="main_home_trip_day">%d 일째 여행중!</string>

@@ -39,12 +39,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/size_20"
+                android:text='@{userViewModel.user.name ?? @string/main_home_guest}'
                 app:layout_constrainedWidth="true"
+                app:layout_constraintEnd_toStartOf="@id/text_sir"
                 app:layout_constraintHorizontal_bias="0"
                 app:layout_constraintHorizontal_chainStyle="packed"
-                app:layout_constraintLeft_toLeftOf="@id/text_welcome"
-                app:layout_constraintRight_toLeftOf="@id/text_sir"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintStart_toStartOf="@id/text_welcome"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="USER_NAME" />
 
             <TextView
                 android:id="@+id/text_sir"
@@ -54,18 +56,19 @@
                 android:layout_marginStart="@dimen/size_7"
                 android:text="@string/main_home_user_name"
                 app:layout_constraintBottom_toBottomOf="@id/text_user_name"
-                app:layout_constraintLeft_toRightOf="@id/text_user_name"
-                app:layout_constraintRight_toRightOf="@id/text_welcome" />
+                app:layout_constraintRight_toRightOf="@id/text_welcome"
+                app:layout_constraintStart_toEndOf="@id/text_user_name" />
 
             <TextView
                 android:id="@+id/text_welcome"
                 style="@style/text_main_home_welcome"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/text_user_name"
-                app:layout_constraintWidth_percent="0.88" />
+                android:layout_marginHorizontal="@dimen/size_20"
+                android:layout_marginTop="@dimen/size_5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_user_name" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/layout_trip"
@@ -76,8 +79,8 @@
                 android:elevation="@dimen/size_4"
                 android:onClick="@{() -> tripPlanViewModel.clickTripButton()}"
                 android:padding="@dimen/size_20"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/text_welcome"
                 app:layout_constraintWidth_percent="0.9">
 
@@ -88,8 +91,8 @@
                     android:layout_height="0dp"
                     android:layout_marginEnd="@dimen/size_5"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toLeftOf="@id/view_click"
+                    app:layout_constraintEnd_toStartOf="@id/view_click"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -99,8 +102,8 @@
                     android:layout_marginEnd="@dimen/size_5"
                     android:visibility="invisible"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toLeftOf="@id/view_click"
+                    app:layout_constraintEnd_toStartOf="@id/view_click"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
 
                     <TextView
@@ -109,8 +112,8 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         app:layout_constraintBottom_toTopOf="@id/txt_trip_content"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_chainStyle="packed" />
 
@@ -156,8 +159,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/size_20"
                 android:layout_marginTop="@dimen/size_50"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/layout_trip" />
 
             <androidx.recyclerview.widget.RecyclerView
@@ -173,8 +176,8 @@
                 android:scrollbars="none"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/text_look_back"
                 tools:listitem="@layout/item_main_home_trip" />
 
@@ -184,8 +187,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintBottom_toBottomOf="@id/recycler_look_back"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@id/recycler_look_back"
                 app:layout_constraintVertical_bias="0.3" />
 
@@ -195,8 +198,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/size_5"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/text_no_contents_title"
                 app:layout_constraintWidth_percent="0.88" />
 

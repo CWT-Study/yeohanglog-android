@@ -5,6 +5,8 @@
 
     <data>
 
+        <import type="android.view.View" />
+
         <variable
             name="userViewModel"
             type="team.triplog.presentation.viewmodel.UserViewModel" />
@@ -35,9 +37,17 @@
                     android:background="@color/main_home_background"
                     android:elevation="@dimen/size_4"
                     android:paddingTop="@dimen/size_30"
+                    android:paddingBottom="@dimen/size_20"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.constraintlayout.widget.Group
+                        android:id="@+id/group_profile_need_sign_in"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="@{userViewModel.user == null ? View.VISIBLE : View.GONE , default=gone}"
+                        app:constraint_referenced_ids="iv_need_sign_in,tv_need_sign_in" />
 
                     <ImageView
                         android:id="@+id/iv_need_sign_in"
@@ -57,7 +67,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/size_10"
-                        android:layout_marginBottom="@dimen/size_20"
                         android:text="@string/main_profile_need_sign_in"
                         android:textColor="@color/black_121212"
                         android:textSize="@dimen/size_15"
