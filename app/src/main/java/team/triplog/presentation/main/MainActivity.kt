@@ -6,9 +6,10 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 import team.triplog.R
 import team.triplog.databinding.ActivityMainBinding
 import team.triplog.presentation.base.BaseActivity
+import team.triplog.presentation.main.setting.SettingActivity
+import team.triplog.presentation.util.event.EventObserver
 import team.triplog.presentation.util.extension.setupButton
 import team.triplog.presentation.viewmodel.MainViewModel
-import team.triplog.presentation.viewmodel.ToolbarViewModel
 
 
 /**
@@ -19,7 +20,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
     R.layout.activity_main
 ) {
     private val mainViewModel: MainViewModel by viewModel()
-    private val toolbarViewModel: ToolbarViewModel by viewModel()
 
     override fun setup() {
         setupNavController(R.id.fragment_main)
@@ -30,6 +30,12 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
     private fun setupViewModel() {
         binding.viewModel = mainViewModel
         binding.toolbarViewModel = toolbarViewModel
+
+        mainViewModel.clickSetting.observe(
+            this, EventObserver {
+                moveSetting()
+            }
+        )
     }
 
     private fun setupView() {
@@ -47,6 +53,10 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
                 binding.btnProfile.id -> moveTap(R.id.navigation_profile)
             }
         }
+    }
+
+    private fun moveSetting() {
+        startActivity(Intent(this, SettingActivity::class.java))
     }
 
     companion object {

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="settingViewModel"
+            type="team.triplog.presentation.viewmodel.SettingViewModel" />
+    </data>
+
+    <ScrollView
+        android:id="@+id/sv_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:overScrollMode="never"
+        android:scrollbars="none">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/background_main"
+            android:paddingVertical="@dimen/size_30">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_setting"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@color/main_profile_background"
+                android:elevation="@dimen/size_4"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <include
+                    android:id="@+id/menu_theme"
+                    layout="@layout/partial_setting_menu"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:divider="@{true}"
+                    app:enabled="@{true}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:title="@{@string/setting_theme}" />
+
+                <include
+                    android:id="@+id/menu_open_source"
+                    layout="@layout/partial_setting_menu"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:enabled="@{true}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/menu_theme"
+                    app:title="@{@string/setting_open_source}" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/tv_version"
+                style="@style/Version"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_30"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cl_setting"
+                tools:text="VERSION" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</layout>

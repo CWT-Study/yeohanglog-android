@@ -11,10 +11,9 @@ val mainModule = module {
     viewModel { MainProfileViewModel() }
     viewModel { TripViewModel() }
     viewModel { MainTripLogViewModel() }
-
     viewModel { UserViewModel() }
-
     viewModel { TripPlanViewModel(get()) }
     viewModel { TripPlanInfoViewModel() }
     viewModel { TripLogViewModel(get()) }
+    viewModel { SettingViewModel() }
 }

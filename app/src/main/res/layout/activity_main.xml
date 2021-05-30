@@ -46,13 +46,26 @@
                         style="@style/ToolbarTitle"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
-                        android:layout_marginStart="@dimen/size_10"
                         android:text="@{toolbarViewModel.title}"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/btn_setting"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         tools:text="TEXT_TITLE" />
+
+                    <ImageButton
+                        android:id="@+id/btn_setting"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:background="@android:color/transparent"
+                        android:onClick="@{() -> viewModel.clickSetting()}"
+                        android:src="@drawable/ic_baseline_settings_24"
+                        android:visibility="@{toolbarViewModel.hasSetting ? View.VISIBLE :View.GONE, default=gone}"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintDimensionRatio="1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tint="@color/color_click_button" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 

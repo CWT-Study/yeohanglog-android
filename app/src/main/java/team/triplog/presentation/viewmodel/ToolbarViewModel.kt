@@ -13,6 +13,7 @@ import team.triplog.presentation.util.event.Event
 class ToolbarViewModel : BaseViewModel() {
 
     val title = MutableLiveData<String>()
+    val hasSetting = MutableLiveData<Boolean>()
 
     private val _eventClickBack = MutableLiveData<Event<Unit>>()
     val eventClickBack: LiveData<Event<Unit>>

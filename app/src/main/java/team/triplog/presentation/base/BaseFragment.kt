@@ -67,6 +67,10 @@ abstract class BaseFragment<T : ViewDataBinding>(
         toolbarViewModel.title.value = title
     }
 
+    protected fun setSettingButton(set: Boolean) {
+        toolbarViewModel.hasSetting.value = set
+    }
+
     protected fun showToast(msg: String) {
         Toast.makeText(context, msg, Toast.LENGTH_SHORT).show()
     }

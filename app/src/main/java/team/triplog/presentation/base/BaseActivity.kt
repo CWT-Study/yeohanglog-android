@@ -8,6 +8,8 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
+import org.koin.androidx.viewmodel.ext.android.viewModel
+import team.triplog.presentation.viewmodel.ToolbarViewModel
 
 
 /**
@@ -20,6 +22,7 @@ abstract class BaseActivity<T : ViewDataBinding>(
 ) : AppCompatActivity() {
 
     protected lateinit var binding: T
+    protected val toolbarViewModel: ToolbarViewModel by viewModel()
     private lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {

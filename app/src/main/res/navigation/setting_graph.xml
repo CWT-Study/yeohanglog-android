@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/setting_graph"
+    app:startDestination="@id/settingMainFragment">
+
+    <fragment
+        android:id="@+id/settingMainFragment"
+        android:name="team.triplog.presentation.main.setting.SettingMainFragment"
+        android:label="SettingMainFragment"
+        tools:layout="@layout/fragment_setting_main">
+        <action
+            android:id="@+id/action_settingMainFragment_to_openSourceFragment"
+            app:destination="@id/openSourceFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_settingMainFragment_to_themeFragment"
+            app:destination="@id/themeFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/themeFragment"
+        android:name="team.triplog.presentation.main.setting.ThemeFragment"
+        android:label="ThemeFragment"
+        tools:layout="@layout/fragment_theme" />
+
+    <fragment
+        android:id="@+id/openSourceFragment"
+        android:name="team.triplog.presentation.main.setting.OpenSourceFragment"
+        android:label="OpenSourceFragment"
+        tools:layout="@layout/fragment_open_source" />
+
+</navigation>

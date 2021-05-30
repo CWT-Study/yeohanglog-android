@@ -21,7 +21,6 @@ import team.triplog.presentation.viewmodel.ToolbarViewModel
 class TripPlanActivity : BaseActivity<ActivityTripPlanBinding>(
     R.layout.activity_trip_plan
 ) {
-    private val toolbarViewModel: ToolbarViewModel by viewModel()
     private val navController: NavController by lazy {
         supportFragmentManager.findFragmentById(R.id.fragment_trip_plan).let { fragment ->
             (fragment as NavHostFragment).navController

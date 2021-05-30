@@ -1,7 +1,6 @@
 package team.triplog.presentation.main.fragment
 
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
-import team.triplog.BuildConfig
 import team.triplog.R
 import team.triplog.databinding.FragmentMainProfileBinding
 import team.triplog.presentation.base.BaseFragment
@@ -22,11 +21,16 @@ class MainProfileFragment : BaseFragment<FragmentMainProfileBinding>(
     }
 
     private fun setupView() {
-        binding.tvVersion.text = getString(R.string.main_more_version, BuildConfig.VERSION_NAME)
     }
 
     override fun onResume() {
         super.onResume()
         setTitle(getString(R.string.main_profile))
+        setSettingButton(true)
+    }
+
+    override fun onStop() {
+        super.onStop()
+        setSettingButton(false)
     }
 }
