@@ -15,14 +15,14 @@ class TripViewModel : BaseViewModel() {
     val planList = MutableLiveData<List<Trip>>()
     val logList = MutableLiveData<List<Trip>>()
 
-    private val _eventCreateTrip = MutableLiveData<Unit>()
-    val eventCreateTrip: LiveData<Unit>
-        get() = _eventCreateTrip
+    private val _clickCreateTrip = MutableLiveData<Unit>()
+    val clickCreateTrip: LiveData<Unit>
+        get() = _clickCreateTrip
 
     /**
      * 새로운 여행 등록 메소드
      */
     fun createTrip() {
-        _eventCreateTrip.value = Unit
+        _clickCreateTrip.value = Unit
     }
 }

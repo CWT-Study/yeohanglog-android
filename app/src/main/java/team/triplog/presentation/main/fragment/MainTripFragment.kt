@@ -10,6 +10,7 @@ import team.triplog.databinding.FragmentMainTripBinding
 import team.triplog.presentation.base.BaseFragment
 import team.triplog.presentation.main.adapter.MainTripAdapter
 import team.triplog.presentation.trip.plan.activity.startTripPlanActivity
+import team.triplog.presentation.util.extension.setupButton
 import team.triplog.presentation.viewmodel.TripViewModel
 
 class MainTripFragment : BaseFragment<FragmentMainTripBinding>(
@@ -20,15 +21,16 @@ class MainTripFragment : BaseFragment<FragmentMainTripBinding>(
     override fun setup() {
         setupViewModel()
         setupViewpager()
+        setupView()
     }
 
     private fun setupViewModel() {
         binding.viewModel = tripViewModel
 
         /** 새로운 여행 등록 클릭 */
-        tripViewModel.eventCreateTrip.observe(
+        tripViewModel.clickCreateTrip.observe(
             viewLifecycleOwner, {
-                binding.root.context.startTripPlanActivity()
+                moveCreatePlan()
             }
         )
     }
@@ -48,6 +50,14 @@ class MainTripFragment : BaseFragment<FragmentMainTripBinding>(
                 binding.viewpager.currentItem = tab.position
             }
         })
+    }
+
+    private fun setupView() {
+        binding.ivPlus.setupButton()
+    }
+
+    private fun moveCreatePlan() {
+        binding.root.context.startTripPlanActivity()
     }
 
     override fun onResume() {
