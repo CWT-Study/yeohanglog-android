@@ -22,6 +22,7 @@
 
             <RadioButton
                 android:id="@+id/rb_app_settings"
+                style="@style/MenuTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/background_radio"
@@ -32,6 +33,7 @@
 
             <RadioButton
                 android:id="@+id/rb_light_mode"
+                style="@style/MenuTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/background_radio"
@@ -41,6 +43,7 @@
 
             <RadioButton
                 android:id="@+id/rb_dark_mode"
+                style="@style/MenuTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/background_radio"
