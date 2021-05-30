@@ -24,6 +24,8 @@
     <color name="main_home_no_contents_message">@android:color/black</color>
     <color name="main_home_button">@android:color/white</color>
     <color name="main_home_new_trip_button_tint">@android:color/black</color>
+    <color name="main_trip_background">@android:color/white</color>
+    <color name="main_trip_tab">@color/gray_333333</color>
     <color name="main_profile_background">@android:color/white</color>
     <color name="search">@android:color/black</color>
     <color name="search_hint">@color/gray_999999</color>

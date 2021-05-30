@@ -1,22 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    >
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
+        <import type="android.view.View" />
+
         <variable
             name="viewModel"
-            type="team.triplog.presentation.viewmodel.MainTripLogViewModel" />
-        <import type="android.view.View"/>
+            type="team.triplog.presentation.viewmodel.TripViewModel" />
     </data>
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+        android:layout_height="match_parent">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_trip_log"
@@ -31,9 +29,50 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintWidth_percent="0.9"
-            app:spanCount="3"
-            />
+            app:spanCount="3" />
+
+        <ImageView
+            android:id="@+id/iv_no_trip_log"
+            android:layout_width="@dimen/size_100"
+            android:layout_height="0dp"
+            android:background="@color/main"
+            app:layout_constraintBottom_toTopOf="@id/tv_no_trip_log_title"
+            app:layout_constraintDimensionRatio="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.2"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/tv_no_trip_log_title"
+            style="@style/main_trip_plan_no_contents_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_15"
+            app:layout_constraintBottom_toTopOf="@id/tv_no_trip_log_message"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_no_trip_log" />
+
+        <TextView
+            android:id="@+id/tv_no_trip_log_message"
+            style="@style/main_trip_plan_no_contents_message"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/size_20"
+            android:layout_marginTop="@dimen/size_10"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_no_trip_log_title" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/group_no_contents"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="@{viewModel.planList.size() == 0 ? View.VISIBLE :View.GONE, default=gone}"
+            app:constraint_referenced_ids="iv_no_trip_log,tv_no_trip_log_title,tv_no_trip_log_message" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

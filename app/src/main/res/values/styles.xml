@@ -68,7 +68,7 @@
     </style>
 
     <style name="tab_text" parent="TextAppearance.Design.Tab">
-        <item name="android:textSize">20dp</item>
+        <item name="android:textSize">@dimen/size_15</item>
         <item name="android:textStyle">bold</item>
     </style>
 
@@ -435,17 +435,17 @@
     <style name="main_trip_plan_no_contents_title">
         <item name="android:textColor">@color/main_trip_plan_no_contents_title</item>
         <item name="android:text">@string/main_trip_plan_no_contents_title</item>
+        <item name="android:textSize">@dimen/size_16</item>
         <item name="android:textStyle">bold</item>
         <item name="android:gravity">center</item>
-        <item name="android:textSize">20dp</item>
     </style>
 
     <style name="main_trip_plan_no_contents_message">
         <item name="android:textColor">@color/main_trip_plan_no_contents_message</item>
         <item name="android:text">@string/main_trip_plan_no_contents_message</item>
+        <item name="android:textSize">@dimen/size_12</item>
         <item name="android:textStyle">normal</item>
         <item name="android:gravity">center</item>
-        <item name="android:textSize">14dp</item>
     </style>
 
     <style name="main_home_no_contents_title">

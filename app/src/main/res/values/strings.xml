@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">여행록</string>
     <string name="main_trip">여행</string>
+    <string name="main_trip_tab_plan">일정</string>
+    <string name="main_trip_tab_log">기록</string>
+    <string name="main_trip_plan_no_contents_title">등록된 일정이 없어요</string>
+    <string name="main_trip_plan_no_contents_message">우측 상단의 버튼으로 새로운 여행을 등록할 수 있습니다.\n즐거운 여행을 시작해보세요.</string>
     <string name="main_profile">프로필</string>
     <string name="main_profile_need_sign_in">로그인이 필요해요</string>
     <string name="main_home_guest">여행자</string>
@@ -42,8 +46,6 @@
     <string name="trip_plan_period_end">종료 날짜</string>
     <string name="trip_plan_name">여행이름</string>
     <string name="trip_log_info_day">DAY %s</string>
-    <string name="main_trip_plan_no_contents_title">등록된 일정 없음</string>
-    <string name="main_trip_plan_no_contents_message">우측 상단의 버튼으로 새로운 여행을 등록할 수 있습니다.\n즐거운 여행을 시작해보세요.</string>
     <string name="trip_account_title">가계부</string>
     <string name="trip_account_total">총 금액</string>
     <string name="trip_account_won">원</string>

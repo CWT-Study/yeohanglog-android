@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    >
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
+        <import type="android.view.View" />
+
         <variable
-            name="vm"
-            type="team.triplog.presentation.viewmodel.MainTripPlanViewModel"
-            />
+            name="viewModel"
+            type="team.triplog.presentation.viewmodel.TripViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_main"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+        android:layout_height="match_parent">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_trip_plan"
@@ -30,38 +30,50 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            />
+            tools:listitem="@layout/item_main_trip_plan" />
+
+        <ImageView
+            android:id="@+id/iv_no_trip_plan"
+            android:layout_width="@dimen/size_100"
+            android:layout_height="0dp"
+            android:background="@color/main"
+            app:layout_constraintBottom_toTopOf="@id/tv_no_trip_plan_title"
+            app:layout_constraintDimensionRatio="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.2"
+            app:layout_constraintVertical_chainStyle="packed" />
 
         <TextView
-            android:id="@+id/text_no_contents_title"
+            android:id="@+id/tv_no_trip_plan_title"
             style="@style/main_trip_plan_no_contents_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.2"
-            />
+            android:layout_marginTop="@dimen/size_15"
+            app:layout_constraintBottom_toTopOf="@id/tv_no_trip_plan_message"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_no_trip_plan" />
 
         <TextView
-            android:id="@+id/text_no_contents_message"
+            android:id="@+id/tv_no_trip_plan_message"
             style="@style/main_trip_plan_no_contents_message"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/text_no_contents_title"
-            app:layout_constraintWidth_percent="0.88"
-            />
+            android:layout_marginHorizontal="@dimen/size_20"
+            android:layout_marginTop="@dimen/size_10"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_no_trip_plan_title" />
 
         <androidx.constraintlayout.widget.Group
             android:id="@+id/group_no_contents"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:constraint_referenced_ids="text_no_contents_title,text_no_contents_message"
-            />
+            android:visibility="@{viewModel.planList.size() == 0 ? View.VISIBLE :View.GONE, default=gone}"
+            app:constraint_referenced_ids="iv_no_trip_plan,tv_no_trip_plan_title,tv_no_trip_plan_message" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

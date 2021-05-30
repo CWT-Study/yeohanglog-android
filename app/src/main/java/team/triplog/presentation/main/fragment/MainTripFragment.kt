@@ -4,18 +4,18 @@ import androidx.viewpager.widget.PagerAdapter
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayout.OnTabSelectedListener
 import com.google.android.material.tabs.TabLayout.TabLayoutOnPageChangeListener
-import org.koin.androidx.viewmodel.ext.android.viewModel
+import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 import team.triplog.R
 import team.triplog.databinding.FragmentMainTripBinding
 import team.triplog.presentation.base.BaseFragment
 import team.triplog.presentation.main.adapter.MainTripAdapter
 import team.triplog.presentation.trip.plan.activity.startTripPlanActivity
-import team.triplog.presentation.viewmodel.MainTripViewModel
+import team.triplog.presentation.viewmodel.TripViewModel
 
 class MainTripFragment : BaseFragment<FragmentMainTripBinding>(
     R.layout.fragment_main_trip
 ) {
-    private val viewModel: MainTripViewModel by viewModel()
+    private val tripViewModel: TripViewModel by sharedViewModel()
 
     override fun setup() {
         setupViewModel()
@@ -23,10 +23,10 @@ class MainTripFragment : BaseFragment<FragmentMainTripBinding>(
     }
 
     private fun setupViewModel() {
-        binding.vm = viewModel
+        binding.viewModel = tripViewModel
 
         /** 새로운 여행 등록 클릭 */
-        viewModel.eventCreateTrip.observe(
+        tripViewModel.eventCreateTrip.observe(
             viewLifecycleOwner, {
                 binding.root.context.startTripPlanActivity()
             }

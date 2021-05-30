@@ -5,14 +5,14 @@
     <data>
 
         <variable
-            name="vm"
-            type="team.triplog.presentation.viewmodel.MainTripViewModel" />
+            name="viewModel"
+            type="team.triplog.presentation.viewmodel.TripViewModel" />
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/background_main">
+        android:background="@color/main_trip_background">
 
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/appbar"
@@ -24,7 +24,7 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:background="@color/white_ffffff"
+                android:background="@color/toolbar_background"
                 app:contentInsetStart="0dp">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -33,31 +33,30 @@
 
                     <com.google.android.material.tabs.TabLayout
                         android:id="@+id/tl_main_trip"
-                        android:layout_width="200dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="0dp"
+                        android:layout_marginHorizontal="@dimen/size_20"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintHorizontal_bias="0.1"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         app:tabIndicatorColor="@color/main"
                         app:tabIndicatorHeight="3dp"
                         app:tabRippleColor="@null"
                         app:tabSelectedTextColor="@color/main"
                         app:tabTextAppearance="@style/tab_text"
-                        app:tabTextColor="#000000">
+                        app:tabTextColor="@color/main_trip_tab">
 
                         <com.google.android.material.tabs.TabItem
                             android:id="@+id/tab_class_detail_info"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="여행" />
+                            android:text="@string/main_trip_tab_plan" />
 
                         <com.google.android.material.tabs.TabItem
                             android:id="@+id/tab_class_review"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="기록" />
+                            android:text="@string/main_trip_tab_log" />
 
                     </com.google.android.material.tabs.TabLayout>
 
@@ -66,14 +65,14 @@
                         android:layout_width="0dp"
                         android:layout_height="0dp"
                         android:layout_gravity="center"
-                        android:onClick="@{() -> vm.createTrip()}"
+                        android:onClick="@{() -> viewModel.createTrip()}"
                         android:padding="@dimen/size_12"
                         android:src="@drawable/ic_add_trip_24"
-                        app:tint="@color/color_black_click"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintDimensionRatio="1"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tint="@color/color_black_click" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
