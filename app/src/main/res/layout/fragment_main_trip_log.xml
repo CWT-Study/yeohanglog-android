@@ -71,7 +71,7 @@
             android:id="@+id/group_no_contents"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:visibility="@{viewModel.planList.size() == 0 ? View.VISIBLE :View.GONE, default=gone}"
+            android:visibility="@{viewModel.logList.size() == 0 ? View.VISIBLE :View.GONE, default=gone}"
             app:constraint_referenced_ids="iv_no_trip_log,tv_no_trip_log_title,tv_no_trip_log_message" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
