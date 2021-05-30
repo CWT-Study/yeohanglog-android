@@ -4,6 +4,7 @@ import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 import team.triplog.R
 import team.triplog.databinding.FragmentMainProfileBinding
 import team.triplog.presentation.base.BaseFragment
+import team.triplog.presentation.util.extension.setupButton
 import team.triplog.presentation.viewmodel.UserViewModel
 
 class MainProfileFragment : BaseFragment<FragmentMainProfileBinding>(
@@ -21,6 +22,7 @@ class MainProfileFragment : BaseFragment<FragmentMainProfileBinding>(
     }
 
     private fun setupView() {
+        binding.clBtnSignIn.setupButton()
     }
 
     override fun onResume() {
