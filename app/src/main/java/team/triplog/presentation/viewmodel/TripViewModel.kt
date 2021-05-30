@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import team.triplog.domain.model.Trip
 import team.triplog.presentation.base.BaseViewModel
+import team.triplog.presentation.util.event.Event
 
 
 /**
@@ -15,14 +16,14 @@ class TripViewModel : BaseViewModel() {
     val planList = MutableLiveData<List<Trip>>()
     val logList = MutableLiveData<List<Trip>>()
 
-    private val _clickCreateTrip = MutableLiveData<Unit>()
-    val clickCreateTrip: LiveData<Unit>
+    private val _clickCreateTrip = MutableLiveData<Event<Unit>>()
+    val clickCreateTrip: LiveData<Event<Unit>>
         get() = _clickCreateTrip
 
     /**
      * 새로운 여행 등록 메소드
      */
     fun createTrip() {
-        _clickCreateTrip.value = Unit
+        _clickCreateTrip.value = Event(Unit)
     }
 }
