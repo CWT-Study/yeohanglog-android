@@ -61,13 +61,13 @@
                     </com.google.android.material.tabs.TabLayout>
 
                     <ImageView
-                        android:id="@+id/v_plus"
+                        android:id="@+id/iv_plus"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
                         android:layout_gravity="center"
                         android:onClick="@{() -> viewModel.createTrip()}"
-                        android:padding="@dimen/size_12"
-                        android:src="@drawable/ic_add_trip_24"
+                        android:padding="@dimen/size_15"
+                        android:src="@drawable/ic_baseline_add_location_alt_24"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintDimensionRatio="1"
                         app:layout_constraintEnd_toEndOf="parent"
