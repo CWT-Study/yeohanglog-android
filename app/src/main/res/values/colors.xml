@@ -95,6 +95,9 @@
     <color name="button_click">@color/gray_999999_50</color>
     <color name="button_disabled">@color/gray_999999_20</color>
 
+    <color name="radio_check_unchecked">@android:color/white</color>
+    <color name="radio_check_checked">@color/main_50</color>
+
 
     <!-- Palette colors -->
     <color name="black_70">#B3000000</color>

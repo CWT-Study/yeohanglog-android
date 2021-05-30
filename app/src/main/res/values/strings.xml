@@ -64,6 +64,9 @@
     <string name="setting_theme">테마 설정</string>
     <string name="setting_open_source">오픈 소스 라이브러리</string>
     <string name="setting_version">Version %s</string>
+    <string name="theme_app_settings">시스템 설정 모드</string>
+    <string name="theme_light_mode">밝은 모드</string>
+    <string name="theme_dark_mode">어두운 모드</string>
 
     <string name="kakao_app_key">8f6abdf916b65498acf91a358491097b</string>
 </resources>

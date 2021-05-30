@@ -1,10 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cl_main"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/background_main"
+        android:paddingVertical="@dimen/size_30">
+
+        <RadioGroup
+            android:id="@+id/rg_theme"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/menu_background"
+            android:elevation="@dimen/size_4"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RadioButton
+                android:id="@+id/rb_app_settings"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background_radio"
+                android:button="@null"
+                android:checked="true"
+                android:padding="@dimen/size_20"
+                android:text="@string/theme_app_settings" />
+
+            <RadioButton
+                android:id="@+id/rb_light_mode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background_radio"
+                android:button="@null"
+                android:padding="@dimen/size_20"
+                android:text="@string/theme_light_mode" />
+
+            <RadioButton
+                android:id="@+id/rb_dark_mode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background_radio"
+                android:button="@null"
+                android:padding="@dimen/size_20"
+                android:text="@string/theme_dark_mode" />
+
+        </RadioGroup>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
