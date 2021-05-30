@@ -10,6 +10,7 @@ import team.triplog.databinding.FragmentMainTripBinding
 import team.triplog.presentation.base.BaseFragment
 import team.triplog.presentation.main.adapter.MainTripAdapter
 import team.triplog.presentation.trip.plan.activity.startTripPlanActivity
+import team.triplog.presentation.util.event.EventObserver
 import team.triplog.presentation.util.extension.setupButton
 import team.triplog.presentation.viewmodel.TripViewModel
 
@@ -29,7 +30,7 @@ class MainTripFragment : BaseFragment<FragmentMainTripBinding>(
 
         /** 새로운 여행 등록 클릭 */
         tripViewModel.clickCreateTrip.observe(
-            viewLifecycleOwner, {
+            viewLifecycleOwner, EventObserver {
                 moveCreatePlan()
             }
         )
