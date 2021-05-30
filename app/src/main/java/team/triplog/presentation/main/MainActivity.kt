@@ -42,6 +42,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
         binding.btnHome.setupButton(CLICK)
         binding.btnTrip.setupButton(CLICK)
         binding.btnProfile.setupButton(CLICK)
+        binding.btnSetting.setupButton()
         setupBottomNavigation()
     }
 
