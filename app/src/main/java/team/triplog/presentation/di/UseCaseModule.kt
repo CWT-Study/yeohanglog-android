@@ -5,12 +5,13 @@ import org.koin.dsl.module
 import team.triplog.domain.usecase.trip.TripCreateUseCase
 import team.triplog.domain.usecase.trip.TripStatusUseCase
 import team.triplog.domain.usecase.trip.log.TripLogReadUseCase
+import team.triplog.domain.usecase.user.ReadUserUseCase
+import team.triplog.domain.usecase.user.SignUpUseCase
 
 val useCaseModule = module {
-    /** 여행 관련 UseCase */
+    single { ReadUserUseCase(get(), Dispatchers.IO) }
+    single { SignUpUseCase(get(), Dispatchers.IO) }
     single { TripCreateUseCase(get(), Dispatchers.IO) }
     single { TripStatusUseCase() }
-
-    /** 여행 기록 */
     single { TripLogReadUseCase(get()) }
 }

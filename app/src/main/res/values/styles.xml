@@ -232,7 +232,6 @@
         <item name="android:textColor">@color/more_user_contents</item>
         <item name="android:textSize">@dimen/size_14</item>
         <item name="android:gravity">center_vertical</item>
-        <item name="android:text">TEXT_CONTENTS</item>
         <item name="android:textStyle">normal</item>
     </style>
 

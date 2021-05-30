@@ -1,11 +1,18 @@
 package team.triplog.domain.repository
 
-import com.kakao.usermgmt.response.model.User
+import kotlinx.coroutines.flow.Flow
+import team.triplog.domain.model.User
 
+
+/**
+ * @author mjkim
+ * @since 2020.10.13
+ */
 interface UserRepository {
 
-    /**
-     * 유저 정보 업데이트
-     */
+    fun createUser(user: User)
+
+    fun readUserAsFlow(id: Int): Flow<User?>
+
     fun updateUser(user: User)
 }

@@ -36,7 +36,9 @@ class MainProfileFragment : BaseFragment<FragmentMainProfileBinding>(
     }
 
     private fun moveSignIn() {
-        // TODO : 로그인 페이지로 이동 
+        // TODO : 로그인 페이지로 이동
+        // TODO : 현재는 임시로 DB 에 User 정보가 생성되도록 설정
+        userViewModel.signUp()
     }
 
     override fun onResume() {
