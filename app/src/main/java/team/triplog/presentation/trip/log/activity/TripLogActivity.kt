@@ -10,7 +10,14 @@ import team.triplog.presentation.base.BaseActivity
 import team.triplog.presentation.trip.log.adapter.TripLogAdapter
 import team.triplog.presentation.trip.log.adapter.TripLogContentAdapter
 
-class TripLogActivity : BaseActivity<ActivityTripLogBinding>(R.layout.activity_trip_log) {
+
+/**
+ * @author mjkim
+ * @since 2021/06/06
+ **/
+class TripLogActivity : BaseActivity<ActivityTripLogBinding>(
+    R.layout.activity_trip_log
+) {
 
     private var tripLogAdapter: TripLogAdapter? = null
     private var tripLogContentAdapter: TripLogContentAdapter? = null

@@ -7,10 +7,19 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import team.triplog.databinding.FragmentMainSearchBinding
 
+
+/**
+ * @author mjkim
+ * @since 2021/06/06
+ **/
 class MainSearchFragment : Fragment() {
     private lateinit var binding: FragmentMainSearchBinding
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         binding = FragmentMainSearchBinding.inflate(inflater, container, false)
         binding.lifecycleOwner = this
 

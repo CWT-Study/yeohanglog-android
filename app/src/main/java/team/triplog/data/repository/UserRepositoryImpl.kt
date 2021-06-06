@@ -5,6 +5,11 @@ import team.triplog.data.source.local.UserLocalDataSource
 import team.triplog.domain.model.User
 import team.triplog.domain.repository.UserRepository
 
+
+/**
+ * @author mjkim
+ * @since 2021/06/06
+ **/
 class UserRepositoryImpl(
     private val userLocalDataSource: UserLocalDataSource
 ) : UserRepository {

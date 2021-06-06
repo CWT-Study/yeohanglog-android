@@ -1,6 +1,6 @@
 package team.triplog.domain.usecase.base
 
-import dev.lazyrabbit.rememberize.util.result.Result
+import team.triplog.domain.util.result.Result
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.withContext
 import timber.log.Timber

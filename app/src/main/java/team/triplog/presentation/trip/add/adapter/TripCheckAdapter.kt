@@ -11,6 +11,11 @@ import kotlinx.android.synthetic.main.item_trip_check.view.*
 import team.triplog.R
 import java.util.*
 
+
+/**
+ * @author mjkim
+ * @since 2021/06/06
+ **/
 class TripCheckAdapter(
     private val context: Context,
     private val items: ArrayList<String>

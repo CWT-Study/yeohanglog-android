@@ -7,6 +7,11 @@ import team.triplog.domain.model.TripLogDetailChat
 import team.triplog.presentation.trip.log.logdetail.viewholder.TripLogDetailChatViewHolder
 import java.util.*
 
+
+/**
+ * @author mjkim
+ * @since 2021/06/06
+ **/
 class TripLogDetailAdapter(
     private val context: Context,
     private val items: ArrayList<TripLogDetailChat>

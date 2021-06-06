@@ -13,7 +13,9 @@ import team.triplog.presentation.trip.add.adapter.TripCheckAdapter
  * @author mjkim
  * @since  2021.05.02
  */
-class TripCheckActivity : BaseActivity<ActivityTripCheckBinding>(R.layout.activity_trip_check) {
+class TripCheckActivity : BaseActivity<ActivityTripCheckBinding>(
+    R.layout.activity_trip_check
+) {
 
     private var checkAdapter: TripCheckAdapter? = null
     private val checkList = arrayListOf<String>()

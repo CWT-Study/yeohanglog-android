@@ -4,17 +4,14 @@ import android.content.Context
 import android.content.Intent
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
-import org.koin.androidx.viewmodel.ext.android.viewModel
 import team.triplog.R
 import team.triplog.databinding.ActivityTripPlanBinding
 import team.triplog.presentation.base.BaseActivity
 import team.triplog.presentation.trip.plan.activity.TripPlanActivity.Companion.EXTRA_TRIP_ID
 import team.triplog.presentation.util.extension.setupButton
-import team.triplog.presentation.viewmodel.ToolbarViewModel
 
 
 /**
- * 여행 등록/관리 화면
  * @author mjkim
  * @since  2021.05.02
  */

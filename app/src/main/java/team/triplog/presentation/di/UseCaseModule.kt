@@ -8,6 +8,11 @@ import team.triplog.domain.usecase.trip.log.TripLogReadUseCase
 import team.triplog.domain.usecase.user.ReadUserUseCase
 import team.triplog.domain.usecase.user.SignUpUseCase
 
+
+/**
+ * @author mjkim
+ * @since 2021/06/06
+ **/
 val useCaseModule = module {
     single { ReadUserUseCase(get(), Dispatchers.IO) }
     single { SignUpUseCase(get(), Dispatchers.IO) }

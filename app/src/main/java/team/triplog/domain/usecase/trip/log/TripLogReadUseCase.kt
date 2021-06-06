@@ -1,12 +1,13 @@
 package team.triplog.domain.usecase.trip.log
 
-import team.triplog.domain.repository.TripLogRepository
 import team.triplog.data.source.local.entity.TripEntity
+import team.triplog.domain.repository.TripLogRepository
 
 
 /**
- * Created by Minjae Kim on 2020.12.02.
- */
+ * @author mjkim
+ * @since 2021/06/06
+ **/
 class TripLogReadUseCase(private val tripLogRepository: TripLogRepository) {
 
     /** 여행 기록 전체 가져오기 */

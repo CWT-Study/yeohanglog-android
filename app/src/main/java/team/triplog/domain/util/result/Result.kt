@@ -1,4 +1,4 @@
-package dev.lazyrabbit.rememberize.util.result
+package team.triplog.domain.util.result
 
 import androidx.lifecycle.MutableLiveData
 

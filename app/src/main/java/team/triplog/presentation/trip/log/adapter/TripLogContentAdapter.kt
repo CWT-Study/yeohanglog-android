@@ -11,7 +11,12 @@ import team.triplog.R
 import team.triplog.domain.model.TripLog
 import java.util.*
 
-class TripLogContentAdapter (
+
+/**
+ * @author mjkim
+ * @since 2021/06/06
+ **/
+class TripLogContentAdapter(
     private val context: Context,
     private val tripLogs: ArrayList<TripLog>
 ) : RecyclerView.Adapter<TripLogContentAdapter.ViewHolder>() {
@@ -47,8 +52,6 @@ class TripLogContentAdapter (
     }
 
 
-
-
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         var textView = view.text
         var view_trip_log_image = view.view_trip_log_image
@@ -60,7 +63,7 @@ class TripLogContentAdapter (
         var text_next_month = view.text_trip_end_month
         var text_prev_day = view.text_trip_start_day
         var text_next_day = view.text_trip_end_day
-        var text_title =view.text_trip_name
+        var text_title = view.text_trip_name
         var viewTrip = view.view_trip
 
 

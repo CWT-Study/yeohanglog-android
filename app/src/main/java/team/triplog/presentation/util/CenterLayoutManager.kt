@@ -7,6 +7,11 @@ import androidx.recyclerview.widget.LinearSmoothScroller
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.SmoothScroller
 
+
+/**
+ * @author mjkim
+ * @since 2021/06/06
+ **/
 class CenterLayoutManager : LinearLayoutManager {
     constructor(context: Context?) : super(context)
     constructor(context: Context?, orientation: Int, reverseLayout: Boolean) : super(

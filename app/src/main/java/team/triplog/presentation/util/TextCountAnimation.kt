@@ -8,7 +8,6 @@ import java.text.DecimalFormat
 
 /**
  * @author  mjkim
- * @version 1.0.0
  * @since   2021.05.02
  */
 class TextCountAnimation(var textView: TextView, var to: Int) : Animation() {

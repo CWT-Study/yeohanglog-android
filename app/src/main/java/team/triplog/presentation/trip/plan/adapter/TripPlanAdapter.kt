@@ -7,7 +7,6 @@ import java.util.*
 
 
 /**
- * 일정화면 날짜별 일정 리스트
  * @author mjkim
  * @since  2021.05.12
  */

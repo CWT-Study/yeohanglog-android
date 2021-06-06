@@ -10,7 +10,12 @@ import io.reactivex.schedulers.Schedulers
 import team.triplog.data.source.local.entity.TripLogEntity
 import team.triplog.presentation.main.viewholder.MainTripLogViewHolder
 
-class MainTripLogAdapter() : RecyclerView.Adapter<MainTripLogViewHolder>() {
+
+/**
+ * @author mjkim
+ * @since 2021/06/06
+ **/
+class MainTripLogAdapter : RecyclerView.Adapter<MainTripLogViewHolder>() {
 
     private var items: List<TripLogEntity> = listOf()
     var listener: OnItemClickListener? = null

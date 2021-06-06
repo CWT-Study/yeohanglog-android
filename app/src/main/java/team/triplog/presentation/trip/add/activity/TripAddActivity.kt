@@ -10,12 +10,12 @@ import team.triplog.presentation.trip.plan.activity.TripPlanActivity
 
 
 /**
- * @author  mjkim
- * @version 1.0.0
- * @since   2021.05.02
- */
-class TripAddActivity : BaseActivity<ActivityTripAddBinding>(R.layout.activity_trip_add) {
-
+ * @author mjkim
+ * @since 2021/06/06
+ **/
+class TripAddActivity : BaseActivity<ActivityTripAddBinding>(
+    R.layout.activity_trip_add
+) {
     override fun setup() {
         init()
         setData()

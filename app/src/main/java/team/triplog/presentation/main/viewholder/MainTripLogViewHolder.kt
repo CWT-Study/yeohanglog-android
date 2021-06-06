@@ -9,6 +9,11 @@ import team.triplog.data.source.local.entity.TripLogEntity
 import team.triplog.databinding.ItemMainTripLogBinding
 import team.triplog.presentation.main.adapter.MainTripLogAdapter
 
+
+/**
+ * @author mjkim
+ * @since 2021/06/06
+ **/
 class MainTripLogViewHolder(
     private val binding: ItemMainTripLogBinding
 ) : RecyclerView.ViewHolder(binding.root) {

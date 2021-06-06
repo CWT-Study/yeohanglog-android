@@ -10,7 +10,9 @@ import team.triplog.presentation.base.BaseActivity
  * @author mjkim
  * @since  2021.05.02
  */
-class TripMemberActivity : BaseActivity<ActivityTripMemberBinding>(R.layout.activity_trip_member) {
+class TripMemberActivity : BaseActivity<ActivityTripMemberBinding>(
+    R.layout.activity_trip_member
+) {
 
     override fun setup() {
         init()

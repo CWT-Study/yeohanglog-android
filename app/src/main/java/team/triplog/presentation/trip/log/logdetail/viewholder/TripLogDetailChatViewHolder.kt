@@ -6,14 +6,22 @@ import androidx.recyclerview.widget.RecyclerView
 import team.triplog.databinding.ItemTripLogDetailUserBinding
 import team.triplog.domain.model.TripLogDetailChat
 
+
+/**
+ * @author mjkim
+ * @since 2021/06/06
+ **/
 class TripLogDetailChatViewHolder(
     private val binding: ItemTripLogDetailUserBinding
 ) : RecyclerView.ViewHolder(binding.root) {
 
     companion object {
         fun getViewHolder(parent: ViewGroup): TripLogDetailChatViewHolder {
-            val binding =
-                ItemTripLogDetailUserBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+            val binding = ItemTripLogDetailUserBinding.inflate(
+                LayoutInflater.from(parent.context),
+                parent,
+                false
+            )
             return TripLogDetailChatViewHolder(binding)
         }
     }
@@ -21,10 +29,8 @@ class TripLogDetailChatViewHolder(
     fun bind(item: TripLogDetailChat) {
         // TODO : Test Data
         binding.tripLogDetailUserName.text = "홍길동"
-        item.sentence?.let {
+        item.sentence.let {
             binding.textUserSentence.text = "문장을 입력하세요"
-        } ?: run {
-            binding.textUserSentence.text = item.sentence
         }
     }
 }

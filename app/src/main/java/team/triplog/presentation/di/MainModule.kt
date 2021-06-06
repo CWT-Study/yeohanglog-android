@@ -4,6 +4,11 @@ import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 import team.triplog.presentation.viewmodel.*
 
+
+/**
+ * @author mjkim
+ * @since 2021/06/06
+ **/
 val mainModule = module {
     viewModel { ToolbarViewModel() }
     viewModel { MainViewModel() }

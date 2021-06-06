@@ -18,12 +18,12 @@ import timber.log.Timber
 
 
 /**
- * @author  mjkim
- * @version 1.0.0
- * @since   2021.05.02
- */
-class SignInActivity : BaseActivity<ActivitySignInBinding>(R.layout.activity_sign_in) {
-
+ * @author mjkim
+ * @since 2021/06/06
+ **/
+class SignInActivity : BaseActivity<ActivitySignInBinding>(
+    R.layout.activity_sign_in
+) {
     private var session: Session? = null
 
     override fun setup() {

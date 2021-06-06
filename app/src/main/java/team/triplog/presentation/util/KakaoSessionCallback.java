@@ -12,6 +12,11 @@ import com.kakao.usermgmt.response.model.UserAccount;
 import com.kakao.util.OptionalBoolean;
 import com.kakao.util.exception.KakaoException;
 
+
+/**
+ * @author mjkim
+ * @since 2021/06/06
+ **/
 public class KakaoSessionCallback implements ISessionCallback {
     @Override
     public void onSessionOpened() {

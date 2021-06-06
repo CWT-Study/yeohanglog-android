@@ -10,6 +10,11 @@ import team.triplog.presentation.main.adapter.MainTripPlanAdapter
 import team.triplog.presentation.trip.plan.activity.startTripPlanActivity
 import team.triplog.presentation.viewmodel.TripViewModel
 
+
+/**
+ * @author mjkim
+ * @since 2021/06/06
+ **/
 class MainTripPlanFragment : BaseFragment<FragmentMainTripPlanBinding>(
     R.layout.fragment_main_trip_plan
 ), MainTripPlanAdapter.OnItemClickListener {

@@ -7,6 +7,11 @@ import androidx.room.TypeConverters
 import team.triplog.data.source.local.Converters
 import java.util.*
 
+
+/**
+ * @author mjkim
+ * @since 2021/06/06
+ **/
 @Entity(tableName = "TripLog")
 @TypeConverters(Converters::class)
 data class TripLogEntity(

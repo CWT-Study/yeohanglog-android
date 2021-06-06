@@ -14,7 +14,6 @@ import team.triplog.presentation.viewmodel.ToolbarViewModel
 
 /**
  * @author  mjkim
- * @version 1.1.0
  * @since   2021.05.02
  */
 abstract class BaseActivity<T : ViewDataBinding>(

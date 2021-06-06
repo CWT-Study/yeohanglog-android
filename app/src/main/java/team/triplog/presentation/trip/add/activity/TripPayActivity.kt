@@ -11,7 +11,9 @@ import team.triplog.presentation.util.TextCountAnimation
  * @author mjkim
  * @since  2021.05.02
  */
-class TripPayActivity : BaseActivity<ActivityTripPayBinding>(R.layout.activity_trip_pay) {
+class TripPayActivity : BaseActivity<ActivityTripPayBinding>(
+    R.layout.activity_trip_pay
+) {
 
     override fun setup() {
         init()

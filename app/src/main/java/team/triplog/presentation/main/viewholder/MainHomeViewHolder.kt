@@ -1,6 +1,5 @@
 package team.triplog.presentation.main.viewholder
 
-import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -12,6 +11,10 @@ import team.triplog.presentation.util.extension.toDefaultFormat
 import java.util.*
 
 
+/**
+ * @author mjkim
+ * @since 2021/06/06
+ **/
 class MainHomeViewHolder(
     private val binding: ItemMainHomeTripBinding
 ) : RecyclerView.ViewHolder(binding.root) {
@@ -24,7 +27,6 @@ class MainHomeViewHolder(
         }
     }
 
-    @SuppressLint("ClickableViewAccessibility")
     fun bind(item: TripEntity, itemClickListener: MainHomeAdapter.OnItemClickListener) {
         // TODO : 여행기록 대표 이미지 표시 추가
 

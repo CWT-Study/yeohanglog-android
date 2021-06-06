@@ -10,6 +10,11 @@ import team.triplog.data.source.local.entity.TripEntity
 import team.triplog.data.source.local.entity.TripLogEntity
 import team.triplog.data.source.local.entity.UserEntity
 
+
+/**
+ * @author mjkim
+ * @since 2021/06/06
+ **/
 @Database(
     entities = [
         UserEntity::class,

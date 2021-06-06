@@ -4,6 +4,11 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
+
+/**
+ * @author mjkim
+ * @since 2021/06/06
+ **/
 @Entity(tableName = "user")
 data class UserEntity(
     @PrimaryKey

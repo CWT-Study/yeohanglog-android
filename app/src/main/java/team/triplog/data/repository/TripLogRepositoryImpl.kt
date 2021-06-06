@@ -5,8 +5,9 @@ import team.triplog.data.source.local.entity.TripEntity
 
 
 /**
- * Created by Minjae Kim on 2020.12.02.
- */
+ * @author mjkim
+ * @since 2020/12/02
+ **/
 class TripLogRepositoryImpl : TripLogRepository {
 
     /** 새로운 여행 기록하기 */

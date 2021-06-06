@@ -12,8 +12,9 @@ import kotlin.math.abs
  * @author mjkim
  * @since  2021.05.02
  */
-class TripLogDetailActivity :
-    BaseActivity<ActivityTripLogDetailBinding>(R.layout.activity_trip_log_detail) {
+class TripLogDetailActivity : BaseActivity<ActivityTripLogDetailBinding>(
+    R.layout.activity_trip_log_detail
+) {
 
     override fun setup() {
         init()

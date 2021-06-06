@@ -8,9 +8,14 @@ import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.item_trip_log.view.*
 import team.triplog.R
 import team.triplog.domain.model.TripLog
-import java.util.ArrayList
+import java.util.*
 
-class TripLogAdapter (
+
+/**
+ * @author mjkim
+ * @since 2021/06/06
+ **/
+class TripLogAdapter(
     private val context: Context,
     private val tripLogs: ArrayList<TripLog>
 ) : RecyclerView.Adapter<TripLogAdapter.ViewHolder>() {
@@ -29,9 +34,9 @@ class TripLogAdapter (
         val item = tripLogs[position]
 
         if (position == 0) {
-            holder.view_trip_log_image.setBackgroundResource(R.drawable.button_plus);
+            holder.view_trip_log_image.setBackgroundResource(R.drawable.button_plus)
             holder.view_trip_log_delee.visibility = View.GONE
-            return;
+            return
         }
 
         holder.textView.text = item.title

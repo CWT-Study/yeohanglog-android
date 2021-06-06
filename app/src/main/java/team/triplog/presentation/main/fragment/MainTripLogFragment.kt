@@ -8,6 +8,10 @@ import team.triplog.presentation.main.adapter.MainTripLogAdapter
 import team.triplog.presentation.viewmodel.TripViewModel
 
 
+/**
+ * @author mjkim
+ * @since 2021/06/06
+ **/
 class MainTripLogFragment : BaseFragment<FragmentMainTripLogBinding>(
     R.layout.fragment_main_trip_log
 ) {

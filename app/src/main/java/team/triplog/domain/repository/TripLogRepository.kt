@@ -2,6 +2,11 @@ package team.triplog.domain.repository
 
 import team.triplog.data.source.local.entity.TripEntity
 
+
+/**
+ * @author mjkim
+ * @since 2021/06/06
+ **/
 interface TripLogRepository {
 
     /** 새로운 여행 기록하기 */

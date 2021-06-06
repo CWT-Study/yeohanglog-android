@@ -8,6 +8,11 @@ import com.bumptech.glide.Glide
 import team.triplog.databinding.ItemTripAlbumBinding
 import team.triplog.presentation.trip.add.adapter.TripAlbumAdapter
 
+
+/**
+ * @author mjkim
+ * @since 2021/06/06
+ **/
 class TripAlbumViewHolder(
     private val binding: ItemTripAlbumBinding
 ) : RecyclerView.ViewHolder(binding.root) {
@@ -20,7 +25,11 @@ class TripAlbumViewHolder(
         }
     }
 
-    fun bind(context: Context, item: String, itemClickListener: TripAlbumAdapter.OnItemClickListener) {
+    fun bind(
+        context: Context,
+        item: String,
+        itemClickListener: TripAlbumAdapter.OnItemClickListener
+    ) {
         Glide.with(context)
             .load(item)
             .thumbnail(0.1f)

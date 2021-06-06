@@ -7,6 +7,11 @@ import androidx.annotation.DimenRes
 import androidx.annotation.StringRes
 import androidx.core.content.ContextCompat
 
+
+/**
+ * @author mjkim
+ * @since 2021/06/06
+ **/
 interface ResourcesProvider {
     @ColorInt
     fun getColor(@ColorRes resId: Int): Int

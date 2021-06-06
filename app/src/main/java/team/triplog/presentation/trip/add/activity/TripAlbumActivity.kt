@@ -9,8 +9,13 @@ import team.triplog.presentation.trip.add.adapter.TripAlbumAdapter
 import java.util.*
 
 
-class TripAlbumActivity : BaseActivity<ActivityTripAlbumBinding>(R.layout.activity_trip_album),
-    TripAlbumAdapter.OnItemClickListener {
+/**
+ * @author mjkim
+ * @since 2021/06/06
+ **/
+class TripAlbumActivity : BaseActivity<ActivityTripAlbumBinding>(
+    R.layout.activity_trip_album
+), TripAlbumAdapter.OnItemClickListener {
 
     private var tripAlbumAdapter: TripAlbumAdapter? = null
     private val imageList = ArrayList<String>()

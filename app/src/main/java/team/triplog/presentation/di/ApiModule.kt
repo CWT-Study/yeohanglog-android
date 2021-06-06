@@ -8,10 +8,9 @@ import team.triplog.data.source.remote.api.UserApi
 
 
 /**
- * Created by Minjae Kim on 2020.12.20.
- *
- * DESC : 서버 Api DI
- */
+ * @author mjkim
+ * @since 2021/06/06
+ **/
 val apiModule = module {
     single { (get(named(DI_RETROFIT_NO_AUTH)) as Retrofit).create(UserApi::class.java) }
     single { (get(named(DI_RETROFIT_NO_AUTH)) as Retrofit).create(TripApi::class.java) }

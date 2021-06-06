@@ -5,6 +5,11 @@ import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
 import team.triplog.presentation.main.startMainActivity
 
+
+/**
+ * @author mjkim
+ * @since 2021/06/06
+ **/
 class SplashActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {

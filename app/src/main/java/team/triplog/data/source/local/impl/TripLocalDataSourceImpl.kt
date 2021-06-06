@@ -6,11 +6,8 @@ import team.triplog.data.source.local.entity.TripEntity
 
 
 /**
- * Description : 여행 로컬 데이터소스 구현체
- *
- * @author   mjkim
- * @version  1.0.0
- * @since    4/19/21 11:40 PM
+ * @author mjkim
+ * @since 2021/06/06
  **/
 class TripLocalDataSourceImpl(
     private val tripDao: TripDao

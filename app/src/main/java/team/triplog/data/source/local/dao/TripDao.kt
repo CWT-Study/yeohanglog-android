@@ -4,6 +4,11 @@ import androidx.lifecycle.LiveData
 import androidx.room.*
 import team.triplog.data.source.local.entity.TripEntity
 
+
+/**
+ * @author mjkim
+ * @since 2021/06/06
+ **/
 @Dao
 interface TripDao: BaseDao<TripEntity> {
 

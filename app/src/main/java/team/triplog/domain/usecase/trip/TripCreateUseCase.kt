@@ -8,11 +8,8 @@ import java.util.*
 
 
 /**
- * Description : 여행 생성 UseCase
- *
- * @author   mjkim
- * @version  1.0.0
- * @since    4/18/21 4:41 PM
+ * @author mjkim
+ * @since 2021/06/06
  **/
 class TripCreateUseCase(
     private val tripRepository: TripRepository,

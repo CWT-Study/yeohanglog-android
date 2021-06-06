@@ -14,6 +14,11 @@ import team.triplog.presentation.util.event.EventObserver
 import team.triplog.presentation.util.extension.setupButton
 import team.triplog.presentation.viewmodel.TripViewModel
 
+
+/**
+ * @author mjkim
+ * @since 2021/06/06
+ **/
 class MainTripFragment : BaseFragment<FragmentMainTripBinding>(
     R.layout.fragment_main_trip
 ) {

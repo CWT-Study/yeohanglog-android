@@ -6,6 +6,11 @@ import androidx.recyclerview.widget.RecyclerView
 import team.triplog.presentation.trip.add.viewholder.TripAlbumViewHolder
 import java.util.*
 
+
+/**
+ * @author mjkim
+ * @since 2021/06/06
+ **/
 class TripAlbumAdapter(
     private val context: Context,
     private var items: ArrayList<String>,
