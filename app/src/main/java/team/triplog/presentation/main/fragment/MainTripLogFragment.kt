@@ -4,7 +4,6 @@ import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 import team.triplog.R
 import team.triplog.databinding.FragmentMainTripLogBinding
 import team.triplog.presentation.base.BaseFragment
-import team.triplog.presentation.main.adapter.MainTripLogAdapter
 import team.triplog.presentation.viewmodel.TripViewModel
 
 
@@ -16,9 +15,6 @@ class MainTripLogFragment : BaseFragment<FragmentMainTripLogBinding>(
     R.layout.fragment_main_trip_log
 ) {
     private val tripViewModel: TripViewModel by sharedViewModel()
-    private val mainTripLogAdapter: MainTripLogAdapter by lazy {
-        MainTripLogAdapter()
-    }
 
     override fun setup() {
         setupViewModel()
@@ -30,6 +26,5 @@ class MainTripLogFragment : BaseFragment<FragmentMainTripLogBinding>(
     }
 
     private fun setupRecycler() {
-        binding.recyclerTripLog.adapter = mainTripLogAdapter
     }
 }

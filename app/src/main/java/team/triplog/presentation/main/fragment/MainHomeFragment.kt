@@ -10,7 +10,6 @@ import team.triplog.presentation.main.adapter.MainHomeAdapter
 import team.triplog.presentation.trip.plan.activity.startTripPlanActivity
 import team.triplog.presentation.util.extension.setupButton
 import team.triplog.presentation.viewmodel.MainViewModel
-import team.triplog.presentation.viewmodel.TripLogViewModel
 import team.triplog.presentation.viewmodel.TripPlanViewModel
 import team.triplog.presentation.viewmodel.UserViewModel
 
@@ -26,7 +25,6 @@ class MainHomeFragment : BaseFragment<FragmentMainHomeBinding>(
     private val mainViewModel: MainViewModel by sharedViewModel()
     private val userViewModel: UserViewModel by sharedViewModel()
     private val tripPlanViewModel: TripPlanViewModel by viewModel()
-    private val tripLogViewModel: TripLogViewModel by viewModel()
 
     private val mainHomeAdapter: MainHomeAdapter by lazy {
         MainHomeAdapter(this)
@@ -42,7 +40,6 @@ class MainHomeFragment : BaseFragment<FragmentMainHomeBinding>(
         binding.mainViewModel = mainViewModel
         binding.userViewModel = userViewModel
         binding.tripPlanViewModel = tripPlanViewModel
-        binding.tripLogViewModel = tripLogViewModel
 
         tripPlanViewModel.eventClickTripButton.observe(
             viewLifecycleOwner, { trip ->
