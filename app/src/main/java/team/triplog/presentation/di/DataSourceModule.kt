@@ -16,7 +16,7 @@ val remoteDataSourceModule = module {
 }
 
 val localDataSourceModule = module {
-    single { UserLocalDataSourceImpl(get()) }
-    single { TripLocalDataSourceImpl(get()) }
+    single { UserLocalDataSourceImpl(get()) as UserLocalDataSource }
+    single { TripLocalDataSourceImpl(get()) as TripLocalDataSource }
 }
 
