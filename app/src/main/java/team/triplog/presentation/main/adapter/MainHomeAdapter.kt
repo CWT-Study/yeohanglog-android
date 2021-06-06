@@ -6,6 +6,11 @@ import androidx.recyclerview.widget.RecyclerView
 import team.triplog.data.source.local.entity.TripEntity
 import team.triplog.presentation.main.viewholder.MainHomeViewHolder
 
+
+/**
+ * @author mjkim
+ * @since 2021/06/06
+ **/
 class MainHomeAdapter(
     var onItemClickListener: OnItemClickListener
 ) : RecyclerView.Adapter<MainHomeViewHolder>() {

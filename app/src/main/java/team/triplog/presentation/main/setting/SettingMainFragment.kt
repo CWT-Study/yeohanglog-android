@@ -9,6 +9,7 @@ import team.triplog.presentation.base.BaseFragment
 import team.triplog.presentation.util.extension.setupButton
 import team.triplog.presentation.viewmodel.SettingViewModel
 
+
 /**
  *  @author mjkim
  *  @since  2021.05.30

@@ -1,18 +1,15 @@
 package team.triplog.domain.usecase.trip
 
-import team.triplog.domain.model.TripStatus
 import team.triplog.domain.model.Trip
+import team.triplog.domain.model.TripStatus
 import java.util.*
 
 
 /**
- * Created by Minjae Kim on 2020. 12. 06
- *
- * TripStatusUseCase
- *  - 여행의 진행상태를 확인하는 로직이 담긴 유즈케이스
- */
+ * @author mjkim
+ * @since 2021/06/06
+ **/
 class TripStatusUseCase {
-
     /**
      * 현재 여행정보를 가지고 여행의 상태를 나타내어 반환함.
      */

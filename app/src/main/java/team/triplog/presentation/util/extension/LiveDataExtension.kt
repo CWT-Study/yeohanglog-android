@@ -7,9 +7,9 @@ import androidx.lifecycle.MediatorLiveData
 
 
 /**
- *  @author Man-jae
- *  @since 2021.03.13.
- */
+ * @author mjkim
+ * @since 2021/06/06
+ **/
 
 fun <T> LiveData<T>.debounce(duration: Long = 1000L) = MediatorLiveData<T>().also { mld ->
     val source = this

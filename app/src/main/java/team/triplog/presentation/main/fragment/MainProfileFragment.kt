@@ -9,6 +9,11 @@ import team.triplog.presentation.util.extension.setupButton
 import team.triplog.presentation.viewmodel.ProfileViewModel
 import team.triplog.presentation.viewmodel.UserViewModel
 
+
+/**
+ * @author mjkim
+ * @since 2021/06/06
+ **/
 class MainProfileFragment : BaseFragment<FragmentMainProfileBinding>(
     R.layout.fragment_main_profile
 ) {

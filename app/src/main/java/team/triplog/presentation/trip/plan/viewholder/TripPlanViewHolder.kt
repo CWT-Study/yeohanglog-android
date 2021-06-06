@@ -5,6 +5,11 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import team.triplog.databinding.ItemTripPlanBinding
 
+
+/**
+ * @author mjkim
+ * @since 2021/06/06
+ **/
 class TripPlanViewHolder(
     private val binding: ItemTripPlanBinding
 ) : RecyclerView.ViewHolder(binding.root) {

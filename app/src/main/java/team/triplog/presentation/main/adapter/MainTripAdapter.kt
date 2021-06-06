@@ -6,6 +6,11 @@ import androidx.fragment.app.FragmentStatePagerAdapter
 import team.triplog.presentation.main.fragment.MainTripLogFragment
 import team.triplog.presentation.main.fragment.MainTripPlanFragment
 
+
+/**
+ * @author mjkim
+ * @since 2021/06/06
+ **/
 class MainTripAdapter(
     fm: FragmentManager?,
     var tabCount: Int

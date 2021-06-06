@@ -6,8 +6,10 @@ import java.util.*
 
 
 /**
- * ex) String 2020.12.25 형식
- */
+ * @author mjkim
+ * @since 2021/06/06
+ **/
+
 fun Date.toDefaultFormat(): String {
     val format = SimpleDateFormat("yyyy.MM.dd", Locale.getDefault())
     return format.format(this)

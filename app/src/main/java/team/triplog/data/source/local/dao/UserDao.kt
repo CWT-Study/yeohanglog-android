@@ -6,6 +6,11 @@ import androidx.room.Query
 import kotlinx.coroutines.flow.Flow
 import team.triplog.data.source.local.entity.UserEntity
 
+
+/**
+ * @author mjkim
+ * @since 2021/06/06
+ **/
 @Dao
 interface UserDao : BaseDao<UserEntity> {
 

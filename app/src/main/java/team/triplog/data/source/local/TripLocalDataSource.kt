@@ -4,11 +4,8 @@ import team.triplog.data.source.local.entity.TripEntity
 
 
 /**
- * Description : 여행 로컬 데이터소스
- *
- * @author   mjkim
- * @version  1.0.0
- * @since    4/18/21 4:55 PM
+ * @author mjkim
+ * @since 2021/06/06
  **/
 interface TripLocalDataSource {
     /**

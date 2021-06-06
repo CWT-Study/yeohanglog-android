@@ -9,6 +9,11 @@ import team.triplog.presentation.main.adapter.MainTripPlanAdapter
 import java.text.SimpleDateFormat
 import java.util.*
 
+
+/**
+ * @author mjkim
+ * @since 2021/06/06
+ **/
 class MainTripPlanViewHolder(
     private val binding: ItemMainTripPlanBinding
 ) : RecyclerView.ViewHolder(binding.root) {
@@ -27,10 +32,12 @@ class MainTripPlanViewHolder(
 
     fun bind(item: Trip, itemClickListener: MainTripPlanAdapter.OnItemClickListener) {
         binding.textTripStartYear.text = yearFormat.format(item.startDate)
-        binding.textTripStartMonth.text = monthFormat.format(item.startDate).toUpperCase(Locale.getDefault())
+        binding.textTripStartMonth.text =
+            monthFormat.format(item.startDate).toUpperCase(Locale.getDefault())
         binding.textTripStartDay.text = dayFormat.format(item.startDate)
         binding.textTripEndYear.text = yearFormat.format(item.endDate)
-        binding.textTripEndMonth.text = monthFormat.format(item.endDate).toUpperCase(Locale.getDefault())
+        binding.textTripEndMonth.text =
+            monthFormat.format(item.endDate).toUpperCase(Locale.getDefault())
         binding.textTripEndDay.text = dayFormat.format(item.endDate)
         binding.textTripName.text = item.name
 

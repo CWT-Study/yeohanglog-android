@@ -7,11 +7,8 @@ import team.triplog.domain.repository.TripRepository
 
 
 /**
- * Description : 여행 관련 Repository 구현체
- *
- * @author   mjkim
- * @version  1.0.0
- * @since    4/18/21 4:51 PM
+ * @author mjkim
+ * @since 2021/03/29
  **/
 class TripRepositoryImpl(
     private val localDataSource: TripLocalDataSource

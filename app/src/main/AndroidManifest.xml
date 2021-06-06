@@ -47,44 +47,9 @@
             android:windowSoftInputMode="adjustPan|stateAlwaysHidden" />
 
         <activity
-            android:name=".presentation.MoreUserActivity"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan|stateAlwaysHidden" />
-
-        <activity
-            android:name=".presentation.trip.log.activity.TripLogActivity"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan|stateAlwaysHidden" />
-
-        <activity
             android:name=".presentation.trip.plan.activity.TripPlanActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize|stateVisible" />
-
-        <activity
-            android:name=".presentation.trip.log.logdetail.activity.TripLogDetailActivity"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan|stateAlwaysHidden" />
-
-        <activity
-            android:name=".presentation.trip.add.activity.TripPayActivity"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan|stateAlwaysHidden" />
-
-        <activity
-            android:name=".presentation.trip.add.activity.TripCheckActivity"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan|stateAlwaysHidden" />
-
-        <activity
-            android:name=".presentation.trip.add.activity.TripMemberActivity"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan|stateAlwaysHidden" />
-
-        <activity
-            android:name=".presentation.trip.add.activity.TripAlbumActivity"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan|stateAlwaysHidden" />
 
     </application>
 

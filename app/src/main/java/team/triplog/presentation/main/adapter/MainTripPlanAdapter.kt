@@ -7,6 +7,11 @@ import team.triplog.domain.model.Trip
 import team.triplog.presentation.main.viewholder.MainTripPlanViewHolder
 import java.util.*
 
+
+/**
+ * @author mjkim
+ * @since 2021/06/06
+ **/
 class MainTripPlanAdapter(
     private val onItemClickListener: OnItemClickListener
 ) : RecyclerView.Adapter<MainTripPlanViewHolder>() {

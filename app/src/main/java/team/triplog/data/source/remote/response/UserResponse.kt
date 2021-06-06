@@ -2,6 +2,11 @@ package team.triplog.data.source.remote.response
 
 import com.google.gson.annotations.SerializedName
 
+
+/**
+ * @author mjkim
+ * @since 2021/06/06
+ **/
 data class UserResponse(
     @SerializedName("_id")
     var id: String,
