@@ -76,24 +76,6 @@
                 app:layout_constraintTop_toBottomOf="@id/tv_end_date_title"
                 tools:text="2021.02.26" />
 
-            <com.applikeysolutions.cosmocalendar.view.CalendarView
-                android:id="@+id/calendar"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_marginTop="@dimen/size_15"
-                android:onClick="@{() -> viewModel.clickDate()}"
-                app:firstDayOfTheWeek="sunday"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_end_date"
-                app:selectedDayBackgroundColor="@color/main_50"
-                app:selectedDayBackgroundEndColor="@color/main"
-                app:selectedDayBackgroundStartColor="@color/main"
-                app:selectionType="range"
-                app:weekDayTitleTextColor="@color/main"
-                app:weekendDayTextColor="@color/main" />
-
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
