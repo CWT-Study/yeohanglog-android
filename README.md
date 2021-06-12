@@ -1,7 +1,9 @@
 # 🗺 여행록 (Android)
-> 여행 계획 및 기록을 위한 안드로이드 어플리케이션  
+![](https://img.shields.io/github/contributors/team-traveler/yeohanglog-android)
+![](https://img.shields.io/github/issues/team-traveler/yeohanglog-android)
 
-https://img.shields.io/github/contributors/team-traveler/yeohanglog-android
+## 개요
+여행 계획 및 기록을 위한 안드로이드 어플리케이션  
 
 ## Stack
 > 여행록 - 안드로이드 의 기술 스택
