@@ -5,9 +5,9 @@ buildscript {
         AppVersionCode = 1
         AppVersionName = "1.0.0"
 
-        BuildSdkVersion = 29
+        BuildSdkVersion = 30
         BuildMinSdkVersion = 21
-        BuildTargetSdkVersion = 29
+        BuildTargetSdkVersion = 30
     }
 
 
