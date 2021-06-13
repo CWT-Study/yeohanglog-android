@@ -5,6 +5,7 @@ import com.kakao.auth.*
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 import team.triplog.presentation.di.*
+import timber.log.Timber
 
 
 /**
@@ -16,6 +17,7 @@ class GlobalApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         setupKoin()
+        Timber.plant(Timber.DebugTree())
     }
 
     private fun setupKoin() {
