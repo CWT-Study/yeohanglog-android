@@ -24,7 +24,7 @@ class MainHomeFragment : BaseFragment<FragmentMainHomeBinding>(
 
     private val mainViewModel: MainViewModel by sharedViewModel()
     private val userViewModel: UserViewModel by sharedViewModel()
-    private val tripPlanViewModel: TripPlanViewModel by viewModel()
+    private val tripPlanViewModel: TripPlanViewModel by sharedViewModel()
 
     private val mainHomeAdapter: MainHomeAdapter by lazy {
         MainHomeAdapter(this)
