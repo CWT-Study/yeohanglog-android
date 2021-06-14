@@ -74,6 +74,7 @@
             android:layout_height="0dp"
             android:background="@drawable/background_profile_default"
             android:elevation="4dp"
+            android:onClick="@{() -> profileViewModel.clickProfileImage()}"
             android:scaleType="centerCrop"
             app:layout_constraintBottom_toTopOf="@id/cl_profile"
             app:layout_constraintDimensionRatio="1"
