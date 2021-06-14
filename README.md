@@ -34,5 +34,5 @@
 - [Okhttp3](https://square.github.io/okhttp/)
 - [Material Design](https://material.io/)
 
-## Rules
+## 📝 Rules
 - [Check out common conventions](https://github.com/team-traveler/travelers-base-camp)
