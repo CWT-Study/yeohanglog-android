@@ -13,5 +13,5 @@ val roomModule = module {
 }
 
 val dataModule = module {
-    single { UserRepositoryImpl(get()) as UserRepository }
+    single<UserRepository> { UserRepositoryImpl(get()) }
 }
