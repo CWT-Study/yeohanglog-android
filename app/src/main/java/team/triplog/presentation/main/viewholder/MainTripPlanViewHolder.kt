@@ -33,11 +33,11 @@ class MainTripPlanViewHolder(
     fun bind(item: Trip, itemClickListener: MainTripPlanAdapter.OnItemClickListener) {
         binding.textTripStartYear.text = yearFormat.format(item.startDate)
         binding.textTripStartMonth.text =
-            monthFormat.format(item.startDate).toUpperCase(Locale.getDefault())
+            monthFormat.format(item.startDate).uppercase(Locale.getDefault())
         binding.textTripStartDay.text = dayFormat.format(item.startDate)
         binding.textTripEndYear.text = yearFormat.format(item.endDate)
         binding.textTripEndMonth.text =
-            monthFormat.format(item.endDate).toUpperCase(Locale.getDefault())
+            monthFormat.format(item.endDate).uppercase(Locale.getDefault())
         binding.textTripEndDay.text = dayFormat.format(item.endDate)
         binding.textTripName.text = item.name
 
