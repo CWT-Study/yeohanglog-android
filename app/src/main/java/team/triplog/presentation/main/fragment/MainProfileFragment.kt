@@ -1,17 +1,15 @@
 package team.triplog.presentation.main.fragment
 
 import android.Manifest
-import androidx.activity.result.ActivityResultLauncher
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 import team.triplog.R
 import team.triplog.databinding.FragmentMainProfileBinding
 import team.triplog.presentation.base.BaseFragment
 import team.triplog.presentation.util.event.EventObserver
-import team.triplog.presentation.util.extension.requestPermission
 import team.triplog.presentation.util.extension.setupButton
+import team.triplog.presentation.util.launcher.PermissionLauncher
 import team.triplog.presentation.viewmodel.ProfileViewModel
 import team.triplog.presentation.viewmodel.UserViewModel
-import timber.log.Timber
 
 
 /**
@@ -24,13 +22,17 @@ class MainProfileFragment : BaseFragment<FragmentMainProfileBinding>(
     private val userViewModel: UserViewModel by sharedViewModel()
     private val profileViewModel: ProfileViewModel by sharedViewModel()
 
-    private lateinit var permissionLauncher: ActivityResultLauncher<String>
+    private val permissionLauncher by lazy { PermissionLauncher() }
 
 
     override fun setup() {
+        setupPermission()
         setupViewModel()
-        setupLauncher()
         setupView()
+    }
+
+    private fun setupPermission() {
+        lifecycle.addObserver(permissionLauncher)
     }
 
     private fun setupViewModel() {
@@ -50,25 +52,19 @@ class MainProfileFragment : BaseFragment<FragmentMainProfileBinding>(
         )
     }
 
-    private fun setupLauncher() {
-        permissionLauncher = requestPermission(
-            permission = Manifest.permission.CAMERA,
-            granted = { startCamera() },
-            explained = { },
-            belowVersionM = { startCamera() }
-        )
-    }
-
     private fun setupView() {
         binding.clBtnSignIn.setupButton()
     }
 
     private fun showCamera() {
-        permissionLauncher.launch(Manifest.permission.CAMERA)
+        permissionLauncher.launch(
+            permission = Manifest.permission.CAMERA,
+            granted = { startCamera() },
+            explained = { showNeedPermissionAlert(getString(R.string.permission_camera)) }
+        )
     }
 
     private fun startCamera() {
-        Timber.i("::::: startCamera")
     }
 
     private fun moveSignIn() {
