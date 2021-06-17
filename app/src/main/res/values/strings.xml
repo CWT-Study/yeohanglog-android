@@ -32,8 +32,13 @@
     <string name="button_yes">예</string>
     <string name="button_no">아니오</string>
     <string name="button_next">다음</string>
+    <string name="button_cancel">취소</string>
+    <string name="button_confirm">확인</string>
+    <string name="button_go_device_setting">설정으로 이동</string>
     <string name="main_home_new_trip">새로운 여행 계획하기</string>
     <string name="dialog_init_setting_info">해당 창을 닫으면 설정한 정보가 초기화됩니다.\n닫으시겠습니까?</string>
+    <string name="dialog_need_permission">%s 기능을 사용하려면 권한이 필요합니다.</string>
+    <string name="permission_camera">카메라</string>
     <string name="setting_main">설정</string>
     <string name="setting_theme">테마 설정</string>
     <string name="setting_open_source">오픈 소스 라이브러리</string>

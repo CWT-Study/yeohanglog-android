@@ -103,4 +103,13 @@ abstract class BaseFragment<T : ViewDataBinding>(
             }
         )
     }
+
+    protected fun showNeedPermissionAlert(permission: String) {
+        showAlert(
+            message = getString(R.string.dialog_need_permission, permission),
+            positive = getString(R.string.button_go_device_setting),
+            negative = getString(R.string.button_cancel),
+            positiveAction = { _, _ -> moveAppPermission() }
+        )
+    }
 }
