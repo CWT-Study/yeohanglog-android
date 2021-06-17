@@ -2,7 +2,10 @@ package team.triplog.presentation.base
 
 import android.app.AlertDialog
 import android.content.DialogInterface
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
+import android.provider.Settings
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -100,6 +103,27 @@ abstract class BaseFragment<T : ViewDataBinding>(
             negative = getString(R.string.button_no),
             positiveAction = { _, _ ->
                 activity?.finish()
+            }
+        )
+    }
+
+    protected fun showNeedPermissionAlert(permission: String) {
+        showAlert(
+            message = getString(R.string.dialog_need_permission, permission),
+            positive = getString(R.string.button_go_device_setting),
+            negative = getString(R.string.button_cancel),
+            positiveAction = { _, _ -> moveAppPermission() }
+        )
+    }
+
+    private fun moveAppPermission() {
+        startActivity(
+            Intent(
+                Settings.ACTION_APPLICATION_DETAILS_SETTINGS,
+                Uri.parse("package:${activity?.packageName}")
+            ).apply {
+                addCategory(Intent.CATEGORY_DEFAULT)
+                flags = Intent.FLAG_ACTIVITY_NEW_TASK
             }
         )
     }
