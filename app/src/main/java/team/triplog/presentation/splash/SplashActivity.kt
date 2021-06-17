@@ -2,6 +2,7 @@ package team.triplog.presentation.splash
 
 import android.os.Bundle
 import android.os.Handler
+import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
 import team.triplog.presentation.main.startMainActivity
 
@@ -14,8 +15,7 @@ class SplashActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        Handler().postDelayed({ moveNext() }, 500)
+        Handler(Looper.getMainLooper()).postDelayed({ moveNext() }, 500)
     }
 
     private fun moveNext() {
